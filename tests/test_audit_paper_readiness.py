@@ -304,6 +304,33 @@ def test_readiness_tracks_second_annotator_packet_status() -> None:
     )
 
     iaa_check = next(check for check in report["checks"] if check["check_id"] == "iaa_second_annotator_packet")
-    assert iaa_check["status"] == "pass"
+    assert iaa_check["status"] == "warning"
     assert "target_rows=60" in iaa_check["evidence"]
     assert "labeled_rows=1" in iaa_check["evidence"]
+
+
+def test_readiness_marks_second_annotator_packet_complete() -> None:
+    report = audit_paper_readiness.audit_readiness(
+        claim_rows=[
+            claim("C1", "ready"),
+            claim("C2", "ready"),
+            claim("C3", "ready"),
+        ],
+        iclr2024_gate=gate(True),
+        iclr2025_gate=gate(True),
+        iclr2024_human=human(2, 2),
+        iclr2025_human=human(1, 1),
+        packet_audits=[{"ok": True}],
+        label_evidence_audits=[{"rows": 3, "evidence_issue_count": 0}],
+        iaa_second_annotator_manifest={"selected_rows": 2},
+        iaa_second_annotator_blind_rows=[
+            {"issue_id": "a", "human_label": "fixed"},
+            {"issue_id": "b", "human_label": "unresolved"},
+        ],
+        iaa_second_annotator_metrics={"labeled_rows": 2, "agreement": 1.0, "cohen_kappa": 1.0},
+    )
+
+    iaa_check = next(check for check in report["checks"] if check["check_id"] == "iaa_second_annotator_packet")
+    assert iaa_check["status"] == "pass"
+    assert "agreement=1.0" in iaa_check["evidence"]
+    assert "IAA mini-slice metrics are complete" in iaa_check["next_action"]

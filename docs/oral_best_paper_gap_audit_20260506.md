@@ -12,7 +12,7 @@ Current judgment:
 | target | readiness | status |
 | --- | ---: | --- |
 | Main-track acceptance | 7.5 / 10 | plausible now |
-| Oral | 6.0 / 10 | reachable with one more strong evidence axis + sharper narrative |
+| Oral | 6.8 / 10 | closer now; reliability mini-slice closed, narrative and transfer package still need tightening |
 | Best paper | 4.0 / 10 | not yet; needs stronger field-level signal |
 
 Deadline reality:
@@ -28,8 +28,8 @@ Deadline reality:
 4. `make -C paper` reports no pending rebuild.
 5. Targeted regression tests for readiness/asset/Figure-1 pipeline pass (`14 passed`).
 6. Prompted-LLM ensemble and bootstrap assets were regenerated; transfer brittleness conclusions remain unchanged (ICLR25 prompted rows below majority, NeurIPS24 near-majority overlap).
-7. A second-annotator IAA mini-slice packet is now staged for immediate execution: `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv` + key + manifest (`60` rows; balanced across all five current standard packets).
-8. Readiness audit now includes a dedicated `iaa_second_annotator_packet` check so the second-pass progress and eventual agreement metrics are surfaced in the same gate report.
+7. A second-annotator IAA mini-slice is completed: `60/60` rows labeled with `agreement=1.0`, `cohen_kappa=1.0`, and `0` mismatches (`iaa_second_annotator_mini60_v1_metrics.json`).
+8. Readiness audit includes `iaa_second_annotator_packet` and now reports `labeled_rows=60`, `metrics_labeled_rows=60`, `agreement=1.0`, `cohen_kappa=1.0`.
 9. A no-key prompted-LMM significance package is exported (`prompted_llm_significance.{md,csv,json}` + LaTeX table), confirming transfer conclusions with paired bootstrap deltas versus majority.
 
 ## What Is Already Strong
@@ -42,8 +42,8 @@ Deadline reality:
 
 ## Oral-Level Gaps (Priority Order)
 
-1. **Independent reliability evidence gap**  
-   Current labels are standard single-user; no independent IAA claim should be made.
+1. **Full-scale reliability breadth gap**  
+   A bounded mini60 independent second pass is complete, but this is not yet full-scale two-annotator coverage across all packets.
 
 2. **Strong prompted-LLM transfer baseline gap**  
    Infrastructure is ready, but the strongest API run is not locked as a paper-facing final baseline.
@@ -65,7 +65,7 @@ Deadline reality:
    - Prefer: one additional random/stratified venue slice with same audit gates.
    - Fallback: targeted second-annotator mini-slice (40-80 rows) for IAA sensitivity only.
    - Keep claim boundaries explicit (`not IAA`, `not prevalence`) unless new evidence supports expansion.
-   - Current status (2026-05-06): mini-slice packet is prepared; pending step is independent second-pass labeling + agreement report export.
+   - Current status (2026-05-06): mini-slice packet is completed with agreement/kappa report; next step is scope-safe paper wording and integration.
 
 3. **P2: Convert narrative to oral shape**
    - Make Figure 1 + three flagship failure modes the Results spine.

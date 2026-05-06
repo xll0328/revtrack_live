@@ -411,7 +411,14 @@ def audit_readiness(
         agreement = iaa_second_annotator_metrics.get("agreement") if iaa_second_annotator_metrics else None
         kappa = iaa_second_annotator_metrics.get("cohen_kappa") if iaa_second_annotator_metrics else None
         metrics_rows = int(iaa_second_annotator_metrics.get("labeled_rows", 0)) if iaa_second_annotator_metrics else 0
-        status = "pass" if target_rows > 0 else "warning"
+        complete = (
+            target_rows > 0
+            and labeled_rows >= target_rows
+            and metrics_rows >= target_rows
+            and agreement is not None
+            and kappa is not None
+        )
+        status = "pass" if complete else "warning"
         add_check(
             checks,
             check_id="iaa_second_annotator_packet",
@@ -422,7 +429,9 @@ def audit_readiness(
                 f"metrics_labeled_rows={metrics_rows}, agreement={agreement}, cohen_kappa={kappa}"
             ),
             next_action=(
-                "Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics."
+                "IAA mini-slice metrics are complete; keep this as bounded reliability evidence and avoid broad prevalence claims."
+                if complete
+                else "Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics."
             ),
         )
 

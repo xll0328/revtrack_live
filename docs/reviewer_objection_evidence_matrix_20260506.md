@@ -42,16 +42,17 @@ Use this matrix to keep claim boundaries strict and response evidence concrete.
 ## O4: "No independent annotation reliability (IAA)."
 
 - Response spine:
-  - Current labels are standard single-user confirmation; we do not overclaim IAA.
-  - Independent second-pass mini60 is staged and tracked in readiness gates.
+  - Main benchmark labels remain standard single-user confirmation for scope control.
+  - A bounded independent second-pass mini60 is completed and tracked in readiness gates.
 - Evidence artifacts:
   - `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv`
   - `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_manifest.md`
   - `outputs/day1/paper_assets/iaa_second_annotator_mini60_batches.md`
+  - `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json`
   - `outputs/day1/paper_assets/paper_readiness_audit.md` (`iaa_second_annotator_packet`)
-- Blocking gap:
-  - Need filled second-pass labels + `iaa_second_annotator_mini60_v1_metrics.json`.
-- Status: `in_progress`
+- Boundary:
+  - Treat this as bounded reliability evidence on mini60, not a full-scale prevalence study.
+- Status: `ready (bounded mini-slice IAA)`
 
 ## O5: "Possible leakage or packet misalignment."
 
@@ -89,6 +90,6 @@ Use this matrix to keep claim boundaries strict and response evidence concrete.
 
 ## Execution Priority (for Oral Push)
 
-1. Close O4 (IAA mini60 second-pass metrics).
-2. Keep O3 bounded and statistically explicit in main text.
-3. Keep O2/O6 wording tight: macro-F1 first, no overclaim on sparse labels.
+1. Keep O3 bounded and statistically explicit in main text.
+2. Keep O2/O6 wording tight: macro-F1 first, no overclaim on sparse labels.
+3. Use O4 mini-slice IAA as reliability support, but avoid overstating scope.

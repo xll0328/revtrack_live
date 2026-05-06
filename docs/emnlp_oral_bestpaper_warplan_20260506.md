@@ -8,15 +8,14 @@ Remaining: `19` days
 ## 1) Distance Snapshot (As of 2026-05-06)
 
 - Main-track acceptance: `7.5 / 10` (plausible now)
-- Oral: `6.0 / 10` (reachable, but still one key evidence axis short)
+- Oral: `6.8 / 10` (now closer; reliability mini-slice closed, narrative still needs tightening)
 - Best paper: `4.0 / 10` (not yet; needs stronger field-level reliability signal)
 
 Interpretation:
 - We are not blocked by pipeline quality. We are blocked by evidence depth + narrative sharpness.
 - To reach oral confidence before `2026-05-25`, we must close:
-  1. independent IAA evidence (or explicitly bounded fallback),
-  2. one stronger transfer baseline package under no-key constraints,
-  3. final story concentration around stale-criticism + failure taxonomy.
+  1. one stronger transfer baseline package under no-key constraints,
+  2. final story concentration around stale-criticism + failure taxonomy.
 
 ## 2) Success Criteria (Submission / Oral / Best)
 
@@ -41,8 +40,8 @@ Interpretation:
 Window: `2026-05-06` to `2026-05-14`
 
 - A1. Prepare second-annotator execution packets (done)
-- A2. Complete independent second-pass labeling on mini60
-- A3. Export agreement/kappa + mismatch analysis
+- A2. Complete independent second-pass labeling on mini60 (done; `60/60`)
+- A3. Export agreement/kappa + mismatch analysis (done; agreement=`1.0`, kappa=`1.0`, mismatches=`0`)
 - A4. Update readiness + limitations + claim ledger language
 
 Exit gate:
@@ -90,19 +89,19 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - [x] T0-4 Added batch splitter utility + test:
   - `scripts/split_second_annotator_packet.py`
   - `tests/test_split_second_annotator_packet.py`
-- [-] T0-5 Start independent second-pass labeling on batch files
+- [x] T0-5 Start independent second-pass labeling on batch files
 - [x] T0-6 Added one-command IAA merge/eval/readiness pipeline:
   - `scripts/run_iaa_second_annotator_pipeline.py`
   - `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_pipeline_report.{md,json}`
 
 ### Week 1 (`2026-05-07` ~ `2026-05-12`)
 
-- [ ] W1-1 Collect completed second-pass labels for at least 2/3 batches
-- [ ] W1-2 Run:
+- [x] W1-1 Collect completed second-pass labels for at least 2/3 batches
+- [x] W1-2 Run:
   - `python scripts/evaluate_human_validation.py --human-sheet experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv --key experiments/day1/iaa_second_annotator_mini60_v1_key.tsv --output-json outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json --mismatch-output outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_mismatches.tsv`
-- [ ] W1-3 Refresh readiness:
+- [x] W1-3 Refresh readiness:
   - `python scripts/audit_paper_readiness.py`
-- [ ] W1-4 Update claim boundaries in paper (IAA done vs not done branch text)
+- [-] W1-4 Update claim boundaries in paper (IAA done vs not done branch text)
 
 ### Week 2 (`2026-05-13` ~ `2026-05-18`)
 
@@ -130,3 +129,4 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: launched no-key significance package and integrated into paper.
 - `2026-05-06`: launched IAA mini60 operationalization via 3 balanced blind batches.
 - `2026-05-06`: added tests and passed targeted checks.
+- `2026-05-06`: completed IAA mini60 second pass (`60/60`), exported agreement=`1.0` and Cohen's kappa=`1.0`, refreshed readiness.
