@@ -40,3 +40,30 @@ pytest -q tests/test_audit_paper_readiness.py \
 1. W2-1 narrative concentration pass (intro/results/discussion), without changing claim scope.
 2. W2-4 dry-run package freeze follow-up: lock final command log + artifact manifest closer to deadline.
 3. Final-week consistency and rebuttal response pack.
+
+## Refresh Checkpoint (Boundary160 Integrated)
+
+Refresh time: `2026-05-06` (UTC)  
+Checkpoint commit: `838b422`
+
+Commands executed:
+
+```bash
+python scripts/export_oral_evidence_panel.py
+python scripts/audit_paper_readiness.py \
+  --output-json outputs/day1/paper_assets/paper_readiness_audit.json \
+  --output-md outputs/day1/paper_assets/paper_readiness_audit.md
+python scripts/audit_paper_citations.py > outputs/day1/paper_assets/paper_citation_audit.json
+make -B -C paper
+```
+
+Refresh results:
+
+- Readiness audit: `overall_status=ready`, `ready_claims=9`, `blockers=0`, `warnings=0`.
+- Citation audit: `pass`, `cited_keys=31`, `problems=0`.
+- Boundary160 packet status: `labeled_rows=160`, `agreement=1.0`, `cohen_kappa=1.0`, `mismatches=0`.
+- Paper build: `pass` (`paper/main.pdf` rebuilt; 18 pages).
+
+Freeze artifact hashes:
+
+- `outputs/day1/paper_assets/submission_artifact_manifest_20260506_1213.md`
