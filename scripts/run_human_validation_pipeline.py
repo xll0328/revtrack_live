@@ -223,6 +223,21 @@ def run_readiness_audit(*, output_json: str | Path, output_md: str | Path) -> di
         )
         if Path(defaults["iclr2023_random80_human_validation_provenance"]).exists()
         else None,
+        iaa_second_annotator_manifest=audit_paper_readiness.load_json(
+            defaults["iaa_second_annotator_manifest"]
+        )
+        if Path(defaults["iaa_second_annotator_manifest"]).exists()
+        else None,
+        iaa_second_annotator_blind_rows=audit_paper_readiness.load_csv_rows(
+            defaults["iaa_second_annotator_blind_sheet"]
+        )
+        if Path(defaults["iaa_second_annotator_blind_sheet"]).exists()
+        else None,
+        iaa_second_annotator_metrics=audit_paper_readiness.load_json(
+            defaults["iaa_second_annotator_metrics"]
+        )
+        if Path(defaults["iaa_second_annotator_metrics"]).exists()
+        else None,
     )
     write_json(output_json, report)
     audit_paper_readiness.write_markdown(output_md, report)

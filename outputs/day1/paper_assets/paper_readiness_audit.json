@@ -72,6 +72,13 @@
       "summary": "Paper citations resolve against the BibTeX file and the final LaTeX log."
     },
     {
+      "check_id": "iaa_second_annotator_packet",
+      "evidence": "target_rows=60, blind_rows=398, labeled_rows=0, metrics_labeled_rows=0, agreement=None, cohen_kappa=None",
+      "next_action": "Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics.",
+      "status": "pass",
+      "summary": "Second-annotator IAA mini-slice status is tracked separately from canonical first-pass labels."
+    },
+    {
       "check_id": "not_ready_claims_blocked",
       "evidence": "not_ready_claims=[]",
       "next_action": "Keep not-ready claims out of the main claim set until gates pass.",

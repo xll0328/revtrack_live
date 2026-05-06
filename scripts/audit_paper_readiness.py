@@ -388,6 +388,17 @@ def audit_readiness(
             + len(citation_audit.get("missing_required_fields", []))
             + len(citation_audit.get("log_problems", []))
         )
+        add_check(
+            checks,
+            check_id="paper_citations_ready",
+            status="pass" if citation_audit.get("ok") else ("blocker" if citation_status == "blocker" else "warning"),
+            summary="Paper citations resolve against the BibTeX file and the final LaTeX log.",
+            evidence=(
+                f"status={citation_status}, cited_keys={citation_audit.get('cited_key_count')}, "
+                f"bib_entries={citation_audit.get('bib_entry_count')}, problems={citation_problem_count}"
+            ),
+            next_action="Rerun audit_paper_citations.py after related-work or BibTeX edits.",
+        )
 
     if iaa_second_annotator_manifest is not None or iaa_second_annotator_blind_rows is not None:
         target_rows = int((iaa_second_annotator_manifest or {}).get("selected_rows", 0))
@@ -409,17 +420,6 @@ def audit_readiness(
             next_action=(
                 "Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics."
             ),
-        )
-        add_check(
-            checks,
-            check_id="paper_citations_ready",
-            status="pass" if citation_audit.get("ok") else ("blocker" if citation_status == "blocker" else "warning"),
-            summary="Paper citations resolve against the BibTeX file and the final LaTeX log.",
-            evidence=(
-                f"status={citation_status}, cited_keys={citation_audit.get('cited_key_count')}, "
-                f"bib_entries={citation_audit.get('bib_entry_count')}, problems={citation_problem_count}"
-            ),
-            next_action="Rerun audit_paper_citations.py after related-work or BibTeX edits.",
         )
 
     not_ready_claims = [row["claim_id"] for row in claim_rows if row.get("status") == "not_ready"]

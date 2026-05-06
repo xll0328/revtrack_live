@@ -88,6 +88,14 @@ Evidence: status=pass, cited_keys=26, bib_entries=26, problems=0
 
 Next action: Rerun audit_paper_citations.py after related-work or BibTeX edits.
 
+### iaa_second_annotator_packet (pass)
+
+Second-annotator IAA mini-slice status is tracked separately from canonical first-pass labels.
+
+Evidence: target_rows=60, blind_rows=398, labeled_rows=0, metrics_labeled_rows=0, agreement=None, cohen_kappa=None
+
+Next action: Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics.
+
 ### not_ready_claims_blocked (pass)
 
 Not-ready claims are explicitly blocked from paper claims.
