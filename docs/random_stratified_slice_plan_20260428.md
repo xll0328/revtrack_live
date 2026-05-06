@@ -28,6 +28,14 @@ Current execution snapshot (2026-04-28):
 - The resolved-candidate sheet was user-confirmed and promoted into the canonical blind sheet on 2026-04-29 (`outputs/day1/iclr2023_limit80_random80_standard_validation_promotion.json`, `promoted_rows=80`).
 - Standard transfer and failure-taxonomy assets now exist for the same `80` rows (`outputs/day1/paper_assets/iclr2023_limit80_random80_standard_transfer_metrics.md`; `outputs/day1/paper_assets/iclr2023_limit80_random80_standard_failure_taxonomy.md`).
 
+Refresh snapshot (2026-05-06):
+
+- Control probes for ICLR 2024 and NeurIPS 2024 still succeed on `v2-notes` with full candidate coverage.
+- Non-ICLR probes remain blocked in this pipeline:
+  - ICML 2024 still returns `issue_candidates=0` in `v2-notes` plus `400` on `v2-search`.
+  - NeurIPS 2023 and ICML 2023 probes are currently unstable (`v2` timeouts/400, no usable `v1` fallback rows).
+- Feasibility report: `outputs/day1/paper_assets/random_stratified_slice_feasibility_2026-05-06.md`.
+
 ## Sampling Policy
 
 - Base pool: all extracted issue candidates from the selected venue slice.
