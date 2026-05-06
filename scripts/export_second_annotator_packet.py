@@ -117,6 +117,18 @@ def parse_args() -> argparse.Namespace:
         help="Number of rows to sample for the second-annotator packet.",
     )
     parser.add_argument(
+        "--min-per-packet",
+        type=int,
+        default=8,
+        help="Minimum rows from each packet before label-quota fill. Set 0 to disable.",
+    )
+    parser.add_argument(
+        "--max-per-packet",
+        type=int,
+        default=20,
+        help="Maximum rows from any packet. Set 0 to disable.",
+    )
+    parser.add_argument(
         "--label-quota",
         action="append",
         default=None,
@@ -334,6 +346,8 @@ def select_candidates(
     *,
     sample_size: int,
     label_quotas: dict[str, int],
+    min_per_packet: int = 0,
+    max_per_packet: int = 0,
 ) -> list[dict[str, Any]]:
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in candidates:
@@ -343,17 +357,48 @@ def select_candidates(
 
     selected: list[dict[str, Any]] = []
     selected_ids: set[str] = set()
+    source_counts: Counter[str] = Counter()
+    label_counts: Counter[str] = Counter()
+
+    def can_take(row: dict[str, Any]) -> bool:
+        if row["issue_id"] in selected_ids:
+            return False
+        if max_per_packet > 0 and source_counts[row["source_packet"]] >= max_per_packet:
+            return False
+        return True
+
+    def take(row: dict[str, Any]) -> None:
+        selected.append(row)
+        selected_ids.add(row["issue_id"])
+        source_counts[row["source_packet"]] += 1
+        label_counts[row["first_pass_label"]] += 1
+
+    if min_per_packet > 0:
+        by_source: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for row in candidates:
+            by_source[row["source_packet"]].append(row)
+        for source in by_source:
+            by_source[source].sort(key=sort_key)
+        for source, rows in sorted(by_source.items()):
+            for row in rows:
+                if len(selected) >= sample_size:
+                    break
+                if source_counts[source] >= min_per_packet:
+                    break
+                if not can_take(row):
+                    continue
+                take(row)
+
     for label in LABEL_ORDER:
         target = max(0, label_quotas.get(label, 0))
         for row in grouped.get(label, []):
             if len(selected) >= sample_size:
                 break
-            if len([r for r in selected if r["first_pass_label"] == label]) >= target:
+            if label_counts[label] >= target:
                 break
-            if row["issue_id"] in selected_ids:
+            if not can_take(row):
                 continue
-            selected.append(row)
-            selected_ids.add(row["issue_id"])
+            take(row)
 
     remaining = sorted(
         [row for row in candidates if row["issue_id"] not in selected_ids],
@@ -362,8 +407,9 @@ def select_candidates(
     for row in remaining:
         if len(selected) >= sample_size:
             break
-        selected.append(row)
-        selected_ids.add(row["issue_id"])
+        if not can_take(row):
+            continue
+        take(row)
 
     return sorted(selected, key=sort_key)
 
@@ -431,6 +477,8 @@ def write_manifest_md(path: str | Path, report: dict[str, Any]) -> None:
         "# Second Annotator IAA Mini-Slice Manifest",
         "",
         f"- sample size target: `{report['sample_size_target']}`",
+        f"- per-packet minimum: `{report['min_per_packet']}`",
+        f"- per-packet maximum: `{report['max_per_packet']}`",
         f"- selected rows: `{report['selected_rows']}`",
         f"- blind sheet: `{report['blind_output']}`",
         f"- key sheet: `{report['key_output']}`",
@@ -483,12 +531,16 @@ def build_report(
     *,
     sample_size: int,
     label_quotas: dict[str, int],
+    min_per_packet: int,
+    max_per_packet: int,
     blind_output: str | Path,
     key_output: str | Path,
     packet_specs: list[PacketSpec],
 ) -> dict[str, Any]:
     return {
         "sample_size_target": sample_size,
+        "min_per_packet": min_per_packet,
+        "max_per_packet": max_per_packet,
         "selected_rows": len(selected),
         "label_quotas": label_quotas,
         "blind_output": relpath(blind_output),
@@ -519,6 +571,8 @@ def main() -> None:
         candidates,
         sample_size=max(1, args.sample_size),
         label_quotas=label_quotas,
+        min_per_packet=max(0, args.min_per_packet),
+        max_per_packet=max(0, args.max_per_packet),
     )
 
     write_tsv(args.blind_output, [as_blind_row(row) for row in selected], BLIND_FIELDS)
@@ -529,6 +583,8 @@ def main() -> None:
         candidates,
         sample_size=max(1, args.sample_size),
         label_quotas=label_quotas,
+        min_per_packet=max(0, args.min_per_packet),
+        max_per_packet=max(0, args.max_per_packet),
         blind_output=args.blind_output,
         key_output=args.key_output,
         packet_specs=packet_specs,

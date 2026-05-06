@@ -161,6 +161,8 @@ def test_write_outputs_and_manifest(tmp_path: Path) -> None:
         candidates,
         sample_size=3,
         label_quotas={"regressed": 1, "fixed": 1, "unresolved": 1, "partially_fixed": 0},
+        min_per_packet=0,
+        max_per_packet=0,
         blind_output=blind_path,
         key_output=key_path,
         packet_specs=[packet],
