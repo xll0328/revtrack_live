@@ -139,5 +139,5 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: launched stronger learned baseline probe (`scripts/run_transformer_classifier_transfer.py`) and recorded first-run fine-tuned ModernBERT transfer metrics.
 - `2026-05-06`: upgraded stronger-baseline evidence to multi-seed summary (`scripts/export_modernbert_multiseed_probe.py`; `finetuned_modernbert_multiseed_20260506.*` + `paper/tables/finetuned_modernbert_multiseed_probe.tex`).
 - `2026-05-06`: integrated stronger learned baseline narrative into main text (`paper/sections/05_experiments.tex`, `paper/sections/06_discussion.tex`) to directly answer the weak-baseline objection.
-- `2026-05-06`: executed boundary160 IAA metrics pipeline and confirmed packet readiness status (`labeled_rows=0` pending completed second-pass labels).
+- `2026-05-06`: completed boundary160 second-pass user confirmation (`160/160`), regenerated batch sheets, exported metrics (`agreement=1.0`, `cohen_kappa=1.0`), and refreshed readiness with boundary160 IAA check.
 - `2026-05-06`: closed related-work gap with DOI-verified additions (`du-etal-2024-llms-assist`, `zhu-etal-2025-deepreview`, `robertson-2023-gpt4-helpful`, `leng-etal-2019-deepreviewer`, `wang-etal-2020-reviewrobot`) and updated citation matrix.
