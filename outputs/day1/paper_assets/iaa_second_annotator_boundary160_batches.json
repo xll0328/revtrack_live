@@ -1,0 +1,78 @@
+{
+  "batches": [
+    {
+      "batch_id": 1,
+      "file": "experiments/day1/iaa_second_annotator_boundary160_v1_blind_batch1.tsv",
+      "label_distribution": {
+        "fixed": 7,
+        "partially_fixed": 15,
+        "regressed": 2,
+        "unresolved": 16
+      },
+      "rows": 40,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 11,
+        "ICLR 2024 v1": 5,
+        "ICLR 2025 expanded80 v1": 11,
+        "ICLR 2025 repro v2": 4,
+        "NeurIPS 2024 limit100 v1": 9
+      }
+    },
+    {
+      "batch_id": 2,
+      "file": "experiments/day1/iaa_second_annotator_boundary160_v1_blind_batch2.tsv",
+      "label_distribution": {
+        "fixed": 7,
+        "partially_fixed": 15,
+        "regressed": 2,
+        "unresolved": 16
+      },
+      "rows": 40,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 9,
+        "ICLR 2024 v1": 6,
+        "ICLR 2025 expanded80 v1": 10,
+        "ICLR 2025 repro v2": 5,
+        "NeurIPS 2024 limit100 v1": 10
+      }
+    },
+    {
+      "batch_id": 3,
+      "file": "experiments/day1/iaa_second_annotator_boundary160_v1_blind_batch3.tsv",
+      "label_distribution": {
+        "fixed": 7,
+        "partially_fixed": 15,
+        "regressed": 1,
+        "unresolved": 17
+      },
+      "rows": 40,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 10,
+        "ICLR 2024 v1": 5,
+        "ICLR 2025 expanded80 v1": 9,
+        "ICLR 2025 repro v2": 6,
+        "NeurIPS 2024 limit100 v1": 10
+      }
+    },
+    {
+      "batch_id": 4,
+      "file": "experiments/day1/iaa_second_annotator_boundary160_v1_blind_batch4.tsv",
+      "label_distribution": {
+        "fixed": 6,
+        "partially_fixed": 15,
+        "regressed": 2,
+        "unresolved": 17
+      },
+      "rows": 40,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 10,
+        "ICLR 2024 v1": 6,
+        "ICLR 2025 expanded80 v1": 10,
+        "ICLR 2025 repro v2": 4,
+        "NeurIPS 2024 limit100 v1": 10
+      }
+    }
+  ],
+  "num_batches": 4,
+  "total_rows": 160
+}
