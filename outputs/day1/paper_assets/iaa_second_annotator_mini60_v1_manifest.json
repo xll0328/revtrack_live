@@ -1,0 +1,63 @@
+{
+  "blind_output": "experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv",
+  "candidate_label_distribution": {
+    "fixed": 27,
+    "partially_fixed": 132,
+    "regressed": 7,
+    "unresolved": 135
+  },
+  "candidate_rows": 301,
+  "key_output": "experiments/day1/iaa_second_annotator_mini60_v1_key.tsv",
+  "label_quotas": {
+    "fixed": 12,
+    "partially_fixed": 12,
+    "regressed": 6,
+    "unresolved": 20
+  },
+  "packets": [
+    {
+      "audit": "experiments/day1/iclr2024_human_validation_v1_audit.tsv",
+      "blind": "experiments/day1/iclr2024_human_validation_v1_blind.tsv",
+      "key": "experiments/day1/iclr2024_human_validation_v1_key.tsv",
+      "name": "ICLR 2024 v1"
+    },
+    {
+      "audit": "experiments/day1/iclr2025_repro_human_validation_v2_audit.tsv",
+      "blind": "experiments/day1/iclr2025_repro_human_validation_v2_blind.tsv",
+      "key": "experiments/day1/iclr2025_repro_human_validation_v2_key.tsv",
+      "name": "ICLR 2025 repro v2"
+    },
+    {
+      "audit": "experiments/day1/iclr2025_expanded80_human_validation_v1_audit.tsv",
+      "blind": "experiments/day1/iclr2025_expanded80_human_validation_v1_blind.tsv",
+      "key": "experiments/day1/iclr2025_expanded80_human_validation_v1_key.tsv",
+      "name": "ICLR 2025 expanded80 v1"
+    },
+    {
+      "audit": "experiments/day1/neurips2024_limit100_human_validation_v1_audit.tsv",
+      "blind": "experiments/day1/neurips2024_limit100_human_validation_v1_blind.tsv",
+      "key": "experiments/day1/neurips2024_limit100_human_validation_v1_key.tsv",
+      "name": "NeurIPS 2024 limit100 v1"
+    },
+    {
+      "audit": "experiments/day1/iclr2023_limit80_random80_human_validation_v1_audit.tsv",
+      "blind": "experiments/day1/iclr2023_limit80_random80_human_validation_v1_blind.tsv",
+      "key": "experiments/day1/iclr2023_limit80_random80_human_validation_v1_key.tsv",
+      "name": "ICLR 2023 random80 v1"
+    }
+  ],
+  "sample_size_target": 60,
+  "selected_label_distribution": {
+    "fixed": 12,
+    "partially_fixed": 17,
+    "regressed": 6,
+    "unresolved": 25
+  },
+  "selected_rows": 60,
+  "selected_source_distribution": {
+    "ICLR 2023 random80 v1": 47,
+    "ICLR 2024 v1": 6,
+    "ICLR 2025 expanded80 v1": 6,
+    "ICLR 2025 repro v2": 1
+  }
+}
