@@ -24,5 +24,5 @@ They capture sample instability only; they do not include annotator uncertainty 
 ## Interpretation
 
 - Cross-year prompted transfer remains claim-risky: the ICLR25 selected LLM/vote rows are below or overlap the majority reference.
-- NeurIPS24 intervals are useful stress evidence but remain provisional until the labels are human-confirmed.
+- NeurIPS24 intervals are useful bounded transfer evidence on a user-confirmed single-pass active frontier.
 - These intervals support a reliability/benchmark framing, not a solved-system framing.
