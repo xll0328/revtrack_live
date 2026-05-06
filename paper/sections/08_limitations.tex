@@ -3,10 +3,11 @@
 The current strongest performance evidence is in-domain ICLR 2024.
 The ICLR 2025 repro set is validated but small, and expanded80 plus NeurIPS 2024 limit100 are active frontiers rather than random or natural-prevalence samples.
 The ICLR 2023 random80 slice adds random/stratified evidence within the ICLR venue family, but it is still standard single-user validation and not a full natural-prevalence estimate for all venues.
-Most labels are standard single-user confirmed labels, and only a bounded mini60 packet has an independent second pass.
+Most labels are standard single-user confirmed labels.
+Second-pass reliability evidence is currently bounded to two packets: an independent mini60 packet and a broader boundary160 packet that was prelabel-assisted before user confirmation.
 We therefore frame cross-year and cross-venue evidence as bounded transfer and external-validity evidence, not as a complete estimate of performance on all issues.
 For the same reason, frontier failure-taxonomy counts should be read as diagnostic counts on intentionally hard frontiers, while random80 counts should be read by measured slice design rather than as broad prevalence estimates.
-The mini60 agreement result should be interpreted narrowly: it is a bounded consistency check on hard cases, not a substitute for full two-annotator coverage across all packets.
+These agreement results should be interpreted narrowly: they are bounded consistency checks on hard cases, not a substitute for full two-annotator coverage across all packets.
 
 The label rubric is issue-level and evidence-based, but some concerns remain ambiguous.
 For example, a narrowed claim may make an original criticism less severe without fully resolving it.
@@ -21,4 +22,5 @@ This keeps the first benchmark auditable and lightweight, but it can miss change
 Future versions should add PDF-aware evidence extraction while preserving issue-level provenance.
 
 Finally, the current standard labels come from user-reviewed AI-assisted signoff and user-confirmed expanded80, NeurIPS 2024, and ICLR 2023 adjudication.
-A separate independent mini60 second pass is now complete and provides bounded reliability evidence, but full-scale two-annotator coverage remains future work.
+A separate independent mini60 second pass is complete, and a user-confirmed boundary160 second-pass packet is also complete.
+Because boundary160 was prelabel-assisted, full-scale blind-independent two-annotator coverage remains future work.
