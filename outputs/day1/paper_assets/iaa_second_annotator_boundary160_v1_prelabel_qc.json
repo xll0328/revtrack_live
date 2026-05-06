@@ -3,55 +3,34 @@
   "scope": "iaa_second_annotator_boundary160_v1 AI prelabel draft",
   "status": "pass_with_methodological_caveat",
   "checks": {
-    "row_count": {
+    "schema_and_completeness": {
       "rows": 160,
-      "pass": true
-    },
-    "labels_complete": {
-      "labeled_rows": 160,
-      "unlabeled_rows": 0,
-      "pass": true
-    },
-    "label_validity": {
+      "unique_issue_ids": 160,
+      "duplicate_issue_ids": 0,
       "invalid_label_rows": 0,
-      "label_distribution": {
-        "fixed": 27,
-        "partially_fixed": 60,
-        "unresolved": 66,
-        "regressed": 7
-      },
-      "pass": true
-    },
-    "field_completeness": {
       "missing_confidence_rows": 0,
       "missing_evidence_rows": 0,
       "missing_notes_rows": 0,
-      "confidence_distribution": {
-        "3": 102,
-        "4": 58
-      },
       "pass": true
     },
-    "id_integrity": {
-      "unique_issue_ids": 160,
-      "duplicate_issue_ids": 0,
-      "missing_issue_id_rows": 0,
+    "label_distribution": {
+      "fixed": 27,
+      "partially_fixed": 60,
+      "unresolved": 66,
+      "regressed": 7,
       "pass": true
     },
     "blind_sheet_leakage": {
       "forbidden_fields_present": [],
       "pass": true
     },
-    "batch_consistency": {
-      "batch_files": 4,
-      "batch_rows_total": 160,
-      "batch_vs_master_mismatch_rows": 0,
-      "pass": true
-    },
-    "label_evidence_audit": {
-      "ok": true,
-      "structural_errors": 0,
-      "evidence_issue_count": 0,
+    "copy_logic_consistency_vs_key": {
+      "label_source_counts": {
+        "assistant_label": 160
+      },
+      "label_mismatch_rows": 0,
+      "confidence_mismatch_rows": 0,
+      "evidence_mismatch_rows": 0,
       "pass": true
     },
     "agreement_eval_vs_key": {
@@ -59,8 +38,44 @@
       "cohen_kappa": 1.0,
       "mismatches": 0,
       "pass": true,
-      "note": "Expected because prelabels were copied from assistant_label (source=assistant_label for 160/160 rows)."
+      "note": "Expected because prelabels were copied from assistant_label for 160/160 rows."
+    },
+    "label_evidence_audit": {
+      "ok": true,
+      "structural_errors": 0,
+      "evidence_issue_count": 0,
+      "pass": true
+    },
+    "batch_consistency": {
+      "batch_files": 4,
+      "batch_rows_total": 160,
+      "duplicates_across_batches": 0,
+      "missing_from_batches": 0,
+      "extra_in_batches": 0,
+      "batch_vs_master_mismatch_rows": 0,
+      "pass": true
+    },
+    "text_quality": {
+      "evidence_length": {
+        "min": 51,
+        "median": 418.0,
+        "p95": 422,
+        "max": 422,
+        "lt_100_chars": 13,
+        "ge_418_chars": 86,
+        "eq_422_chars": 25
+      },
+      "notes": {
+        "min_chars": 129,
+        "max_chars": 129,
+        "unique_templates": 1
+      },
+      "placeholder_scan_regex_hits": 1,
+      "placeholder_scan_example_issue_id": "eHzIwAhj06__r03",
+      "placeholder_scan_note": "Single hit is lexical ('unknown nuances') in evidence text, not an annotation placeholder.",
+      "pass": true
     }
   },
-  "methodological_caveat": "This is an AI prelabel draft, not independent second-annotator evidence. IAA claims must use human-reviewed labels only."
+  "methodological_caveat": "This is an AI prelabel draft, not independent second-annotator evidence. IAA claims must use human-reviewed labels only.",
+  "recommendation_before_promotion": "Human reviewer should inspect all 160 rows and overwrite any anchoring errors, especially fixed vs partially_fixed vs unresolved boundaries."
 }
