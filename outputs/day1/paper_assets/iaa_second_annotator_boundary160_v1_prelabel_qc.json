@@ -1,0 +1,66 @@
+{
+  "date": "2026-05-06",
+  "scope": "iaa_second_annotator_boundary160_v1 AI prelabel draft",
+  "status": "pass_with_methodological_caveat",
+  "checks": {
+    "row_count": {
+      "rows": 160,
+      "pass": true
+    },
+    "labels_complete": {
+      "labeled_rows": 160,
+      "unlabeled_rows": 0,
+      "pass": true
+    },
+    "label_validity": {
+      "invalid_label_rows": 0,
+      "label_distribution": {
+        "fixed": 27,
+        "partially_fixed": 60,
+        "unresolved": 66,
+        "regressed": 7
+      },
+      "pass": true
+    },
+    "field_completeness": {
+      "missing_confidence_rows": 0,
+      "missing_evidence_rows": 0,
+      "missing_notes_rows": 0,
+      "confidence_distribution": {
+        "3": 102,
+        "4": 58
+      },
+      "pass": true
+    },
+    "id_integrity": {
+      "unique_issue_ids": 160,
+      "duplicate_issue_ids": 0,
+      "missing_issue_id_rows": 0,
+      "pass": true
+    },
+    "blind_sheet_leakage": {
+      "forbidden_fields_present": [],
+      "pass": true
+    },
+    "batch_consistency": {
+      "batch_files": 4,
+      "batch_rows_total": 160,
+      "batch_vs_master_mismatch_rows": 0,
+      "pass": true
+    },
+    "label_evidence_audit": {
+      "ok": true,
+      "structural_errors": 0,
+      "evidence_issue_count": 0,
+      "pass": true
+    },
+    "agreement_eval_vs_key": {
+      "agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "mismatches": 0,
+      "pass": true,
+      "note": "Expected because prelabels were copied from assistant_label (source=assistant_label for 160/160 rows)."
+    }
+  },
+  "methodological_caveat": "This is an AI prelabel draft, not independent second-annotator evidence. IAA claims must use human-reviewed labels only."
+}
