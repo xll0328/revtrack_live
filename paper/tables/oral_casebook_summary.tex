@@ -2,16 +2,16 @@
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{p{0.19\textwidth}p{0.14\textwidth}p{0.12\textwidth}p{0.46\textwidth}}
+\begin{tabular}{p{0.18\textwidth}p{0.16\textwidth}p{0.13\textwidth}p{0.44\textwidth}}
 \toprule
 Failure mode & Split / model & Gold / prediction & Why it matters \\
 \midrule
-stale\_criticism & iclr2024\_signoff / - & fixed / tfidf=partially\_fixed, structured=partially\_fixed & This example separates revision-aware judgment from static semantic plausibility. \\
-accuracy\_trap\_fixed\_cases & iclr2025\_repro\_v2 / tfidf & fixed / tfidf=partially\_fixed, structured=partially\_fixed & This is the core reason the paper reports macro-F1 and per-label recovery. \\
-over\_crediting\_unresolved & iclr2025\_expanded80\_standard / structured & unresolved / tfidf=partially\_fixed, structured=fixed & This is the practical stale-assistant failure: the model would stop tracking an unresolved concern. \\
-fixed\_under\_recovery & iclr2025\_expanded80\_standard / tfidf & fixed / tfidf=partially\_fixed, structured=fixed & This motivates fixed-case F1 rather than accuracy-only reporting. \\
-regression\_blindness & iclr2025\_expanded80\_standard / tfidf & regressed / tfidf=partially\_fixed, structured=fixed & This justifies keeping the regressed label while avoiding strong regression-performance claims. \\
-partial\_vs\_fixed\_boundary & iclr2025\_expanded80\_standard / issue\_ledger & partially\_fixed / tfidf=partially\_fixed, structured=partially\_fixed & This is the central label-boundary risk for benchmark reliability. \\
+stale\_criticism & ICLR24 signoff / - & F / T:P, S:P & This example separates revision-aware judgment from static semantic plausibility. \\
+accuracy\_trap\_fixed\_cases & ICLR25 repro / TF-IDF & F / T:P, S:P & This is the core reason the paper reports macro-F1 and per-label recovery. \\
+over\_crediting\_unresolved & ICLR25 exp80 / Structured & U / T:P, S:F & This is the practical stale-assistant failure: the model would stop tracking an unresolved concern. \\
+fixed\_under\_recovery & ICLR25 exp80 / TF-IDF & F / T:P, S:F & This motivates fixed-case F1 rather than accuracy-only reporting. \\
+regression\_blindness & ICLR25 exp80 / TF-IDF & R / T:P, S:F & This justifies keeping the regressed label while avoiding strong regression-performance claims. \\
+partial\_vs\_fixed\_boundary & ICLR25 exp80 / Ledger & P / T:P, S:P & This is the central label-boundary risk for benchmark reliability. \\
 \bottomrule
 \end{tabular}
 \caption{Representative failure cases used for oral/rebuttal discussion.}
