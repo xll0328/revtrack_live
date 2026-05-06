@@ -84,7 +84,7 @@ Next action: Rerun merge_human_validation_batches.py after batch edits; write ca
 
 Paper citations resolve against the BibTeX file and the final LaTeX log.
 
-Evidence: status=pass, cited_keys=26, bib_entries=26, problems=0
+Evidence: status=pass, cited_keys=31, bib_entries=31, problems=0
 
 Next action: Rerun audit_paper_citations.py after related-work or BibTeX edits.
 

@@ -66,7 +66,7 @@
     },
     {
       "check_id": "paper_citations_ready",
-      "evidence": "status=pass, cited_keys=26, bib_entries=26, problems=0",
+      "evidence": "status=pass, cited_keys=31, bib_entries=31, problems=0",
       "next_action": "Rerun audit_paper_citations.py after related-work or BibTeX edits.",
       "status": "pass",
       "summary": "Paper citations resolve against the BibTeX file and the final LaTeX log."
