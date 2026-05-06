@@ -28,11 +28,12 @@ It includes 80-row active frontiers for ICLR 2025 and NeurIPS 2024, plus an 80-r
 
 The empirical picture is deliberately diagnostic rather than model-chasing.
 On the hardened ICLR 2024 clean-dev benchmark, a structured evidence model reaches 0.704 macro-F1, compared with 0.389 for the strongest semantic encoder baseline.
-At the same time, cross-year transfer exposes brittleness.
+At the same time, stress-oriented cross-year transfer slices expose brittleness.
 On the ICLR 2025 stress set, a TF-IDF model matches the majority baseline in accuracy while assigning zero F1 to fixed cases.
 On the standard-labeled expanded80 frontier, the best model reaches only 0.469 macro-F1; structured transfer over-credits unresolved concerns in 66 cases, while TF-IDF misses all fixed and regressed examples in that frontier.
 On the user-confirmed NeurIPS 2024 active frontier, the best transferred semantic encoder reaches 0.348 macro-F1, while prompted LLMs and calibrated votes remain near the majority reference.
 The ICLR 2023 random/stratified slice adds bounded external-validity evidence outside disagreement-focused active frontiers while preserving the same no-IAA and no-natural-prevalence boundary.
+Together, these transfer slices are used as brittleness diagnostics rather than venue-wide prevalence estimates.
 
 The central contribution is therefore not a new state-of-the-art review model.
 \textsc{RevTrack} argues that the community is measuring the wrong capability for scientific assistants.
@@ -43,7 +44,7 @@ Our contributions are:
 \begin{itemize}[leftmargin=*]
 \item We define revision-status tracking as an issue-level task for scientific review assistance.
 \item We release a reproducible construction and validation pipeline with blind/key separation, evidence-span auditing, leakage checks, and claim-readiness gates.
-\item We provide a validated ICLR 2024 benchmark slice, a 21-row ICLR 2025 stress set, 80-row user-confirmed active frontiers for ICLR 2025 and NeurIPS 2024, and an 80-row ICLR 2023 random/stratified standard slice.
+\item We provide a validated ICLR 2024 benchmark slice, a 21-row ICLR 2025 stress set, 80-row user-confirmed active frontiers for ICLR 2025 and NeurIPS 2024, and an 80-row ICLR 2023 random/stratified standard slice, and we report them with explicit stress-evidence boundaries.
 \item We show that semantic baselines can look reasonable by accuracy while failing fixed, unresolved, and regressed-case recovery.
 \item We demonstrate that structured revision evidence improves in-domain macro-F1 and use prompted LLMs, vote ensembles, and a failure taxonomy to explain where transfer models still break.
 \end{itemize}

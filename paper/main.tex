@@ -29,8 +29,9 @@ Scientific review assistance requires temporal judgment: after authors revise a 
 Existing review-assistance evaluations mostly score static critiques and therefore miss this revision-aware capability.
 We introduce \textsc{RevTrack}, an issue-level benchmark that aligns a review concern with author response and revision evidence, then asks whether the concern is \textit{fixed}, \textit{partially fixed}, \textit{unresolved}, or \textit{regressed}.
 On a hardened ICLR 2024 benchmark, a structured revision-evidence model reaches 0.704 macro-F1, compared with 0.389 for the strongest semantic encoder baseline.
-On ICLR 2025, a stress set and an 80-row standard-labeled active frontier show that cross-year transfer remains brittle: TF-IDF collapses to zero fixed-case F1, and the best expanded-frontier macro-F1 is 0.469.
-A user-confirmed 80-row NeurIPS 2024 active frontier adds a second venue axis: the best transferred semantic encoder reaches 0.348 macro-F1, while prompted LLMs and vote ensembles remain near majority on this frontier.
+On ICLR 2025, a 21-row stress set and an 80-row standard-labeled active frontier show that cross-year transfer remains brittle: TF-IDF collapses to zero fixed-case F1, and the best expanded-frontier macro-F1 is 0.469.
+A user-confirmed 80-row NeurIPS 2024 active frontier adds a second venue stress axis: the best transferred semantic encoder reaches 0.348 macro-F1, while prompted LLMs and vote ensembles remain near majority on this frontier.
+These transfer slices are stress-oriented diagnostics, not venue-wide prevalence estimates.
 RevTrack reframes scientific review assistance as longitudinal evidence tracking and ships with auditable construction artifacts for blind validation, leakage control, label evidence, and claim readiness.
 \end{abstract}
 

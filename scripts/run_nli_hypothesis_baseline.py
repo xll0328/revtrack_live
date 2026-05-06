@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import sys
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -72,6 +74,24 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", default="outputs/day1/nli_hypothesis_baseline")
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--local-files-only", action="store_true")
+    parser.add_argument(
+        "--model-load-retries",
+        type=int,
+        default=5,
+        help="Retry count for loading tokenizer/model (handles flaky HF downloads).",
+    )
+    parser.add_argument(
+        "--model-load-retry-sleep",
+        type=float,
+        default=10.0,
+        help="Base sleep seconds between model-load retries (linear backoff).",
+    )
+    parser.add_argument(
+        "--hf-download-timeout",
+        type=int,
+        default=1200,
+        help="HF download timeout in seconds (exported to HF_HUB_DOWNLOAD_TIMEOUT if unset).",
+    )
     return parser.parse_args()
 
 
@@ -258,6 +278,49 @@ def write_latex(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def load_model_and_tokenizer(args: argparse.Namespace):
+    # Allow callers to increase timeout without mutating global shell env.
+    os.environ.setdefault("HF_HUB_DOWNLOAD_TIMEOUT", str(args.hf_download_timeout))
+
+    last_error: Exception | None = None
+    for attempt in range(1, args.model_load_retries + 1):
+        try:
+            tokenizer = AutoTokenizer.from_pretrained(
+                args.model,
+                local_files_only=args.local_files_only,
+            )
+            model = AutoModelForSequenceClassification.from_pretrained(
+                args.model,
+                local_files_only=args.local_files_only,
+            )
+            return tokenizer, model
+        except Exception as exc:  # pragma: no cover - runtime/network dependent
+            last_error = exc
+            if attempt >= args.model_load_retries:
+                raise
+            wait_seconds = args.model_load_retry_sleep * attempt
+            print(
+                json.dumps(
+                    {
+                        "event": "model_load_retry",
+                        "attempt": attempt,
+                        "max_attempts": args.model_load_retries,
+                        "wait_seconds": wait_seconds,
+                        "model": args.model,
+                        "error_type": type(exc).__name__,
+                        "error": str(exc)[:240],
+                    }
+                ),
+                file=sys.stderr,
+                flush=True,
+            )
+            time.sleep(wait_seconds)
+
+    if last_error is not None:  # pragma: no cover - defensive
+        raise last_error
+    raise RuntimeError("Unexpected model loading state")
+
+
 def main() -> None:
     args = parse_args()
     datasets = parse_datasets(args.dataset)
@@ -267,10 +330,7 @@ def main() -> None:
         output_dir = ROOT / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model, local_files_only=args.local_files_only)
-    model = AutoModelForSequenceClassification.from_pretrained(
-        args.model, local_files_only=args.local_files_only
-    )
+    tokenizer, model = load_model_and_tokenizer(args)
     model.to(args.device)
     entailment_index = find_entailment_index(model)
 
@@ -309,6 +369,11 @@ def main() -> None:
                 }
             )
         )
+
+    smoke_like = len(datasets) == 1 and datasets[0].name.lower().startswith("smoke")
+    if smoke_like:
+        print(json.dumps({"status": "ok", "note": "smoke run: skipped paper asset export"}))
+        return
 
     csv_path = ROOT / "outputs/day1/paper_assets/nli_hypothesis_transfer_20260506.csv"
     md_path = ROOT / "outputs/day1/paper_assets/nli_hypothesis_transfer_20260506.md"
