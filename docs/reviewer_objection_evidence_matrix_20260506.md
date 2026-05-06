@@ -47,16 +47,22 @@ Use this matrix to keep claim boundaries strict and response evidence concrete.
 
 - Response spine:
   - Main benchmark labels remain standard single-user confirmation for scope control.
-  - A bounded independent second-pass mini60 is completed and tracked in readiness gates.
+  - A bounded independent second-pass mini60 is completed.
+  - A broader boundary160 second-pass packet is also complete after explicit user confirmation of all rows.
 - Evidence artifacts:
   - `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv`
   - `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_manifest.md`
   - `outputs/day1/paper_assets/iaa_second_annotator_mini60_batches.md`
   - `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json`
+  - `experiments/day1/iaa_second_annotator_boundary160_v1_blind.tsv`
+  - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_manifest.md`
+  - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.json`
+  - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_user_confirmation.md`
   - `outputs/day1/paper_assets/paper_readiness_audit.md` (`iaa_second_annotator_packet`)
 - Boundary:
-  - Treat this as bounded reliability evidence on mini60, not a full-scale prevalence study.
-- Status: `ready (bounded mini-slice IAA)`
+  - Treat this as bounded reliability evidence, not full-scale two-annotator prevalence evidence.
+  - boundary160 is prelabel-assisted before user confirmation, so it should not be described as blind-independent IAA.
+- Status: `ready (bounded reliability packet evidence with explicit claim boundary)`
 
 ## O5: "Possible leakage or packet misalignment."
 
@@ -96,4 +102,4 @@ Use this matrix to keep claim boundaries strict and response evidence concrete.
 
 1. Keep O3 bounded and statistically explicit in main text.
 2. Keep O2/O6 wording tight: macro-F1 first, no overclaim on sparse labels.
-3. Use O4 mini-slice IAA as reliability support, but avoid overstating scope.
+3. Use O4 reliability packets (mini60 + boundary160) as support, but keep the blind-independence boundary explicit.
