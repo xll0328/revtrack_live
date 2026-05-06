@@ -83,7 +83,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
 
 ### P2 (rebuttal and polish)
 
-- [ ] **R6 Related-work gap closure**
+- [x] **R6 Related-work gap closure**
   - Goal: verify and integrate missing adjacent work (peer-review LLM assistance, response assistance).
   - Deliverables:
     - updated `docs/related_work_matrix.md`
@@ -91,6 +91,9 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
     - `paper/refs.bib` updates (only verified references).
   - Exit gate:
     - citation audit passes and no unverifiable references are added.
+  - Completed:
+    - verified and integrated additional peer-review assistance references with DOI-backed entries;
+    - excluded unverified candidate items from paper citations.
 
 - [x] **R7 Ethics + misuse risk expansion**
   - Goal: explicitly discuss disciplinary bias, venue-style dependence, and semi-automated editorial misuse risks.

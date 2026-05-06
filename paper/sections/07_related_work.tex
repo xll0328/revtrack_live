@@ -6,6 +6,8 @@ PeerRead introduced a public corpus of paper drafts, decisions, and expert revie
 NLPeer expands this line with a clearly licensed, multi-domain resource that includes drafts, camera-ready versions, reviews, metadata, and versioning information \citep{dycke-etal-2023-nlpeer}.
 More recent resources such as Re2 collect full-stage review and rebuttal discussions across many OpenReview venues \citep{zhang-etal-2025-re2}.
 Task inventories for peer-review automation also emphasize that reviewing decomposes into many different subtasks and that dataset documentation matters for comparability \citep{staudinger-etal-2024-analysis}.
+Earlier automatic-review systems such as DeepReviewer and ReviewRobot also establish the paper-review automation line with score/comment generation objectives \citep{leng-etal-2019-deepreviewer,wang-etal-2020-reviewrobot}.
+Recent LLM-era work extends this line with larger review datasets and staged reasoning pipelines for review generation \citep{zhu-etal-2025-deepreview}.
 These resources provide the raw setting for studying scientific review, but their main tasks are usually paper-level prediction, review understanding, or discussion modeling.
 RevTrack changes the unit of evaluation.
 Rather than predicting acceptance, summarizing reviews, or modeling discussions wholesale, it isolates one reviewer concern and asks whether later revision evidence changes that concern's status.
@@ -24,6 +26,8 @@ This perspective is also connected to QA with conflicting evidence, where system
 \paragraph{LLM-assisted reviewing.}
 LLM-based review assistance has focused heavily on generating reviewer feedback.
 Large-scale empirical work suggests that GPT-4 feedback can overlap with human-reviewer feedback and can be perceived as useful by authors \citep{liang-etal-2023-can}.
+Targeted critique/meta-review assistance has also been studied directly for NLP papers \citep{du-etal-2024-llms-assist}.
+At the same time, pilot evidence reports only limited net utility for generic peer-review assistance prompts \citep{robertson-2023-gpt4-helpful}.
 For example, MARG uses multiple specialized LLM agents to generate scientific-paper feedback and reduce generic comments \citep{darcy-etal-2024-marg}.
 This direction is useful, but review generation alone does not test whether an assistant can retire stale criticisms after a paper changes.
 RevTrack therefore evaluates a narrower and more auditable capability: revision-aware issue tracking.
