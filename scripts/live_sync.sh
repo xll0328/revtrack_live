@@ -3,8 +3,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-PID_FILE="${REPO_ROOT}/.git/revtrack_live_sync.pid"
 LOG_FILE="${REPO_ROOT}/.git/revtrack_live_sync.log"
+TMUX_SESSION="revtrack_live_sync"
 
 sync_once() {
   cd "${REPO_ROOT}"
@@ -24,49 +24,34 @@ sync_once() {
 }
 
 is_running() {
-  if [[ -f "${PID_FILE}" ]]; then
-    local pid
-    pid="$(cat "${PID_FILE}")"
-    if [[ -n "${pid}" ]] && kill -0 "${pid}" 2>/dev/null; then
-      return 0
-    fi
-  fi
-  return 1
+  tmux has-session -t "${TMUX_SESSION}" 2>/dev/null
 }
 
 start_loop() {
   local interval="${1:-120}"
   if is_running; then
-    echo "live-sync already running (pid=$(cat "${PID_FILE}"))"
+    echo "live-sync already running (tmux session: ${TMUX_SESSION})"
     return 0
   fi
 
-  nohup "${BASH_SOURCE[0]}" daemon "${interval}" >>"${LOG_FILE}" 2>&1 &
-
-  echo "$!" >"${PID_FILE}"
-  echo "live-sync started (pid=$!, interval=${interval}s)"
+  tmux new-session -d -s "${TMUX_SESSION}" "cd '${REPO_ROOT}' && while true; do '${REPO_ROOT}/scripts/live_sync.sh' once || true; sleep '${interval}'; done >> '${LOG_FILE}' 2>&1"
+  echo "live-sync started (tmux session: ${TMUX_SESSION}, interval=${interval}s)"
+  echo "attach: tmux attach -t ${TMUX_SESSION}"
 }
 
 stop_loop() {
-  if ! [[ -f "${PID_FILE}" ]]; then
+  if ! is_running; then
     echo "live-sync is not running"
     return 0
   fi
 
-  local pid
-  pid="$(cat "${PID_FILE}")"
-  if [[ -n "${pid}" ]] && kill -0 "${pid}" 2>/dev/null; then
-    kill "${pid}"
-    echo "live-sync stopped (pid=${pid})"
-  else
-    echo "live-sync pid file exists but process is not running"
-  fi
-  rm -f "${PID_FILE}"
+  tmux kill-session -t "${TMUX_SESSION}"
+  echo "live-sync stopped (tmux session: ${TMUX_SESSION})"
 }
 
 status_loop() {
   if is_running; then
-    echo "live-sync running (pid=$(cat "${PID_FILE}"))"
+    echo "live-sync running (tmux session: ${TMUX_SESSION})"
   else
     echo "live-sync stopped"
   fi
@@ -83,15 +68,6 @@ Usage:
 EOF
 }
 
-daemon_loop() {
-  local interval="${1:-120}"
-  cd "${REPO_ROOT}"
-  while true; do
-    sync_once
-    sleep "${interval}"
-  done
-}
-
 cmd="${1:-}"
 case "${cmd}" in
   start)
@@ -105,9 +81,6 @@ case "${cmd}" in
     ;;
   once)
     sync_once
-    ;;
-  daemon)
-    daemon_loop "${2:-120}"
     ;;
   *)
     usage
