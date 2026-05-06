@@ -1,0 +1,31 @@
+{
+  "train_data": "data/processed/iclr2024_train_v8.jsonl",
+  "eval_specs": [
+    {
+      "name": "iclr2024_clean_dev_v7",
+      "path": "/data/sony/emnlp2026_revtrack/data/processed/iclr2024_clean_dev_assistant_v7.jsonl"
+    },
+    {
+      "name": "iclr2025_expanded80",
+      "path": "/data/sony/emnlp2026_revtrack/data/processed/iclr2025_expanded80_standard_validation_v1.jsonl"
+    },
+    {
+      "name": "neurips2024_limit100",
+      "path": "/data/sony/emnlp2026_revtrack/data/processed/neurips2024_limit100_standard_validation_v1.jsonl"
+    },
+    {
+      "name": "iclr2023_random80",
+      "path": "/data/sony/emnlp2026_revtrack/data/processed/iclr2023_limit80_random80_standard_validation_v1.jsonl"
+    }
+  ],
+  "model": "answerdotai/ModernBERT-base",
+  "max_length": 512,
+  "batch_size": 8,
+  "epochs": 4,
+  "lr": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "grad_accum": 1,
+  "seed": 13,
+  "device": "cuda"
+}

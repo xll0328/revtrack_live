@@ -1,0 +1,533 @@
+{
+  "summary": {
+    "num_examples": 80.0,
+    "accuracy": 0.0625,
+    "macro_f1": 0.05641821946169773,
+    "per_label": {
+      "fixed": {
+        "precision": 0.05263157894736842,
+        "recall": 0.5,
+        "f1": 0.09523809523809525,
+        "support": 4.0
+      },
+      "partially_fixed": {
+        "precision": 0.07142857142857142,
+        "recall": 0.75,
+        "f1": 0.13043478260869565,
+        "support": 4.0
+      },
+      "unresolved": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 66.0
+      },
+      "regressed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6.0
+      }
+    },
+    "confusion": {
+      "regressed": {
+        "fixed": 4,
+        "partially_fixed": 2
+      },
+      "unresolved": {
+        "partially_fixed": 35,
+        "fixed": 31
+      },
+      "fixed": {
+        "partially_fixed": 2,
+        "fixed": 2
+      },
+      "partially_fixed": {
+        "partially_fixed": 3,
+        "fixed": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "VNMJfBBUd5__r04",
+      "gold_label": "regressed",
+      "predicted_label": "fixed",
+      "paper_title": "Activation Gradient based Poisoned Sample Detection Against Backdoor Attacks"
+    },
+    {
+      "id": "1qP3lsatCR__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "NetMoE: Accelerating MoE Training through Dynamic Sample Placement"
+    },
+    {
+      "id": "DTqx3iqjkz__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Convergence and Implicit Bias of Gradient Descent on Continual Linear Classification"
+    },
+    {
+      "id": "dgR6i4TSng__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Quantum-PEFT: Ultra parameter-efficient fine-tuning"
+    },
+    {
+      "id": "nNiWRRj6r9__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "ONLINE EPSILON NET & PIERCING SET FOR GEOMETRIC CONCEPTS"
+    },
+    {
+      "id": "rpwGUtTeA5__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+    },
+    {
+      "id": "tNn6Hskmti__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Asymptotic Analysis of Two-Layer Neural Networks after One Gradient Step under Gaussian Mixtures Data with Structure"
+    },
+    {
+      "id": "tNn6Hskmti__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Asymptotic Analysis of Two-Layer Neural Networks after One Gradient Step under Gaussian Mixtures Data with Structure"
+    },
+    {
+      "id": "nNiWRRj6r9__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "ONLINE EPSILON NET & PIERCING SET FOR GEOMETRIC CONCEPTS"
+    },
+    {
+      "id": "ONfWFluZBI__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Self-supervised contrastive learning performs non-linear system identification"
+    },
+    {
+      "id": "ONfWFluZBI__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Self-supervised contrastive learning performs non-linear system identification"
+    },
+    {
+      "id": "rAoEub6Nw2__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "A Statistical Framework for Ranking LLM-based Chatbots"
+    },
+    {
+      "id": "2Chkk5Ye2s__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Be More Diverse than the Most Diverse: Optimal Mixtures of Generative Models via Mixture-UCB Bandit Algorithms"
+    },
+    {
+      "id": "82p8VHRsaK__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Language Models are Advanced Anonymizers"
+    },
+    {
+      "id": "BUj9VSCoET__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Efficient Residual Learning with Mixture-of-Experts for Universal Dexterous Grasping"
+    },
+    {
+      "id": "BUj9VSCoET__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Efficient Residual Learning with Mixture-of-Experts for Universal Dexterous Grasping"
+    },
+    {
+      "id": "BUj9VSCoET__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Efficient Residual Learning with Mixture-of-Experts for Universal Dexterous Grasping"
+    },
+    {
+      "id": "E4LAVLXAHW__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Black-Box Detection of Language Model Watermarks"
+    },
+    {
+      "id": "KnoS9XxIlK__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules"
+    },
+    {
+      "id": "KnoS9XxIlK__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules"
+    },
+    {
+      "id": "L14sqcrUC3__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks"
+    },
+    {
+      "id": "L14sqcrUC3__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks"
+    },
+    {
+      "id": "QEHrmQPBdd__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style"
+    },
+    {
+      "id": "QEHrmQPBdd__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style"
+    },
+    {
+      "id": "Sd4wYYOhmY__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "TabM: Advancing tabular deep learning with parameter-efficient ensembling"
+    },
+    {
+      "id": "WwmtcGr4lP__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "GANDALF: Generative AttentioN based Data Augmentation and predictive modeLing Framework for personalized cancer treatment"
+    },
+    {
+      "id": "WwmtcGr4lP__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "GANDALF: Generative AttentioN based Data Augmentation and predictive modeLing Framework for personalized cancer treatment"
+    },
+    {
+      "id": "WwmtcGr4lP__r05",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "GANDALF: Generative AttentioN based Data Augmentation and predictive modeLing Framework for personalized cancer treatment"
+    },
+    {
+      "id": "ZS7UEI3vG5__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Oracle efficient truncated statistics"
+    },
+    {
+      "id": "bqf0aCF3Dd__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "SOO-Bench: Benchmarks for Evaluating the Stability of Offline Black-Box Optimization"
+    },
+    {
+      "id": "gx1wHnf5Vp__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization"
+    },
+    {
+      "id": "h0vC0fm1q7__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Sensitivity Verification for Additive Decision Tree Ensembles"
+    },
+    {
+      "id": "l11DZY5Nxu__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Robust Root Cause Diagnosis using In-Distribution Interventions"
+    },
+    {
+      "id": "l11DZY5Nxu__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Robust Root Cause Diagnosis using In-Distribution Interventions"
+    },
+    {
+      "id": "moWiYJuSGF__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation"
+    },
+    {
+      "id": "p0DjhjPXl3__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Stealthy Shield Defense: A Conditional Mutual Information-Based Approach against Black-Box Model Inversion Attacks"
+    },
+    {
+      "id": "rpwGUtTeA5__r05",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+    },
+    {
+      "id": "sb1HgVDLjN__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Offline Model-Based Optimization by Learning to Rank"
+    },
+    {
+      "id": "sb1HgVDLjN__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Offline Model-Based Optimization by Learning to Rank"
+    },
+    {
+      "id": "sb1HgVDLjN__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Offline Model-Based Optimization by Learning to Rank"
+    },
+    {
+      "id": "uClUUJk05H__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Compositional simulation-based inference for time series"
+    },
+    {
+      "id": "uClUUJk05H__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Compositional simulation-based inference for time series"
+    },
+    {
+      "id": "uClUUJk05H__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Compositional simulation-based inference for time series"
+    },
+    {
+      "id": "uClUUJk05H__r05",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Compositional simulation-based inference for time series"
+    },
+    {
+      "id": "uClUUJk05H__r06",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Compositional simulation-based inference for time series"
+    },
+    {
+      "id": "wVTJRnZ11Z__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "When GNNs meet symmetry in ILPs: an orbit-based feature augmentation approach"
+    },
+    {
+      "id": "wVTJRnZ11Z__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "When GNNs meet symmetry in ILPs: an orbit-based feature augmentation approach"
+    },
+    {
+      "id": "x83w6yGIWb__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Beware of Calibration Data for Pruning Large Language Models"
+    },
+    {
+      "id": "l11DZY5Nxu__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Robust Root Cause Diagnosis using In-Distribution Interventions"
+    },
+    {
+      "id": "NGKQoaqLpo__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "How new data permeates LLM knowledge and how to dilute it"
+    },
+    {
+      "id": "Ouu3HnIVBc__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "ADAM: An Embodied Causal Agent in Open-World Environments"
+    },
+    {
+      "id": "odjMSBSWRt__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "DarkBench: Benchmarking Dark Patterns in Large Language Models"
+    },
+    {
+      "id": "odjMSBSWRt__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "DarkBench: Benchmarking Dark Patterns in Large Language Models"
+    },
+    {
+      "id": "pDDODPtpx9__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Distribution-Free Data Uncertainty for Neural Network Regression"
+    },
+    {
+      "id": "w7P92BEsb2__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "PIED: Physics-Informed Experimental Design for Inverse Problems"
+    },
+    {
+      "id": "xPTzjpIQNp__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Optimal Transport for Time Series Imputation"
+    },
+    {
+      "id": "Nfd7z9d6Bb__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Probabilistic Conformal Prediction with Approximate Conditional Validity"
+    },
+    {
+      "id": "Nfd7z9d6Bb__r05",
+      "gold_label": "regressed",
+      "predicted_label": "fixed",
+      "paper_title": "Probabilistic Conformal Prediction with Approximate Conditional Validity"
+    },
+    {
+      "id": "GM7cmQfk2F__r03",
+      "gold_label": "regressed",
+      "predicted_label": "fixed",
+      "paper_title": "Rethinking Neural Multi-Objective Combinatorial Optimization via Neat Weight Embedding"
+    },
+    {
+      "id": "TbTJJNjumY__r03",
+      "gold_label": "regressed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems"
+    },
+    {
+      "id": "TbTJJNjumY__r04",
+      "gold_label": "regressed",
+      "predicted_label": "fixed",
+      "paper_title": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems"
+    },
+    {
+      "id": "5pd78GmXC6__r02",
+      "gold_label": "regressed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Charting the Design Space of Neural Graph Representations for Subgraph Matching"
+    },
+    {
+      "id": "1qP3lsatCR__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "NetMoE: Accelerating MoE Training through Dynamic Sample Placement"
+    },
+    {
+      "id": "1qP3lsatCR__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "NetMoE: Accelerating MoE Training through Dynamic Sample Placement"
+    },
+    {
+      "id": "1qP3lsatCR__r05",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "NetMoE: Accelerating MoE Training through Dynamic Sample Placement"
+    },
+    {
+      "id": "3tukjsVyrE__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Scaling Speech-Text Pre-training with Synthetic Interleaved Data"
+    },
+    {
+      "id": "3tukjsVyrE__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Scaling Speech-Text Pre-training with Synthetic Interleaved Data"
+    },
+    {
+      "id": "3tukjsVyrE__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Scaling Speech-Text Pre-training with Synthetic Interleaved Data"
+    },
+    {
+      "id": "5o9JJJPPm6__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "ComaDICE: Offline Cooperative Multi-Agent Reinforcement Learning with Stationary Distribution Shift Regularization"
+    },
+    {
+      "id": "5o9JJJPPm6__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "ComaDICE: Offline Cooperative Multi-Agent Reinforcement Learning with Stationary Distribution Shift Regularization"
+    },
+    {
+      "id": "5o9JJJPPm6__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "ComaDICE: Offline Cooperative Multi-Agent Reinforcement Learning with Stationary Distribution Shift Regularization"
+    },
+    {
+      "id": "5o9JJJPPm6__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "ComaDICE: Offline Cooperative Multi-Agent Reinforcement Learning with Stationary Distribution Shift Regularization"
+    },
+    {
+      "id": "Kak2ZH5Itp__r02",
+      "gold_label": "fixed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Language Imbalance Driven Rewarding for Multilingual Self-improving"
+    },
+    {
+      "id": "KnoS9XxIlK__r01",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules"
+    },
+    {
+      "id": "L14sqcrUC3__r04",
+      "gold_label": "fixed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks"
+    },
+    {
+      "id": "ZS7UEI3vG5__r04",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Oracle efficient truncated statistics"
+    },
+    {
+      "id": "75PhjtbBdr__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Multi-Label Test-Time Adaptation with Bound Entropy Minimization"
+    },
+    {
+      "id": "KnoS9XxIlK__r05",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules"
+    },
+    {
+      "id": "L14sqcrUC3__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks"
+    },
+    {
+      "id": "NGKQoaqLpo__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "How new data permeates LLM knowledge and how to dilute it"
+    }
+  ]
+}

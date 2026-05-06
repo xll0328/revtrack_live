@@ -1,0 +1,42 @@
+[
+  {
+    "split": "iclr2024_clean_dev_v7",
+    "rows": 148.0,
+    "accuracy": 0.75,
+    "macro_f1": 0.5188165286812537,
+    "fixed_f1": 0.6292134831460674,
+    "partially_fixed_f1": 0.8210526315789475,
+    "unresolved_f1": 0.625,
+    "regressed_f1": 0.0
+  },
+  {
+    "split": "iclr2025_expanded80",
+    "rows": 80.0,
+    "accuracy": 0.0375,
+    "macro_f1": 0.0332244008714597,
+    "fixed_f1": 0.058823529411764705,
+    "partially_fixed_f1": 0.07407407407407407,
+    "unresolved_f1": 0.0,
+    "regressed_f1": 0.0
+  },
+  {
+    "split": "neurips2024_limit100",
+    "rows": 80.0,
+    "accuracy": 0.3375,
+    "macro_f1": 0.13636363636363638,
+    "fixed_f1": 0.0,
+    "partially_fixed_f1": 0.5454545454545455,
+    "unresolved_f1": 0.0,
+    "regressed_f1": 0.0
+  },
+  {
+    "split": "iclr2023_random80",
+    "rows": 80.0,
+    "accuracy": 0.45,
+    "macro_f1": 0.20911764705882355,
+    "fixed_f1": 0.17647058823529413,
+    "partially_fixed_f1": 0.66,
+    "unresolved_f1": 0.0,
+    "regressed_f1": 0.0
+  }
+]
