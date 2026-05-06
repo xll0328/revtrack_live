@@ -1,0 +1,17 @@
+{
+  "allow_overwrite": false,
+  "blind_sheet": "experiments/day1/iaa_second_annotator_boundary160_v1_blind.tsv",
+  "claim_boundary": "AI prelabel draft only; requires human confirmation before IAA claim usage.",
+  "default_confidence": "3",
+  "errors": [],
+  "invalid_label_rows": 0,
+  "key_sheet": "experiments/day1/iaa_second_annotator_boundary160_v1_key.tsv",
+  "label_source": "assistant_first",
+  "missing_evidence_rows": 0,
+  "missing_key_rows": 0,
+  "prefilled_rows": 160,
+  "rows": 160,
+  "skipped_existing_rows": 0,
+  "status": "ok",
+  "write": true
+}
