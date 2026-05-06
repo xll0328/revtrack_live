@@ -30,7 +30,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - reviewer can reproduce label decision logic from main text alone.
 
-- [-] **A3. Stronger baseline suite expansion (NLI-style + evidence-grounded)**
+- [x] **A3. Stronger baseline suite expansion (NLI-style + evidence-grounded)**
   - Reviewer issue: baseline suite lacks explicit entailment-style formulation.
   - Actions:
     - add an NLI-style hypothesis baseline (concern + response + revision -> label hypotheses).
@@ -41,10 +41,10 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
     - optional table: `paper/tables/nli_hypothesis_transfer.tex`
   - Exit gate:
     - reproducible command + auditable metrics exported.
-  - Current blocker (`2026-05-06`):
-    - HF model checkpoint downloads repeatedly fail on `cas-bridge.xethub.hf.co` (timeouts / incomplete reads); script now has retry+timeout hardening, but full metric export is pending network-stable checkpoint fetch.
+  - Resolution (`2026-05-06`):
+    - Added retry+timeout hardening in `scripts/run_nli_hypothesis_baseline.py` and completed export with local cached fallback model `typeform/mobilebert-uncased-mnli` (`--local-files-only`).
 
-- [-] **A4. Transfer-claim boundary tightening**
+- [x] **A4. Transfer-claim boundary tightening**
   - Reviewer issue: abstract/intro can still be read as broader than stress-sampled evidence.
   - Actions:
     - tighten abstract and intro phrasing to “stress-oriented transfer evidence”.
@@ -82,6 +82,9 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
     - fix malformed citation style snippets.
   - Artifacts:
     - paper sections + affected tables.
+  - Progress (`2026-05-06`):
+    - `in-domain` spelling normalized and several long captions shortened (`dataset_versions.tex`, `prompted_llm_ensemble.tex`, `prompted_llm_temperature_ablation.tex`).
+    - citation-style snippet cleanup reserved for final freeze pass.
 
 ## C. Final freeze + rebuttal packet
 

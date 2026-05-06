@@ -1,0 +1,5 @@
+dataset,rows,accuracy,macro_f1,fixed_f1,partially_fixed_f1,unresolved_f1,regressed_f1
+iclr2024_clean_dev_v7,148,0.5608108108108109,0.18281938325991187,0.0,0.7312775330396475,0.0,0.0
+iclr2025_expanded80_standard_validation_v1,80,0.0625,0.031852930469603205,0.0,0.09756097560975609,0.02985074626865672,0.0
+neurips2024_limit100_standard_validation_v1,80,0.55,0.1774193548387097,0.0,0.7096774193548387,0.0,0.0
+iclr2023_limit80_random80_standard_validation_v1,80,0.6,0.1875,0.0,0.75,0.0,0.0
