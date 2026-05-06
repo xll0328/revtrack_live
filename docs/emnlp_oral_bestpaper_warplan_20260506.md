@@ -134,3 +134,5 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: exported oral/rebuttal representative casebook (`oral_casebook.{md,csv,json}` + `paper/tables/oral_casebook_summary.tex`) and integrated into appendix.
 - `2026-05-06`: completed full artifact regeneration + citation/readiness audits and paper rebuild under no-key constraints (`export_paper_assets`, `audit_paper_readiness`, `audit_paper_citations`, `make -B -C paper`).
 - `2026-05-06`: opened submission dry-run freeze log (`docs/submission_dryrun_20260506.md`) with command backbone + gate decision.
+- `2026-05-06`: opened mock pre-review sprint map (`docs/mock_presubmission_todo_20260506.md`) and started execution.
+- `2026-05-06`: exported split label-coverage panel (`split_label_coverage.{md,csv,json}` + `paper/tables/split_label_coverage.tex`) and prepared boundary-focused second-annotator packet (`iaa_second_annotator_boundary160_v1`).

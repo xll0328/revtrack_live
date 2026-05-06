@@ -1,0 +1,6 @@
+split,rows,sample_design,validation_status,fixed,partially_fixed,unresolved,regressed,missing_labels
+ICLR 2024 clean dev v7,148,in_domain_standard,standard_single_user_confirmed,50,86,11,1,
+ICLR 2025 repro v2,21,stress_set,standard_single_user_confirmed,5,16,0,0,"unresolved,regressed"
+ICLR 2025 expanded80,80,active_frontier,standard_single_user_confirmed,4,4,66,6,
+NeurIPS 2024 limit100,80,active_frontier,standard_single_user_confirmed,0,44,36,0,"fixed,regressed"
+ICLR 2023 random80,80,random_stratified,standard_single_user_confirmed,5,49,26,0,regressed

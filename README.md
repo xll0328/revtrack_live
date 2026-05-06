@@ -36,6 +36,7 @@ This repo is designed for day-0 and day-1 work:
 - [docs/emnlp_oral_best_paper_sprint_plan.md](/data/sony/emnlp2026_revtrack/docs/emnlp_oral_best_paper_sprint_plan.md): EMNLP 2026 oral/best-paper sprint plan
 - [docs/emnlp_oral_bestpaper_warplan_20260506.md](/data/sony/emnlp2026_revtrack/docs/emnlp_oral_bestpaper_warplan_20260506.md): dated oral/best-paper execution plan + todo checklist
 - [docs/submission_dryrun_20260506.md](/data/sony/emnlp2026_revtrack/docs/submission_dryrun_20260506.md): no-key submission dry-run freeze log with gate decision
+- [docs/mock_presubmission_todo_20260506.md](/data/sony/emnlp2026_revtrack/docs/mock_presubmission_todo_20260506.md): mock pre-review to executable sprint todo map
 - [docs/emnlp_oral_90s_pitch_20260506.md](/data/sony/emnlp2026_revtrack/docs/emnlp_oral_90s_pitch_20260506.md): 90-second oral pitch script with boundary-safe evidence anchors
 - [docs/reviewer_objection_evidence_matrix_20260506.md](/data/sony/emnlp2026_revtrack/docs/reviewer_objection_evidence_matrix_20260506.md): reviewer objection to evidence mapping for oral/rebuttal hardening
 - [docs/emnlp2026_pitch_and_intro_v0.md](/data/sony/emnlp2026_revtrack/docs/emnlp2026_pitch_and_intro_v0.md): one-page pitch and Introduction v0
@@ -93,6 +94,7 @@ Latest assistant-adjudicated benchmark assets:
 - prompted LLM significance vs majority: [prompted_llm_significance.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/prompted_llm_significance.md)
 - oral/rebuttal evidence panel: [oral_evidence_panel.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/oral_evidence_panel.md)
 - oral/rebuttal casebook: [oral_casebook.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/oral_casebook.md)
+- split label-coverage panel: [split_label_coverage.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/split_label_coverage.md)
 - related-work matrix: [related_work_matrix.md](/data/sony/emnlp2026_revtrack/docs/related_work_matrix.md)
 - human-validation work queue: [human_validation_work_queue.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.md)
 - human-validation queue table: [human_validation_work_queue.csv](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.csv)

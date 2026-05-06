@@ -1,0 +1,57 @@
+[
+  {
+    "split": "ICLR 2024 clean dev v7",
+    "rows": 148,
+    "sample_design": "in_domain_standard",
+    "validation_status": "standard_single_user_confirmed",
+    "fixed": 50,
+    "partially_fixed": 86,
+    "unresolved": 11,
+    "regressed": 1,
+    "missing_labels": ""
+  },
+  {
+    "split": "ICLR 2025 repro v2",
+    "rows": 21,
+    "sample_design": "stress_set",
+    "validation_status": "standard_single_user_confirmed",
+    "fixed": 5,
+    "partially_fixed": 16,
+    "unresolved": 0,
+    "regressed": 0,
+    "missing_labels": "unresolved,regressed"
+  },
+  {
+    "split": "ICLR 2025 expanded80",
+    "rows": 80,
+    "sample_design": "active_frontier",
+    "validation_status": "standard_single_user_confirmed",
+    "fixed": 4,
+    "partially_fixed": 4,
+    "unresolved": 66,
+    "regressed": 6,
+    "missing_labels": ""
+  },
+  {
+    "split": "NeurIPS 2024 limit100",
+    "rows": 80,
+    "sample_design": "active_frontier",
+    "validation_status": "standard_single_user_confirmed",
+    "fixed": 0,
+    "partially_fixed": 44,
+    "unresolved": 36,
+    "regressed": 0,
+    "missing_labels": "fixed,regressed"
+  },
+  {
+    "split": "ICLR 2023 random80",
+    "rows": 80,
+    "sample_design": "random_stratified",
+    "validation_status": "standard_single_user_confirmed",
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26,
+    "regressed": 0,
+    "missing_labels": "regressed"
+  }
+]
