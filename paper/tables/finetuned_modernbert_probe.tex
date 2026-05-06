@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.30\linewidth}rrr}
+\toprule
+Split & Accuracy & Macro-F1 & Unresolved F1 \\
+\midrule
+ICLR 2024 clean dev v7 & 0.797 & 0.553 & 0.625 \\
+ICLR 2025 expanded80 & 0.038 & 0.033 & 0.000 \\
+NeurIPS 2024 limit100 & 0.325 & 0.134 & 0.000 \\
+ICLR 2023 random80 & 0.450 & 0.219 & 0.000 \\
+\bottomrule
+\end{tabular}
+\caption{Single-run fine-tuned ModernBERT probe trained on ICLR2024 train v8. Despite stronger learned modeling, transfer unresolved recovery remains brittle on current cross-year/cross-venue splits.}
+\label{tab:finetuned-modernbert-probe}
+\end{table}

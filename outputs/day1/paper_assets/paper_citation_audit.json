@@ -166,6 +166,7 @@
     "/data/sony/emnlp2026_revtrack/paper/tables/dataset_versions.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/expanded80_transfer.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/failure_taxonomy.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/finetuned_modernbert_probe.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/iclr2024_significance.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/main_results.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/neurips_limit100_transfer.tex",
@@ -176,7 +177,9 @@
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_ensemble.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_postprocess_rules.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_significance.tex",
-    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_temperature_ablation.tex"
+    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_temperature_ablation.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/split_label_coverage.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/worked_issue_examples.tex"
   ],
   "log_path": "/data/sony/emnlp2026_revtrack/paper/main.log",
   "log_problems": [],

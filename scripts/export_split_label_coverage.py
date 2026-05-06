@@ -124,6 +124,10 @@ def export_md(path: Path, rows: list[dict]) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def latex_escape(value: str) -> str:
+    return value.replace("_", "\\_")
+
+
 def export_tex(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
@@ -138,9 +142,12 @@ def export_tex(path: Path, rows: list[dict]) -> None:
     ]
     for row in rows:
         missing = row["missing_labels"] or "-"
+        split = latex_escape(str(row["split"]))
+        design = latex_escape(str(row["sample_design"]))
+        missing_escaped = latex_escape(str(missing))
         lines.append(
-            f"{row['split']} & {row['rows']} & {row['sample_design']} & {row['fixed']} & "
-            f"{row['partially_fixed']} & {row['unresolved']} & {row['regressed']} & {missing} \\\\"
+            f"{split} & {row['rows']} & {design} & {row['fixed']} & "
+            f"{row['partially_fixed']} & {row['unresolved']} & {row['regressed']} & {missing_escaped} \\\\"
         )
     lines.extend(
         [
@@ -154,10 +161,9 @@ def export_tex(path: Path, rows: list[dict]) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def main() -> None:
-    args = parse_args()
+def build_rows(specs: list[dict] | None = None) -> list[dict]:
     rows: list[dict] = []
-    for spec in DATASET_SPECS:
+    for spec in specs or DATASET_SPECS:
         payload = load_jsonl(resolve(spec["path"]))
         counter = Counter(label_of(row) for row in payload)
         missing = [label for label in LABELS if counter.get(label, 0) == 0]
@@ -174,7 +180,12 @@ def main() -> None:
                 "missing_labels": ",".join(missing),
             }
         )
+    return rows
 
+
+def main() -> None:
+    args = parse_args()
+    rows = build_rows()
     export_csv(resolve(args.output_csv), rows)
     export_json(resolve(args.output_json), rows)
     export_md(resolve(args.output_md), rows)

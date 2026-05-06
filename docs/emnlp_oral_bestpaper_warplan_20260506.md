@@ -136,3 +136,4 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: opened submission dry-run freeze log (`docs/submission_dryrun_20260506.md`) with command backbone + gate decision.
 - `2026-05-06`: opened mock pre-review sprint map (`docs/mock_presubmission_todo_20260506.md`) and started execution.
 - `2026-05-06`: exported split label-coverage panel (`split_label_coverage.{md,csv,json}` + `paper/tables/split_label_coverage.tex`) and prepared boundary-focused second-annotator packet (`iaa_second_annotator_boundary160_v1`).
+- `2026-05-06`: launched stronger learned baseline probe (`scripts/run_transformer_classifier_transfer.py`) and recorded first-run fine-tuned ModernBERT transfer metrics.
