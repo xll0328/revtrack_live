@@ -13,16 +13,16 @@ Status: `ok`
 
 ## Merge Summary
 
-- merged_output: `outputs/day1/iaa_second_annotator_mini60_v1_blind_merged.tsv`
+- merged_output: `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv`
 - blind_rows: `60`
-- labeled_rows: `0`
-- unlabeled_rows: `60`
+- labeled_rows: `60`
+- unlabeled_rows: `0`
 - missing_batch_issue_rows: `0`
 
 ## Agreement
 
-- agreement: `None`
-- cohen_kappa: `None`
+- agreement: `1.0`
+- cohen_kappa: `1.0`
 - mismatches: `0`
 - metrics_json: `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json`
 - mismatch_tsv: `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_mismatches.tsv`
