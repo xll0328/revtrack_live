@@ -41,13 +41,7 @@ start_loop() {
     return 0
   fi
 
-  (
-    cd "${REPO_ROOT}"
-    while true; do
-      sync_once
-      sleep "${interval}"
-    done
-  ) >>"${LOG_FILE}" 2>&1 &
+  nohup "${BASH_SOURCE[0]}" daemon "${interval}" >>"${LOG_FILE}" 2>&1 &
 
   echo "$!" >"${PID_FILE}"
   echo "live-sync started (pid=$!, interval=${interval}s)"
@@ -89,6 +83,15 @@ Usage:
 EOF
 }
 
+daemon_loop() {
+  local interval="${1:-120}"
+  cd "${REPO_ROOT}"
+  while true; do
+    sync_once
+    sleep "${interval}"
+  done
+}
+
 cmd="${1:-}"
 case "${cmd}" in
   start)
@@ -102,6 +105,9 @@ case "${cmd}" in
     ;;
   once)
     sync_once
+    ;;
+  daemon)
+    daemon_loop "${2:-120}"
     ;;
   *)
     usage
