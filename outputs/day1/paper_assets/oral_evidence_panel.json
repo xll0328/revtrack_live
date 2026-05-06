@@ -1,0 +1,37 @@
+[
+  {
+    "axis": "In-domain gain",
+    "checkpoint": "ICLR24 structured macro-F1=0.704 vs MPNet=0.389 (delta=0.314)",
+    "boundary": "Clean-dev v7 only; transfer claims are separate."
+  },
+  {
+    "axis": "Accuracy trap",
+    "checkpoint": "ICLR25 repro TF-IDF acc=0.762 equals majority acc=0.762; fixed F1 stays 0.000",
+    "boundary": "Stress-set diagnostic, not prevalence estimate."
+  },
+  {
+    "axis": "Transfer frontier (ICLR25 expanded80)",
+    "checkpoint": "Best macro-F1 is issue-ledger 0.469; structured macro-F1 0.298 with unresolved F1 0.000",
+    "boundary": "Active disagreement frontier; no natural-prevalence claim."
+  },
+  {
+    "axis": "Cross-venue frontier (NeurIPS24)",
+    "checkpoint": "Best macro-F1 is MPNet 0.348; TF-IDF unresolved F1 0.000",
+    "boundary": "Single-user standard frontier; fixed/regressed labels absent in this split."
+  },
+  {
+    "axis": "Prompted significance",
+    "checkpoint": "ICLR25 Vote-3(+U+F-cal) macro-F1 0.094 vs majority 0.226; NeurIPS24 vote 0.167 vs majority 0.177",
+    "boundary": "Bootstrap deltas quantify split uncertainty only."
+  },
+  {
+    "axis": "IAA mini-slice reliability",
+    "checkpoint": "mini60 labeled=60 agreement=1.000 kappa=1.000 mismatches=0",
+    "boundary": "Bounded mini-slice support, not full two-annotator coverage."
+  },
+  {
+    "axis": "Readiness gate",
+    "checkpoint": "overall_status=ready ready_claims=9 blockers=0",
+    "boundary": "Submission gate is satisfied for current scoped claims."
+  }
+]

@@ -52,7 +52,7 @@ Window: `2026-05-06` to `2026-05-12`
 
 - B1. Lock prompted significance vs majority (done)
 - B2. Keep transfer-brittleness claim statistically explicit in paper text (done)
-- B3. Add one compact reviewer-facing evidence table/paragraph for rebuttal use
+- B3. Add one compact reviewer-facing evidence table/paragraph for rebuttal use (done)
 
 Exit gate:
 - significance, bootstrap, and failure-taxonomy narratives are coherent and non-contradictory.
@@ -130,3 +130,4 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: launched IAA mini60 operationalization via 3 balanced blind batches.
 - `2026-05-06`: added tests and passed targeted checks.
 - `2026-05-06`: completed IAA mini60 second pass (`60/60`), exported agreement=`1.0` and Cohen's kappa=`1.0`, refreshed readiness.
+- `2026-05-06`: exported oral/rebuttal evidence panel (`oral_evidence_panel.{md,csv,json}` + `paper/tables/oral_evidence_panel.tex`) and integrated into appendix.

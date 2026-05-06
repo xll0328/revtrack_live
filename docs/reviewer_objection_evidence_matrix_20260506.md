@@ -22,6 +22,7 @@ Use this matrix to keep claim boundaries strict and response evidence concrete.
   - We report macro-F1 and per-label recovery as primary metrics.
   - Accuracy-trap behavior is explicit on transfer stress sets.
 - Evidence artifacts:
+  - `outputs/day1/paper_assets/oral_evidence_panel.md`
   - `outputs/day1/paper_assets/clean_dev_summary.md`
   - `outputs/day1/paper_assets/transfer_summary.md`
   - `paper/sections/05_experiments.tex`
@@ -34,6 +35,7 @@ Use this matrix to keep claim boundaries strict and response evidence concrete.
   - Cross-year transfer is explicitly framed as bounded stress evidence.
   - Prompted baseline deltas vs majority are backed by paired bootstrap export.
 - Evidence artifacts:
+  - `outputs/day1/paper_assets/oral_evidence_panel.md`
   - `outputs/day1/paper_assets/prompted_llm_significance.md`
   - `outputs/day1/paper_assets/bootstrap_transfer_summary.md`
   - `docs/oral_best_paper_gap_audit_20260506.md`
