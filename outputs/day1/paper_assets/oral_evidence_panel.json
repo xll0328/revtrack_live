@@ -25,9 +25,9 @@
     "boundary": "Bootstrap deltas quantify split uncertainty only."
   },
   {
-    "axis": "IAA mini-slice reliability",
-    "checkpoint": "mini60 labeled=60 agreement=1.000 kappa=1.000 mismatches=0",
-    "boundary": "Bounded mini-slice support, not full two-annotator coverage."
+    "axis": "IAA boundary-packet reliability",
+    "checkpoint": "boundary160 labeled=160 agreement=1.000 kappa=1.000 mismatches=0",
+    "boundary": "User-confirmed prelabel-assisted packet; bounded support, not blind-independent full two-annotator coverage."
   },
   {
     "axis": "Readiness gate",

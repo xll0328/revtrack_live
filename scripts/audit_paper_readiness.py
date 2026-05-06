@@ -38,10 +38,10 @@ DEFAULTS = {
     / "outputs/day1/iclr2023_limit80_random80_standard_validation_promotion.json",
     "citation_audit": ROOT / "outputs/day1/paper_assets/paper_citation_audit.json",
     "iaa_second_annotator_manifest": ROOT
-    / "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_manifest.json",
-    "iaa_second_annotator_blind_sheet": ROOT / "experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv",
+    / "outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_manifest.json",
+    "iaa_second_annotator_blind_sheet": ROOT / "experiments/day1/iaa_second_annotator_boundary160_v1_blind.tsv",
     "iaa_second_annotator_metrics": ROOT
-    / "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json",
+    / "outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.json",
     "packet_audits": [
         ROOT / "outputs/day1/iclr2024_human_validation_v1_packet_audit.json",
         ROOT / "outputs/day1/iclr2025_repro_human_validation_v1_packet_audit.json",
@@ -423,13 +423,13 @@ def audit_readiness(
             checks,
             check_id="iaa_second_annotator_packet",
             status=status,
-            summary="Second-annotator IAA mini-slice status is tracked separately from canonical first-pass labels.",
+            summary="Second-annotator packet status is tracked separately from canonical first-pass labels.",
             evidence=(
                 f"target_rows={target_rows}, blind_rows={blind_total_rows}, labeled_rows={labeled_rows}, "
                 f"metrics_labeled_rows={metrics_rows}, agreement={agreement}, cohen_kappa={kappa}"
             ),
             next_action=(
-                "IAA mini-slice metrics are complete; keep this as bounded reliability evidence and avoid broad prevalence claims."
+                "Second-annotator packet metrics are complete; keep this as bounded reliability evidence and avoid broad prevalence claims."
                 if complete
                 else "Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics."
             ),

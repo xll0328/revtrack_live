@@ -90,11 +90,11 @@ Next action: Rerun audit_paper_citations.py after related-work or BibTeX edits.
 
 ### iaa_second_annotator_packet (pass)
 
-Second-annotator IAA mini-slice status is tracked separately from canonical first-pass labels.
+Second-annotator packet status is tracked separately from canonical first-pass labels.
 
 Evidence: target_rows=160, blind_rows=160, labeled_rows=160, metrics_labeled_rows=160, agreement=1.0, cohen_kappa=1.0
 
-Next action: IAA mini-slice metrics are complete; keep this as bounded reliability evidence and avoid broad prevalence claims.
+Next action: Second-annotator packet metrics are complete; keep this as bounded reliability evidence and avoid broad prevalence claims.
 
 ### not_ready_claims_blocked (pass)
 

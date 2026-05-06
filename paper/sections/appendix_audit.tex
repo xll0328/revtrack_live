@@ -82,7 +82,7 @@ This addresses the concern that frozen encoder baselines may be too weak: in-dom
 \input{tables/finetuned_modernbert_multiseed_probe}
 
 \paragraph{Oral/rebuttal evidence panel.}
-Table~\ref{tab:oral-evidence-panel} summarizes the highest-signal checkpoints used in oral/rebuttal discussion: in-domain gain, accuracy-trap evidence, transfer-frontier brittleness, prompted-significance boundary, mini-slice IAA reliability, and readiness-gate status.
+Table~\ref{tab:oral-evidence-panel} summarizes the highest-signal checkpoints used in oral/rebuttal discussion: in-domain gain, accuracy-trap evidence, transfer-frontier brittleness, prompted-significance boundary, bounded second-pass reliability, and readiness-gate status.
 \input{tables/oral_evidence_panel}
 
 \paragraph{Representative oral casebook.}
@@ -102,4 +102,6 @@ It is intended as a boundary-interpretation aid for readers and reviewers, not a
 
 \paragraph{Bounded second-pass reliability check.}
 For a separate independent mini60 packet, second-pass labels are complete (60/60) with agreement $=1.0$, Cohen's $\kappa=1.0$, and zero mismatches.
-This artifact is tracked in \path{iaa_second_annotator_mini60_v1_metrics.json} and surfaced by the readiness gate as bounded reliability evidence rather than full-scale two-annotator coverage.
+For a broader boundary160 packet, user-confirmed second-pass labels are complete (160/160), also with agreement $=1.0$, Cohen's $\kappa=1.0$, and zero mismatches.
+Because boundary160 was prelabel-assisted before confirmation, we treat it as user-confirmed bounded reliability evidence rather than blind-independent IAA.
+These artifacts are tracked in \path{iaa_second_annotator_mini60_v1_metrics.json} and \path{iaa_second_annotator_boundary160_v1_metrics.json}, and surfaced by the readiness gate as bounded reliability evidence rather than full-scale two-annotator coverage.

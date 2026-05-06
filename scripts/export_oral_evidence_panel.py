@@ -12,7 +12,7 @@ DEFAULT_NULL_BASELINES = ROOT / "outputs/day1/paper_assets/null_baseline_compari
 DEFAULT_EXPANDED80 = ROOT / "outputs/day1/paper_assets/iclr2025_expanded80_standard_transfer_metrics.csv"
 DEFAULT_NEURIPS = ROOT / "outputs/day1/paper_assets/neurips2024_limit100_standard_transfer_metrics.csv"
 DEFAULT_PROMPTED_SIG = ROOT / "outputs/day1/paper_assets/prompted_llm_significance.csv"
-DEFAULT_IAA_METRICS = ROOT / "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json"
+DEFAULT_IAA_METRICS = ROOT / "outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.json"
 DEFAULT_READINESS = ROOT / "outputs/day1/paper_assets/paper_readiness_audit.json"
 
 DEFAULT_OUTPUT_CSV = ROOT / "outputs/day1/paper_assets/oral_evidence_panel.csv"
@@ -132,12 +132,12 @@ def build_panel() -> list[dict[str, str]]:
             "boundary": "Bootstrap deltas quantify split uncertainty only.",
         },
         {
-            "axis": "IAA mini-slice reliability",
+            "axis": "IAA boundary-packet reliability",
             "checkpoint": (
-                f"mini60 labeled={iaa.get('labeled_rows')} agreement={fmt3(float(iaa.get('agreement') or 0.0))} "
+                f"boundary160 labeled={iaa.get('labeled_rows')} agreement={fmt3(float(iaa.get('agreement') or 0.0))} "
                 f"kappa={fmt3(float(iaa.get('cohen_kappa') or 0.0))} mismatches={iaa.get('mismatches')}"
             ),
-            "boundary": "Bounded mini-slice support, not full two-annotator coverage.",
+            "boundary": "User-confirmed prelabel-assisted packet; bounded support, not blind-independent full two-annotator coverage.",
         },
         {
             "axis": "Readiness gate",

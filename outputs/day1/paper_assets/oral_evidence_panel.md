@@ -9,5 +9,5 @@ Reviewer-facing high-signal checkpoints for oral/rebuttal sprint.
 | Transfer frontier (ICLR25 expanded80) | Best macro-F1 is issue-ledger 0.469; structured macro-F1 0.298 with unresolved F1 0.000 | Active disagreement frontier; no natural-prevalence claim. |
 | Cross-venue frontier (NeurIPS24) | Best macro-F1 is MPNet 0.348; TF-IDF unresolved F1 0.000 | Single-user standard frontier; fixed/regressed labels absent in this split. |
 | Prompted significance | ICLR25 Vote-3(+U+F-cal) macro-F1 0.094 vs majority 0.226; NeurIPS24 vote 0.167 vs majority 0.177 | Bootstrap deltas quantify split uncertainty only. |
-| IAA mini-slice reliability | mini60 labeled=60 agreement=1.000 kappa=1.000 mismatches=0 | Bounded mini-slice support, not full two-annotator coverage. |
+| IAA boundary-packet reliability | boundary160 labeled=160 agreement=1.000 kappa=1.000 mismatches=0 | User-confirmed prelabel-assisted packet; bounded support, not blind-independent full two-annotator coverage. |
 | Readiness gate | overall_status=ready ready_claims=9 blockers=0 | Submission gate is satisfied for current scoped claims. |
