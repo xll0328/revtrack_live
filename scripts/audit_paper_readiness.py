@@ -138,8 +138,12 @@ def load_claim_rows(path: str | Path) -> list[dict[str, str]]:
 
 
 def load_csv_rows(path: str | Path) -> list[dict[str, str]]:
-    with Path(path).open("r", encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle))
+    file_path = Path(path)
+    with file_path.open("r", encoding="utf-8", newline="") as handle:
+        first_line = handle.readline()
+        handle.seek(0)
+        delimiter = "\t" if first_line.count("\t") > first_line.count(",") else ","
+        return list(csv.DictReader(handle, delimiter=delimiter))
 
 
 def add_check(

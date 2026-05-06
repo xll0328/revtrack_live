@@ -29,6 +29,7 @@ Deadline reality:
 5. Targeted regression tests for readiness/asset/Figure-1 pipeline pass (`14 passed`).
 6. Prompted-LLM ensemble and bootstrap assets were regenerated; transfer brittleness conclusions remain unchanged (ICLR25 prompted rows below majority, NeurIPS24 near-majority overlap).
 7. A second-annotator IAA mini-slice packet is now staged for immediate execution: `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv` + key + manifest (`60` rows; balanced across all five current standard packets).
+8. Readiness audit now includes a dedicated `iaa_second_annotator_packet` check so the second-pass progress and eventual agreement metrics are surfaced in the same gate report.
 
 ## What Is Already Strong
 
