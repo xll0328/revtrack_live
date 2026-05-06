@@ -170,9 +170,12 @@
     "/data/sony/emnlp2026_revtrack/paper/tables/main_results.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/neurips_limit100_transfer.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/null_baselines.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/oral_casebook_summary.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/oral_evidence_panel.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_bootstrap_intervals.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_ensemble.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_postprocess_rules.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_significance.tex",
     "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_temperature_ablation.tex"
   ],
   "log_path": "/data/sony/emnlp2026_revtrack/paper/main.log",
