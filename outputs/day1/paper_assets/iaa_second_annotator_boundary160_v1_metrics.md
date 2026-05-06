@@ -7,12 +7,13 @@ Source:
 
 Current readout:
 - `rows`: `160`
-- `labeled_rows`: `0`
-- `unlabeled_rows`: `160`
-- `agreement`: `null`
-- `cohen_kappa`: `null`
+- `labeled_rows`: `160`
+- `unlabeled_rows`: `0`
+- `agreement`: `1.0`
+- `cohen_kappa`: `1.0`
 - `mismatches`: `0`
 
 Interpretation:
-- Packet construction and evaluation pipeline are ready.
-- Independent second-pass labels have not yet been filled in the blind sheet, so boundary160 IAA is **not complete**.
+- Boundary160 second-pass sheet is fully labeled and metrics are complete.
+- Labels are user-confirmed (`xll0328`) and can be treated as human second-pass labels for this packet.
+- Reporting boundary: this packet used AI prelabel assistance before user confirmation; it is not a blind-independent two-annotator IAA setup.

@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-06",
+  "status": "ok",
+  "reviewer": "xll0328",
+  "scope": "iaa_second_annotator_boundary160_v1",
+  "blind_sheet": "experiments/day1/iaa_second_annotator_boundary160_v1_blind.tsv",
+  "batch_prefix": "experiments/day1/iaa_second_annotator_boundary160_v1_blind_batch",
+  "rows_confirmed": 160,
+  "note_template": "User-reviewed second-pass label confirmation on 2026-05-06 by xll0328; source=user_confirmed_prelabel_assistant; treat as human second-pass labels for this packet; prelabel-assisted and not blind-independent IAA.",
+  "metrics_json": "outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.json",
+  "metrics": {
+    "rows": 160,
+    "labeled_rows": 160,
+    "unlabeled_rows": 0,
+    "agreement": 1.0,
+    "cohen_kappa": 1.0,
+    "mismatches": 0
+  },
+  "claim_boundary": "Use as user-confirmed human second-pass labels for this packet. Because labels were prefilled before confirmation, do not describe this as blind-independent IAA."
+}
