@@ -24,6 +24,26 @@ MODE_ORDER = [
     "partial_vs_fixed_boundary",
 ]
 
+SPLIT_SHORT = {
+    "iclr2024_signoff": "ICLR24 signoff",
+    "iclr2025_repro_v2": "ICLR25 repro",
+    "iclr2025_expanded80_standard": "ICLR25 exp80",
+}
+
+MODEL_SHORT = {
+    "-": "-",
+    "tfidf": "TF-IDF",
+    "structured": "Structured",
+    "issue_ledger": "Ledger",
+}
+
+LABEL_SHORT = {
+    "fixed": "F",
+    "partially_fixed": "P",
+    "unresolved": "U",
+    "regressed": "R",
+}
+
 
 def compact(value: str | None) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
@@ -172,19 +192,40 @@ def latex_escape(text: str) -> str:
 
 
 def write_tex(path: Path, rows: list[dict[str, str]]) -> None:
+    def short_label(label: str) -> str:
+        return LABEL_SHORT.get(label, label)
+
+    def short_snapshot(snapshot: str) -> str:
+        text = snapshot.strip()
+        if not text or text == "n/a":
+            return "n/a"
+        parts = []
+        for item in text.split(","):
+            item = item.strip()
+            if "=" not in item:
+                continue
+            key, value = item.split("=", 1)
+            key = key.strip().lower()
+            value = value.strip().lower()
+            prefix = "T" if key == "tfidf" else ("S" if key == "structured" else key[:1].upper())
+            parts.append(f"{prefix}:{short_label(value)}")
+        return ", ".join(parts) if parts else text
+
     lines = [
         r"\begin{table*}[t]",
         r"\centering",
         r"\scriptsize",
         r"\setlength{\tabcolsep}{3pt}",
-        r"\begin{tabular}{p{0.19\textwidth}p{0.14\textwidth}p{0.12\textwidth}p{0.46\textwidth}}",
+        r"\begin{tabular}{p{0.18\textwidth}p{0.16\textwidth}p{0.13\textwidth}p{0.44\textwidth}}",
         r"\toprule",
         r"Failure mode & Split / model & Gold / prediction & Why it matters \\",
         r"\midrule",
     ]
     for row in rows[:6]:
-        split_model = f"{row['source_split']} / {row['model_key']}"
-        gold_pred = f"{row['gold_label']} / {row['prediction_snapshot']}"
+        split = SPLIT_SHORT.get(row["source_split"], row["source_split"])
+        model = MODEL_SHORT.get(row["model_key"], row["model_key"])
+        split_model = f"{split} / {model}"
+        gold_pred = f"{short_label(row['gold_label'])} / {short_snapshot(row['prediction_snapshot'])}"
         why = row["why_it_matters"] or row["claim"]
         lines.append(
             f"{latex_escape(row['failure_mode'])} & {latex_escape(split_model)} & {latex_escape(gold_pred)} & "
