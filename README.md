@@ -35,6 +35,7 @@ This repo is designed for day-0 and day-1 work:
 - [docs/related_work_matrix.md](/data/sony/emnlp2026_revtrack/docs/related_work_matrix.md): paper-facing comparison against peer-review corpora, evidence QA, fact verification, and review-generation work
 - [docs/emnlp_oral_best_paper_sprint_plan.md](/data/sony/emnlp2026_revtrack/docs/emnlp_oral_best_paper_sprint_plan.md): EMNLP 2026 oral/best-paper sprint plan
 - [docs/emnlp_oral_bestpaper_warplan_20260506.md](/data/sony/emnlp2026_revtrack/docs/emnlp_oral_bestpaper_warplan_20260506.md): dated oral/best-paper execution plan + todo checklist
+- [docs/submission_dryrun_20260506.md](/data/sony/emnlp2026_revtrack/docs/submission_dryrun_20260506.md): no-key submission dry-run freeze log with gate decision
 - [docs/emnlp_oral_90s_pitch_20260506.md](/data/sony/emnlp2026_revtrack/docs/emnlp_oral_90s_pitch_20260506.md): 90-second oral pitch script with boundary-safe evidence anchors
 - [docs/reviewer_objection_evidence_matrix_20260506.md](/data/sony/emnlp2026_revtrack/docs/reviewer_objection_evidence_matrix_20260506.md): reviewer objection to evidence mapping for oral/rebuttal hardening
 - [docs/emnlp2026_pitch_and_intro_v0.md](/data/sony/emnlp2026_revtrack/docs/emnlp2026_pitch_and_intro_v0.md): one-page pitch and Introduction v0
@@ -67,6 +68,7 @@ Latest assistant-adjudicated benchmark assets:
 - paper readiness JSON: [paper_readiness_audit.json](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/paper_readiness_audit.json)
 - top-conference gap audit: [top_conference_quality_audit_2026-04-28.md](/data/sony/emnlp2026_revtrack/outputs/day1/top_conference_quality_audit_2026-04-28.md)
 - oral/best-paper gap audit (2026-05-06): [oral_best_paper_gap_audit_20260506.md](/data/sony/emnlp2026_revtrack/docs/oral_best_paper_gap_audit_20260506.md)
+- submission dry-run freeze (2026-05-06): [submission_dryrun_20260506.md](/data/sony/emnlp2026_revtrack/docs/submission_dryrun_20260506.md)
 - second-annotator IAA mini-slice manifest (2026-05-06): [iaa_second_annotator_mini60_v1_manifest.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_manifest.md)
 - second-annotator IAA mini-slice blind packet: [iaa_second_annotator_mini60_v1_blind_packet.html](/data/sony/emnlp2026_revtrack/outputs/day1/iaa_second_annotator_mini60_v1_blind_packet.html)
 - second-annotator IAA mini-slice batch plan: [iaa_second_annotator_mini60_batches.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iaa_second_annotator_mini60_batches.md)

@@ -108,7 +108,7 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - [ ] W2-1 Narrative concentration pass for oral style (intro/results/discussion; focus/clarity, no evidence deletion)
 - [x] W2-2 Reviewer objection evidence matrix refresh
 - [x] W2-3 Full artifact regeneration and citation audit
-- [ ] W2-4 Dry-run submission package freeze (no new experimental scope)
+- [-] W2-4 Dry-run submission package freeze (no new experimental scope)
 
 ### Final Week (`2026-05-19` ~ `2026-05-24`)
 
@@ -133,3 +133,4 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: exported oral/rebuttal evidence panel (`oral_evidence_panel.{md,csv,json}` + `paper/tables/oral_evidence_panel.tex`) and integrated into appendix.
 - `2026-05-06`: exported oral/rebuttal representative casebook (`oral_casebook.{md,csv,json}` + `paper/tables/oral_casebook_summary.tex`) and integrated into appendix.
 - `2026-05-06`: completed full artifact regeneration + citation/readiness audits and paper rebuild under no-key constraints (`export_paper_assets`, `audit_paper_readiness`, `audit_paper_citations`, `make -B -C paper`).
+- `2026-05-06`: opened submission dry-run freeze log (`docs/submission_dryrun_20260506.md`) with command backbone + gate decision.
