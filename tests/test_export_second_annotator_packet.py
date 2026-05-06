@@ -132,6 +132,21 @@ def test_select_candidates_respects_quotas_and_fills_remaining(tmp_path: Path) -
     assert "f2" in selected_ids
 
 
+def test_select_candidates_obeys_per_packet_cap(tmp_path: Path) -> None:
+    packet = make_packet(tmp_path)
+    candidates = export_second_annotator_packet.build_candidates([packet])
+
+    selected = export_second_annotator_packet.select_candidates(
+        candidates,
+        sample_size=4,
+        label_quotas={"regressed": 0, "fixed": 0, "unresolved": 0, "partially_fixed": 0},
+        max_per_packet=2,
+    )
+
+    assert len(selected) == 2
+    assert len({row["source_packet"] for row in selected}) == 1
+
+
 def test_write_outputs_and_manifest(tmp_path: Path) -> None:
     packet = make_packet(tmp_path)
     candidates = export_second_annotator_packet.build_candidates([packet])

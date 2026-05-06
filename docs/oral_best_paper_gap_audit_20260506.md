@@ -28,6 +28,7 @@ Deadline reality:
 4. `make -C paper` reports no pending rebuild.
 5. Targeted regression tests for readiness/asset/Figure-1 pipeline pass (`14 passed`).
 6. Prompted-LLM ensemble and bootstrap assets were regenerated; transfer brittleness conclusions remain unchanged (ICLR25 prompted rows below majority, NeurIPS24 near-majority overlap).
+7. A second-annotator IAA mini-slice packet is now staged for immediate execution: `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv` + key + manifest (`60` rows; balanced across all five current standard packets).
 
 ## What Is Already Strong
 
@@ -62,6 +63,7 @@ Deadline reality:
    - Prefer: one additional random/stratified venue slice with same audit gates.
    - Fallback: targeted second-annotator mini-slice (40-80 rows) for IAA sensitivity only.
    - Keep claim boundaries explicit (`not IAA`, `not prevalence`) unless new evidence supports expansion.
+   - Current status (2026-05-06): mini-slice packet is prepared; pending step is independent second-pass labeling + agreement report export.
 
 3. **P2: Convert narrative to oral shape**
    - Make Figure 1 + three flagship failure modes the Results spine.

@@ -235,11 +235,12 @@ Verified today:
 - Progress dashboard refreshed (`scripts/render_progress_dashboard.py`).
 - Paper build command reports clean state (`make -C paper` -> no pending rebuild).
 - Figure-1 rendering text and regression tests are aligned (`14` targeted tests pass).
+- A second-annotator IAA mini-slice packet is now prepared with balanced per-packet coverage (`60` rows; label mix `regressed 6 / fixed 12 / unresolved 30 / partially_fixed 12`) at `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv`, with key and manifest in `outputs/day1/paper_assets/`.
 
 What still blocks oral/best-paper confidence:
 
 - No independent IAA evidence yet (current validation is standard single-user).
-- No strong frontier prompted-LLM run is finalized under clean output audit (GPT-5.5 path still pending key/runtime run).
+- No strong frontier prompted-LLM rerun is finalized under the current runtime (GPT-5.5 path still pending key/runtime run in this shell).
 - External-validity framing is stronger than April, but still requires one more high-trust axis (non-frontier random/stratified venue slice and/or targeted IAA mini-slice).
 - The manuscript story must keep failure taxonomy and stale-criticism narrative as the center, not auxiliary analysis.
 

@@ -1,6 +1,8 @@
 # Second Annotator IAA Mini-Slice Manifest
 
 - sample size target: `60`
+- per-packet minimum: `8`
+- per-packet maximum: `20`
 - selected rows: `60`
 - blind sheet: `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv`
 - key sheet: `experiments/day1/iaa_second_annotator_mini60_v1_key.tsv`
@@ -11,17 +13,18 @@
 | --- | ---: | ---: |
 | regressed | 6 | 7 |
 | fixed | 12 | 27 |
-| unresolved | 25 | 135 |
-| partially_fixed | 17 | 132 |
+| unresolved | 30 | 135 |
+| partially_fixed | 12 | 132 |
 
 ## Source Distribution
 
 | source packet | selected |
 | --- | ---: |
-| ICLR 2023 random80 v1 | 47 |
-| ICLR 2024 v1 | 6 |
-| ICLR 2025 expanded80 v1 | 6 |
-| ICLR 2025 repro v2 | 1 |
+| ICLR 2023 random80 v1 | 20 |
+| ICLR 2025 expanded80 v1 | 13 |
+| ICLR 2024 v1 | 10 |
+| NeurIPS 2024 limit100 v1 | 9 |
+| ICLR 2025 repro v2 | 8 |
 
 ## Evaluation Command After Second-Pass Labeling
 
