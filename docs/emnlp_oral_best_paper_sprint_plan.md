@@ -237,6 +237,7 @@ Verified today:
 - Figure-1 rendering text and regression tests are aligned (`14` targeted tests pass).
 - A second-annotator IAA mini-slice packet is now prepared with balanced per-packet coverage (`60` rows; label mix `regressed 6 / fixed 12 / unresolved 30 / partially_fixed 12`) at `experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv`, with key and manifest in `outputs/day1/paper_assets/`.
 - Readiness audit now tracks the second-annotator packet explicitly (`iaa_second_annotator_packet`) with target rows, labeling progress, and optional agreement/kappa once second-pass labels are filled.
+- A no-key prompted significance audit is now added: paired stratified-bootstrap deltas versus majority for ICLR24 / ICLR25 expanded80 / NeurIPS24, exported to `outputs/day1/paper_assets/prompted_llm_significance.md` and Appendix Table `tab:prompted-llm-significance`.
 
 What still blocks oral/best-paper confidence:
 

@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccccc}
+\toprule
+Dataset & Method & $n$ & Macro-F1 & $\Delta$ vs Majority & 95\% CI ($\Delta$) & $p(\Delta\le0)$ \\
+\midrule
+ICLR24 & GPT-5.5 (v2) & 148 & 0.350 & 0.167 & [0.093, 0.250] & 0.000 \\
+ICLR24 & GPT-4.1-mini & 148 & 0.347 & 0.164 & [0.091, 0.245] & 0.000 \\
+ICLR24 & Vote-3 (+U+F-cal) & 148 & 0.350 & 0.167 & [0.097, 0.244] & 0.000 \\
+ICLR25 & GPT-5.5 (v2) & 80 & 0.081 & -0.145 & [-0.200, -0.068] & 1.000 \\
+ICLR25 & GPT-4.1-mini & 80 & 0.066 & -0.160 & [-0.176, -0.136] & 1.000 \\
+ICLR25 & Vote-3 (+U+F-cal) & 80 & 0.094 & -0.132 & [-0.198, -0.047] & 0.999 \\
+NeurIPS24 & GPT-5.5 (v2) & 80 & 0.171 & -0.006 & [-0.019, 0.004] & 0.862 \\
+NeurIPS24 & GPT-4.1-mini & 80 & 0.181 & 0.003 & [-0.012, 0.018] & 0.319 \\
+NeurIPS24 & Vote-3 (+U+F-cal) & 80 & 0.167 & -0.011 & [-0.024, 0.001] & 0.966 \\
+\bottomrule
+\end{tabular}
+\caption{Prompted LLM paired stratified-bootstrap significance against the majority baseline on standard-labeled splits. $\Delta$ is macro-F1(method) minus macro-F1(majority).}
+\label{tab:prompted-llm-significance}
+\end{table*}

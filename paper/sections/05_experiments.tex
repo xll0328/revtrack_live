@@ -76,6 +76,7 @@ On ICLR 2025 expanded80, all prompted and ensemble variants remain below the maj
 On NeurIPS limit100, the best prompted model reaches 0.181 macro-F1, while the best vote reaches 0.179 and stays near the majority baseline (0.177).
 Model pooling therefore improves stability but does not close the longitudinal transfer gap.
 Appendix Table~\ref{tab:prompted-llm-bootstrap} shows the same risk under bootstrap uncertainty: ICLR24 prompted rows are above majority, ICLR25 rows remain below majority, and NeurIPS24 rows mostly overlap the majority reference.
+Appendix Table~\ref{tab:prompted-llm-significance} reports paired stratified-bootstrap significance against the majority baseline: prompted rows are reliably above majority in-domain, reliably below majority on ICLR25 expanded80, and statistically overlapping on NeurIPS24.
 
 \input{tables/prompted_llm_temperature_ablation}
 

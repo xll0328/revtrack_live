@@ -83,6 +83,7 @@ Latest assistant-adjudicated benchmark assets:
 - ICLR 2023 random/stratified historical pre-confirmation failure taxonomy: [iclr2023_limit80_random80_resolved_candidate_failure_taxonomy.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2023_limit80_random80_resolved_candidate_failure_taxonomy.md)
 - ICLR 2023 random/stratified promotion runbook: [iclr2023_random80_promotion_runbook.md](/data/sony/emnlp2026_revtrack/docs/iclr2023_random80_promotion_runbook.md)
 - prompted LLM bootstrap intervals: [prompted_llm_bootstrap_intervals.md](/data/sony/emnlp2026_revtrack/outputs/day1/prompted_llm_baselines/prompted_llm_bootstrap_intervals.md)
+- prompted LLM significance vs majority: [prompted_llm_significance.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/prompted_llm_significance.md)
 - related-work matrix: [related_work_matrix.md](/data/sony/emnlp2026_revtrack/docs/related_work_matrix.md)
 - human-validation work queue: [human_validation_work_queue.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.md)
 - human-validation queue table: [human_validation_work_queue.csv](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.csv)

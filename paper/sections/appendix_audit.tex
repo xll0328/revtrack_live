@@ -70,3 +70,8 @@ This check quantifies uncertainty under transfer difficulty and preserves the sa
 Table~\ref{tab:prompted-llm-bootstrap} reports example-level bootstrap intervals for selected prompted LLM and vote baselines.
 The intervals are used as a claim-risk check: they capture sample instability in the current splits, while leaving annotator uncertainty and API stochasticity as separate limitations.
 \input{tables/prompted_llm_bootstrap_intervals}
+
+\paragraph{Prompted LLM significance vs majority.}
+Table~\ref{tab:prompted-llm-significance} reports paired stratified-bootstrap deltas against the majority baseline.
+It strengthens the transfer-boundary statement with a direct hypothesis-test style view: prompted methods are significantly above majority in-domain, significantly below majority on ICLR25 expanded80, and overlapping on NeurIPS24.
+\input{tables/prompted_llm_significance}
