@@ -27,6 +27,7 @@ Deadline reality:
 3. `scripts/render_progress_dashboard.py` refreshed the dashboard.
 4. `make -C paper` reports no pending rebuild.
 5. Targeted regression tests for readiness/asset/Figure-1 pipeline pass (`14 passed`).
+6. Prompted-LLM ensemble and bootstrap assets were regenerated; transfer brittleness conclusions remain unchanged (ICLR25 prompted rows below majority, NeurIPS24 near-majority overlap).
 
 ## What Is Already Strong
 
