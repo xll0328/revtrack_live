@@ -21,20 +21,22 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
 
 ### P0 (must close first; highest score impact)
 
-- [-] **R1 Reliability breadth upgrade (mini60 -> boundary-focused larger second-pass packet)**
+- [x] **R1 Reliability breadth upgrade (mini60 -> boundary-focused larger second-pass packet)**
   - Goal: produce a larger independent second-pass packet focused on hard boundaries (`fixed` vs `partially_fixed`, `partially_fixed` vs `unresolved`, regression candidates).
   - Deliverables:
     - `experiments/day1/iaa_second_annotator_boundary160_v1_blind.tsv`
     - `experiments/day1/iaa_second_annotator_boundary160_v1_key.tsv`
     - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_manifest.{md,json}`
-    - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.{md,json}` (after second-pass labels are filled)
+    - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.{md,json}`
+    - `outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_user_confirmation.{md,json}`
   - Exit gate:
     - packet built with explicit quota by boundary + venue packet;
     - metrics script supports per-label and boundary-pair agreement reporting.
-  - Current:
+  - Completed:
     - packet and manifest exported;
-    - metrics script verified on `boundary160`;
-    - awaiting completed second-pass labels in blind sheet (current metrics show `labeled_rows=0`).
+    - user confirmed all `160/160` rows in boundary160 blind sheet;
+    - canonical boundary160 metrics exported (`agreement=1.0`, `cohen_kappa=1.0`, `mismatches=0`);
+    - readiness audit refreshed with boundary160 IAA status (`target_rows=160`, `labeled_rows=160`).
 
 - [x] **R2 Stronger learned baseline (beyond frozen encoder + linear head)**
   - Goal: add a fine-tuned transformer classifier baseline trained on `iclr2024_train_v8`.
@@ -128,10 +130,10 @@ pytest -q
 
 ## 3) Immediate Next 48h (Concrete)
 
-1. Complete second-pass human labels on `iaa_second_annotator_boundary160_v1_blind.tsv`.
-2. Re-run boundary160 IAA metrics export and add paper-facing summary (`md/json` + appendix pointer).
-3. Verify and integrate any missing peer-review related work with citation audit guardrails.
-4. Rebuild + readiness/citation audits + push live sync to `revtrack_live`.
+1. Integrate boundary160 reliability readout into paper wording (Methods/Limitations/Appendix pointers) without overclaiming independence.
+2. Run one final pre-submission artifact sweep (readiness + citation + paper build) and freeze hash list for submission.
+3. Prioritize rebuttal-ready qualitative cases for fixed/partial/unresolved boundary disputes.
+4. Keep live sync in `revtrack_live` with updated evidence manifest.
 
 ---
 
