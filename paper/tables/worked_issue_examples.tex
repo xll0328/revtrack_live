@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.10\textwidth}p{0.12\textwidth}p{0.34\textwidth}p{0.34\textwidth}}
+\toprule
+Gold label & Issue ID & Concern snippet & Response/revision evidence snippet \\
+\midrule
+fixed & \texttt{w7P92BEsb2\_\_r01} & Reviewer asks for concrete computational-cost comparison and questions whether efficiency claims are substantiated. & Revision adds direct cost/error comparisons (Figure 6; lines 510--530), satisfying the original evidence request. \\
+partially\_fixed & \texttt{9k0krNzvlV\_\_r02} & Reviewer questions the practical contribution to open-model watermarking and asks for stronger empirical support. & Revision adds sample-efficiency plots, multi-key experiments, and clearer framing, but does not fully close the contribution concern. \\
+unresolved & \texttt{My7lkRNnL9\_\_r01} & Reviewer asks whether one-hidden-layer theory can extend to deeper networks. & Author response acknowledges the limitation and adds discussion, but no new theory or decisive evidence resolves the core concern. \\
+regressed & \texttt{VNMJfBBUd5\_\_r04} & Reviewer flags ambiguity and formulation issues in gradient-circular-distance definitions and layer-wise computation. & Revised response introduces additional explanation, but adjudication marks the issue as worsened/contradicted under the benchmark rubric, so the status remains regressed. \\
+\bottomrule
+\end{tabular}
+\caption{Worked issue-level adjudication examples with concern and evidence snippets. These examples complement aggregate metrics and make label boundaries explicit.}
+\label{tab:worked-issue-examples}
+\end{table*}
