@@ -90,6 +90,7 @@ Latest assistant-adjudicated benchmark assets:
 - prompted LLM bootstrap intervals: [prompted_llm_bootstrap_intervals.md](/data/sony/emnlp2026_revtrack/outputs/day1/prompted_llm_baselines/prompted_llm_bootstrap_intervals.md)
 - prompted LLM significance vs majority: [prompted_llm_significance.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/prompted_llm_significance.md)
 - oral/rebuttal evidence panel: [oral_evidence_panel.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/oral_evidence_panel.md)
+- oral/rebuttal casebook: [oral_casebook.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/oral_casebook.md)
 - related-work matrix: [related_work_matrix.md](/data/sony/emnlp2026_revtrack/docs/related_work_matrix.md)
 - human-validation work queue: [human_validation_work_queue.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.md)
 - human-validation queue table: [human_validation_work_queue.csv](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.csv)

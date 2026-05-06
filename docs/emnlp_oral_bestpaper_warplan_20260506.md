@@ -131,3 +131,4 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: added tests and passed targeted checks.
 - `2026-05-06`: completed IAA mini60 second pass (`60/60`), exported agreement=`1.0` and Cohen's kappa=`1.0`, refreshed readiness.
 - `2026-05-06`: exported oral/rebuttal evidence panel (`oral_evidence_panel.{md,csv,json}` + `paper/tables/oral_evidence_panel.tex`) and integrated into appendix.
+- `2026-05-06`: exported oral/rebuttal representative casebook (`oral_casebook.{md,csv,json}` + `paper/tables/oral_casebook_summary.tex`) and integrated into appendix.
