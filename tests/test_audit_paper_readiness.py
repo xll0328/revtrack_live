@@ -333,4 +333,4 @@ def test_readiness_marks_second_annotator_packet_complete() -> None:
     iaa_check = next(check for check in report["checks"] if check["check_id"] == "iaa_second_annotator_packet")
     assert iaa_check["status"] == "pass"
     assert "agreement=1.0" in iaa_check["evidence"]
-    assert "IAA mini-slice metrics are complete" in iaa_check["next_action"]
+    assert "Second-annotator packet metrics are complete" in iaa_check["next_action"]
