@@ -21,7 +21,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
 
 ### P0 (must close first; highest score impact)
 
-- [ ] **R1 Reliability breadth upgrade (mini60 -> boundary-focused larger second-pass packet)**
+- [-] **R1 Reliability breadth upgrade (mini60 -> boundary-focused larger second-pass packet)**
   - Goal: produce a larger independent second-pass packet focused on hard boundaries (`fixed` vs `partially_fixed`, `partially_fixed` vs `unresolved`, regression candidates).
   - Deliverables:
     - `experiments/day1/iaa_second_annotator_boundary160_v1_blind.tsv`
@@ -31,8 +31,12 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - packet built with explicit quota by boundary + venue packet;
     - metrics script supports per-label and boundary-pair agreement reporting.
+  - Current:
+    - packet and manifest exported;
+    - metrics script verified on `boundary160`;
+    - awaiting completed second-pass labels in blind sheet (current metrics show `labeled_rows=0`).
 
-- [ ] **R2 Stronger learned baseline (beyond frozen encoder + linear head)**
+- [x] **R2 Stronger learned baseline (beyond frozen encoder + linear head)**
   - Goal: add a fine-tuned transformer classifier baseline trained on `iclr2024_train_v8`.
   - Deliverables:
     - `scripts/run_transformer_classifier_transfer.py`
@@ -44,10 +48,16 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
     - paper-facing summary table under `outputs/day1/paper_assets/`.
   - Exit gate:
     - reproducible command log + metrics JSON + confusion/error profile per split.
+  - Completed:
+    - single-seed transfer runs completed;
+    - multi-seed summary exported:
+      - `outputs/day1/paper_assets/finetuned_modernbert_multiseed_20260506.{md,csv,json}`
+      - `paper/tables/finetuned_modernbert_multiseed_probe.tex`
+    - paper text updated to report stronger baseline behavior in-domain vs transfer.
 
 ### P1 (must close for oral robustness)
 
-- [ ] **R3 Representativeness/coverage diagnostics panel**
+- [x] **R3 Representativeness/coverage diagnostics panel**
   - Goal: make missing-label coverage explicit and auditable for each split.
   - Deliverables:
     - `outputs/day1/paper_assets/split_label_coverage.{md,csv,json}`
@@ -55,7 +65,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - every transfer claim in paper points to this panel.
 
-- [ ] **R4 Hard-rule dependence transparency**
+- [x] **R4 Hard-rule dependence transparency**
   - Goal: separate "learned signal" vs "hard override" contribution more explicitly.
   - Deliverables:
     - ablation note/table updates from existing outputs (`structured` vs `structured_no_overrides`);
@@ -63,10 +73,10 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - reviewer can tell exactly what fraction of gain depends on overrides.
 
-- [ ] **R5 Main-text qualitative examples (3-5 cases)**
+- [x] **R5 Main-text qualitative examples (3-5 cases)**
   - Goal: include concrete issue-level adjudication examples for trust.
   - Deliverables:
-    - `outputs/day1/paper_assets/issue_status_worked_examples.{md,csv,json}`
+    - `outputs/day1/paper_assets/oral_casebook.{md,csv,json}` (issue-level worked examples)
     - paper insertion (main or appendix with main-text pointer).
   - Exit gate:
     - examples cover at least `fixed`, `partially_fixed`, `unresolved`, and one regression-risk case.
@@ -82,7 +92,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - citation audit passes and no unverifiable references are added.
 
-- [ ] **R7 Ethics + misuse risk expansion**
+- [x] **R7 Ethics + misuse risk expansion**
   - Goal: explicitly discuss disciplinary bias, venue-style dependence, and semi-automated editorial misuse risks.
   - Deliverables:
     - updated `paper/sections/09_ethics.tex`
@@ -90,7 +100,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - risk statements are concrete and tied to known failure modes.
 
-- [ ] **R8 Terminology simplification pass**
+- [x] **R8 Terminology simplification pass**
   - Goal: reduce internal tooling jargon in core narrative.
   - Deliverables:
     - intro/dataset/discussion wording pass (`claim-readiness gate` etc. simplified or contextualized).
@@ -115,11 +125,10 @@ pytest -q
 
 ## 3) Immediate Next 48h (Concrete)
 
-1. Implement `run_transformer_classifier_transfer.py` and launch first baseline run.
-2. Export boundary-focused second-annotator packet (`boundary160`) and manifest.
-3. Export split label-coverage panel and wire to appendix.
-4. Add worked examples artifact and paper pointer.
-5. Rebuild + audit + push to `revtrack_live`.
+1. Complete second-pass human labels on `iaa_second_annotator_boundary160_v1_blind.tsv`.
+2. Re-run boundary160 IAA metrics export and add paper-facing summary (`md/json` + appendix pointer).
+3. Verify and integrate any missing peer-review related work with citation audit guardrails.
+4. Rebuild + readiness/citation audits + push live sync to `revtrack_live`.
 
 ---
 

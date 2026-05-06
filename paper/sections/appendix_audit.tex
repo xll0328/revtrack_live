@@ -77,9 +77,9 @@ It strengthens the transfer-boundary statement with a direct hypothesis-test sty
 \input{tables/prompted_llm_significance}
 
 \paragraph{Fine-tuned stronger-baseline probe.}
-Table~\ref{tab:finetuned-modernbert-probe} reports a single-run fine-tuned ModernBERT classifier probe trained on ICLR2024 train v8.
-This addresses the concern that frozen encoder baselines may be too weak: the probe improves in-domain performance but still collapses unresolved recovery on transfer splits.
-\input{tables/finetuned_modernbert_probe}
+Table~\ref{tab:finetuned-modernbert-multiseed} reports a multi-seed fine-tuned ModernBERT classifier probe trained on ICLR2024 train v8.
+This addresses the concern that frozen encoder baselines may be too weak: in-domain performance improves, but unresolved/regressed transfer recovery remains near-zero across seeds on frontier splits.
+\input{tables/finetuned_modernbert_multiseed_probe}
 
 \paragraph{Oral/rebuttal evidence panel.}
 Table~\ref{tab:oral-evidence-panel} summarizes the highest-signal checkpoints used in oral/rebuttal discussion: in-domain gain, accuracy-trap evidence, transfer-frontier brittleness, prompted-significance boundary, mini-slice IAA reliability, and readiness-gate status.

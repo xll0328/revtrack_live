@@ -96,6 +96,8 @@ Latest assistant-adjudicated benchmark assets:
 - oral/rebuttal casebook: [oral_casebook.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/oral_casebook.md)
 - split label-coverage panel: [split_label_coverage.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/split_label_coverage.md)
 - fine-tuned ModernBERT probe (2026-05-06): [finetuned_modernbert_probe_20260506.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/finetuned_modernbert_probe_20260506.md)
+- fine-tuned ModernBERT multi-seed probe (2026-05-06): [finetuned_modernbert_multiseed_20260506.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/finetuned_modernbert_multiseed_20260506.md)
+- boundary160 second-pass IAA status (2026-05-06): [iaa_second_annotator_boundary160_v1_metrics.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iaa_second_annotator_boundary160_v1_metrics.md)
 - related-work matrix: [related_work_matrix.md](/data/sony/emnlp2026_revtrack/docs/related_work_matrix.md)
 - human-validation work queue: [human_validation_work_queue.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.md)
 - human-validation queue table: [human_validation_work_queue.csv](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/human_validation_work_queue.csv)

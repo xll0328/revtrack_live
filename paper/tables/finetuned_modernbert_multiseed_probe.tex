@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.28\linewidth}rrr}
+\toprule
+Split & Accuracy & Macro-F1 & Unresolved F1 \\
+\midrule
+iclr2023\_random80 & 0.433$\pm$0.016 & 0.211$\pm$0.008 & 0.022$\pm$0.031 \\
+iclr2024\_clean\_dev\_v7 & 0.739$\pm$0.016 & 0.531$\pm$0.021 & 0.671$\pm$0.065 \\
+iclr2025\_expanded80 & 0.054$\pm$0.012 & 0.047$\pm$0.010 & 0.000$\pm$0.000 \\
+neurips2024\_limit100 & 0.329$\pm$0.012 & 0.141$\pm$0.007 & 0.017$\pm$0.024 \\
+\bottomrule
+\end{tabular}
+\caption{Multi-seed ($n=3$) fine-tuned ModernBERT probe trained on ICLR2024 train v8. Transfer unresolved recovery remains brittle across seeds.}
+\label{tab:finetuned-modernbert-multiseed}
+\end{table}

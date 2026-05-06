@@ -8,6 +8,7 @@ Both failures can distort author effort and reviewer attention.
 The benchmark also changes how model progress should be read.
 Small accuracy differences are not meaningful when most examples are partially fixed.
 Macro-F1 and per-label recovery are closer to the scientific workload: fixed cases test whether stale criticism is retired, while unresolved cases test whether a model resists superficial reassurance.
+The stronger fine-tuned ModernBERT probe narrows the baseline gap in-domain, but it does not remove the transfer failure pattern, so the central conclusion is not an artifact of using only frozen encoders.
 The failure taxonomy makes this point concrete.
 On the expanded ICLR 2025 frontier, many transfer errors are not random confusions; they are recognizable scientific-assistance failures such as over-crediting unresolved concerns, keeping fixed criticisms alive, and missing regressions.
 

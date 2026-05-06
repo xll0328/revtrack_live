@@ -14,6 +14,9 @@ The strongest semantic baseline, MPNet with a linear classifier, reaches 0.581 a
 The structured model reaches 0.682 accuracy and 0.704 macro-F1.
 Removing structured hard overrides drops macro-F1 to 0.424, showing that explicit revision-follow-up cues drive much of the minority-label recovery.
 This large drop also clarifies the model role: the strongest in-domain system is a diagnostic hybrid that combines learned scoring with benchmark-specific explicit cues.
+To address the weak-baseline concern directly, we also run a stronger learned baseline: a fine-tuned ModernBERT classifier with three random seeds (Appendix Table~\ref{tab:finetuned-modernbert-multiseed}).
+In-domain performance improves over frozen semantic encoders (ICLR 2024 macro-F1 $0.531\pm0.021$), but still remains below the structured model.
+Under transfer, unresolved and regressed recovery stay near zero across seeds (ICLR 2025 expanded80 unresolved F1 $0.000\pm0.000$, regressed F1 $0.000\pm0.000$), reinforcing that the main bottleneck is longitudinal transfer rather than only baseline weakness.
 
 \subsection{RQ2: When Does Accuracy Mislead?}
 

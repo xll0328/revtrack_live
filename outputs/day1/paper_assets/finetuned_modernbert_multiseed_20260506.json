@@ -1,0 +1,69 @@
+{
+  "seed_dirs": [
+    "/data/sony/emnlp2026_revtrack/outputs/day1/strong_baselines/modernbert_finetune_seed7",
+    "/data/sony/emnlp2026_revtrack/outputs/day1/strong_baselines/modernbert_finetune_seed13",
+    "/data/sony/emnlp2026_revtrack/outputs/day1/strong_baselines/modernbert_finetune_seed42"
+  ],
+  "rows": [
+    {
+      "split": "iclr2023_random80",
+      "rows": 80,
+      "seeds": 3,
+      "accuracy_mean": 0.43333333333333335,
+      "accuracy_std": 0.015590239111558104,
+      "macro_f1_mean": 0.21121760708555737,
+      "macro_f1_std": 0.008250017803558485,
+      "unresolved_f1_mean": 0.022222222222222227,
+      "unresolved_f1_std": 0.031426968052735454,
+      "fixed_f1_mean": 0.18812930577636458,
+      "fixed_f1_std": 0.0628511757466583,
+      "regressed_f1_mean": 0.0,
+      "regressed_f1_std": 0.0
+    },
+    {
+      "split": "iclr2024_clean_dev_v7",
+      "rows": 148,
+      "seeds": 3,
+      "accuracy_mean": 0.7387387387387387,
+      "accuracy_std": 0.015925828405102413,
+      "macro_f1_mean": 0.5313564657321043,
+      "macro_f1_std": 0.021027623298478033,
+      "unresolved_f1_mean": 0.6706349206349206,
+      "unresolved_f1_std": 0.06453752367972461,
+      "fixed_f1_mean": 0.6624896449531544,
+      "fixed_f1_std": 0.025635329847641036,
+      "regressed_f1_mean": 0.0,
+      "regressed_f1_std": 0.0
+    },
+    {
+      "split": "iclr2025_expanded80",
+      "rows": 80,
+      "seeds": 3,
+      "accuracy_mean": 0.05416666666666667,
+      "accuracy_std": 0.011785113019775794,
+      "macro_f1_mean": 0.04695312396315585,
+      "macro_f1_std": 0.009937209379869439,
+      "unresolved_f1_mean": 0.0,
+      "unresolved_f1_std": 0.0,
+      "fixed_f1_mean": 0.07285925122737268,
+      "fixed_f1_std": 0.015993976304680052,
+      "regressed_f1_mean": 0.0,
+      "regressed_f1_std": 0.0
+    },
+    {
+      "split": "neurips2024_limit100",
+      "rows": 80,
+      "seeds": 3,
+      "accuracy_mean": 0.32916666666666666,
+      "accuracy_std": 0.011785113019775804,
+      "macro_f1_mean": 0.14115960667684804,
+      "macro_f1_std": 0.006782526261682699,
+      "unresolved_f1_mean": 0.017094017094017092,
+      "unresolved_f1_std": 0.0241745908097965,
+      "fixed_f1_mean": 0.0,
+      "fixed_f1_std": 0.0,
+      "regressed_f1_mean": 0.0,
+      "regressed_f1_std": 0.0
+    }
+  ]
+}

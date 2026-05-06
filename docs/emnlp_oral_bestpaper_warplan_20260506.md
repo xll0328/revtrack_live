@@ -105,7 +105,7 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 
 ### Week 2 (`2026-05-13` ~ `2026-05-18`)
 
-- [ ] W2-1 Narrative concentration pass for oral style (intro/results/discussion; focus/clarity, no evidence deletion)
+- [-] W2-1 Narrative concentration pass for oral style (intro/results/discussion; focus/clarity, no evidence deletion)
 - [x] W2-2 Reviewer objection evidence matrix refresh
 - [x] W2-3 Full artifact regeneration and citation audit
 - [-] W2-4 Dry-run submission package freeze (no new experimental scope)
@@ -137,3 +137,6 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: opened mock pre-review sprint map (`docs/mock_presubmission_todo_20260506.md`) and started execution.
 - `2026-05-06`: exported split label-coverage panel (`split_label_coverage.{md,csv,json}` + `paper/tables/split_label_coverage.tex`) and prepared boundary-focused second-annotator packet (`iaa_second_annotator_boundary160_v1`).
 - `2026-05-06`: launched stronger learned baseline probe (`scripts/run_transformer_classifier_transfer.py`) and recorded first-run fine-tuned ModernBERT transfer metrics.
+- `2026-05-06`: upgraded stronger-baseline evidence to multi-seed summary (`scripts/export_modernbert_multiseed_probe.py`; `finetuned_modernbert_multiseed_20260506.*` + `paper/tables/finetuned_modernbert_multiseed_probe.tex`).
+- `2026-05-06`: integrated stronger learned baseline narrative into main text (`paper/sections/05_experiments.tex`, `paper/sections/06_discussion.tex`) to directly answer the weak-baseline objection.
+- `2026-05-06`: executed boundary160 IAA metrics pipeline and confirmed packet readiness status (`labeled_rows=0` pending completed second-pass labels).

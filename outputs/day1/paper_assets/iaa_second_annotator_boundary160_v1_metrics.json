@@ -1,0 +1,70 @@
+{
+  "agreement": null,
+  "assistant_distribution": {},
+  "bucket_agreement": {},
+  "cohen_kappa": null,
+  "confusion_assistant_to_human": {
+    "fixed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "partially_fixed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "regressed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "unresolved": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    }
+  },
+  "human_distribution": {},
+  "invalid_rows": [],
+  "key_rows": 160,
+  "labeled_rows": 0,
+  "mismatches": 0,
+  "missing_key_rows": 0,
+  "per_label": {
+    "fixed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "partially_fixed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "regressed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "unresolved": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    }
+  },
+  "rows": 160,
+  "unlabeled_rows": 160
+}
