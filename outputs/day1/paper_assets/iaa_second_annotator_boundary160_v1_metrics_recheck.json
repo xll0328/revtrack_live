@@ -1,0 +1,111 @@
+{
+  "agreement": 1.0,
+  "assistant_distribution": {
+    "fixed": 27,
+    "partially_fixed": 60,
+    "regressed": 7,
+    "unresolved": 66
+  },
+  "bucket_agreement": {
+    "label_stratum": {
+      "agreement": 1.0,
+      "matches": 23,
+      "total": 23
+    },
+    "minority_regressed": {
+      "agreement": 1.0,
+      "matches": 11,
+      "total": 11
+    },
+    "minority_unresolved": {
+      "agreement": 1.0,
+      "matches": 90,
+      "total": 90
+    },
+    "model_disagreement": {
+      "agreement": 1.0,
+      "matches": 10,
+      "total": 10
+    },
+    "model_high_conflict": {
+      "agreement": 1.0,
+      "matches": 2,
+      "total": 2
+    },
+    "structured_error": {
+      "agreement": 1.0,
+      "matches": 24,
+      "total": 24
+    }
+  },
+  "cohen_kappa": 1.0,
+  "confusion_assistant_to_human": {
+    "fixed": {
+      "fixed": 27,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "partially_fixed": {
+      "fixed": 0,
+      "partially_fixed": 60,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "regressed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 7,
+      "unresolved": 0
+    },
+    "unresolved": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 66
+    }
+  },
+  "human_distribution": {
+    "fixed": 27,
+    "partially_fixed": 60,
+    "regressed": 7,
+    "unresolved": 66
+  },
+  "invalid_rows": [],
+  "key_rows": 160,
+  "labeled_rows": 160,
+  "mismatches": 0,
+  "missing_key_rows": 0,
+  "per_label": {
+    "fixed": {
+      "assistant_support": 27,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 27
+    },
+    "partially_fixed": {
+      "assistant_support": 60,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 60
+    },
+    "regressed": {
+      "assistant_support": 7,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 7
+    },
+    "unresolved": {
+      "assistant_support": 66,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 66
+    }
+  },
+  "rows": 160,
+  "unlabeled_rows": 0
+}
