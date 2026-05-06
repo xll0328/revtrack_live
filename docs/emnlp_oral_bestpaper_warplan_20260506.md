@@ -101,13 +101,13 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
   - `python scripts/evaluate_human_validation.py --human-sheet experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv --key experiments/day1/iaa_second_annotator_mini60_v1_key.tsv --output-json outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json --mismatch-output outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_mismatches.tsv`
 - [x] W1-3 Refresh readiness:
   - `python scripts/audit_paper_readiness.py`
-- [-] W1-4 Update claim boundaries in paper (IAA done vs not done branch text)
+- [x] W1-4 Update claim boundaries in paper (IAA done vs not done branch text)
 
 ### Week 2 (`2026-05-13` ~ `2026-05-18`)
 
-- [ ] W2-1 Narrative compression pass for oral style (intro/results/discussion)
-- [ ] W2-2 Reviewer objection evidence matrix refresh
-- [ ] W2-3 Full artifact regeneration and citation audit
+- [ ] W2-1 Narrative concentration pass for oral style (intro/results/discussion; focus/clarity, no evidence deletion)
+- [x] W2-2 Reviewer objection evidence matrix refresh
+- [x] W2-3 Full artifact regeneration and citation audit
 - [ ] W2-4 Dry-run submission package freeze (no new experimental scope)
 
 ### Final Week (`2026-05-19` ~ `2026-05-24`)
@@ -132,3 +132,4 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - `2026-05-06`: completed IAA mini60 second pass (`60/60`), exported agreement=`1.0` and Cohen's kappa=`1.0`, refreshed readiness.
 - `2026-05-06`: exported oral/rebuttal evidence panel (`oral_evidence_panel.{md,csv,json}` + `paper/tables/oral_evidence_panel.tex`) and integrated into appendix.
 - `2026-05-06`: exported oral/rebuttal representative casebook (`oral_casebook.{md,csv,json}` + `paper/tables/oral_casebook_summary.tex`) and integrated into appendix.
+- `2026-05-06`: completed full artifact regeneration + citation/readiness audits and paper rebuild under no-key constraints (`export_paper_assets`, `audit_paper_readiness`, `audit_paper_citations`, `make -B -C paper`).
