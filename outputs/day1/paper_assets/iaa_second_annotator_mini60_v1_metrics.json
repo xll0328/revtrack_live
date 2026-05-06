@@ -1,70 +1,106 @@
 {
-  "agreement": null,
-  "assistant_distribution": {},
-  "bucket_agreement": {},
-  "cohen_kappa": null,
+  "agreement": 1.0,
+  "assistant_distribution": {
+    "fixed": 12,
+    "partially_fixed": 12,
+    "regressed": 6,
+    "unresolved": 30
+  },
+  "bucket_agreement": {
+    "label_stratum": {
+      "agreement": 1.0,
+      "matches": 7,
+      "total": 7
+    },
+    "minority_regressed": {
+      "agreement": 1.0,
+      "matches": 10,
+      "total": 10
+    },
+    "minority_unresolved": {
+      "agreement": 1.0,
+      "matches": 30,
+      "total": 30
+    },
+    "model_high_conflict": {
+      "agreement": 1.0,
+      "matches": 2,
+      "total": 2
+    },
+    "structured_error": {
+      "agreement": 1.0,
+      "matches": 11,
+      "total": 11
+    }
+  },
+  "cohen_kappa": 1.0,
   "confusion_assistant_to_human": {
     "fixed": {
-      "fixed": 0,
+      "fixed": 12,
       "partially_fixed": 0,
       "regressed": 0,
       "unresolved": 0
     },
     "partially_fixed": {
       "fixed": 0,
-      "partially_fixed": 0,
+      "partially_fixed": 12,
       "regressed": 0,
       "unresolved": 0
     },
     "regressed": {
       "fixed": 0,
       "partially_fixed": 0,
-      "regressed": 0,
+      "regressed": 6,
       "unresolved": 0
     },
     "unresolved": {
       "fixed": 0,
       "partially_fixed": 0,
       "regressed": 0,
-      "unresolved": 0
+      "unresolved": 30
     }
   },
-  "human_distribution": {},
+  "human_distribution": {
+    "fixed": 12,
+    "partially_fixed": 12,
+    "regressed": 6,
+    "unresolved": 30
+  },
   "invalid_rows": [],
   "key_rows": 60,
-  "labeled_rows": 0,
+  "labeled_rows": 60,
   "mismatches": 0,
   "missing_key_rows": 0,
   "per_label": {
     "fixed": {
-      "assistant_support": 0,
-      "f1": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "support": 0
+      "assistant_support": 12,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 12
     },
     "partially_fixed": {
-      "assistant_support": 0,
-      "f1": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "support": 0
+      "assistant_support": 12,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 12
     },
     "regressed": {
-      "assistant_support": 0,
-      "f1": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "support": 0
+      "assistant_support": 6,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6
     },
     "unresolved": {
-      "assistant_support": 0,
-      "f1": 0.0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "support": 0
+      "assistant_support": 30,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 30
     }
   },
   "rows": 60,
-  "unlabeled_rows": 60
+  "unlabeled_rows": 0
 }

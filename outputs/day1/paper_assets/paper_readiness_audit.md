@@ -92,7 +92,7 @@ Next action: Rerun audit_paper_citations.py after related-work or BibTeX edits.
 
 Second-annotator IAA mini-slice status is tracked separately from canonical first-pass labels.
 
-Evidence: target_rows=60, blind_rows=60, labeled_rows=0, metrics_labeled_rows=0, agreement=None, cohen_kappa=None
+Evidence: target_rows=60, blind_rows=60, labeled_rows=60, metrics_labeled_rows=60, agreement=1.0, cohen_kappa=1.0
 
 Next action: Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics.
 
