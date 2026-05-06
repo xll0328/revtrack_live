@@ -13,6 +13,19 @@ The label set is:
 \textit{Unresolved} means the concern remains present, is deferred, or is reframed without enough evidence.
 \textit{Regressed} means the attempted fix introduces a new issue on the same axis or makes the paper less reliable.
 
+\paragraph{Adjudication protocol.}
+To reduce ambiguity at the fixed/partial/unresolved boundary, we apply the same decision order for every row.
+\textbf{(1) Axis match:} check whether the revision evidence addresses the same technical axis as the reviewer concern (not just tone alignment).
+\textbf{(2) Materiality:} check whether the highest-impact part of the concern is resolved for scientific judgment (for example, a missing core comparison vs a minor wording tweak).
+\textbf{(3) Evidence sufficiency:} require concrete revision-facing evidence (new experiment, corrected claim, revised method detail, released artifact, or explicit limitation narrowing) rather than acknowledgement-only responses.
+This yields \textit{fixed} when all three checks pass, \textit{partially fixed} when axis match and partial material progress exist but a material gap remains, \textit{unresolved} when evidence is insufficient or deferred, and \textit{regressed} when the attempted fix degrades reliability on the same axis.
+
+\paragraph{Boundary examples in main narrative.}
+Two recurring boundary patterns illustrate this protocol.
+\textbf{Fixed vs partially fixed:} adding one ablation requested by the reviewer can be \textit{partially fixed} if the core missing comparison remains absent, and only becomes \textit{fixed} once the requested core comparison is present with revision evidence.
+\textbf{Partially fixed vs unresolved:} a detailed rebuttal that promises future experiments remains \textit{unresolved} without revision evidence, while a partial empirical addition that narrows but does not close the concern is \textit{partially fixed}.
+Appendix Table~\ref{tab:worked-issue-examples} provides compact concern/evidence snippets for all four labels.
+
 \paragraph{Evaluation.}
 Macro-F1 is the primary metric because label skew is central to the task.
 Accuracy is reported only with null baselines and per-label recovery.
