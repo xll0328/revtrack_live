@@ -3,6 +3,7 @@
 The experiments ask whether systems can update a concrete review issue after revision evidence, not merely whether they can produce plausible criticism.
 We therefore read every result through two lenses: macro-F1 and per-label recovery under skew, and the failure modes in Table~\ref{tab:failure-taxonomy}.
 The first two RQs quantify the accuracy trap; the latter two explain what breaks when models transfer across years.
+Across all splits, three findings persist: (i) structured evidence gives the clearest in-domain gain, (ii) accuracy alone hides severe label-level failures, and (iii) prompted transfer remains brittle even with model voting and calibration rules.
 
 \subsection{RQ1: Does Structure Help In Domain?}
 
@@ -24,7 +25,7 @@ This is the core evaluation failure RevTrack is designed to surface.
 
 \subsection{RQ3: What Fails Qualitatively?}
 
-The failure taxonomy is the bridge from aggregate scores to reviewer-facing risk.
+The failure taxonomy is the bridge from aggregate scores to reviewer-facing risk and is a primary claim-bearing result, not an auxiliary error list.
 It identifies five recurring modes.
 \textit{Stale criticism} occurs when a model preserves an old concern after direct revision evidence fixes it.
 \textit{Over-crediting} occurs when a long response acknowledges a limitation without resolving it.
@@ -74,6 +75,7 @@ In-domain ICLR 2024 is competitive for several prompted variants, but transfer r
 On ICLR 2025 expanded80, all prompted and ensemble variants remain below the majority-label macro-F1 baseline (0.226); the strongest calibrated vote reaches 0.094.
 On NeurIPS limit100, the best prompted model reaches 0.181 macro-F1, while the best vote reaches 0.179 and stays near the majority baseline (0.177).
 Model pooling therefore improves stability but does not close the longitudinal transfer gap.
+Appendix Table~\ref{tab:prompted-llm-bootstrap} shows the same risk under bootstrap uncertainty: ICLR24 prompted rows are above majority, ICLR25 rows remain below majority, and NeurIPS24 rows mostly overlap the majority reference.
 
 \input{tables/prompted_llm_temperature_ablation}
 
