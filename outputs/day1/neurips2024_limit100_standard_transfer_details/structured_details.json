@@ -1,0 +1,482 @@
+[
+  {
+    "gold_label": "partially_fixed",
+    "id": "BRZYhVHvSg__r02",
+    "paper_title": "Multi-Group Proportional Representation in Retrieval",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "BRZYhVHvSg__r03",
+    "paper_title": "Multi-Group Proportional Representation in Retrieval",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "DAO2BFzMfy__r04",
+    "paper_title": "Interpreting the Weight Space of Customized Diffusion Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "eHzIwAhj06__r03",
+    "paper_title": "The Group Robustness is in the Details: Revisiting Finetuning under Spurious Correlations",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3ZAfFoAcUI__r02",
+    "paper_title": "On the Inductive Bias of Stacking Towards Improving Reasoning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "YO6GVPUrKN__r03",
+    "paper_title": "On the Limitations of Fractal Dimension as a Measure of Generalization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "YO6GVPUrKN__r04",
+    "paper_title": "On the Limitations of Fractal Dimension as a Measure of Generalization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "owuEcT6BTl__r01",
+    "paper_title": "Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "owuEcT6BTl__r04",
+    "paper_title": "Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "JO6T4rEJ32__r04",
+    "paper_title": "Binding in hippocampal-entorhinal circuits enables compositionality in cognitive maps",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "FZQYfmsmX9__r03",
+    "paper_title": "A Critical Evaluation of AI Feedback for Aligning Large Language Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "Yu7H8ZOuI2__r02",
+    "paper_title": "Sample-Efficient Geometry Reconstruction from Euclidean Distances using Non-Convex Optimization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "hGgkdFF2hR__r02",
+    "paper_title": "Low-Rank Optimal Transport through Factor Relaxation with Latent Coupling",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "lwpfH9wVkO__r02",
+    "paper_title": "Controlling Multiple Errors Simultaneously with a PAC-Bayes Bound",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "lwpfH9wVkO__r04",
+    "paper_title": "Controlling Multiple Errors Simultaneously with a PAC-Bayes Bound",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "wDirCeTIoz__r03",
+    "paper_title": "Communication Efficient Distributed Training with Distributed Lion",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3BNPUDvqMt__r01",
+    "paper_title": "Better by default: Strong pre-tuned MLPs and boosted trees on tabular data",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3BNPUDvqMt__r02",
+    "paper_title": "Better by default: Strong pre-tuned MLPs and boosted trees on tabular data",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3ZAfFoAcUI__r01",
+    "paper_title": "On the Inductive Bias of Stacking Towards Improving Reasoning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "9uolDxbYLm__r01",
+    "paper_title": "Model Reconstruction Using Counterfactual Explanations: A Perspective From Polytope Theory",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "9uolDxbYLm__r03",
+    "paper_title": "Model Reconstruction Using Counterfactual Explanations: A Perspective From Polytope Theory",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "IfZwSRpqHl__r04",
+    "paper_title": "Dynamic Rescaling for Training GNNs",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "JO6T4rEJ32__r02",
+    "paper_title": "Binding in hippocampal-entorhinal circuits enables compositionality in cognitive maps",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "LxxIiInmuF__r02",
+    "paper_title": "Paths to Equilibrium in Games",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "LxxIiInmuF__r03",
+    "paper_title": "Paths to Equilibrium in Games",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "LxxIiInmuF__r04",
+    "paper_title": "Paths to Equilibrium in Games",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "MQIET1VfoV__r02",
+    "paper_title": "Boosting Sample Efficiency and Generalization in Multi-agent Reinforcement Learning via Equivariance",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "N2RaC7LO6k__r03",
+    "paper_title": "Geometry of naturalistic object representations in recurrent neural network models of working memory",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "NfOFbPpYII__r03",
+    "paper_title": "Non-asymptotic Convergence of Training Transformers for Next-token Prediction",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "UwvjJZWjPT__r01",
+    "paper_title": "Inductive biases of multi-task learning and finetuning: multiple regimes of feature reuse",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "UwvjJZWjPT__r03",
+    "paper_title": "Inductive biases of multi-task learning and finetuning: multiple regimes of feature reuse",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "cknAewsBhD__r02",
+    "paper_title": "EGSST: Event-based Graph Spatiotemporal Sensitive Transformer for Object Detection",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "cknAewsBhD__r04",
+    "paper_title": "EGSST: Event-based Graph Spatiotemporal Sensitive Transformer for Object Detection",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "cuO0DenqMl__r01",
+    "paper_title": "Wasserstein Gradient Boosting: A Framework for Distribution-Valued Supervised Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "cuO0DenqMl__r02",
+    "paper_title": "Wasserstein Gradient Boosting: A Framework for Distribution-Valued Supervised Learning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "cuO0DenqMl__r04",
+    "paper_title": "Wasserstein Gradient Boosting: A Framework for Distribution-Valued Supervised Learning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "gcpeEg88R3__r04",
+    "paper_title": "Quasi-Bayes meets Vines",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "hOcsUrOY0D__r04",
+    "paper_title": "Attack-Aware Noise Calibration for Differential Privacy",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "iEeiZlTbts__r01",
+    "paper_title": "No Regrets: Investigating and Improving Regret Approximations for Curriculum Discovery",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "nF34qXcY0b__r04",
+    "paper_title": "Identification of Analytic Nonlinear Dynamical Systems with Non-asymptotic Guarantees",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "owuEcT6BTl__r02",
+    "paper_title": "Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "qOSFiJdVkZ__r03",
+    "paper_title": "Continual learning with the neural tangent ensemble",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "qOSFiJdVkZ__r04",
+    "paper_title": "Continual learning with the neural tangent ensemble",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "uSKzEaj9zJ__r01",
+    "paper_title": "Nonlocal Attention Operator: Materializing Hidden Knowledge Towards Interpretable Physics Discovery",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "yCh1z6Dcto__r01",
+    "paper_title": "Stepping Forward on the Last Mile",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "yCh1z6Dcto__r04",
+    "paper_title": "Stepping Forward on the Last Mile",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "NfOFbPpYII__r04",
+    "paper_title": "Non-asymptotic Convergence of Training Transformers for Next-token Prediction",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "axW8xvQPkF__r04",
+    "paper_title": "Fairness in Social Influence Maximization via Optimal Transport",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3ZAfFoAcUI__r03",
+    "paper_title": "On the Inductive Bias of Stacking Towards Improving Reasoning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "YO6GVPUrKN__r01",
+    "paper_title": "On the Limitations of Fractal Dimension as a Measure of Generalization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "m5dyKArVn8__r03",
+    "paper_title": "How many classifiers do we need?",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "m6pVpdIN0y__r03",
+    "paper_title": "Neglected Hessian component explains mysteries in sharpness regularization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "qOSFiJdVkZ__r02",
+    "paper_title": "Continual learning with the neural tangent ensemble",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "qo7NtGMr2u__r01",
+    "paper_title": "Symmetry Discovery Beyond Affine Transformations",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "rniiAVjHi5__r03",
+    "paper_title": "Universality of AdaGrad Stepsizes for Stochastic Optimization: Inexact Oracle, Acceleration and Variance Reduction",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "B3rZZRALhk__r02",
+    "paper_title": "On improved Conditioning Mechanisms and Pre-training Strategies for Diffusion Models",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "JO6T4rEJ32__r01",
+    "paper_title": "Binding in hippocampal-entorhinal circuits enables compositionality in cognitive maps",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "axW8xvQPkF__r01",
+    "paper_title": "Fairness in Social Influence Maximization via Optimal Transport",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "doaJTihgIZ__r02",
+    "paper_title": "Dynamics of Supervised and Reinforcement Learning in the Non-Linear Perceptron",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "doaJTihgIZ__r03",
+    "paper_title": "Dynamics of Supervised and Reinforcement Learning in the Non-Linear Perceptron",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "hB5NkiET32__r04",
+    "paper_title": "Detecting Bugs with Substantial Monetary Consequences by LLM and Rule-based Reasoning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "me1MpmENpw__r02",
+    "paper_title": "Semantics and Spatiality of Emergent Communication",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nw4TWuEPGx__r01",
+    "paper_title": "Discovering plasticity rules that organize and maintain neural circuits",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nw4TWuEPGx__r02",
+    "paper_title": "Discovering plasticity rules that organize and maintain neural circuits",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nw4TWuEPGx__r03",
+    "paper_title": "Discovering plasticity rules that organize and maintain neural circuits",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nw4TWuEPGx__r04",
+    "paper_title": "Discovering plasticity rules that organize and maintain neural circuits",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nw4TWuEPGx__r05",
+    "paper_title": "Discovering plasticity rules that organize and maintain neural circuits",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "doaJTihgIZ__r01",
+    "paper_title": "Dynamics of Supervised and Reinforcement Learning in the Non-Linear Perceptron",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "te6VagJf6G__r01",
+    "paper_title": "Learning to Reason via Program Generation, Emulation, and Search",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "te6VagJf6G__r02",
+    "paper_title": "Learning to Reason via Program Generation, Emulation, and Search",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "te6VagJf6G__r03",
+    "paper_title": "Learning to Reason via Program Generation, Emulation, and Search",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "wDirCeTIoz__r02",
+    "paper_title": "Communication Efficient Distributed Training with Distributed Lion",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "wDirCeTIoz__r04",
+    "paper_title": "Communication Efficient Distributed Training with Distributed Lion",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "wZgw4CrxwK__r01",
+    "paper_title": "Incentivizing Quality Text Generation via Statistical Contracts",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "wZgw4CrxwK__r03",
+    "paper_title": "Incentivizing Quality Text Generation via Statistical Contracts",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "JO6T4rEJ32__r03",
+    "paper_title": "Binding in hippocampal-entorhinal circuits enables compositionality in cognitive maps",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "LxxIiInmuF__r01",
+    "paper_title": "Paths to Equilibrium in Games",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "qOSFiJdVkZ__r01",
+    "paper_title": "Continual learning with the neural tangent ensemble",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "NfOFbPpYII__r02",
+    "paper_title": "Non-asymptotic Convergence of Training Transformers for Next-token Prediction",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "IfZwSRpqHl__r03",
+    "paper_title": "Dynamic Rescaling for Training GNNs",
+    "predicted_label": "unresolved"
+  }
+]

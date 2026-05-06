@@ -1,0 +1,121 @@
+\section{Experiments}
+
+The experiments ask whether systems can update a concrete review issue after revision evidence, not merely whether they can produce plausible criticism.
+We therefore read every result through two lenses: macro-F1 and per-label recovery under skew, and the failure modes in Table~\ref{tab:failure-taxonomy}.
+The first two RQs quantify the accuracy trap; the latter two explain what breaks when models transfer across years.
+
+\subsection{RQ1: Does Structure Help In Domain?}
+
+\input{tables/main_results}
+
+Table~\ref{tab:main-results} shows that structured revision evidence substantially improves macro-F1 on ICLR 2024 clean dev v7.
+The strongest semantic baseline, MPNet with a linear classifier, reaches 0.581 accuracy and 0.389 macro-F1.
+The structured model reaches 0.682 accuracy and 0.704 macro-F1.
+Removing structured hard overrides drops macro-F1 to 0.424, showing that explicit revision-follow-up cues drive much of the minority-label recovery.
+
+\subsection{RQ2: When Does Accuracy Mislead?}
+
+\input{tables/null_baselines}
+
+Table~\ref{tab:null-baselines} shows why accuracy is insufficient.
+On ICLR 2024, the majority-label baseline reaches the same accuracy as the best semantic baseline but has zero F1 for fixed, unresolved, and regressed cases.
+On the ICLR 2025 repro stress set, TF-IDF exactly matches the majority baseline while assigning zero F1 to fixed cases.
+This is the core evaluation failure RevTrack is designed to surface.
+
+\subsection{RQ3: What Fails Qualitatively?}
+
+The failure taxonomy is the bridge from aggregate scores to reviewer-facing risk.
+It identifies five recurring modes.
+\textit{Stale criticism} occurs when a model preserves an old concern after direct revision evidence fixes it.
+\textit{Over-crediting} occurs when a long response acknowledges a limitation without resolving it.
+\textit{Fixed under-recovery} occurs when the model keeps a resolved concern alive because the original critique remains lexically salient.
+\textit{Partial-fix ambiguity} occurs when added evidence narrows but does not eliminate the concern.
+\textit{Regression scarcity} remains a limitation: the current clean-dev pool contains only one regressed example, so regression performance is not yet a stable claim.
+Table~\ref{tab:failure-taxonomy} turns these modes into paper-facing evidence rather than a post-hoc error list.
+On expanded80, the structured transfer model over-credits unresolved concerns as fixed or partially fixed in 66 cases, TF-IDF misses all four fixed examples and all six regressed examples, and the strongest issue-ledger model still makes four partial/full-boundary errors.
+These counts should be read as active-frontier diagnostics, not natural prevalence.
+
+\input{tables/failure_taxonomy}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/figure2_transfer_breakdown.pdf}
+\caption{Transfer-profile summary from three settings. Structured models and issue-ledger rules dominate in-domain and frontier settings on macro-F1, but fixed-label recovery remains weak under transfer and the NeurIPS 2024 frontier is dominated by unresolved cases.}
+\label{fig:transfer-breakdown}
+\end{figure*}
+
+\subsection{RQ4: What Transfers Across Years and Venues?}
+
+\input{tables/expanded80_transfer}
+\input{tables/neurips_limit100_transfer}
+
+\textbf{In-domain to ICLR 2025} is still the strongest signal for proving in-year revision-aware gain, but both expanded80 and NeurIPS limit100 are purposefully hard.
+Cross-venue transfer confirms the same pattern:
+high aggregate scores alone can mask clinically important misses, while unresolved concerns remain the hardest safety-critical case.
+
+The validated ICLR 2025 repro set is a stress test, not a full benchmark.
+It reveals brittleness: the majority baseline and TF-IDF both reach 0.762 accuracy, while TF-IDF has fixed-label F1 of 0.000.
+The expanded ICLR 2025 frontier removes the scale blocker at the active-frontier stage: it contains 322 candidates and 244 model-disagreement rows, and its 80-row validation packet has complete standard labels and evidence spans.
+Table~\ref{tab:expanded80-transfer} shows this frontier remains difficult under transfer.
+Table~\ref{tab:neurips100-transfer} shows the same trend in a different venue ecology and is included as a standard single-user cross-venue active frontier.
+It also shows unresolved labels still dominating and fixed recovery absent in the current split.
+Issue-ledger rules are strongest overall in this bounded frontier setting, while TF-IDF and encoder baselines have weak macro-F1 and poor fixed-case recovery.
+This supports a cross-year brittleness claim, but not a broad prevalence claim, because the frontier is intentionally model-disagreement-heavy.
+The ICLR 2023 random/stratified slice complements these frontiers with 80 standard rows and a fixed/partial/unresolved label mix of 5/49/26.
+It supports bounded external-validity evidence by measured slice design, not a claim about natural venue prevalence.
+Appendix Table~\ref{tab:cross-split-significance} reports stratified-bootstrap confidence intervals for all three standard splits; ranking uncertainty is small for the in-domain gap and substantially larger on transfer frontiers.
+
+\subsection{RQ5: How Do Prompted LLM Baselines Behave Under Transfer?}
+
+\input{tables/prompted_llm_ensemble}
+
+Table~\ref{tab:prompted-llm-ensemble} adds six prompted-LLM baselines, five vote-calibration variants, and a majority-label reference on the same standard-labeled splits.
+In-domain ICLR 2024 is competitive for several prompted variants, but transfer remains brittle.
+On ICLR 2025 expanded80, all prompted and ensemble variants remain below the majority-label macro-F1 baseline (0.226); the strongest calibrated vote reaches 0.094.
+On NeurIPS limit100, the best prompted model reaches 0.181 macro-F1, while the best vote reaches 0.179 and stays near the majority baseline (0.177).
+Model pooling therefore improves stability but does not close the longitudinal transfer gap.
+
+\input{tables/prompted_llm_temperature_ablation}
+
+Table~\ref{tab:prompted-llm-temp} shows targeted decoding/prompt ablations on expanded80.
+Raising temperature (0.0 to 0.3/0.7) lowers macro-F1 from 0.077 to around 0.020, so transfer errors are not resolved by sampling diversity.
+Unresolved-strict prompting is model-dependent: it hurts GPT-4o-mini and GPT-5.5(v2), but improves GPT-4.1-mini and GPT-4.1-nano with different fixed-recall trade-offs.
+Even with those gains, absolute transfer performance remains low and below the majority baseline.
+Full offline calibration-rule search results are reported in Appendix Table~\ref{tab:prompted-llm-postprocess-rules}.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/figure3_prompted_llm_transfer.pdf}
+\caption{Prompted-LLM transfer profile with majority baseline and vote ensembles, including calibrated unresolved/fixed safeguards. Ensemble voting improves ICLR 2024 stability but does not recover cross-year robustness on expanded80.}
+\label{fig:prompted-llm-transfer}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/figure4_prompted_llm_label_recall.pdf}
+\caption{Label-wise recall for majority baseline, prompted LLMs, and vote ensemble. Cross-year failures are dominated by unresolved under-recovery and zero regressed recall under prompted transfer.}
+\label{fig:prompted-llm-recall}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/figure5_expanded80_confusion.pdf}
+\caption{Expanded80 row-normalized confusion matrices for majority baseline, GPT-5.5(v2), and Vote-3(+U+F-cal). Prompted transfer over-credits unresolved concerns as fixed/partial, while calibrated safeguards increase unresolved recovery but introduce additional tradeoffs.}
+\label{fig:prompted-llm-confusion}
+\end{figure*}
+
+Figure~\ref{fig:prompted-llm-recall} explains why pooled prompted systems still fail under transfer.
+In ICLR 2025 expanded80, prompted systems frequently over-credit unresolved cases as fixed or partial, so unresolved recall collapses to near-zero levels while regressed recall remains zero.
+In NeurIPS limit100, the user-confirmed active frontier contains only partially-fixed and unresolved labels, and prompted models again collapse unresolved recall to zero by over-predicting partially-fixed.
+Figure~\ref{fig:prompted-llm-confusion} localizes this failure in confusion space: most unresolved rows are reassigned to fixed/partial columns under prompted transfer.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/figure6_expanded80_error_stack.pdf}
+\caption{Expanded80 stacked error decomposition. Over-crediting unresolved concerns dominates all prompted variants; unresolved-strict prompting reduces this category for GPT-5.5, GPT-4.1-mini, and GPT-4.1-nano, but transfer brittleness remains.}
+\label{fig:prompted-llm-error-stack}
+\end{figure*}
+
+Figure~\ref{fig:prompted-llm-error-stack} quantifies the same pattern at error-type granularity.
+Across models, over-crediting unresolved concerns is the largest error bucket by a wide margin, while regression misses remain persistent.
+These label-level failures explain why aggregate in-domain gains do not translate into robust transfer behavior.

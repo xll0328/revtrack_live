@@ -1,0 +1,8 @@
+{
+  "api_mode": "v2-notes",
+  "diagnostics": [],
+  "limit": 100,
+  "output": "data/raw/openreview/neurips2024_limit100_submissions.jsonl",
+  "submissions": 100,
+  "venue_id": "NeurIPS.cc/2024/Conference"
+}

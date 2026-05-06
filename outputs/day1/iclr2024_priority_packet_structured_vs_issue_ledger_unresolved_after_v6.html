@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structured v6 vs Issue-Ledger v6 Residual</title>
+  <style>
+    :root {
+      --bg: #f6efe2;
+      --panel: rgba(255, 251, 244, 0.88);
+      --panel-strong: #fffaf2;
+      --ink: #1d1a17;
+      --muted: #685c4c;
+      --line: rgba(40, 28, 10, 0.14);
+      --accent: #0b6e4f;
+      --accent-2: #c16200;
+      --fixed: #1f8f59;
+      --partially-fixed: #2d6cdf;
+      --unresolved: #c76a12;
+      --regressed: #b0283a;
+      --missing: #8c8071;
+      --shadow: 0 18px 60px rgba(44, 30, 10, 0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(11, 110, 79, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(193, 98, 0, 0.12), transparent 25%),
+        linear-gradient(180deg, #fbf5ea 0%, #f3ead8 100%);
+    }
+    .page {
+      width: min(1500px, calc(100vw - 32px));
+      margin: 24px auto 48px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(250,241,225,0.82));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(11, 110, 79, 0.16), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "IBM Plex Serif", "Georgia", serif;
+      font-size: clamp(30px, 4.6vw, 54px);
+      line-height: 0.98;
+      max-width: 900px;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 980px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .hero-stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+      align-items: start;
+    }
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 12px 0 8px;
+    }
+    input, select {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel-strong);
+      font: inherit;
+      color: var(--ink);
+    }
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--ink);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .check input {
+      width: auto;
+      margin: 0;
+    }
+    .results-line {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .stat-group + .stat-group {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+    }
+    .stat-title {
+      margin-bottom: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .count-strip, .badge-strip {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .count-chip, .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      line-height: 1;
+      background: rgba(255,255,255,0.68);
+    }
+    .pill-key {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 10px;
+      opacity: 0.72;
+    }
+    .pill-fixed, .count-fixed {
+      border-color: rgba(31, 143, 89, 0.24);
+      color: var(--fixed);
+      background: rgba(31, 143, 89, 0.1);
+    }
+    .pill-partially-fixed, .count-partially-fixed {
+      border-color: rgba(45, 108, 223, 0.24);
+      color: var(--partially-fixed);
+      background: rgba(45, 108, 223, 0.1);
+    }
+    .pill-unresolved, .count-unresolved {
+      border-color: rgba(199, 106, 18, 0.24);
+      color: var(--unresolved);
+      background: rgba(199, 106, 18, 0.1);
+    }
+    .pill-regressed, .count-regressed {
+      border-color: rgba(176, 40, 58, 0.24);
+      color: var(--regressed);
+      background: rgba(176, 40, 58, 0.1);
+    }
+    .pill-missing, .count-missing {
+      border-color: rgba(140, 128, 113, 0.18);
+      color: var(--missing);
+      background: rgba(140, 128, 113, 0.1);
+    }
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+    .issue-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,249,240,0.82));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px 20px 16px;
+      box-shadow: var(--shadow);
+    }
+    .issue-card[data-high-conflict="1"] {
+      box-shadow: 0 18px 60px rgba(193, 98, 0, 0.12);
+      border-color: rgba(193, 98, 0, 0.32);
+    }
+    .card-topline, .meta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .card-topline {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .issue-card h2 {
+      margin: 0;
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.1;
+      font-family: "IBM Plex Serif", "Georgia", serif;
+    }
+    .meta-row {
+      margin: 10px 0 14px;
+    }
+    .prediction-panel, .reason-box {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.58);
+    }
+    .prediction-title {
+      margin-bottom: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .badge-strip-models .pill {
+      background: rgba(248, 244, 238, 0.86);
+    }
+    .reason-box {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .reason-box strong {
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      margin-right: 6px;
+    }
+    .detail-block {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.56);
+      overflow: hidden;
+    }
+    .detail-block summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      font-weight: 600;
+    }
+    .detail-block summary::-webkit-details-marker {
+      display: none;
+    }
+    .detail-block pre {
+      margin: 0;
+      padding: 0 16px 16px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #3e352c;
+    }
+    .hidden {
+      display: none !important;
+    }
+    @media (max-width: 1100px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+      }
+    }
+    @media (max-width: 720px) {
+      .page {
+        width: min(100vw - 18px, 100%);
+        margin: 10px auto 24px;
+      }
+      .hero {
+        padding: 20px;
+        border-radius: 24px;
+      }
+      .hero-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .panel, .issue-card {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">RevTrack Annotation Packet</div>
+      <h1>Structured v6 vs Issue-Ledger v6 Residual</h1>
+      <p>
+        This browser packet is optimized for fast issue adjudication. Keep it open next to
+        <code>iclr2024_priority_sheet_structured_vs_issue_ledger_unresolved_after_v6_prefilled.tsv</code>, filter for high-conflict cases, and use the
+        suggestion and silver signals as references rather than ground truth.
+      </p>
+      <div class="hero-grid">
+        <div class="hero-stat"><strong>1</strong><span>rows in packet</span></div>
+        <div class="hero-stat"><strong>1</strong><span>still unlabeled</span></div>
+        <div class="hero-stat"><strong>0</strong><span>with silver clue</span></div>
+        <div class="hero-stat"><strong>0</strong><span>high-conflict cards</span></div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="panel">
+          <h3>Filters</h3>
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="issue id, paper title, quote, label">
+
+          <label for="suggested">Suggested label</label>
+          <select id="suggested">
+            <option value="">All suggested labels</option>
+            <option value="fixed">fixed</option>
+            <option value="partially_fixed">partially fixed</option>
+            <option value="unresolved">unresolved</option>
+            <option value="regressed">regressed</option>
+          </select>
+
+          <label for="gold">Gold label</label>
+          <select id="gold">
+            <option value="">All gold states</option>
+            <option value="missing">missing</option>
+            <option value="fixed">fixed</option>
+            <option value="partially_fixed">partially fixed</option>
+            <option value="unresolved">unresolved</option>
+            <option value="regressed">regressed</option>
+          </select>
+
+          <label for="conflict">Conflict spread</label>
+          <select id="conflict">
+            <option value="">Any model spread</option>
+            <option value="1">1 label only</option>
+            <option value="2">2 labels</option>
+            <option value="3">3 labels</option>
+            <option value="4">4 labels</option>
+          </select>
+
+          <label class="check"><input id="silverOnly" type="checkbox">Only rows with silver clue</label>
+          <label class="check"><input id="unlabeledOnly" type="checkbox">Only unlabeled rows</label>
+          <label class="check"><input id="highConflictOnly" type="checkbox">Only high-conflict rows</label>
+          <div class="results-line" id="resultsLine"></div>
+        </div>
+
+        <div class="panel">
+          <h3>How To Use</h3>
+          <p>
+            Start with the review concern and top response chunk. Use the broader revision summary only
+            to resolve ambiguity. The fastest paper-worthy cases are usually ones where a naive heuristic
+            says <code>fixed</code> but the stronger encoder says <code>partially_fixed</code>,
+            <code>unresolved</code>, or <code>regressed</code>.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Packet Summary</h3>
+          <div class="stat-group"><div class="stat-title">Suggested Labels</div><div class="count-strip"><span class="count-chip count-fixed"><strong>1</strong> fixed</span></div></div><div class="stat-group"><div class="stat-title">Gold Labels</div><div class="stat-empty">none</div></div><div class="stat-group"><div class="stat-title">Suggestion Sources</div><div class="count-strip"><span class="count-chip count-missing"><strong>1</strong> priority secondary issue ledger v6</span></div></div><div class="stat-group"><div class="stat-title">Conflict Spread</div><div class="count-strip"><span class="count-chip count-missing"><strong>1</strong> 1 labels</span></div></div>
+        </div>
+      </aside>
+
+      <section class="cards" id="cards">
+        <article class="issue-card" data-suggested="fixed" data-gold="" data-silver="0" data-unlabeled="true" data-conflict="2" data-disagreement="1" data-high-conflict="0" data-search="ajbkfwxh3u__r02 causality-inspired spatial-temporal explanations for dynamic graph neural networks fixed priority_secondary_issue_ledger_v6 issue_ledger_v6=fixed; structured_v6=partially_fixed [weaknesses] minors: in figure 1, the text is too small.
+
+[questions] in table 2, the best performance for orphicx is obtained by dtree-grid?
+
+[summary] this paper proposes a novel approach for interpretability in dynamic graph neural networks. the proposed framework is demonstrated on both synthetic and real-world datasets. the experimental results show that the proposed method outperforms the baselines (all baselines are for explaining static graph neural networks). another contribution is that the paper constructs a new synthetic benchmark dataset for dynamic graph interpretability tasks. we appreciate your overall positive assessment of our contributions and are grateful for your suggestion. we have already updated the new revision based on your suggestions. ------ **q1: derivation process and complexity descriptions** **a1:** in equation 1, we merge the estimation of $p(\mathcal{y}|do(\mathcal{c}))$ with that of $p(\mathcal{y}|do(\mathcal{d}))$. the detailed derivation process of backdoor adjustment can be shown as: $$ p(\mathcal{y}|do(\mathcal{d})) = \sum p(\mathcal{y}|do(\mathcal{d}), \mathcal{s})p(\mathcal{s}|do(\mathcal{d})) \\ = \sum p(\mathcal{y}|do(\mathcal{c}))p(\mathcal{s})\\ = \sum p(\mathcal{s})\sum p(\mathcal{y}|do(\mathcal{c}),\mathcal{t})p(\mathcal{t}|do(\mathcal{c})\\ = \sum p(\mathcal{s})\sum p(\mathcal{y}|\mathcal{g})p(\mathcal{t}). $$ vgae-based encoder is the most time consuming component in our method. in the dynamic vgae-based encoder, we generate the causal soft mask matrix $\mathbf{m}^{\mathcal{c}}$ and the dynamic soft mask matric $\mathbf{m}^{\mathcal{d}}$ with $o(d*|v|^2)$ complexity for t unique time steps, where d is the embedding size. the contrastive learning part also costs lots of time and has time complexity o(|v|*d*$t^2$). then... we appreciate your overall positive assessment of our contributions and are grateful for your suggestion. we have already updated the new revision based on your suggestions. ------ **q1: derivation process and complexity descriptions** **a1:** in equation 1, we merge the estimation of $p(\mathcal{y}|do(\mathcal{c}))$ with that of $p(\mathcal{y}|do(\mathcal{d}))$. the detailed derivation process of backdoor adjustment can be shown as: $$ p(\mathcal{y}|do(\mathcal{d})) = \sum p(\mathcal{y}|do(\mathcal{d}), \mathcal{s})p(\mathcal{s}|do(\mathcal{d})) \\ = \sum p(\mathcal{y}|do(\mathcal{c}))p(\mathcal{s})\\ = \sum p(\mathcal{s})\sum p(\mathcal{y}|do(\mathcal{c}),\mathcal{t})p(\mathcal{t}|do(\mathcal{c})\\ = \sum p(\mathcal{s})\sum p(\mathcal{y}|\mathcal{g})p(\mathcal{t}). $$ vgae-based encoder is the most time consuming component in our method. in the dynamic vgae-based encoder, we generate the causal soft mask matrix $\mathbf{m}^{\mathcal{c}}$ and the dynamic soft mask matric $\mathbf{m}^{\mathcal{d}}$ with $o(d*|v|^2)$ complexity for t unique time steps, where d is the embedding size. the contrastive learning part also costs lots of time and has time complexity o(|v|*d*$t^2$). then, the total time complexity is o($|v|^2$*d*t + |v|*d*$t^2$). note that $t &lt;&lt; |v|$, then we can ignore the time of contrastive learning and obtain the total time complexity as o(|v|^2*d*t). we add this in appendix a.4 in the new version. ------ **q2: loss function hyperparameters** **a2:** thank you for your valuable suggestions. in graph interpretation tasks, they usually have many constraints and require different types of loss functions to satisfy these constraints, e.g., orphicx has 4 loss functions for the static graph interpretation. we supplement the parameter search range and optimal parameter selection of the four constraints of the loss function to help improve the reliability and reproducibility of the results. in the final optimization objects, the loss function weight parameters $\lambda_1$, $\lambda_2$, $\lambda_3$, and $\lambda_4$ are set from [0.2, 0.4, 0.6, 0.8, 1]. and the best performance is obtained where $\lambda_1=1$, $\lambda_2=0.4$, $\lambda_3=0.2$, and $\lambda_4=0.2$. we add this in appendix a.2. once again, i extend my gratitude for your invaluable suggestions. it remains our primary objective to deliver trustworthy interpretive results. ------ **q3: shortage of benchmarks and ablation study** **a3:** thank you for your valuable questions. although there have been some works on static graph interpretability, to the best of our knowledge, we are the first to study dynamic graph interpretability. therefore, we have no existing dynamic graph interpretability benchmarks for comparison, and can only compare with currently competitive static interpretability methods. on the other hand, you recommend some benchmarks for graph representation and graph generalization. but it is hard to compare our method with them since the task in our model is totally different from theirs. graph representation and graph generalization models are the target models we want to explain. for interpretable methods, the target model is model-agnostic. the interpretability task is to provide good explanations for these models. we make this more clear in section 3.1. given the novelty of our study on dynamic graph interpretability, there is a dearth of readily available synthetic datasets suitable for this purpose. consequently, we&#x27;ve undertaken dynamic transformations of commonly used synthetic static graph interpretability datasets such as ba-shapes. we also use two real-world dynamic graph datasets, elliptic for node classification and memetracker for graph classification. the ogbn-arxiv dataset is a real-world data set but a static graph dataset. if we dynamically transform it, it will lose its real meaning. we make this more clear in section 3.1. for ablation study, we provide a dygnnexplainer version without vgae (&#x27;w/o. vgae&#x27;). in this version, we replace the encoder with a simple gcn layer. dygnnexplainer outperforms the `w/o. vgae&#x27; version. this is primarily due to the superior capabilities of vgae in harnessing spatial graph information to generate soft masks. we provide this ablation study in section 3.2. ------ **q4: related work** **a4:** thank you for your valuable suggestions. although our interpretability task is totally different from the graph generalization task, their method is the model we want to explain and is helpful in our work. additionally, the spatial-temporal method and the causal method are directly related to our tasks. we add these related works in section 4 and appendix 4.3. ------ thank you again for your constructive reviews. hope that our response can address your concerns. we will feel grateful if you could boost our paper.
+
+we appreciate your overall positive assessment of our contributions and are grateful for your suggestion. we have already updated the new revision based on your suggestions. ------ **q1: problems in introduction section** **w2:** thanks for your valuable questions and suggestions. **spatial interpretability and temporal interpretability:** the investigation of spatial interpretability critically relies on the extraction of subgraphs that can represent the characteristics of the complete graph in spatial dimension and elucidate outcomes in subsequent tasks. in essence, these subgraphs serve as substitutes for the original graphs, enabling the attainment of analogous results in downstream tasks. temporal interpretability relies on the importance of representative sub-graphs over the time slots. in essence, it&#x27;s essential to elucidate the significance of each time step concerning its impact on the outcomes of subsequent tasks. we add this in section 1. **challenges for implementing the scm:** the first challenge lies in the approach to disentangling the complex causal relationships as no explicit information is available for the identification of trivial, dynamic, and static relationships. the dynamic graph encapsulates intricate spatial-temporal relationships and dependencies, posing a challenge in directly conducting interventions on the confounder. this makes decoupling the trivial, dynamic, and static relationships very difficult. the second challenge is the way to construct the scm to fit the task of discovering spatial-temporal interpretability due to the lack of existing models for dynamic graphs. as pioneers in the realm of dynamic graph interpretability, we encounter the challenge of lacking a causal model that can offer interpretive insights into intricate spatial-temporal relationships. **how the proposed approach addresses the challenges:** we propose two constraints to disentangle the trivial relationship, the static relationship, and the dynamic relationship, respectively. first, to disentangle the trivial relationship and the causal relationship, we propose that the causal relationship determines the downstream task results. thus, we propose a contrastive learning module to ensure the semantic similarity between the causal relationship and the original graph while enlarging the semantic distance between the causal relationship and the trivial relationship. second, to disentangle the static relationship and the dynamic relationship, we propose that dynamic relationships evolve over time steps but static relationships are independent across each time step. consequently, we leverage the pre-trained target dygnn model to guarantee the essential temporal correlation between neighboring subgraphs for the dynamic relationships and identify the rest independent causal information to the static relationships. thank you again for your questions. it is also our goal to clean up our motivations and solutions. we aspire that through our explanations, you gain a more clear understanding of our work. ------ **q2: static datasets** **w2:** since our method is the first study on dynamic graph interpretability, there are no directly available datasets suitable for the task of dynamic graph interpretability. so we dynamically transformed some commonly used static graph interpretability datasets. we add this in section 3.1 in the revision. ------ **q3: baselines** **w3:** since our method is the first study on dynamic graph interpretability, we can only utilize the baselines from static graph interpretability tasks. to achieve a relatively fair comparison, we add the time factor into baselines so as to make them suitable for dynamic graph interpretability. dynamic graphs are much more complex than static graphs due to their spatial-temporal correlations. it is meaningless if we compare our method with baselines on static graphs. ------ **q4: typo in table 2** **w4:** we are sorry that one of the data in table 2 was filled in incorrectly. the best performance in dtree-grid is obtained by dygnnexplainer. we have corrected the typo in table 2 in the revision. ------
+
+we appreciate your overall positive assessment of our contributions and are grateful for your suggestion. we have already updated the new revision based on your suggestions. ------ **q1: generative model** **w1:** thanks for your question. our dynamic graph interpretability task lies in providing spatial-temporal explanations (dynamic subgraph set) for dynamic graph structures. consequently, our ultimate objective is to define a generative model, not a representational model. we make this more clear in section 2.1. ------ **q2: logical derivation of equation 1** **w2:** in equation 1, we merge the estimation of $p(\mathcal{y}|do(\mathcal{c}))$ with that of $p(\mathcal{y}|do(\mathcal{d}))$. the detailed derivation process of backdoor adjustment can be shown as: \begin{equation} \begin{aligned} p(\mathcal{y}|do(\mathcal{d})) &amp;= \sum p(\mathcal{y}|do(\mathcal{d}), \mathcal{s})p(\mathcal{s}|do(\mathcal{d})) \\ &amp;= \sum p(\mathcal{y}|do(\mathcal{c}))p(\mathcal{s})\\ &amp;= \sum p(\mathcal{s})\sum p(\mathcal{y}|do(\mathcal{c}),\mathcal{t})p(\mathcal{t}|do(\mathcal{c})\\ &amp;= \sum p(\mathcal{s})\sum p(\mathcal{y}|\mathcal{g})p(\mathcal{t}). \end{aligned}. \end{equation} we add this in appendix a.4 in the revision. ------ **q3: interpretability issue of dygnns** **w3:** sorry for our unclear expression, all our experiments are conducted on dynamic datasets. in essence, our case study is conducted on dba-shapes to provide a more vivid demonstration of dygnnexplainer&#x27;s interpretability. we visually represent both the original graph and the top six weighted edges of the generated causal subgraph across all time steps using dygnnexplainer. regarding temporal interpretability, the scrutiny of variable $t_p$ reveals that dygnnexplainer adeptly pinpoints the most critical time steps that significantly influence the target node label within the original graph. in terms of spatial interpretability, dygnnexplainer proficiently discerns the presence of the &#x27;house&#x27; motif within the original graph&#x27;s concluding time step, offering a compelling explanation for the target node label. ------ **q4: static datasets** **w4:** since our method is the first study on dynamic graph interpretability, there are no directly available datasets suitable for the task of dynamic graph interpretability. so we dynamically transformed some commonly used static graph interpretability datasets. we add this in section 3.1 in the revision. ------ **q5: missing important literature** **w5:** you recommend some benchmarks for graph representation and graph generalization. but it is hard to compare our method with them since the task in our model is totally different from theirs. graph representation and graph generalization models are the target models we want to explain. for interpretable methods, the target model is model-agnostic. the interpretability task is to provide good explanations for these models. we make this more clear in section 3.1. additionally, our methods of decoupling dynamic and static relationships are also different from cast. to disentangle the static relationship and the dynamic relationship, we propose the constraint that dynamic relationships evolve over time steps but static relationships are independent across each time step. consequently, we leverage the pre-trained target dygnn model to guarantee the essential temporal correlation between neighboring subgraphs for the dynamic relationships and identify the rest independent causal information to the static relationships. ------ **q6: implementation of equation 7** **w6:** we utilize contrastive learning to ensure the semantic similarity between the causal embedding $\mathbf{e}^{\mathcal{c}}_t$ and the original embedding $\mathbf{e}_t$ while enlarging the semantic distance between the causal embedding $\mathbf{e}^{\mathcal{c}}_t$ and the trivial embedding $\mathbf{e}^{\mathcal{t}}_t$. $s(\cdot,\cdot)$ measures the similarity, we utilize the dot product here. we add the implementation in section 2.5 in the revision. ------ **q7: implementation of equation 14** **w7:** $\left\|\mathbf{a}^{\mathcal{c}}_t\right\|_1$ and $\left\|\mathbf{a}^{\mathcal{d}}_t\right\|_1$ are $l_1$ norm of the causal graph set and the dynamic causal graph set, respectively. we sum up all elements here. the $\left\|\mathbf{a}^{\mathcal{s}}_t\right\|_1$ in equation 14 should be replaced by $\left\|\mathbf{a}^{\mathcal{d}}_t\right\|_1$ , we have corrected it in revision. ------ **q8: typo in table 2 and equation 15** **w8:** we are sorry that one of the data in table 2 was filled in incorrectly. the best performance in dtree-grid is obtained by dygnnexplainer. we have corrected the typo in table 2 in the revision. and we have corrected $\theta$ with $\psi$ in the last line of section 2. ------ thank you again for your constructive reviews. hope that our response can address your concerns. we feel grateful for your appreciation. we appreciate your overall positive assessment of our contributions and are grateful for your suggestion. we have already updated the new revision based on your suggestions. ------ **q1: generative model** **w1:** thanks for your question. our dynamic graph interpretability task lies in providing spatial-temporal explanations (dynamic subgraph set) for dynamic graph structures. consequently, our ultimate objective is to define a generative model, not a representational model. we make this more clear in section 2.1. ------ **q2: logical derivation of equation 1** **w2:** in equation 1, we merge the estimation of $p(\mathcal{y}|do(\mathcal{c}))$ with that of $p(\mathcal{y}|do(\mathcal{d}))$. the detailed derivation process of backdoor adjustment can be shown as: \begin{equation} \begin{aligned} p(\mathcal{y}|do(\mathcal{d})) &amp;= \sum p(\mathcal{y}|do(\mathcal{d}), \mathcal{s})p(\mathcal{s}|do(\mathcal{d})) \\ &amp;= \sum p(\mathcal{y}|do(\mathcal{c}))p(\mathcal{s})\\ &amp;= \sum p(\mathcal{s})\sum p(\mathcal{y}|do(\mathcal{c}),\mathcal{t})p(\mathcal{t}|do(\mathcal{c})\\ &amp;= \sum p(\mathcal{s})\sum p(\mathcal{y}|\mathcal{g})p(\mathcal{t}). \end{aligned}. \end{equation} we add this in appendix a.4 in the revision. ------ **q3: interpretability issue of dygnns** **w3:** sorry for our unclear expression, all our experiments are conducted on dynamic datasets. in essence, our case study is conducted on dba-shapes to provide a more vivid demonstration of dygnnexplainer&#x27;s interpretability. we visually represent both the original graph and the top six weighted edges of the generated causal subgraph across all time steps using dygnnexplainer. regarding temporal interpretability, the scrutiny of variable $t_p$ reveals that dygnnexplainer adeptly pinpoints the most critical time steps that significantly influence the target node label within the original graph. in terms of spatial interpretability, dygnnexplainer proficiently discerns the presence of the &#x27;house&#x27; motif within the original graph&#x27;s concluding time step, offering a compelling explanation for the target node label. ------ **q4: static datasets** **w4:** since our method is the first study on dynamic graph interpretability, there are no directly available datasets suitable for the task of dynamic graph interpretability. so we dynamically transformed some commonly used static graph interpretability datasets. we add this in section 3.1 in the revision. ------ **q5: missing important literature** **w5:** you recommend some benchmarks for graph representation and graph generalization. but it is hard to compare our method with them since the task in our model is totally different from theirs. graph representation and graph generalization models are the target models we want to explain. for interpretable methods, the target model is model-agnostic. the interpretability task is to provide good explanations for these models. we make this more clear in section 3.1. additionally, our methods of decoupling dynamic and static relationships are also different from cast. to disentangle the static relationship and the dynamic relationship, we propose the constraint that dynamic relationships evolve over time steps but static relationships are independent across each time step. consequently, we leverage the pre-trained target dygnn model to guarantee the essential temporal correlation between neighboring subgraphs for the dynamic relationships and identify the rest independent causal information to the static relationships. ------ **q6: implementation of equation 7** **w6:** we utilize contrastive learning to ensure the semantic similarity between the causal embedding $\mathbf{e}^{\mathcal{c}}_t$ and the original embedding $\mathbf{e}_t$ while enlarging the semantic distance between the causal embedding $\mathbf{e}^{\mathcal{c}}_t$ and the trivial embedding $\mathbf{e}^{\mathcal{t}}_t$. $s(\cdot,\cdot)$ measures the similarity, we utilize the dot product here. we add the implementation in section 2.5 in the revision. ------ **q7: implementation of equation 14** **w7:** $\left\|\mathbf{a}^{\mathcal{c}}_t\right\|_1$ and $\left\|\mathbf{a}^{\mathcal{d}}_t\right\|_1$ are $l_1$ norm of the causal graph set and the dynamic causal graph set, respectively. we sum up all elements here. the $\left\|\mathbf{a}^{\mathcal{s}}_t\right\|_1$ in equation 14 should be replaced by $\left\|\mathbf{a}^{\mathcal{d}}_t\right\|_1$ , we have corrected it in revision. ------ **q8: typo in table 2 and equation 15** **w8:** we are sorry that one of the data in table 2 was filled in incorrectly. the best performance in dtree-grid is obtained by dygnnexplainer. we have corrected the typo in table 2 in the revision. and we have corrected $\theta$ with $\psi$ in the last line of section 2. ------ thank you again for your constructive reviews. hope that our response can address your concerns. we feel grateful for your appreciation.
+
+we thank all reviewers for their insightful comments and suggestions. we are particularly encouraged by the reviewers’ feedback. we have made a heavy revision to our paper according to the reviewer&#x27;s constructive suggestions. below we summarize some key modifications in this revision: - derivation process of backdoor adjustment in equation 1in appendix a.4 (reviewer #1, reviewer #4) - complexity descriptions of dynamic vgae in appendix a.4 (reviewer #1) - loss function hyperparameters in appendix a.2 (reviewer #1, reviewer #3) - dataset and baseline selection in section 3.1 (reviewer #1, reviewer #3, reviewer #4) - more related works in section 4 and appendix 4.3 (reviewer #1) - clearer explanation and presentation - ablation study in section 3.2 (reviewer #1) - text in figure 1 (reviewer #2) - motivations and solutions in section 1 (reviewer #3, reviewer #4) - graph interpretability task in section 2.1 (reviewer #4) - implementation of equation 7 (reviewer #4) moreover, we have carefully checked our paper typos and reorganized the presentation. if there still remains any consideration, please kindly let us know. we are very happy to make a further revision in light of your great suggestions. we will address comments by each of the reviewers individually.
+
+**q5: hyperparameters and computational complexity in equation 15** **w5:** thanks for your suggestions. we supplement the parameter search range and optimal parameter selection of the four constraints of the loss function to help improve the reliability and reproducibility of the results. in the final optimization objects, the loss function weight parameters $\lambda_1$, $\lambda_2$, $\lambda_3$, and $\lambda_4$ are set from [0.2, 0.4, 0.6, 0.8, 1]. and the best performance is obtained where $\lambda_1=1$, $\lambda_2=0.4$, $\lambda_3=0.2$, and $\lambda_4=0.2$. we add this in appendix a.2. vgae-based encoder is the most time consuming component in our method. in the dynamic vgae-based encoder, we generate the causal soft mask matrix $\mathbf{m}^{\mathcal{c}}$ and the dynamic soft mask matric $\mathbf{m}^{\mathcal{d}}$ with $o(d*|v|^2)$ complexity for t unique time steps, where d is the embedding size. the contrastive learning part also costs lots of time and has time complexity o($|v|$*$d$*$t^2$). then, the total time complexity is o($|v|^2$*$d$*$t$ + $|v|$*$d$*$t^2$). note that $t &lt;&lt; |v|$, then we can ignore the time of contrastive learning and obtain the total time complexity as o($|v|^2$*$d$*$t$). ------ **q6: codebase link** **w6:** so sorry we attached the wrong code link. the wrong code link is unrelated to this paper and does not include any information about authors. we have updated the correct anonymous code link in the new version. ------ thank you again for your constructive reviews. hope that our response can address your concerns. we will feel grateful if you could boost our paper. issue_ledger_v6=fixed; structured_v6=partially_fixed"><div class="card-topline"><span>AJBkfwXh3u__r02</span><span>priority 5.999</span><span>2-label spread</span><span>1 disagreement step</span></div><h2>Causality-Inspired Spatial-Temporal Explanations for Dynamic Graph Neural Networks</h2><div class="meta-row"><span>8: accept, good paper</span><span>2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.</span></div><div class="badge-strip"><span class="pill pill-fixed"><span class="pill-key">suggested</span><span>fixed</span></span><span class="pill pill-missing"><span class="pill-key">silver</span><span>missing</span></span><span class="pill pill-missing"><span class="pill-key">gold</span><span>missing</span></span></div><div class="prediction-panel"><div class="prediction-title">Model snapshot</div><div class="badge-strip badge-strip-models"><span class="pill pill-partially-fixed"><span class="pill-key">heuristic</span><span>partially fixed</span></span><span class="pill pill-partially-fixed"><span class="pill-key">tfidf</span><span>partially fixed</span></span><span class="pill pill-partially-fixed"><span class="pill-key">modernbert</span><span>partially fixed</span></span><span class="pill pill-fixed"><span class="pill-key">mpnet</span><span>fixed</span></span><span class="pill pill-fixed"><span class="pill-key">issue-ledger</span><span>fixed</span></span><span class="pill pill-partially-fixed"><span class="pill-key">structured</span><span>partially fixed</span></span></div></div><div class="reason-box"><div><strong>suggestion source</strong> priority_secondary_issue_ledger_v6</div><div><strong>hint</strong> issue_ledger_v6=fixed; structured_v6=partially_fixed</div></div><details class="detail-block" open><summary>Review Concern</summary><pre>[weaknesses] Minors: In Figure 1, the text is too small.
+
+[questions] In table 2, the best performance for OrphicX is obtained by DTree-Grid?
+
+[summary] This paper proposes a novel approach for interpretability in dynamic graph neural networks. The proposed framework is demonstrated on both synthetic and real-world datasets. The experimental results show that the proposed method outperforms the baselines (all baselines are for explaining static graph neural networks). Another contribution is that the paper constructs a new synthetic benchmark dataset for dynamic graph interpretability tasks.</pre></details><details class="detail-block" open><summary>Top Response Chunk</summary><pre>We appreciate your overall positive assessment of our contributions and are grateful for your suggestion. We have already updated the new revision based on your suggestions. ------ **Q1: Derivation process and complexity descriptions** **A1:** In Equation 1, we merge the estimation of $P(\mathcal{Y}|do(\mathcal{C}))$ with that of $P(\mathcal{Y}|do(\mathcal{D}))$. The detailed derivation process of backdoor adjustment can be shown as: $$ P(\mathcal{Y}|do(\mathcal{D})) = \sum P(\mathcal{Y}|do(\mathcal{D}), \mathcal{S})P(\mathcal{S}|do(\mathcal{D})) \\ = \sum P(\mathcal{Y}|do(\mathcal{C}))P(\mathcal{S})\\ = \sum P(\mathcal{S})\sum P(\mathcal{Y}|do(\mathcal{C}),\mathcal{T})P(\mathcal{T}|do(\mathcal{C})\\ = \sum P(\mathcal{S})\sum P(\mathcal{Y}|\mathcal{G})P(\mathcal{T}). $$ VGAE-based encoder is the most time consuming component in our method. In the dynamic VGAE-based encoder, we generate the causal soft mask matrix $\mathbf{M}^{\mathcal{C}}$ and the dynamic soft mask matric $\mathbf{M}^{\mathcal{D}}$ with $O(d*|V|^2)$ complexity for T unique time steps, where d is the embedding size. The contrastive learning part also costs lots of time and has time complexity O(|V|*d*$T^2$). Then...</pre></details><details class="detail-block"><summary>Aligned Response Context</summary><pre>We appreciate your overall positive assessment of our contributions and are grateful for your suggestion. We have already updated the new revision based on your suggestions. ------ **Q1: Derivation process and complexity descriptions** **A1:** In Equation 1, we merge the estimation of $P(\mathcal{Y}|do(\mathcal{C}))$ with that of $P(\mathcal{Y}|do(\mathcal{D}))$. The detailed derivation process of backdoor adjustment can be shown as: $$ P(\mathcal{Y}|do(\mathcal{D})) = \sum P(\mathcal{Y}|do(\mathcal{D}), \mathcal{S})P(\mathcal{S}|do(\mathcal{D})) \\ = \sum P(\mathcal{Y}|do(\mathcal{C}))P(\mathcal{S})\\ = \sum P(\mathcal{S})\sum P(\mathcal{Y}|do(\mathcal{C}),\mathcal{T})P(\mathcal{T}|do(\mathcal{C})\\ = \sum P(\mathcal{S})\sum P(\mathcal{Y}|\mathcal{G})P(\mathcal{T}). $$ VGAE-based encoder is the most time consuming component in our method. In the dynamic VGAE-based encoder, we generate the causal soft mask matrix $\mathbf{M}^{\mathcal{C}}$ and the dynamic soft mask matric $\mathbf{M}^{\mathcal{D}}$ with $O(d*|V|^2)$ complexity for T unique time steps, where d is the embedding size. The contrastive learning part also costs lots of time and has time complexity O(|V|*d*$T^2$). Then, the total time complexity is O($|V|^2$*d*T + |V|*d*$T^2$). Note that $T &lt;&lt; |V|$, then we can ignore the time of contrastive learning and obtain the total time complexity as O(|V|^2*d*T). We add this in Appendix A.4 in the new version. ------ **Q2: Loss function hyperparameters** **A2:** Thank you for your valuable suggestions. In graph interpretation tasks, they usually have many constraints and require different types of loss functions to satisfy these constraints, e.g., OrphicX has 4 loss functions for the static graph interpretation. We supplement the parameter search range and optimal parameter selection of the four constraints of the loss function to help improve the reliability and reproducibility of the results. In the final optimization objects, the loss function weight parameters $\lambda_1$, $\lambda_2$, $\lambda_3$, and $\lambda_4$ are set from [0.2, 0.4, 0.6, 0.8, 1]. And the best performance is obtained where $\lambda_1=1$, $\lambda_2=0.4$, $\lambda_3=0.2$, and $\lambda_4=0.2$. We add this in Appendix A.2. Once again, I extend my gratitude for your invaluable suggestions. It remains our primary objective to deliver trustworthy interpretive results. ------ **Q3: Shortage of benchmarks and ablation study** **A3:** Thank you for your valuable questions. Although there have been some works on static graph interpretability, to the best of our knowledge, we are the first to study dynamic graph interpretability. Therefore, we have no existing dynamic graph interpretability benchmarks for comparison, and can only compare with currently competitive static interpretability methods. On the other hand, you recommend some benchmarks for graph representation and graph generalization. But it is hard to compare our method with them since the task in our model is totally different from theirs. Graph representation and graph generalization models are the target models we want to explain. For interpretable methods, the target model is model-agnostic. The interpretability task is to provide good explanations for these models. We make this more clear in Section 3.1. Given the novelty of our study on dynamic graph interpretability, there is a dearth of readily available synthetic datasets suitable for this purpose. Consequently, we&#x27;ve undertaken dynamic transformations of commonly used synthetic static graph interpretability datasets such as BA-Shapes. We also use two real-world dynamic graph datasets, Elliptic for node classification and MemeTracker for graph classification. The Ogbn-Arxiv dataset is a real-world data set but a static graph dataset. If we dynamically transform it, it will lose its real meaning. We make this more clear in Section 3.1. For ablation study, we provide a DyGNNExplainer version without VGAE (&#x27;w/o. VGAE&#x27;). In this version, we replace the encoder with a simple GCN layer. DyGNNExplainer outperforms the `w/o. VGAE&#x27; version. This is primarily due to the superior capabilities of VGAE in harnessing spatial graph information to generate soft masks. We provide this ablation study in Section 3.2. ------ **Q4: Related work** **A4:** Thank you for your valuable suggestions. Although our interpretability task is totally different from the graph generalization task, their method is the model we want to explain and is helpful in our work. Additionally, the spatial-temporal method and the causal method are directly related to our tasks. We add these related works in Section 4 and Appendix 4.3. ------ Thank you again for your constructive reviews. Hope that our response can address your concerns. We will feel grateful if you could boost our paper.
+
+We appreciate your overall positive assessment of our contributions and are grateful for your suggestion. We have already updated the new revision based on your suggestions. ------ **Q1: Problems in introduction section** **W2:** Thanks for your valuable questions and suggestions. **Spatial interpretability and temporal interpretability:** The investigation of spatial interpretability critically relies on the extraction of subgraphs that can represent the characteristics of the complete graph in spatial dimension and elucidate outcomes in subsequent tasks. In essence, these subgraphs serve as substitutes for the original graphs, enabling the attainment of analogous results in downstream tasks. Temporal interpretability relies on the importance of representative sub-graphs over the time slots. In essence, it&#x27;s essential to elucidate the significance of each time step concerning its impact on the outcomes of subsequent tasks. We add this in Section 1. **Challenges for implementing the SCM:** The first challenge lies in the approach to disentangling the complex causal relationships as no explicit information is available for the identification of trivial, dynamic, and static relationships. The dynamic graph encapsulates intricate spatial-temporal relationships and dependencies, posing a challenge in directly conducting interventions on the confounder. This makes decoupling the trivial, dynamic, and static relationships very difficult. The second challenge is the way to construct the SCM to fit the task of discovering spatial-temporal interpretability due to the lack of existing models for dynamic graphs. As pioneers in the realm of dynamic graph interpretability, we encounter the challenge of lacking a causal model that can offer interpretive insights into intricate spatial-temporal relationships. **How the proposed approach addresses the challenges:** We propose two constraints to disentangle the trivial relationship, the static relationship, and the dynamic relationship, respectively. First, to disentangle the trivial relationship and the causal relationship, we propose that the causal relationship determines the downstream task results. Thus, we propose a contrastive learning module to ensure the semantic similarity between the causal relationship and the original graph while enlarging the semantic distance between the causal relationship and the trivial relationship. Second, to disentangle the static relationship and the dynamic relationship, we propose that dynamic relationships evolve over time steps but static relationships are independent across each time step. Consequently, we leverage the pre-trained target DyGNN model to guarantee the essential temporal correlation between neighboring subgraphs for the dynamic relationships and identify the rest independent causal information to the static relationships. Thank you again for your questions. It is also our goal to clean up our motivations and solutions. We aspire that through our explanations, you gain a more clear understanding of our work. ------ **Q2: Static datasets** **W2:** Since our method is the first study on dynamic graph interpretability, there are no directly available datasets suitable for the task of dynamic graph interpretability. So we dynamically transformed some commonly used static graph interpretability datasets. We add this in Section 3.1 in the revision. ------ **Q3: Baselines** **W3:** Since our method is the first study on dynamic graph interpretability, we can only utilize the baselines from static graph interpretability tasks. To achieve a relatively fair comparison, we add the time factor into baselines so as to make them suitable for dynamic graph interpretability. Dynamic graphs are much more complex than static graphs due to their spatial-temporal correlations. It is meaningless if we compare our method with baselines on static graphs. ------ **Q4: Typo in Table 2** **W4:** We are sorry that one of the data in Table 2 was filled in incorrectly. The best performance in DTree-Grid is obtained by DyGNNExplainer. We have corrected the typo in Table 2 in the revision. ------
+
+We appreciate your overall positive assessment of our contributions and are grateful for your suggestion. We have already updated the new revision based on your suggestions. ------ **Q1: Generative model** **W1:** Thanks for your question. Our dynamic graph interpretability task lies in providing spatial-temporal explanations (dynamic subgraph set) for dynamic graph structures. Consequently, our ultimate objective is to define a generative model, not a representational model. We make this more clear in Section 2.1. ------ **Q2: Logical derivation of Equation 1** **W2:** In Equation 1, we merge the estimation of $P(\mathcal{Y}|do(\mathcal{C}))$ with that of $P(\mathcal{Y}|do(\mathcal{D}))$. The detailed derivation process of backdoor adjustment can be shown as: \begin{equation} \begin{aligned} P(\mathcal{Y}|do(\mathcal{D})) &amp;= \sum P(\mathcal{Y}|do(\mathcal{D}), \mathcal{S})P(\mathcal{S}|do(\mathcal{D})) \\ &amp;= \sum P(\mathcal{Y}|do(\mathcal{C}))P(\mathcal{S})\\ &amp;= \sum P(\mathcal{S})\sum P(\mathcal{Y}|do(\mathcal{C}),\mathcal{T})P(\mathcal{T}|do(\mathcal{C})\\ &amp;= \sum P(\mathcal{S})\sum P(\mathcal{Y}|\mathcal{G})P(\mathcal{T}). \end{aligned}. \end{equation} We add this in Appendix A.4 in the revision. ------ **Q3: Interpretability issue of DyGNNs** **W3:** Sorry for our unclear expression, all our experiments are conducted on dynamic datasets. In essence, our case study is conducted on DBA-Shapes to provide a more vivid demonstration of DyGNNExplainer&#x27;s interpretability. We visually represent both the original graph and the top six weighted edges of the generated causal subgraph across all time steps using DyGNNExplainer. Regarding temporal interpretability, the scrutiny of variable $t_p$ reveals that DyGNNExplainer adeptly pinpoints the most critical time steps that significantly influence the target node label within the original graph. In terms of spatial interpretability, DyGNNExplainer proficiently discerns the presence of the &#x27;house&#x27; motif within the original graph&#x27;s concluding time step, offering a compelling explanation for the target node label. ------ **Q4: Static datasets** **W4:** Since our method is the first study on dynamic graph interpretability, there are no directly available datasets suitable for the task of dynamic graph interpretability. So we dynamically transformed some commonly used static graph interpretability datasets. We add this in Section 3.1 in the revision. ------ **Q5: Missing important literature** **W5:** You recommend some benchmarks for graph representation and graph generalization. But it is hard to compare our method with them since the task in our model is totally different from theirs. Graph representation and graph generalization models are the target models we want to explain. For interpretable methods, the target model is model-agnostic. The interpretability task is to provide good explanations for these models. We make this more clear in Section 3.1. Additionally, our methods of decoupling dynamic and static relationships are also different from CaST. To disentangle the static relationship and the dynamic relationship, we propose the constraint that dynamic relationships evolve over time steps but static relationships are independent across each time step. Consequently, we leverage the pre-trained target DyGNN model to guarantee the essential temporal correlation between neighboring subgraphs for the dynamic relationships and identify the rest independent causal information to the static relationships. ------ **Q6: Implementation of Equation 7** **W6:** We utilize contrastive learning to ensure the semantic similarity between the causal embedding $\mathbf{e}^{\mathcal{C}}_t$ and the original embedding $\mathbf{e}_t$ while enlarging the semantic distance between the causal embedding $\mathbf{e}^{\mathcal{C}}_t$ and the trivial embedding $\mathbf{e}^{\mathcal{T}}_t$. $s(\cdot,\cdot)$ measures the similarity, we utilize the dot product here. We add the implementation in Section 2.5 in the revision. ------ **Q7: Implementation of Equation 14** **W7:** $\left\|\mathbf{A}^{\mathcal{C}}_t\right\|_1$ and $\left\|\mathbf{A}^{\mathcal{D}}_t\right\|_1$ are $l_1$ norm of the causal graph set and the dynamic causal graph set, respectively. We sum up all elements here. The $\left\|\mathbf{A}^{\mathcal{S}}_t\right\|_1$ in Equation 14 should be replaced by $\left\|\mathbf{A}^{\mathcal{D}}_t\right\|_1$ , we have corrected it in revision. ------ **Q8: Typo in Table 2 and Equation 15** **W8:** We are sorry that one of the data in Table 2 was filled in incorrectly. The best performance in DTree-Grid is obtained by DyGNNExplainer. We have corrected the typo in Table 2 in the revision. And we have corrected $\Theta$ with $\Psi$ in the last line of Section 2. ------ Thank you again for your constructive reviews. Hope that our response can address your concerns. We feel grateful for your appreciation.</pre></details><details class="detail-block"><summary>Revision Summary</summary><pre>We appreciate your overall positive assessment of our contributions and are grateful for your suggestion. We have already updated the new revision based on your suggestions. ------ **Q1: Generative model** **W1:** Thanks for your question. Our dynamic graph interpretability task lies in providing spatial-temporal explanations (dynamic subgraph set) for dynamic graph structures. Consequently, our ultimate objective is to define a generative model, not a representational model. We make this more clear in Section 2.1. ------ **Q2: Logical derivation of Equation 1** **W2:** In Equation 1, we merge the estimation of $P(\mathcal{Y}|do(\mathcal{C}))$ with that of $P(\mathcal{Y}|do(\mathcal{D}))$. The detailed derivation process of backdoor adjustment can be shown as: \begin{equation} \begin{aligned} P(\mathcal{Y}|do(\mathcal{D})) &amp;= \sum P(\mathcal{Y}|do(\mathcal{D}), \mathcal{S})P(\mathcal{S}|do(\mathcal{D})) \\ &amp;= \sum P(\mathcal{Y}|do(\mathcal{C}))P(\mathcal{S})\\ &amp;= \sum P(\mathcal{S})\sum P(\mathcal{Y}|do(\mathcal{C}),\mathcal{T})P(\mathcal{T}|do(\mathcal{C})\\ &amp;= \sum P(\mathcal{S})\sum P(\mathcal{Y}|\mathcal{G})P(\mathcal{T}). \end{aligned}. \end{equation} We add this in Appendix A.4 in the revision. ------ **Q3: Interpretability issue of DyGNNs** **W3:** Sorry for our unclear expression, all our experiments are conducted on dynamic datasets. In essence, our case study is conducted on DBA-Shapes to provide a more vivid demonstration of DyGNNExplainer&#x27;s interpretability. We visually represent both the original graph and the top six weighted edges of the generated causal subgraph across all time steps using DyGNNExplainer. Regarding temporal interpretability, the scrutiny of variable $t_p$ reveals that DyGNNExplainer adeptly pinpoints the most critical time steps that significantly influence the target node label within the original graph. In terms of spatial interpretability, DyGNNExplainer proficiently discerns the presence of the &#x27;house&#x27; motif within the original graph&#x27;s concluding time step, offering a compelling explanation for the target node label. ------ **Q4: Static datasets** **W4:** Since our method is the first study on dynamic graph interpretability, there are no directly available datasets suitable for the task of dynamic graph interpretability. So we dynamically transformed some commonly used static graph interpretability datasets. We add this in Section 3.1 in the revision. ------ **Q5: Missing important literature** **W5:** You recommend some benchmarks for graph representation and graph generalization. But it is hard to compare our method with them since the task in our model is totally different from theirs. Graph representation and graph generalization models are the target models we want to explain. For interpretable methods, the target model is model-agnostic. The interpretability task is to provide good explanations for these models. We make this more clear in Section 3.1. Additionally, our methods of decoupling dynamic and static relationships are also different from CaST. To disentangle the static relationship and the dynamic relationship, we propose the constraint that dynamic relationships evolve over time steps but static relationships are independent across each time step. Consequently, we leverage the pre-trained target DyGNN model to guarantee the essential temporal correlation between neighboring subgraphs for the dynamic relationships and identify the rest independent causal information to the static relationships. ------ **Q6: Implementation of Equation 7** **W6:** We utilize contrastive learning to ensure the semantic similarity between the causal embedding $\mathbf{e}^{\mathcal{C}}_t$ and the original embedding $\mathbf{e}_t$ while enlarging the semantic distance between the causal embedding $\mathbf{e}^{\mathcal{C}}_t$ and the trivial embedding $\mathbf{e}^{\mathcal{T}}_t$. $s(\cdot,\cdot)$ measures the similarity, we utilize the dot product here. We add the implementation in Section 2.5 in the revision. ------ **Q7: Implementation of Equation 14** **W7:** $\left\|\mathbf{A}^{\mathcal{C}}_t\right\|_1$ and $\left\|\mathbf{A}^{\mathcal{D}}_t\right\|_1$ are $l_1$ norm of the causal graph set and the dynamic causal graph set, respectively. We sum up all elements here. The $\left\|\mathbf{A}^{\mathcal{S}}_t\right\|_1$ in Equation 14 should be replaced by $\left\|\mathbf{A}^{\mathcal{D}}_t\right\|_1$ , we have corrected it in revision. ------ **Q8: Typo in Table 2 and Equation 15** **W8:** We are sorry that one of the data in Table 2 was filled in incorrectly. The best performance in DTree-Grid is obtained by DyGNNExplainer. We have corrected the typo in Table 2 in the revision. And we have corrected $\Theta$ with $\Psi$ in the last line of Section 2. ------ Thank you again for your constructive reviews. Hope that our response can address your concerns. We feel grateful for your appreciation.
+
+We thank all reviewers for their insightful comments and suggestions. We are particularly encouraged by the reviewers’ feedback. We have made a heavy revision to our paper according to the reviewer&#x27;s constructive suggestions. Below we summarize some key modifications in this revision: - Derivation process of backdoor adjustment in Equation 1in Appendix A.4 (Reviewer #1, Reviewer #4) - Complexity descriptions of dynamic VGAE in Appendix A.4 (Reviewer #1) - Loss function hyperparameters in Appendix A.2 (Reviewer #1, Reviewer #3) - Dataset and baseline selection in Section 3.1 (Reviewer #1, Reviewer #3, Reviewer #4) - More related works in Section 4 and Appendix 4.3 (Reviewer #1) - Clearer explanation and presentation - Ablation study in Section 3.2 (Reviewer #1) - Text in Figure 1 (Reviewer #2) - Motivations and solutions in Section 1 (Reviewer #3, Reviewer #4) - Graph interpretability task in Section 2.1 (Reviewer #4) - Implementation of Equation 7 (Reviewer #4) Moreover, we have carefully checked our paper typos and reorganized the presentation. If there still remains any consideration, please kindly let us know. We are very happy to make a further revision in light of your great suggestions. We will address comments by each of the reviewers individually.
+
+**Q5: Hyperparameters and computational complexity in Equation 15** **W5:** Thanks for your suggestions. We supplement the parameter search range and optimal parameter selection of the four constraints of the loss function to help improve the reliability and reproducibility of the results. In the final optimization objects, the loss function weight parameters $\lambda_1$, $\lambda_2$, $\lambda_3$, and $\lambda_4$ are set from [0.2, 0.4, 0.6, 0.8, 1]. And the best performance is obtained where $\lambda_1=1$, $\lambda_2=0.4$, $\lambda_3=0.2$, and $\lambda_4=0.2$. We add this in Appendix A.2. VGAE-based encoder is the most time consuming component in our method. In the dynamic VGAE-based encoder, we generate the causal soft mask matrix $\mathbf{M}^{\mathcal{C}}$ and the dynamic soft mask matric $\mathbf{M}^{\mathcal{D}}$ with $O(d*|V|^2)$ complexity for T unique time steps, where d is the embedding size. The contrastive learning part also costs lots of time and has time complexity O($|V|$*$d$*$T^2$). Then, the total time complexity is O($|V|^2$*$d$*$T$ + $|V|$*$d$*$T^2$). Note that $T &lt;&lt; |V|$, then we can ignore the time of contrastive learning and obtain the total time complexity as O($|V|^2$*$d$*$T$). ------ **Q6: Codebase link** **W6:** So sorry we attached the wrong code link. The wrong code link is unrelated to this paper and does not include any information about authors. We have updated the correct anonymous code link in the new version. ------ Thank you again for your constructive reviews. Hope that our response can address your concerns. We will feel grateful if you could boost our paper.</pre></details></article>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const suggestedSelect = document.getElementById("suggested");
+    const goldSelect = document.getElementById("gold");
+    const conflictSelect = document.getElementById("conflict");
+    const silverOnly = document.getElementById("silverOnly");
+    const unlabeledOnly = document.getElementById("unlabeledOnly");
+    const highConflictOnly = document.getElementById("highConflictOnly");
+    const resultsLine = document.getElementById("resultsLine");
+    const cards = Array.from(document.querySelectorAll(".issue-card"));
+
+    function matches(card) {
+      const search = searchInput.value.trim().toLowerCase();
+      const suggested = suggestedSelect.value;
+      const gold = goldSelect.value;
+      const conflict = conflictSelect.value;
+
+      if (search && !card.dataset.search.includes(search)) {
+        return false;
+      }
+      if (suggested && card.dataset.suggested !== suggested) {
+        return false;
+      }
+      if (gold) {
+        const goldValue = card.dataset.gold || "missing";
+        if (goldValue !== gold) {
+          return false;
+        }
+      }
+      if (conflict && card.dataset.conflict !== conflict) {
+        return false;
+      }
+      if (silverOnly.checked && card.dataset.silver !== "1") {
+        return false;
+      }
+      if (unlabeledOnly.checked && card.dataset.unlabeled !== "true") {
+        return false;
+      }
+      if (highConflictOnly.checked && card.dataset.highConflict !== "1") {
+        return false;
+      }
+      return true;
+    }
+
+    function applyFilters() {
+      let visible = 0;
+      for (const card of cards) {
+        const ok = matches(card);
+        card.classList.toggle("hidden", !ok);
+        if (ok) {
+          visible += 1;
+        }
+      }
+      resultsLine.textContent = `${visible} / ${cards.length} rows visible`;
+    }
+
+    [searchInput, suggestedSelect, goldSelect, conflictSelect, silverOnly, unlabeledOnly, highConflictOnly]
+      .forEach((node) => node.addEventListener("input", applyFilters));
+
+    applyFilters();
+  </script>
+</body>
+</html>

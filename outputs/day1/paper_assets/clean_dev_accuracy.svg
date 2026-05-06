@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<rect width="100%" height="100%" fill="#fbf7ef"/>
+<text x="86" y="32" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1b1814">Clean-Dev Accuracy Across Active-Learning Rounds</text>
+<line x1="86" x2="952" y1="438.0" y2="438.0" stroke="#ddd1c2" stroke-width="1"/>
+<text x="74" y="442.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6a5646">0.0</text>
+<line x1="86" x2="952" y1="362.0" y2="362.0" stroke="#ddd1c2" stroke-width="1"/>
+<text x="74" y="366.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6a5646">0.2</text>
+<line x1="86" x2="952" y1="286.0" y2="286.0" stroke="#ddd1c2" stroke-width="1"/>
+<text x="74" y="290.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6a5646">0.4</text>
+<line x1="86" x2="952" y1="210.0" y2="210.0" stroke="#ddd1c2" stroke-width="1"/>
+<text x="74" y="214.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6a5646">0.6</text>
+<line x1="86" x2="952" y1="134.0" y2="134.0" stroke="#ddd1c2" stroke-width="1"/>
+<text x="74" y="138.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6a5646">0.8</text>
+<line x1="86" x2="952" y1="58.0" y2="58.0" stroke="#ddd1c2" stroke-width="1"/>
+<text x="74" y="62.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6a5646">1.0</text>
+<line x1="86" x2="952" y1="438" y2="438" stroke="#1b1814" stroke-width="1.3"/>
+<line x1="86" x2="86" y1="58" y2="438" stroke="#1b1814" stroke-width="1.3"/>
+<text x="86.0" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v1</text>
+<text x="230.3" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v2</text>
+<text x="374.7" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v3</text>
+<text x="519.0" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v4</text>
+<text x="663.3" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v5</text>
+<text x="807.7" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v6</text>
+<text x="952.0" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1b1814">v7</text>
+<circle cx="86" cy="490" r="5" fill="#286dc9"/>
+<text x="98" y="494" font-family="Arial, sans-serif" font-size="12" fill="#1b1814">TF-IDF + LinearSVC</text>
+<circle cx="378" cy="490" r="5" fill="#7b63d6"/>
+<text x="390" y="494" font-family="Arial, sans-serif" font-size="12" fill="#1b1814">ModernBERT + LinearSVC</text>
+<circle cx="670" cy="490" r="5" fill="#0f7b77"/>
+<text x="682" y="494" font-family="Arial, sans-serif" font-size="12" fill="#1b1814">MPNet + LinearSVC</text>
+<circle cx="86" cy="510" r="5" fill="#c14f1a"/>
+<text x="98" y="514" font-family="Arial, sans-serif" font-size="12" fill="#1b1814">Issue-Ledger</text>
+<circle cx="378" cy="510" r="5" fill="#8060c9"/>
+<text x="390" y="514" font-family="Arial, sans-serif" font-size="12" fill="#1b1814">Structured (No Overrides)</text>
+<circle cx="670" cy="510" r="5" fill="#ad2e49"/>
+<text x="682" y="514" font-family="Arial, sans-serif" font-size="12" fill="#1b1814">Structured</text>
+<polyline points="86.0,184.7 230.3,153.0 374.7,181.7 519.0,230.4 663.3,225.1 807.7,230.5 952.0,224.9" fill="none" stroke="#286dc9" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="184.7" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="230.3" cy="153.0" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="374.7" cy="181.7" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="519.0" cy="230.4" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="663.3" cy="225.1" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="807.7" cy="230.5" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="952.0" cy="224.9" r="4" fill="#286dc9" stroke="#fbf7ef" stroke-width="1.5"/>
+<polyline points="86.0,159.3 230.3,184.7 374.7,199.4 519.0,226.9 663.3,231.6 807.7,227.8 952.0,224.9" fill="none" stroke="#7b63d6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="159.3" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="230.3" cy="184.7" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="374.7" cy="199.4" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="519.0" cy="226.9" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="663.3" cy="231.6" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="807.7" cy="227.8" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="952.0" cy="224.9" r="4" fill="#7b63d6" stroke="#fbf7ef" stroke-width="1.5"/>
+<polyline points="86.0,146.7 230.3,176.8 374.7,195.0 519.0,219.9 663.3,218.5 807.7,214.3 952.0,217.2" fill="none" stroke="#0f7b77" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="146.7" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="230.3" cy="176.8" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="374.7" cy="195.0" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="519.0" cy="219.9" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="663.3" cy="218.5" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="807.7" cy="214.3" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="952.0" cy="217.2" r="4" fill="#0f7b77" stroke="#fbf7ef" stroke-width="1.5"/>
+<polyline points="86.0,96.0 230.3,224.2 374.7,314.3 519.0,265.6 663.3,261.1 807.7,260.1 952.0,258.3" fill="none" stroke="#c14f1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="96.0" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="230.3" cy="224.2" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="374.7" cy="314.3" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="519.0" cy="265.6" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="663.3" cy="261.1" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="807.7" cy="260.1" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="952.0" cy="258.3" r="4" fill="#c14f1a" stroke="#fbf7ef" stroke-width="1.5"/>
+<polyline points="230.3,153.0 374.7,137.5 519.0,198.7 663.3,198.9 807.7,198.1 952.0,188.9" fill="none" stroke="#8060c9" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="230.3" cy="153.0" r="4" fill="#8060c9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="374.7" cy="137.5" r="4" fill="#8060c9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="519.0" cy="198.7" r="4" fill="#8060c9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="663.3" cy="198.9" r="4" fill="#8060c9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="807.7" cy="198.1" r="4" fill="#8060c9" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="952.0" cy="188.9" r="4" fill="#8060c9" stroke="#fbf7ef" stroke-width="1.5"/>
+<polyline points="230.3,129.2 374.7,133.1 519.0,184.7 663.3,182.5 807.7,190.1 952.0,178.7" fill="none" stroke="#ad2e49" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="230.3" cy="129.2" r="4" fill="#ad2e49" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="374.7" cy="133.1" r="4" fill="#ad2e49" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="519.0" cy="184.7" r="4" fill="#ad2e49" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="663.3" cy="182.5" r="4" fill="#ad2e49" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="807.7" cy="190.1" r="4" fill="#ad2e49" stroke="#fbf7ef" stroke-width="1.5"/>
+<circle cx="952.0" cy="178.7" r="4" fill="#ad2e49" stroke="#fbf7ef" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,54 @@
+{
+  "allow_subset": false,
+  "duplicate_ids": [],
+  "evaluated_examples": 80,
+  "invalid_rows": [
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "rpwGUtTeA5__r04",
+      "row": "6"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "ONfWFluZBI__r01",
+      "row": "10"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "BUj9VSCoET__r01",
+      "row": "15"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "BUj9VSCoET__r04",
+      "row": "17"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "p0DjhjPXl3__r01",
+      "row": "36"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "GM7cmQfk2F__r03",
+      "row": "59"
+    }
+  ],
+  "label_distribution": {
+    "fixed": 66,
+    "invalid": 6,
+    "unresolved": 8
+  },
+  "missing_evidence_ids": [
+    "rpwGUtTeA5__r04",
+    "ONfWFluZBI__r01",
+    "BUj9VSCoET__r01",
+    "BUj9VSCoET__r04",
+    "p0DjhjPXl3__r01",
+    "GM7cmQfk2F__r03"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 80,
+  "rows": 80,
+  "status": "error"
+}

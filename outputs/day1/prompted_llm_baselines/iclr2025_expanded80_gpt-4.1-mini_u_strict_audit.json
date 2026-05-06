@@ -1,0 +1,18 @@
+{
+  "allow_subset": false,
+  "duplicate_ids": [],
+  "evaluated_examples": 80,
+  "invalid_rows": [],
+  "label_distribution": {
+    "fixed": 30,
+    "partially_fixed": 42,
+    "unresolved": 8
+  },
+  "missing_evidence_ids": [
+    "l11DZY5Nxu__r02"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 80,
+  "rows": 80,
+  "status": "ok"
+}

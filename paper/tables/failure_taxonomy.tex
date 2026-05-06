@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.22\linewidth}p{0.31\linewidth}p{0.35\linewidth}}
+\toprule
+Failure mode & Pattern & Evidence use \\
+\midrule
+Stale criticism & predicts partially\_fixed or unresolved because the original concern remains semantically plausible & This example separates revision-aware judgment from static semantic plausibility. \\
+Over-crediting & over-credits unresolved concerns as fixed or partially fixed (66 expanded80 errors) & This is the practical stale-assistant failure: the model would stop tracking an unresolved concern. \\
+Fixed under-recovery & keeps a fixed concern alive as partially fixed or unresolved (4 expanded80 errors) & This motivates fixed-case F1 rather than accuracy-only reporting. \\
+Regression blindness & misses cases where the revision introduces or worsens a problem (6 expanded80 errors) & This justifies keeping the regressed label while avoiding strong regression-performance claims. \\
+Partial/full boundary & collapses partial resolution into fixed (4 expanded80 errors) & This is the central label-boundary risk for benchmark reliability. \\
+\bottomrule
+\end{tabular}
+\caption{Qualitative failure taxonomy used to interpret RevTrack errors. Expanded80 counts are from the user-confirmed standard active frontier and should not be read as natural prevalence.}
+\label{tab:failure-taxonomy}
+\end{table}

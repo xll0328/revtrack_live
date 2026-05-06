@@ -1,0 +1,3 @@
+model_key,rows,accuracy,macro_f1,fixed_f1,partially_fixed_f1,unresolved_f1,regressed_f1,status
+issue_ledger,80,1.0,0.75,1.0,1.0,1.0,0.0,provisional_assistant_adjudication
+tfidf,80,0.6625,0.42239467849223944,0.9090909090909091,0.7804878048780487,0.0,0.0,provisional_assistant_adjudication

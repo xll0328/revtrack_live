@@ -1,0 +1,62 @@
+[
+  {
+    "gold_label": "partially_fixed",
+    "id": "TPZRq4FALB__r03",
+    "paper_title": "Test-time Adaptation against Multi-modal Reliability Bias",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "qBL04XXex6__r01",
+    "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "kmn0BhQk7p__r03",
+    "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models",
+    "predicted_label": "invalid"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "rhgIgTSSxW__r01",
+    "paper_title": "TabR: Tabular Deep Learning Meets Nearest Neighbors",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "uz7d2N2zul__r01",
+    "paper_title": "Bayesian Coreset Optimization for Personalized Federated Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "qBL04XXex6__r02",
+    "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "kmn0BhQk7p__r04",
+    "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "rhgIgTSSxW__r02",
+    "paper_title": "TabR: Tabular Deep Learning Meets Nearest Neighbors",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "regressed",
+    "id": "uz7d2N2zul__r02",
+    "paper_title": "Bayesian Coreset Optimization for Personalized Federated Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "qBL04XXex6__r03",
+    "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+    "predicted_label": "fixed"
+  }
+]

@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{p{0.36\linewidth}rrrr}
+\toprule
+Model & Macro-F1 & 95\% CI & $\Delta$ to Structured & $P(\leq 0)$ \\
+\midrule
+Structured & 0.704 & [0.630, 0.775] & 0.000 & 1.000 \\
+Structured (No Overrides) & 0.424 & [0.352, 0.494] & 0.280 & 0.000 \\
+MPNet + LinearSVC & 0.389 & [0.320, 0.461] & 0.314 & 0.000 \\
+ModernBERT + LinearSVC & 0.387 & [0.311, 0.464] & 0.317 & 0.000 \\
+TF-IDF + LinearSVC & 0.376 & [0.305, 0.447] & 0.328 & 0.000 \\
+Majority label & 0.184 & [0.184, 0.184] & 0.520 & 0.000 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Stratified-bootstrap significance summary on ICLR 2024 clean dev v7. $P(\leq 0)$ is the paired-bootstrap probability that Structured is not better than the compared model on macro-F1.}
+\label{tab:iclr2024-significance}
+\end{table}

@@ -1,0 +1,98 @@
+[
+  {
+    "gold_label": "partially_fixed",
+    "id": "ONfWFluZBI__r03",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "ONfWFluZBI__r01",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "w7P92BEsb2__r01",
+    "paper_title": "PIED: Physics-Informed Experimental Design for Inverse Problems",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "odjMSBSWRt__r04",
+    "paper_title": "DarkBench: Benchmarking Dark Patterns in Large Language Models",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "odjMSBSWRt__r03",
+    "paper_title": "DarkBench: Benchmarking Dark Patterns in Large Language Models",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "PwxYoMvmvy__r04",
+    "paper_title": "Beyond Random Masking: When Dropout meets Graph Convolutional Networks",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "ONfWFluZBI__r02",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "w7P92BEsb2__r02",
+    "paper_title": "PIED: Physics-Informed Experimental Design for Inverse Problems",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "w7P92BEsb2__r04",
+    "paper_title": "PIED: Physics-Informed Experimental Design for Inverse Problems",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "w7P92BEsb2__r03",
+    "paper_title": "PIED: Physics-Informed Experimental Design for Inverse Problems",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "PwxYoMvmvy__r01",
+    "paper_title": "Beyond Random Masking: When Dropout meets Graph Convolutional Networks",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "odjMSBSWRt__r02",
+    "paper_title": "DarkBench: Benchmarking Dark Patterns in Large Language Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "odjMSBSWRt__r01",
+    "paper_title": "DarkBench: Benchmarking Dark Patterns in Large Language Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "PwxYoMvmvy__r02",
+    "paper_title": "Beyond Random Masking: When Dropout meets Graph Convolutional Networks",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "ONfWFluZBI__r05",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "ONfWFluZBI__r04",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "partially_fixed"
+  }
+]

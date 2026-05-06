@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Variant & Prompt & Temp & Accuracy & Macro-F1 & U Recall & F Recall \\
+\midrule
+GPT-4o-mini & default & 0.0 & 0.062 & 0.077 & 0.015 & 0.250 \\
+GPT-4o-mini & default & 0.3 & 0.038 & 0.020 & 0.015 & 0.000 \\
+GPT-4o-mini & default & 0.7 & 0.038 & 0.021 & 0.015 & 0.000 \\
+GPT-4o-mini & unresolved-strict & 0.0 & 0.062 & 0.032 & 0.015 & 0.000 \\
+GPT-5.5(v2) & default & 0.0 & 0.088 & 0.081 & 0.045 & 0.250 \\
+GPT-5.5(v2) & unresolved-strict & 0.0 & 0.100 & 0.059 & 0.091 & 0.000 \\
+GPT-4.1-mini & default & 0.0 & 0.062 & 0.066 & 0.015 & 1.000 \\
+GPT-4.1-mini & unresolved-strict & 0.0 & 0.100 & 0.086 & 0.061 & 1.000 \\
+GPT-4.1-nano & default & 0.0 & 0.350 & 0.161 & 0.379 & 0.750 \\
+GPT-4.1-nano & unresolved-strict & 0.0 & 0.412 & 0.171 & 0.485 & 0.250 \\
+\bottomrule
+\end{tabular}
+\caption{Expanded80 decoding/prompt ablation for prompted transfer. Temperature increases are uniformly harmful. Unresolved-strict prompting is model-dependent: it hurts GPT-4o-mini and GPT-5.5(v2) macro-F1, while improving GPT-4.1-mini and GPT-4.1-nano unresolved recall and macro-F1 with trade-offs on fixed recall.}
+\label{tab:prompted-llm-temp}
+\end{table*}

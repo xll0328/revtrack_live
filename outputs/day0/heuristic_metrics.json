@@ -1,0 +1,100 @@
+{
+  "summary": {
+    "num_examples": 8.0,
+    "accuracy": 0.625,
+    "macro_f1": 0.6249999999999999,
+    "per_label": {
+      "fixed": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 2.0
+      },
+      "partially_fixed": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 2.0
+      },
+      "unresolved": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 2.0
+      },
+      "regressed": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 2.0
+      }
+    },
+    "confusion": {
+      "fixed": {
+        "fixed": 2
+      },
+      "unresolved": {
+        "unresolved": 1,
+        "partially_fixed": 1
+      },
+      "partially_fixed": {
+        "fixed": 1,
+        "partially_fixed": 1
+      },
+      "regressed": {
+        "fixed": 1,
+        "regressed": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "smoke-001",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Sparse Evidence Routing for Long-Context QA"
+    },
+    {
+      "id": "smoke-002",
+      "gold_label": "unresolved",
+      "predicted_label": "unresolved",
+      "paper_title": "Cross-Domain Retrieval Tuning"
+    },
+    {
+      "id": "smoke-003",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Chain-of-Plan Decoding"
+    },
+    {
+      "id": "smoke-004",
+      "gold_label": "regressed",
+      "predicted_label": "fixed",
+      "paper_title": "Low-Resource Multilingual Alignment"
+    },
+    {
+      "id": "smoke-005",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Calibration-Aware Reasoning"
+    },
+    {
+      "id": "smoke-006",
+      "gold_label": "unresolved",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Adaptive Context Pruning"
+    },
+    {
+      "id": "smoke-007",
+      "gold_label": "partially_fixed",
+      "predicted_label": "partially_fixed",
+      "paper_title": "Provable Prompt Compression"
+    },
+    {
+      "id": "smoke-008",
+      "gold_label": "regressed",
+      "predicted_label": "regressed",
+      "paper_title": "Self-Debugging Tool Agents"
+    }
+  ]
+}

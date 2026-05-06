@@ -1,0 +1,28 @@
+{
+  "blind_sheet": "experiments/day1/neurips2024_limit100_human_validation_v1_blind.tsv",
+  "candidate_rows": 80,
+  "claim_boundary": "Use as user-confirmed single-pass standard validation only after --write with an explicit confirmation note; do not report as independent two-annotator IAA.",
+  "confidence_distribution": {
+    "3": 80
+  },
+  "confirmation_note": "User confirmed NeurIPS resolved candidate on 2026-04-28.",
+  "errors": [],
+  "label_distribution": {
+    "partially_fixed": 44,
+    "unresolved": 36
+  },
+  "promotable_rows": 80,
+  "promoted_rows": 80,
+  "resolution_action_distribution": {
+    "downgrade_regressed": 4,
+    "keep": 36,
+    "upgrade_weak_unresolved_to_partial": 40
+  },
+  "resolution_provenance_distribution": {
+    "assistant_resolved_candidate_not_human_validation": 80
+  },
+  "resolved_candidate": "experiments/day1/neurips2024_limit100_resolved_adjudication_v1.tsv",
+  "rows": 80,
+  "status": "ok",
+  "write": true
+}

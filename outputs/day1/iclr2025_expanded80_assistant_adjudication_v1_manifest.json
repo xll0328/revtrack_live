@@ -1,0 +1,28 @@
+{
+  "best_provisional_model": {
+    "accuracy": 0.85,
+    "fixed_f1": 0.4285714285714285,
+    "macro_f1": 0.46898496240601506,
+    "model_key": "issue_ledger",
+    "partially_fixed_f1": 0.0,
+    "regressed_f1": 0.5,
+    "rows": 80,
+    "status": "provisional_assistant_adjudication",
+    "unresolved_f1": 0.9473684210526316
+  },
+  "claim_boundary": "Use only as provisional assistant-adjudicated expanded80 analysis; do not report as standard human validation or benchmark transfer performance.",
+  "human_validation_status": "not_human_validated",
+  "label_distribution": {
+    "fixed": 4,
+    "partially_fixed": 4,
+    "regressed": 6,
+    "unresolved": 66
+  },
+  "metrics_csv": "/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2025_expanded80_provisional_transfer_metrics.csv",
+  "metrics_md": "/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2025_expanded80_provisional_transfer_metrics.md",
+  "missing_evidence_rows": [],
+  "output_jsonl": "/data/sony/emnlp2026_revtrack/data/processed/iclr2025_expanded80_assistant_adjudication_v1.jsonl",
+  "output_tsv": "/data/sony/emnlp2026_revtrack/experiments/day1/iclr2025_expanded80_assistant_adjudication_v1.tsv",
+  "rows": 80,
+  "status": "provisional_assistant_adjudication"
+}

@@ -1,0 +1,413 @@
+{
+  "rows": [
+    {
+      "dataset": "ICLR24",
+      "method": "Majority",
+      "n": 148,
+      "macro_f1": 0.18376068376068377,
+      "ci95_low": 0.16666666666666666,
+      "ci95_high": 0.19795918367346937,
+      "ci95_width": 0.03129251700680272,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "reference"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "GPT-5.5",
+      "n": 148,
+      "macro_f1": 0.35047613990371,
+      "ci95_low": 0.27893878059534094,
+      "ci95_high": 0.4297474767458319,
+      "ci95_width": 0.15080869615049097,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "GPT-4.1",
+      "n": 148,
+      "macro_f1": 0.3262927415504667,
+      "ci95_low": 0.2505586465718783,
+      "ci95_high": 0.3990550052211929,
+      "ci95_width": 0.1484963586493146,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "GPT-4o-mini",
+      "n": 148,
+      "macro_f1": 0.29919541969330105,
+      "ci95_low": 0.22409677117468135,
+      "ci95_high": 0.3896784024387305,
+      "ci95_width": 0.16558163126404912,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "GPT-4.1-nano",
+      "n": 148,
+      "macro_f1": 0.2100869610770601,
+      "ci95_low": 0.15547055220316777,
+      "ci95_high": 0.26332276232962926,
+      "ci95_width": 0.10785221012646148,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "Qwen2.5-72B",
+      "n": 148,
+      "macro_f1": 0.33419913419913416,
+      "ci95_low": 0.26871864362093967,
+      "ci95_high": 0.41817448454866846,
+      "ci95_width": 0.1494558409277288,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "GPT-4.1-mini",
+      "n": 148,
+      "macro_f1": 0.34735449735449736,
+      "ci95_low": 0.27161328754223873,
+      "ci95_high": 0.4370653777105251,
+      "ci95_width": 0.16545209016828638,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "Vote-3 (top)",
+      "n": 148,
+      "macro_f1": 0.35169513866919755,
+      "ci95_low": 0.2766900722669263,
+      "ci95_high": 0.43379954622568206,
+      "ci95_width": 0.15710947395875574,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "Vote-3 (diverse)",
+      "n": 148,
+      "macro_f1": 0.34653005464480874,
+      "ci95_low": 0.2715300620953724,
+      "ci95_high": 0.43544025918206974,
+      "ci95_width": 0.16391019708669735,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "Vote-3 (U-guard)",
+      "n": 148,
+      "macro_f1": 0.34484059252034505,
+      "ci95_low": 0.2802463532759897,
+      "ci95_high": 0.4243096010470031,
+      "ci95_width": 0.14406324777101343,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "Vote-3 (U+F)",
+      "n": 148,
+      "macro_f1": 0.3502953972203883,
+      "ci95_low": 0.2818735771556082,
+      "ci95_high": 0.4282260745207173,
+      "ci95_width": 0.14635249736510914,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR24",
+      "method": "Vote-6 (all)",
+      "n": 148,
+      "macro_f1": 0.34423441948750394,
+      "ci95_low": 0.2685912954518593,
+      "ci95_high": 0.4367081565067498,
+      "ci95_width": 0.16811686105489054,
+      "majority_macro_f1": 0.18376068376068377,
+      "risk": "above majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Majority",
+      "n": 80,
+      "macro_f1": 0.22602739726027396,
+      "ci95_low": 0.21223021582733814,
+      "ci95_high": 0.23684210526315788,
+      "ci95_width": 0.02461188943581974,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "reference"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "GPT-5.5",
+      "n": 80,
+      "macro_f1": 0.0810340022296544,
+      "ci95_low": 0.020731897365051554,
+      "ci95_high": 0.15795036435559706,
+      "ci95_width": 0.13721846699054552,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "GPT-4.1",
+      "n": 80,
+      "macro_f1": 0.07,
+      "ci95_low": 0.031639868140318606,
+      "ci95_high": 0.11313190154296114,
+      "ci95_width": 0.08149203340264254,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "GPT-4o-mini",
+      "n": 80,
+      "macro_f1": 0.07694320604768366,
+      "ci95_low": 0.00684931506849315,
+      "ci95_high": 0.169253552810112,
+      "ci95_width": 0.16240423774161886,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "GPT-4.1-nano",
+      "n": 80,
+      "macro_f1": 0.16145833333333334,
+      "ci95_low": 0.11567429978784868,
+      "ci95_high": 0.2072239552386611,
+      "ci95_width": 0.09154965545081242,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Qwen2.5-72B",
+      "n": 80,
+      "macro_f1": 0.0721838882180438,
+      "ci95_low": 0.019221698113207546,
+      "ci95_high": 0.12458874458874453,
+      "ci95_width": 0.10536704647553698,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "GPT-4.1-mini",
+      "n": 80,
+      "macro_f1": 0.06596638655462185,
+      "ci95_low": 0.01722701149425287,
+      "ci95_high": 0.11449840015057403,
+      "ci95_width": 0.09727138865632115,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Vote-3 (top)",
+      "n": 80,
+      "macro_f1": 0.0714703425229741,
+      "ci95_low": 0.015466351889065916,
+      "ci95_high": 0.1277956911509542,
+      "ci95_width": 0.11232933926188829,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Vote-3 (diverse)",
+      "n": 80,
+      "macro_f1": 0.08805955160553337,
+      "ci95_low": 0.014395194697597348,
+      "ci95_high": 0.1602814765314765,
+      "ci95_width": 0.14588628183387917,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Vote-3 (U-guard)",
+      "n": 80,
+      "macro_f1": 0.09221207508878741,
+      "ci95_low": 0.03280551926421347,
+      "ci95_high": 0.1534087258318892,
+      "ci95_width": 0.12060320656767573,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Vote-3 (U+F)",
+      "n": 80,
+      "macro_f1": 0.09428037715708948,
+      "ci95_low": 0.026477146042363436,
+      "ci95_high": 0.18410630487542679,
+      "ci95_width": 0.15762915883306336,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "ICLR25",
+      "method": "Vote-6 (all)",
+      "n": 80,
+      "macro_f1": 0.06422574998010663,
+      "ci95_low": 0.007246376811594203,
+      "ci95_high": 0.12385767625336917,
+      "ci95_width": 0.11661129944177497,
+      "majority_macro_f1": 0.22602739726027396,
+      "risk": "below majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Majority",
+      "n": 80,
+      "macro_f1": 0.1774193548387097,
+      "ci95_low": 0.15217391304347827,
+      "ci95_high": 0.19924812030075187,
+      "ci95_width": 0.0470742072572736,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "reference"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "GPT-5.5",
+      "n": 80,
+      "macro_f1": 0.17094017094017094,
+      "ci95_low": 0.14351851851851852,
+      "ci95_high": 0.1929292608585216,
+      "ci95_width": 0.04941074234000309,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "GPT-4.1",
+      "n": 80,
+      "macro_f1": 0.1661129568106312,
+      "ci95_low": 0.12209302325581395,
+      "ci95_high": 0.21111310473152575,
+      "ci95_width": 0.0890200814757118,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "GPT-4o-mini",
+      "n": 80,
+      "macro_f1": 0.17768595041322313,
+      "ci95_low": 0.15350877192982457,
+      "ci95_high": 0.1984732824427481,
+      "ci95_width": 0.04496451051292352,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "GPT-4.1-nano",
+      "n": 80,
+      "macro_f1": 0.1264455264759586,
+      "ci95_low": 0.07466087039615064,
+      "ci95_high": 0.1786101172770139,
+      "ci95_width": 0.10394924688086325,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Qwen2.5-72B",
+      "n": 80,
+      "macro_f1": 0.1650943396226415,
+      "ci95_low": 0.13636363636363635,
+      "ci95_high": 0.18860846970367087,
+      "ci95_width": 0.05224483334003452,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "GPT-4.1-mini",
+      "n": 80,
+      "macro_f1": 0.18055555555555555,
+      "ci95_low": 0.15418710095308596,
+      "ci95_high": 0.2025862068965517,
+      "ci95_width": 0.04839910594346575,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Vote-3 (top)",
+      "n": 80,
+      "macro_f1": 0.17857142857142858,
+      "ci95_low": 0.15384615384615385,
+      "ci95_high": 0.20089285714285715,
+      "ci95_width": 0.047046703296703296,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Vote-3 (diverse)",
+      "n": 80,
+      "macro_f1": 0.17372881355932204,
+      "ci95_low": 0.14864864864864866,
+      "ci95_high": 0.1951219512195122,
+      "ci95_width": 0.046473302570863545,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Vote-3 (U-guard)",
+      "n": 80,
+      "macro_f1": 0.16972477064220184,
+      "ci95_low": 0.14215686274509803,
+      "ci95_high": 0.1929151125846111,
+      "ci95_width": 0.050758249839513075,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Vote-3 (U+F)",
+      "n": 80,
+      "macro_f1": 0.16666666666666666,
+      "ci95_low": 0.1409090909090909,
+      "ci95_high": 0.1889763779527559,
+      "ci95_width": 0.048067287043665,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    },
+    {
+      "dataset": "NeurIPS24",
+      "method": "Vote-6 (all)",
+      "n": 80,
+      "macro_f1": 0.17699115044247787,
+      "ci95_low": 0.15196078431372548,
+      "ci95_high": 0.19915254237288135,
+      "ci95_width": 0.047191758059155875,
+      "majority_macro_f1": 0.1774193548387097,
+      "risk": "overlaps majority"
+    }
+  ],
+  "labels": [
+    "fixed",
+    "partially_fixed",
+    "regressed",
+    "unresolved"
+  ],
+  "selected_methods": [
+    "Majority",
+    "GPT-5.5",
+    "GPT-4.1-mini",
+    "GPT-4.1-nano",
+    "Vote-3 (U+F)"
+  ]
+}

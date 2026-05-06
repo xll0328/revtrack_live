@@ -1,0 +1,31 @@
+version,model_key,model,rows,fixed,partially_fixed,unresolved,regressed
+v3,tfidf,TF-IDF + LinearSVC,230,58,155,14,3
+v3,modernbert,ModernBERT + LinearSVC,230,82,123,24,1
+v3,mpnet,MPNet + LinearSVC,230,91,126,12,1
+v3,issue_ledger,Issue-Ledger,230,71,88,70,1
+v3,structured,Structured,230,81,135,13,1
+v4,tfidf,TF-IDF + LinearSVC,230,67,137,23,3
+v4,modernbert,ModernBERT + LinearSVC,230,71,139,19,1
+v4,mpnet,MPNet + LinearSVC,230,67,142,20,1
+v4,issue_ledger,Issue-Ledger,230,56,97,76,1
+v4,structured,Structured,230,72,138,19,1
+v5,tfidf,TF-IDF + LinearSVC,230,83,123,21,3
+v5,modernbert,ModernBERT + LinearSVC,230,77,136,16,1
+v5,mpnet,MPNet + LinearSVC,230,78,134,17,1
+v5,issue_ledger,Issue-Ledger,230,63,93,73,1
+v5,structured,Structured,230,77,134,18,1
+v6,tfidf,TF-IDF + LinearSVC,230,73,135,19,3
+v6,modernbert,ModernBERT + LinearSVC,230,75,138,16,1
+v6,mpnet,MPNet + LinearSVC,230,77,136,16,1
+v6,issue_ledger,Issue-Ledger,230,63,94,72,1
+v6,structured,Structured,230,76,136,17,1
+v7,tfidf,TF-IDF + LinearSVC,230,72,130,25,3
+v7,modernbert,ModernBERT + LinearSVC,230,73,142,14,1
+v7,mpnet,MPNet + LinearSVC,230,74,142,13,1
+v7,issue_ledger,Issue-Ledger,230,61,99,69,1
+v7,structured,Structured,230,73,142,14,1
+v8,tfidf,TF-IDF + LinearSVC,230,74,131,22,3
+v8,modernbert,ModernBERT + LinearSVC,230,73,143,13,1
+v8,mpnet,MPNet + LinearSVC,230,73,143,13,1
+v8,issue_ledger,Issue-Ledger,230,60,100,69,1
+v8,structured,Structured,230,74,141,14,1

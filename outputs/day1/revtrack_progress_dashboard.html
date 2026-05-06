@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RevTrack Progress Dashboard</title>
+  <style>
+    :root {
+      --bg: #f5ebdc;
+      --ink: #1b1814;
+      --muted: #6a5646;
+      --line: rgba(27, 24, 20, 0.12);
+      --panel: rgba(255, 249, 241, 0.86);
+      --panel-strong: rgba(255, 255, 255, 0.94);
+      --shadow: 0 26px 70px rgba(46, 28, 10, 0.14);
+      --gold: #c56c16;
+      --teal: #0d7765;
+      --blue: #2e61cf;
+      --rose: #b23256;
+      --sand: #f0e0c9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(13,119,101,0.16), transparent 24%),
+        radial-gradient(circle at 92% 12%, rgba(197,108,22,0.18), transparent 24%),
+        linear-gradient(180deg, #f8f2e9 0%, #efe2d0 54%, #f7f3ee 100%);
+    }
+    .page {
+      width: min(1540px, calc(100vw - 28px));
+      margin: 18px auto 40px;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 30px 26px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(251,241,224,0.88));
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(46,97,207,0.18), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 980px;
+    }
+    .sub {
+      max-width: 980px;
+      margin-top: 14px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .hero-card {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .hero-card strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 6px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+    }
+    .hero-card span {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 18px;
+      margin-top: 18px;
+      align-items: start;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 25px;
+    }
+    .kicker {
+      margin-bottom: 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .note {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .toggle-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .toggle {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.75);
+      color: var(--ink);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font: inherit;
+      cursor: pointer;
+      transition: transform 140ms ease, background 140ms ease, color 140ms ease;
+    }
+    .toggle.active {
+      background: linear-gradient(135deg, rgba(13,119,101,0.14), rgba(197,108,22,0.15));
+      color: var(--teal);
+      transform: translateY(-1px);
+    }
+    .line-shell {
+      position: relative;
+      border-radius: 24px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.72);
+      font-size: 14px;
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+    .mix-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .mix-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--panel-strong);
+      padding: 14px;
+    }
+    .mix-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .mix-head strong {
+      font-size: 18px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+    }
+    .mix-head span {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .stacked {
+      display: flex;
+      width: 100%;
+      height: 18px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(27,24,20,0.06);
+    }
+    .seg {
+      width: 0;
+      transition: width 800ms cubic-bezier(.2,.8,.2,1);
+    }
+    .mix-labels {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+    .mix-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+    }
+    .mix-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+    .transfer-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .transfer-tab {
+      cursor: pointer;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+      font: inherit;
+    }
+    .transfer-tab.active {
+      background: linear-gradient(135deg, rgba(46,97,207,0.12), rgba(173,50,86,0.12));
+      color: var(--rose);
+    }
+    .transfer-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .transfer-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--panel-strong);
+      padding: 14px;
+    }
+    .mini-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+      line-height: 1.45;
+    }
+    .disagreement-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .dis-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(251,241,226,0.88));
+      padding: 16px;
+    }
+    .dis-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+    .dis-top strong {
+      font-size: 20px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+    }
+    .dis-total {
+      color: var(--rose);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .pair-list {
+      display: grid;
+      gap: 8px;
+    }
+    .pair-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.72);
+      font-size: 13px;
+    }
+    .foot {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    @media (max-width: 1080px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .hero-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .legend {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="eyebrow">RevTrack Flight Deck</div>
+      <h1>RevTrack Progress Dashboard</h1>
+      <div class="sub">
+        A dynamic progress view for the EMNLP 2026 revision-aware judgment project. This panel tracks how the clean-dev benchmark hardens over time, how model rankings shift under stricter evaluation, and how the full-candidate frontier shrinks as supervision grows.
+      </div>
+      <div class="hero-grid" id="hero-grid"></div>
+    </section>
+
+    <div class="layout">
+      <div class="stack">
+        <section class="panel">
+          <div class="kicker">Metric Progression</div>
+          <h2>Clean-Dev Trajectories</h2>
+          <div class="note">
+            Toggle between accuracy and macro-F1. The key story is not just the peak score, but which models stay stable as the benchmark shifts from `v1` to the much harder `v4`.
+          </div>
+          <div class="toggle-row">
+            <button class="toggle active" data-metric="accuracy">Accuracy</button>
+            <button class="toggle" data-metric="macro_f1">Macro-F1</button>
+          </div>
+          <div class="line-shell">
+            <svg id="metric-chart" viewBox="0 0 980 420" aria-label="metric progression chart"></svg>
+          </div>
+          <div class="legend" id="metric-legend"></div>
+        </section>
+
+        <section class="panel">
+          <div class="kicker">Benchmark Growth</div>
+          <h2>Label Mix By Dev Version</h2>
+          <div class="note">
+            The benchmark is getting larger and more adversarial in the `fixed <-> partially_fixed` region. That pressure is exactly why the semantic baselines fall from `v3` to `v4`.
+          </div>
+          <div class="mix-grid" id="mix-grid"></div>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="panel">
+          <div class="kicker">Transfer Drift</div>
+          <h2>Full-Candidate Label Distributions</h2>
+          <div class="note">
+            Switch models to see how the `230` public issue candidates move from `train_v3` to `train_v5`. This is where the project’s active-learning frontier becomes visible.
+          </div>
+          <div class="transfer-tabs" id="transfer-tabs"></div>
+          <div class="transfer-grid" id="transfer-grid"></div>
+          <div class="mini-note">
+            `structured` and `mpnet` are now almost converged globally, while `structured vs tfidf` still carries the most reviewer-relevant `fixed <-> partially_fixed` disagreements.
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="kicker">Latest Frontier</div>
+          <h2>Disagreement Surface At Train V5</h2>
+          <div class="note">
+            These cards summarize the latest label-level fault lines. They are the best direct input for the next annotation tranche and for the “why structure helps” section of the paper.
+          </div>
+          <div class="disagreement-grid" id="disagreement-grid"></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="foot">
+      `v4` clean-dev metrics use strict `LOO-feature` evaluation for `issue-ledger` and `structured`.
+      Earlier optimistic passes that injected full-train transfer labels into the clean-dev sheet are not shown here.
+    </div>
+  </div>
+
+  <script>
+    const payload = {"label_order": ["fixed", "partially_fixed", "unresolved", "regressed"], "label_colors": {"fixed": "#157f5b", "partially_fixed": "#d58617", "unresolved": "#b33a2f", "regressed": "#8e2f75"}, "dev_versions": [{"id": "v1", "label": "Clean Dev v1", "labels": {"fixed": 10, "partially_fixed": 14, "unresolved": 5, "regressed": 1}, "rows": 30}, {"id": "v2", "label": "Clean Dev v2", "labels": {"fixed": 14, "partially_fixed": 27, "unresolved": 6, "regressed": 1}, "rows": 48}, {"id": "v3", "label": "Clean Dev v3", "labels": {"fixed": 24, "partially_fixed": 52, "unresolved": 9, "regressed": 1}, "rows": 86}, {"id": "v4", "label": "Clean Dev v4", "labels": {"fixed": 36, "partially_fixed": 61, "unresolved": 10, "regressed": 1}, "rows": 108}, {"id": "v5", "label": "Clean Dev v5", "labels": {"fixed": 38, "partially_fixed": 67, "unresolved": 10, "regressed": 1}, "rows": 116}, {"id": "v6", "label": "Clean Dev v6", "labels": {"fixed": 47, "partially_fixed": 82, "unresolved": 11, "regressed": 1}, "rows": 141}, {"id": "v7", "label": "Clean Dev v7", "labels": {"fixed": 50, "partially_fixed": 86, "unresolved": 11, "regressed": 1}, "rows": 148}], "metric_rows": [{"model": "Heuristic", "color": "#8d5f2b", "points": [{"version": "v1", "accuracy": 0.03333333333333333, "macro_f1": 0.02}, {"version": "v2", "accuracy": 0.0625, "macro_f1": 0.04166666666666666}, {"version": "v3", "accuracy": 0.09302325581395349, "macro_f1": 0.061538461538461535}, {"version": "v4", "accuracy": 0.12962962962962962, "macro_f1": 0.07865168539325842}, {"version": "v5", "accuracy": 0.1206896551724138, "macro_f1": 0.07526881720430106}, {"version": "v6", "accuracy": 0.1276595744680851, "macro_f1": 0.08181818181818182}, {"version": "v7", "accuracy": 0.13513513513513514, "macro_f1": 0.08547008547008547}]}, {"model": "TF-IDF + LinearSVC", "color": "#286dc9", "points": [{"version": "v1", "accuracy": 0.6666666666666666, "macro_f1": 0.568609022556391}, {"version": "v2", "accuracy": 0.75, "macro_f1": 0.5967782217782218}, {"version": "v3", "accuracy": 0.6744186046511628, "macro_f1": 0.47789634146341464}, {"version": "v4", "accuracy": 0.5462962962962963, "macro_f1": 0.38794117647058823}, {"version": "v5", "accuracy": 0.5603448275862069, "macro_f1": 0.3934002433090025}, {"version": "v6", "accuracy": 0.5460992907801419, "macro_f1": 0.36875121657730353}, {"version": "v7", "accuracy": 0.5608108108108109, "macro_f1": 0.3755193694244165}]}, {"model": "ModernBERT + LinearSVC", "color": "#7b63d6", "points": [{"version": "v1", "accuracy": 0.7333333333333333, "macro_f1": 0.6300000000000001}, {"version": "v2", "accuracy": 0.6666666666666666, "macro_f1": 0.5187782805429865}, {"version": "v3", "accuracy": 0.627906976744186, "macro_f1": 0.42991850205428706}, {"version": "v4", "accuracy": 0.5555555555555556, "macro_f1": 0.39952312105029963}, {"version": "v5", "accuracy": 0.5431034482758621, "macro_f1": 0.3811751233262861}, {"version": "v6", "accuracy": 0.5531914893617021, "macro_f1": 0.37199784751331144}, {"version": "v7", "accuracy": 0.5608108108108109, "macro_f1": 0.38671889704498397}]}, {"model": "MPNet + LinearSVC", "color": "#0f7b77", "points": [{"version": "v1", "accuracy": 0.7666666666666667, "macro_f1": 0.6345454545454545}, {"version": "v2", "accuracy": 0.6875, "macro_f1": 0.577612863327149}, {"version": "v3", "accuracy": 0.6395348837209303, "macro_f1": 0.47741690645037044}, {"version": "v4", "accuracy": 0.5740740740740741, "macro_f1": 0.4044079044079044}, {"version": "v5", "accuracy": 0.5775862068965517, "macro_f1": 0.40306529721675277}, {"version": "v6", "accuracy": 0.5886524822695035, "macro_f1": 0.39074743821579266}, {"version": "v7", "accuracy": 0.581081081081081, "macro_f1": 0.3894849415255115}]}, {"model": "Issue-Ledger Calibrator", "color": "#c14f1a", "points": [{"version": "v1", "accuracy": 0.9, "macro_f1": 0.909919028340081}, {"version": "v2", "accuracy": 0.5625, "macro_f1": 0.674933838781203}, {"version": "v3", "accuracy": 0.32558139534883723, "macro_f1": 0.5059523809523809}, {"version": "v4", "accuracy": 0.4537037037037037, "macro_f1": 0.5933231819859727}, {"version": "v5", "accuracy": 0.46551724137931033, "macro_f1": 0.595851407432445}, {"version": "v6", "accuracy": 0.46808510638297873, "macro_f1": 0.5966725877870456}, {"version": "v7", "accuracy": 0.47297297297297297, "macro_f1": 0.5946065840663997}]}, {"model": "Structured Calibrator (No Overrides)", "color": "#8060c9", "points": [{"version": "v3", "accuracy": 0.7906976744186046, "macro_f1": 0.5732335386984984}, {"version": "v4", "accuracy": 0.6296296296296297, "macro_f1": 0.4102757222236852}, {"version": "v5", "accuracy": 0.6293103448275862, "macro_f1": 0.4092604433077579}, {"version": "v6", "accuracy": 0.6312056737588653, "macro_f1": 0.40194360237463683}, {"version": "v7", "accuracy": 0.6554054054054054, "macro_f1": 0.423731394671328}]}, {"model": "Structured Calibrator", "color": "#ad2e49", "points": [{"version": "v3", "accuracy": 0.8023255813953488, "macro_f1": 0.8252551020408163}, {"version": "v4", "accuracy": 0.6666666666666666, "macro_f1": 0.6976911976911977}, {"version": "v5", "accuracy": 0.6724137931034483, "macro_f1": 0.7010476929259699}, {"version": "v6", "accuracy": 0.6524822695035462, "macro_f1": 0.6747895622895623}, {"version": "v7", "accuracy": 0.6824324324324325, "macro_f1": 0.7038066988011371}]}], "transfer_rows": {"v3": {"tfidf": {"fixed": 58, "partially_fixed": 155, "unresolved": 14, "regressed": 3}, "modernbert": {"fixed": 82, "partially_fixed": 123, "unresolved": 24, "regressed": 1}, "mpnet": {"fixed": 91, "partially_fixed": 126, "unresolved": 12, "regressed": 1}, "issue_ledger": {"fixed": 71, "partially_fixed": 88, "unresolved": 70, "regressed": 1}, "structured": {"fixed": 81, "partially_fixed": 135, "unresolved": 13, "regressed": 1}}, "v4": {"tfidf": {"fixed": 67, "partially_fixed": 137, "unresolved": 23, "regressed": 3}, "modernbert": {"fixed": 71, "partially_fixed": 139, "unresolved": 19, "regressed": 1}, "mpnet": {"fixed": 67, "partially_fixed": 142, "unresolved": 20, "regressed": 1}, "issue_ledger": {"fixed": 56, "partially_fixed": 97, "unresolved": 76, "regressed": 1}, "structured": {"fixed": 72, "partially_fixed": 138, "unresolved": 19, "regressed": 1}}, "v5": {"tfidf": {"fixed": 83, "partially_fixed": 123, "unresolved": 21, "regressed": 3}, "modernbert": {"fixed": 77, "partially_fixed": 136, "unresolved": 16, "regressed": 1}, "mpnet": {"fixed": 78, "partially_fixed": 134, "unresolved": 17, "regressed": 1}, "issue_ledger": {"fixed": 63, "partially_fixed": 93, "unresolved": 73, "regressed": 1}, "structured": {"fixed": 77, "partially_fixed": 134, "unresolved": 18, "regressed": 1}}, "v6": {"tfidf": {"fixed": 73, "partially_fixed": 135, "unresolved": 19, "regressed": 3}, "modernbert": {"fixed": 75, "partially_fixed": 138, "unresolved": 16, "regressed": 1}, "mpnet": {"fixed": 77, "partially_fixed": 136, "unresolved": 16, "regressed": 1}, "issue_ledger": {"fixed": 63, "partially_fixed": 94, "unresolved": 72, "regressed": 1}, "structured": {"fixed": 76, "partially_fixed": 136, "unresolved": 17, "regressed": 1}}, "v7": {"tfidf": {"fixed": 72, "partially_fixed": 130, "unresolved": 25, "regressed": 3}, "modernbert": {"fixed": 73, "partially_fixed": 142, "unresolved": 14, "regressed": 1}, "mpnet": {"fixed": 74, "partially_fixed": 142, "unresolved": 13, "regressed": 1}, "issue_ledger": {"fixed": 61, "partially_fixed": 99, "unresolved": 69, "regressed": 1}, "structured": {"fixed": 73, "partially_fixed": 142, "unresolved": 14, "regressed": 1}}, "v8": {"tfidf": {"fixed": 74, "partially_fixed": 131, "unresolved": 22, "regressed": 3}, "modernbert": {"fixed": 73, "partially_fixed": 143, "unresolved": 13, "regressed": 1}, "mpnet": {"fixed": 73, "partially_fixed": 143, "unresolved": 13, "regressed": 1}, "issue_ledger": {"fixed": 60, "partially_fixed": 100, "unresolved": 69, "regressed": 1}, "structured": {"fixed": 74, "partially_fixed": 141, "unresolved": 14, "regressed": 1}}}, "disagreements": [{"pair": "structured vs tfidf", "total": 35, "top_pairs": {"partially_fixed -> fixed": 11, "fixed -> partially_fixed": 10, "partially_fixed -> unresolved": 8, "fixed -> unresolved": 2, "partially_fixed -> regressed": 2, "unresolved -> partially_fixed": 1, "unresolved -> fixed": 1}}, {"pair": "structured vs mpnet", "total": 2, "top_pairs": {"fixed -> partially_fixed": 1, "unresolved -> partially_fixed": 1}}, {"pair": "structured vs issue_ledger", "total": 55, "top_pairs": {"partially_fixed -> unresolved": 41, "fixed -> unresolved": 14}}], "hero": {"dev_versions": 7, "latest_rows": 148, "best_accuracy": 0.682, "best_macro_f1": 0.704, "candidate_count": 230}};
+    const labelOrder = payload.label_order;
+    const labelColors = payload.label_colors;
+    const devVersions = payload.dev_versions;
+    const metricRows = payload.metric_rows;
+    const transferRows = payload.transfer_rows;
+    const disagreements = payload.disagreements;
+    const hero = payload.hero;
+
+    function pct(value) {
+      return `${(value * 100).toFixed(1)}%`;
+    }
+
+    function makeHero() {
+      const stats = [
+        ['Versions', hero.dev_versions],
+        ['Latest Rows', hero.latest_rows],
+        ['Best Acc.', hero.best_accuracy.toFixed(3)],
+        ['Best Macro-F1', hero.best_macro_f1.toFixed(3)],
+        ['Candidates', hero.candidate_count],
+      ];
+      const grid = document.getElementById('hero-grid');
+      stats.forEach(([label, value]) => {
+        const card = document.createElement('div');
+        card.className = 'hero-card';
+        card.innerHTML = `<strong>${value}</strong><span>${label}</span>`;
+        grid.appendChild(card);
+      });
+    }
+
+    let currentMetric = 'accuracy';
+
+    function renderMetricChart() {
+      const svg = document.getElementById('metric-chart');
+      svg.innerHTML = '';
+      const width = 980;
+      const height = 420;
+      const pad = { top: 28, right: 26, bottom: 58, left: 70 };
+      const innerW = width - pad.left - pad.right;
+      const innerH = height - pad.top - pad.bottom;
+
+      const versions = devVersions.map(item => item.id);
+      const xFor = (version, index) => pad.left + (innerW / Math.max(1, versions.length - 1)) * index;
+      const yFor = value => pad.top + innerH - value * innerH;
+
+      for (let i = 0; i <= 5; i += 1) {
+        const value = i / 5;
+        const y = yFor(value);
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', String(pad.left));
+        line.setAttribute('x2', String(width - pad.right));
+        line.setAttribute('y1', String(y));
+        line.setAttribute('y2', String(y));
+        line.setAttribute('stroke', 'rgba(27,24,20,0.12)');
+        line.setAttribute('stroke-dasharray', '4 6');
+        svg.appendChild(line);
+
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', String(pad.left - 14));
+        label.setAttribute('y', String(y + 4));
+        label.setAttribute('text-anchor', 'end');
+        label.setAttribute('fill', '#6a5646');
+        label.setAttribute('font-size', '12');
+        label.textContent = value.toFixed(1);
+        svg.appendChild(label);
+      }
+
+      versions.forEach((version, index) => {
+        const x = xFor(version, index);
+        const tick = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        tick.setAttribute('x', String(x));
+        tick.setAttribute('y', String(height - 20));
+        tick.setAttribute('text-anchor', 'middle');
+        tick.setAttribute('fill', '#6a5646');
+        tick.setAttribute('font-size', '13');
+        tick.textContent = version.toUpperCase();
+        svg.appendChild(tick);
+      });
+
+      metricRows.forEach((row, index) => {
+        const points = row.points.map(point => {
+          const versionIndex = versions.indexOf(point.version);
+          return [xFor(point.version, versionIndex), yFor(point[currentMetric])];
+        });
+        const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        polyline.setAttribute('fill', 'none');
+        polyline.setAttribute('stroke', row.color);
+        polyline.setAttribute('stroke-width', '4');
+        polyline.setAttribute('stroke-linecap', 'round');
+        polyline.setAttribute('stroke-linejoin', 'round');
+        polyline.setAttribute('points', points.map(point => point.join(',')).join(' '));
+        polyline.style.opacity = '0.92';
+        polyline.style.strokeDasharray = '1400';
+        polyline.style.strokeDashoffset = '1400';
+        polyline.style.animation = `dash 1.2s ease forwards ${index * 90}ms`;
+        svg.appendChild(polyline);
+
+        row.points.forEach((point, pointIndex) => {
+          const versionIndex = versions.indexOf(point.version);
+          const cx = xFor(point.version, versionIndex);
+          const cy = yFor(point[currentMetric]);
+          const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          circle.setAttribute('cx', String(cx));
+          circle.setAttribute('cy', String(cy));
+          circle.setAttribute('r', '6');
+          circle.setAttribute('fill', row.color);
+          circle.setAttribute('stroke', '#fff');
+          circle.setAttribute('stroke-width', '2.5');
+          group.appendChild(circle);
+
+          const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+          title.textContent = `${row.model} | ${point.version.toUpperCase()} | ${currentMetric}=${point[currentMetric].toFixed(3)}`;
+          group.appendChild(title);
+          group.style.animation = `rise 600ms ease both ${index * 90 + pointIndex * 40}ms`;
+          svg.appendChild(group);
+        });
+      });
+    }
+
+    function renderLegend() {
+      const legend = document.getElementById('metric-legend');
+      legend.innerHTML = '';
+      metricRows.forEach(row => {
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `<span class="swatch" style="background:${row.color}"></span><span>${row.model}</span>`;
+        legend.appendChild(item);
+      });
+    }
+
+    function renderMix() {
+      const mix = document.getElementById('mix-grid');
+      mix.innerHTML = '';
+      devVersions.forEach(version => {
+        const card = document.createElement('div');
+        card.className = 'mix-card';
+        const total = version.rows;
+        const labels = labelOrder.map(label => {
+          const count = version.labels[label] || 0;
+          const width = total ? (count / total) * 100 : 0;
+          return `<div class="seg" style="background:${labelColors[label]}; width:${width}%"></div>`;
+        }).join('');
+        const labelRows = labelOrder.map(label => {
+          const count = version.labels[label] || 0;
+          return `<div class="mix-label"><span class="mix-dot" style="background:${labelColors[label]}"></span><span>${label.replace('_', ' ')}: <strong>${count}</strong></span></div>`;
+        }).join('');
+        card.innerHTML = `
+          <div class="mix-head">
+            <strong>${version.label}</strong>
+            <span>${version.rows} rows</span>
+          </div>
+          <div class="stacked">${labels}</div>
+          <div class="mix-labels">${labelRows}</div>
+        `;
+        mix.appendChild(card);
+      });
+    }
+
+    const transferModelOrder = ['structured', 'mpnet', 'tfidf', 'modernbert', 'issue_ledger'];
+    let currentTransferModel = 'structured';
+
+    function renderTransferTabs() {
+      const tabs = document.getElementById('transfer-tabs');
+      tabs.innerHTML = '';
+      transferModelOrder.forEach(model => {
+        const btn = document.createElement('button');
+        btn.className = 'transfer-tab' + (model === currentTransferModel ? ' active' : '');
+        btn.textContent = model.replace('_', ' ');
+        btn.onclick = () => {
+          currentTransferModel = model;
+          renderTransferTabs();
+          renderTransferGrid();
+        };
+        tabs.appendChild(btn);
+      });
+    }
+
+    function renderTransferGrid() {
+      const grid = document.getElementById('transfer-grid');
+      grid.innerHTML = '';
+      Object.entries(transferRows).forEach(([version, models]) => {
+        const counts = models[currentTransferModel];
+        const total = labelOrder.reduce((acc, label) => acc + (counts[label] || 0), 0);
+        const labels = labelOrder.map(label => {
+          const count = counts[label] || 0;
+          const width = total ? (count / total) * 100 : 0;
+          return `<div class="seg" style="background:${labelColors[label]}; width:${width}%"></div>`;
+        }).join('');
+        const labelsDetail = labelOrder.map(label => `${label.replace('_', ' ')} ${counts[label] || 0}`).join(' · ');
+        const card = document.createElement('div');
+        card.className = 'transfer-card';
+        card.innerHTML = `
+          <div class="mix-head">
+            <strong>Train ${version.toUpperCase()}</strong>
+            <span>${currentTransferModel.replace('_', ' ')}</span>
+          </div>
+          <div class="stacked">${labels}</div>
+          <div class="mini-note">${labelsDetail}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function renderDisagreements() {
+      const grid = document.getElementById('disagreement-grid');
+      grid.innerHTML = '';
+      disagreements.forEach(row => {
+        const pairs = Object.entries(row.top_pairs).map(([pair, count]) => `
+          <div class="pair-row">
+            <span>${pair}</span>
+            <strong>${count}</strong>
+          </div>
+        `).join('');
+        const card = document.createElement('div');
+        card.className = 'dis-card';
+        card.innerHTML = `
+          <div class="dis-top">
+            <strong>${row.pair}</strong>
+            <div class="dis-total">${row.total}</div>
+          </div>
+          <div class="pair-list">${pairs}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll('.toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.toggle').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        currentMetric = button.dataset.metric;
+        renderMetricChart();
+      });
+    });
+
+    makeHero();
+    renderLegend();
+    renderMetricChart();
+    renderMix();
+    renderTransferTabs();
+    renderTransferGrid();
+    renderDisagreements();
+  </script>
+  <style>
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  </style>
+</body>
+</html>

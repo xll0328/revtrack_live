@@ -1,0 +1,36 @@
+{
+  "limit": 80,
+  "modes": [
+    {
+      "candidate_rate": 1.0,
+      "diagnostics": [],
+      "issue_candidates": 322,
+      "max_replies": 78,
+      "min_replies": 6,
+      "mode": "v2-notes",
+      "status": "ok",
+      "submissions": 80,
+      "submissions_with_candidates": 80
+    },
+    {
+      "diagnostics": [],
+      "error": "OpenReview request failed for https://api2.openreview.net/notes/search with params {'venueid': 'ICLR.cc/2025/Conference', 'source': 'forum', 'limit': 80, 'offset': 0}: 400 Client Error: Bad Request for url: https://api2.openreview.net/notes/search?venueid=ICLR.cc%2F2025%2FConference&source=forum&limit=80&offset=0",
+      "mode": "v2-search",
+      "status": "error"
+    },
+    {
+      "candidate_rate": 0.0,
+      "diagnostics": [],
+      "issue_candidates": 0,
+      "max_replies": 0,
+      "min_replies": 0,
+      "mode": "v1-notes",
+      "status": "ok",
+      "submissions": 0,
+      "submissions_with_candidates": 0
+    }
+  ],
+  "retries": 1,
+  "timeout": 12,
+  "venue_id": "ICLR.cc/2025/Conference"
+}

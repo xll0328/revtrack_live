@@ -1,0 +1,69 @@
+{
+  "complete_rate": 1.0,
+  "complete_rows": 230,
+  "disagreement": {
+    "comparable_rows": 230,
+    "disagreement_rows": 82,
+    "high_disagreement_rows": 7,
+    "label_combo_counts": {
+      "issue_ledger=fixed; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=fixed": 50,
+      "issue_ledger=fixed; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 7,
+      "issue_ledger=fixed; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=unresolved": 2,
+      "issue_ledger=fixed; modernbert=partially_fixed; mpnet=partially_fixed; structured=fixed; tfidf=fixed": 1,
+      "issue_ledger=partially_fixed; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=fixed": 9,
+      "issue_ledger=partially_fixed; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 85,
+      "issue_ledger=partially_fixed; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=unresolved": 6,
+      "issue_ledger=regressed; modernbert=regressed; mpnet=regressed; structured=regressed; tfidf=regressed": 1,
+      "issue_ledger=unresolved; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=fixed": 11,
+      "issue_ledger=unresolved; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 3,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=fixed": 2,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 35,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=regressed": 2,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=unresolved": 2,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=partially_fixed; structured=unresolved; tfidf=partially_fixed": 1,
+      "issue_ledger=unresolved; modernbert=unresolved; mpnet=unresolved; structured=unresolved; tfidf=fixed": 1,
+      "issue_ledger=unresolved; modernbert=unresolved; mpnet=unresolved; structured=unresolved; tfidf=unresolved": 12
+    },
+    "missing_prediction_rows": 0,
+    "prediction_models": [
+      "issue_ledger",
+      "modernbert",
+      "mpnet",
+      "structured",
+      "tfidf"
+    ]
+  },
+  "duplicate_issue_ids": [],
+  "errors": [],
+  "field_nonempty_rates": {
+    "aligned_response_excerpt": 1.0,
+    "concern_text": 1.0,
+    "revision_summary": 1.0
+  },
+  "missing_issue_ids": 0,
+  "ok": true,
+  "review_field_counts": {
+    "questions": 230,
+    "summary": 230,
+    "weaknesses": 230
+  },
+  "rows": 230,
+  "submission_count": 60,
+  "top_submission_issue_counts": {
+    "5JWAOLBxwp": 5,
+    "7vVWiCrFnd": 5,
+    "SLw9fp4yI6": 5,
+    "YItWKZci78": 5,
+    "buC4E91xZE": 6,
+    "kmn0BhQk7p": 5,
+    "lK2V2E2MNv": 5,
+    "qBL04XXex6": 5,
+    "rhgIgTSSxW": 4,
+    "vESNKdEMGp": 5
+  },
+  "unique_issue_ids": 230,
+  "venue_counts": {
+    "ICLR.cc/2024/Conference": 230
+  },
+  "warnings": []
+}

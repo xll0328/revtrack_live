@@ -1,0 +1,52 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+
+\makeatletter
+\def\input@path{{acl_style/}}
+\makeatother
+\usepackage[review]{acl}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\title{RevTrack: Evaluating Whether Scientific Assistants Know When a Review Concern Has Been Fixed}
+
+\author{Anonymous EMNLP Submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Scientific review assistance requires temporal judgment: after authors revise a paper, a useful assistant must decide whether an old reviewer concern is still valid, partially addressed, or obsolete.
+Existing review-assistance evaluations mostly score static critiques and therefore miss this revision-aware capability.
+We introduce \textsc{RevTrack}, an issue-level benchmark that aligns a review concern with author response and revision evidence, then asks whether the concern is \textit{fixed}, \textit{partially fixed}, \textit{unresolved}, or \textit{regressed}.
+On a hardened ICLR 2024 benchmark, a structured revision-evidence model reaches 0.704 macro-F1, compared with 0.389 for the strongest semantic encoder baseline.
+On ICLR 2025, a stress set and an 80-row standard-labeled active frontier show that cross-year transfer remains brittle: TF-IDF collapses to zero fixed-case F1, and the best expanded-frontier macro-F1 is 0.469.
+A user-confirmed 80-row NeurIPS 2024 active frontier adds a second venue axis: the best transferred semantic encoder reaches 0.348 macro-F1, while prompted LLMs and vote ensembles remain near majority on this frontier.
+RevTrack reframes scientific review assistance as longitudinal evidence tracking and ships with auditable construction artifacts for blind validation, leakage control, label evidence, and claim readiness.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_task}
+\input{sections/03_dataset}
+\input{sections/04_models}
+\input{sections/05_experiments}
+\input{sections/06_discussion}
+\input{sections/07_related_work}
+\input{sections/08_limitations}
+\input{sections/09_ethics}
+
+\bibliography{refs}
+
+\appendix
+\input{sections/appendix_audit}
+
+\end{document}

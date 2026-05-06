@@ -1,0 +1,114 @@
+{
+  "allow_subset": true,
+  "duplicate_ids": [],
+  "evaluated_examples": 80,
+  "invalid_rows": [
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "BRZYhVHvSg__r03",
+      "row": "2"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "YO6GVPUrKN__r04",
+      "row": "7"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "owuEcT6BTl__r04",
+      "row": "9"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "9uolDxbYLm__r03",
+      "row": "21"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "LxxIiInmuF__r04",
+      "row": "26"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "UwvjJZWjPT__r01",
+      "row": "30"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "cknAewsBhD__r04",
+      "row": "33"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "cuO0DenqMl__r01",
+      "row": "34"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "cuO0DenqMl__r02",
+      "row": "35"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "gcpeEg88R3__r04",
+      "row": "37"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "iEeiZlTbts__r01",
+      "row": "39"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "3ZAfFoAcUI__r03",
+      "row": "49"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "doaJTihgIZ__r02",
+      "row": "59"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "te6VagJf6G__r02",
+      "row": "70"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "wDirCeTIoz__r04",
+      "row": "73"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "wZgw4CrxwK__r03",
+      "row": "75"
+    }
+  ],
+  "label_distribution": {
+    "invalid": 16,
+    "partially_fixed": 62,
+    "unresolved": 2
+  },
+  "missing_evidence_ids": [
+    "BRZYhVHvSg__r03",
+    "YO6GVPUrKN__r04",
+    "owuEcT6BTl__r04",
+    "9uolDxbYLm__r03",
+    "LxxIiInmuF__r04",
+    "UwvjJZWjPT__r01",
+    "cknAewsBhD__r04",
+    "cuO0DenqMl__r01",
+    "cuO0DenqMl__r02",
+    "gcpeEg88R3__r04",
+    "iEeiZlTbts__r01",
+    "3ZAfFoAcUI__r03",
+    "doaJTihgIZ__r02",
+    "te6VagJf6G__r02",
+    "wDirCeTIoz__r04",
+    "wZgw4CrxwK__r03"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 80,
+  "rows": 80,
+  "status": "error"
+}

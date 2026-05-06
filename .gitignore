@@ -1,0 +1,25 @@
+.omx/
+.secrets/
+*.secret
+.codex/*
+!.codex/agents/
+!.codex/agents/**
+!.codex/skills/
+!.codex/skills/**
+.codex/skills/.system/**
+!.codex/prompts/
+!.codex/prompts/**
+
+# Python/cache artifacts
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# LaTeX transient build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out

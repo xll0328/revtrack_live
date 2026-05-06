@@ -1,0 +1,24 @@
+{
+  "allow_subset": false,
+  "duplicate_ids": [],
+  "evaluated_examples": 80,
+  "invalid_rows": [],
+  "label_distribution": {
+    "fixed": 30,
+    "partially_fixed": 46,
+    "unresolved": 4
+  },
+  "missing_evidence_ids": [
+    "E4LAVLXAHW__r03",
+    "bqf0aCF3Dd__r01",
+    "l11DZY5Nxu__r02",
+    "uClUUJk05H__r06",
+    "5pd78GmXC6__r02",
+    "5o9JJJPPm6__r01",
+    "5o9JJJPPm6__r02"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 80,
+  "rows": 80,
+  "status": "ok"
+}

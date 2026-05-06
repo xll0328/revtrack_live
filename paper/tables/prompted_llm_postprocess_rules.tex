@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.28\textwidth}rrrrr}
+\toprule
+Rule & Mean F1 & ICLR24 F1 & ICLR25 F1 & NeurIPS24 F1 & ICLR25 U Recall \\
+\midrule
+u\_guard\_fix\_suppress & 0.204 & 0.350 & 0.094 & 0.167 & 0.061 \\
+u\_any & 0.202 & 0.345 & 0.092 & 0.170 & 0.061 \\
+fixed\_suppress & 0.202 & 0.357 & 0.073 & 0.175 & 0.015 \\
+base & 0.201 & 0.352 & 0.071 & 0.179 & 0.015 \\
+\bottomrule
+\end{tabular}
+\caption{Offline post-processing rule search on top of a three-model prompted vote (GPT-5.5(v2), GPT-4.1-mini, Qwen2.5-72B). The best rule combines unresolved guarding with fixed-disagreement suppression.}
+\label{tab:prompted-llm-postprocess-rules}
+\end{table*}

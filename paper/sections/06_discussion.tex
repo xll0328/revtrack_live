@@ -1,0 +1,22 @@
+\section{Discussion}
+
+RevTrack suggests that review assistance should be evaluated as evidence tracking rather than static critique generation.
+The practical failure mode is not merely that a model makes a wrong label.
+It is that the model may keep repeating a criticism that has been fixed, or may credit a response that only defers the issue.
+Both failures can distort author effort and reviewer attention.
+
+The benchmark also changes how model progress should be read.
+Small accuracy differences are not meaningful when most examples are partially fixed.
+Macro-F1 and per-label recovery are closer to the scientific workload: fixed cases test whether stale criticism is retired, while unresolved cases test whether a model resists superficial reassurance.
+The failure taxonomy makes this point concrete.
+On the expanded ICLR 2025 frontier, many transfer errors are not random confusions; they are recognizable scientific-assistance failures such as over-crediting unresolved concerns, keeping fixed criticisms alive, and missing regressions.
+
+The expanded ICLR 2025 frontier strengthens the cross-year story but also sharpens the boundary of the claim.
+It confirms brittleness on a larger active frontier, yet the sample is deliberately hard and disagreement-heavy.
+This is useful evidence for a benchmark paper because it shows where static matching breaks under pressure.
+The NeurIPS active frontier and ICLR 2023 random/stratified slice broaden that evidence, but they still do not imply that the same label distribution holds across all venues or years.
+The next step is therefore a non-ICLR random/stratified slice for broader prevalence-sensitive evidence, and a second annotator pass only if the paper claims inter-annotator reliability.
+
+More broadly, RevTrack points to a design requirement for scientific assistants.
+They need an issue ledger: a structured representation of what was criticized, what evidence was added, and what status each concern should now have.
+That representation is not a complete solution, but it gives the field a measurable target for longitudinal scientific judgment.

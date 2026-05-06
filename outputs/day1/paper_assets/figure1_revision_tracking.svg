@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="760" viewBox="0 0 1320 760">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#435466"/>
+  </marker>
+  <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+    <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#1f2937" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#f4f7fb"/>
+<path d="M0 0 H1320 V154 C1080 132 914 120 702 144 C458 172 244 152 0 118 Z" fill="#e6eef8"/>
+<text x="54" y="54" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="29" font-weight="900" fill="#0f172a">A review concern can become stale after revision</text>
+<text x="54" y="86" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#475569">RevTrack asks whether one concrete concern remains valid after aligning the review, response, and revised evidence.</text>
+<text x="54" y="112" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748b">Example: PIED: Physics-Informed Experimental Design for Inverse Problems (w7P92BEsb2__r01)</text>
+
+<g filter="url(#shadow)">
+<rect x="54" y="156" width="285" height="226" rx="14" fill="#ffffff" stroke="#c7d0da" stroke-width="1.4"/>
+<rect x="54" y="156" width="285" height="7" rx="3.5" fill="#2563eb"/>
+<text x="72" y="190" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">Original review concern</text>
+<text x="72" y="216" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.2" fill="#2563eb">BEFORE REVISION</text>
+<text x="72" y="244" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">The review asks for direct</text>
+<text x="72" y="266" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">computational-cost evidence, not</text>
+<text x="72" y="288" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">just a claim that the revised</text>
+<text x="72" y="310" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">method is efficient.</text>
+<rect x="374" y="156" width="285" height="226" rx="14" fill="#ffffff" stroke="#c7d0da" stroke-width="1.4"/>
+<rect x="374" y="156" width="285" height="7" rx="3.5" fill="#0891b2"/>
+<text x="392" y="190" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">Author response</text>
+<text x="392" y="216" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.2" fill="#0891b2">CLAIMED FIX</text>
+<text x="392" y="244" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">The authors say they added a cost</text>
+<text x="392" y="266" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">comparison and point to the revised</text>
+<text x="392" y="288" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">experiment section.</text>
+<rect x="374" y="414" width="285" height="206" rx="14" fill="#ffffff" stroke="#c7d0da" stroke-width="1.4"/>
+<rect x="374" y="414" width="285" height="7" rx="3.5" fill="#16a34a"/>
+<text x="392" y="448" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">Revised paper evidence</text>
+<text x="392" y="474" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.2" fill="#16a34a">OBSERVED FIX</text>
+<text x="392" y="502" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">New revision evidence adds Figure 6</text>
+<text x="392" y="524" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">and Lines 510-530, comparing error</text>
+<text x="392" y="546" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">and computational cost.</text>
+<rect x="704" y="156" width="255" height="226" rx="14" fill="#fff7ed" stroke="#c7d0da" stroke-width="1.4"/>
+<rect x="704" y="156" width="255" height="7" rx="3.5" fill="#d97706"/>
+<text x="722" y="190" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">Static LLM trap</text>
+<text x="722" y="216" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.2" fill="#d97706">WRONG ABSTRACTION</text>
+<text x="722" y="244" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">A static judge can repeat the</text>
+<text x="722" y="266" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">old criticism because the</text>
+<text x="722" y="288" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">original concern still sounds</text>
+<text x="722" y="310" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">plausible in isolation.</text>
+<rect x="1004" y="156" width="262" height="226" rx="14" fill="#f0fdf4" stroke="#c7d0da" stroke-width="1.4"/>
+<rect x="1004" y="156" width="262" height="7" rx="3.5" fill="#15803d"/>
+<text x="1022" y="190" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">RevTrack target</text>
+<text x="1022" y="216" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.2" fill="#15803d">ISSUE STATUS</text>
+<text x="1022" y="244" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">Label: fixed. The exact</text>
+<text x="1022" y="266" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">cost-comparison concern is</text>
+<text x="1022" y="288" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">retired because the new evidence</text>
+<text x="1022" y="310" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">directly answers it.</text>
+</g>
+
+<line x1="341" y1="269" x2="372" y2="269" stroke="#435466" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="660" y1="269" x2="702" y2="269" stroke="#435466" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="660" y1="514" x2="1002" y2="281" stroke="#15803d" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="960" y1="269" x2="1002" y2="269" stroke="#435466" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+<rect x="735" y="338" width="154" height="28" rx="14" fill="#d97706"/><text x="752" y="357" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff">stale criticism</text>
+<rect x="1030" y="338" width="74" height="28" rx="14" fill="#15803d"/><text x="1047" y="357" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff">fixed</text>
+
+<rect x="54" y="654" width="1212" height="74" rx="16" fill="#ffffff" stroke="#c7d0da" stroke-width="1.4"/>
+<circle cx="102" cy="693" r="22" fill="#2563eb"/>
+<text x="102" y="700" text-anchor="middle" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="900" fill="#ffffff">1</text>
+<text x="136" y="690" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">Extract issue</text>
+<text x="136" y="714" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">One reviewer concern</text>
+<circle cx="326" cy="693" r="22" fill="#0891b2"/>
+<text x="326" y="700" text-anchor="middle" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="900" fill="#ffffff">2</text>
+<text x="360" y="690" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">Align response</text>
+<text x="360" y="714" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">Find claimed fix</text>
+<circle cx="552" cy="693" r="22" fill="#16a34a"/>
+<text x="552" y="700" text-anchor="middle" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="900" fill="#ffffff">3</text>
+<text x="586" y="690" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">Check revision</text>
+<text x="586" y="714" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">Require paper evidence</text>
+<circle cx="784" cy="693" r="22" fill="#0f766e"/>
+<text x="784" y="700" text-anchor="middle" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="900" fill="#ffffff">4</text>
+<text x="818" y="690" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">Assign status</text>
+<text x="818" y="714" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">fixed / partial /</text>
+<text x="818" y="730" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">unresolved / regressed</text>
+<circle cx="1058" cy="693" r="22" fill="#334155"/>
+<text x="1058" y="700" text-anchor="middle" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="900" fill="#ffffff">5</text>
+<text x="1092" y="690" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">Gate claims</text>
+<text x="1092" y="714" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">Only evidence-backed</text>
+<text x="1092" y="730" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#17202a">results</text>
+
+<text x="704" y="430" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#111827">Key distinction</text>
+<text x="704" y="462" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">The label is not based on whether the old concern sounds reasonable.</text>
+<text x="704" y="492" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#17202a">It is based on whether new revision evidence resolves that exact concern.</text>
+</svg>

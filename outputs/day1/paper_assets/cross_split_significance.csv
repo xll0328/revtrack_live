@@ -1,0 +1,19 @@
+split_key,split,rows,anchor_key,anchor_model,model_key,model,macro_f1,ci95_low,ci95_high,delta_to_anchor,anchor_not_better_prob
+iclr2024_clean_dev_v7,ICLR 2024 clean dev v7,148,structured,Structured,majority,Majority label,0.183761,0.183761,0.183761,0.520046,0.0
+iclr2024_clean_dev_v7,ICLR 2024 clean dev v7,148,structured,Structured,tfidf,TF-IDF + LinearSVC,0.375519,0.305096,0.447049,0.328287,0.0
+iclr2024_clean_dev_v7,ICLR 2024 clean dev v7,148,structured,Structured,modernbert,ModernBERT + LinearSVC,0.386719,0.31136,0.463859,0.317088,0.0
+iclr2024_clean_dev_v7,ICLR 2024 clean dev v7,148,structured,Structured,mpnet,MPNet + LinearSVC,0.389485,0.31981,0.460713,0.314322,0.0
+iclr2024_clean_dev_v7,ICLR 2024 clean dev v7,148,structured,Structured,structured_no_overrides,Structured (No Overrides),0.423731,0.351883,0.493759,0.280075,0.0
+iclr2024_clean_dev_v7,ICLR 2024 clean dev v7,148,structured,Structured,structured,Structured,0.703807,0.629712,0.774761,0.0,1.0
+iclr2025_expanded80_standard,ICLR 2025 expanded80 standard frontier,80,issue_ledger,Issue ledger,majority,Majority label,0.226027,0.226027,0.226027,0.242958,0.0
+iclr2025_expanded80_standard,ICLR 2025 expanded80 standard frontier,80,issue_ledger,Issue ledger,tfidf,TF-IDF,0.025974,0.024691,0.027778,0.443011,0.0
+iclr2025_expanded80_standard,ICLR 2025 expanded80 standard frontier,80,issue_ledger,Issue ledger,modernbert,ModernBERT,0.091653,0.053922,0.133942,0.377332,0.0
+iclr2025_expanded80_standard,ICLR 2025 expanded80 standard frontier,80,issue_ledger,Issue ledger,mpnet,MPNet,0.276433,0.139999,0.372033,0.192552,0.0
+iclr2025_expanded80_standard,ICLR 2025 expanded80 standard frontier,80,issue_ledger,Issue ledger,structured,Structured,0.297959,0.218225,0.3525,0.171026,0.0604
+iclr2025_expanded80_standard,ICLR 2025 expanded80 standard frontier,80,issue_ledger,Issue ledger,issue_ledger,Issue ledger,0.468985,0.323073,0.576723,0.0,1.0
+neurips2024_limit100_standard,NeurIPS 2024 limit100 standard frontier,80,mpnet,MPNet,majority,Majority label,0.177419,0.177419,0.177419,0.170363,0.0
+neurips2024_limit100_standard,NeurIPS 2024 limit100 standard frontier,80,mpnet,MPNet,tfidf,TF-IDF,0.177419,0.177419,0.177419,0.170363,0.0
+neurips2024_limit100_standard,NeurIPS 2024 limit100 standard frontier,80,mpnet,MPNet,modernbert,ModernBERT,0.137143,0.081914,0.193003,0.210639,0.0
+neurips2024_limit100_standard,NeurIPS 2024 limit100 standard frontier,80,mpnet,MPNet,mpnet,MPNet,0.347782,0.298963,0.390434,0.0,1.0
+neurips2024_limit100_standard,NeurIPS 2024 limit100 standard frontier,80,mpnet,MPNet,structured,Structured,0.197339,0.141166,0.25025,0.150443,0.0
+neurips2024_limit100_standard,NeurIPS 2024 limit100 standard frontier,80,mpnet,MPNet,issue_ledger,Issue ledger,0.211478,0.173273,0.253394,0.136304,0.0002

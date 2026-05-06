@@ -1,0 +1,54 @@
+{
+  "complete_rate": 1.0,
+  "complete_rows": 241,
+  "disagreement": {
+    "comparable_rows": 241,
+    "disagreement_rows": 83,
+    "high_disagreement_rows": 0,
+    "label_combo_counts": {
+      "issue_ledger=fixed; tfidf=fixed": 5,
+      "issue_ledger=partially_fixed; tfidf=fixed": 1,
+      "issue_ledger=partially_fixed; tfidf=partially_fixed": 153,
+      "issue_ledger=unresolved; tfidf=fixed": 4,
+      "issue_ledger=unresolved; tfidf=partially_fixed": 78
+    },
+    "missing_prediction_rows": 0,
+    "prediction_models": [
+      "issue_ledger",
+      "tfidf"
+    ]
+  },
+  "duplicate_issue_ids": [],
+  "errors": [],
+  "field_nonempty_rates": {
+    "aligned_response_excerpt": 1.0,
+    "concern_text": 1.0,
+    "revision_summary": 1.0
+  },
+  "missing_issue_ids": 0,
+  "ok": true,
+  "review_field_counts": {
+    "confidence": 241,
+    "strength_and_weaknesses": 241,
+    "summary_of_the_paper": 241
+  },
+  "rows": 241,
+  "submission_count": 65,
+  "top_submission_issue_counts": {
+    "HTJE5Krui0g": 4,
+    "I3HCE7Ro78H": 4,
+    "N3kGYG3ZcTi": 4,
+    "NOKUQ9JMohJ": 4,
+    "N_g8TT9Cy7f": 4,
+    "TZG_XsO4x6y": 4,
+    "sZI1Oj9KBKy": 4,
+    "tmIiMPl4IPa": 5,
+    "vzdrgR2nomD": 5,
+    "yqe0BZeN_xH": 4
+  },
+  "unique_issue_ids": 241,
+  "venue_counts": {
+    "ICLR.cc/2023/Conference": 241
+  },
+  "warnings": []
+}

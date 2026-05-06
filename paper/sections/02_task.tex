@@ -1,0 +1,19 @@
+\section{Task Definition}
+
+\paragraph{Input.}
+Each example contains a paper title and optional abstract, one reviewer concern, author response candidates, an aligned response excerpt, and a revision summary.
+The unit of prediction is a single issue, not a paper-level decision.
+This design prevents a model from hiding behind a global paper-quality judgment when one concern was fixed and another remains unresolved.
+
+\paragraph{Output labels.}
+The label set is:
+\textit{fixed}, \textit{partially fixed}, \textit{unresolved}, and \textit{regressed}.
+\textit{Fixed} means the exact concern is addressed with concrete revision evidence.
+\textit{Partially fixed} means the revision makes real progress but leaves a material part open.
+\textit{Unresolved} means the concern remains present, is deferred, or is reframed without enough evidence.
+\textit{Regressed} means the attempted fix introduces a new issue on the same axis or makes the paper less reliable.
+
+\paragraph{Evaluation.}
+Macro-F1 is the primary metric because label skew is central to the task.
+Accuracy is reported only with null baselines and per-label recovery.
+We explicitly track fixed-case and unresolved-case F1 because stale criticism and over-crediting are the most consequential failures for review support.

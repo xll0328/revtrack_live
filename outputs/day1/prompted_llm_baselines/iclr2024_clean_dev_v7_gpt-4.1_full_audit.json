@@ -1,0 +1,16 @@
+{
+  "allow_subset": true,
+  "duplicate_ids": [],
+  "evaluated_examples": 148,
+  "invalid_rows": [],
+  "label_distribution": {
+    "fixed": 83,
+    "partially_fixed": 53,
+    "unresolved": 12
+  },
+  "missing_evidence_ids": [],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 148,
+  "rows": 148,
+  "status": "ok"
+}

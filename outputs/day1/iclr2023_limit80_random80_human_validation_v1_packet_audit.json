@@ -1,0 +1,19 @@
+{
+  "assistant_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "audit_bucket_distribution": {
+    "label_stratum": 53,
+    "minority_unresolved": 26,
+    "model_disagreement": 1
+  },
+  "audit_rows": 80,
+  "blind_rows": 80,
+  "errors": [],
+  "key_rows": 80,
+  "ok": true,
+  "source_rows": 80,
+  "warnings": []
+}

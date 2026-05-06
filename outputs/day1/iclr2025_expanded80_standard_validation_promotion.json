@@ -1,0 +1,27 @@
+{
+  "adjudication": "experiments/day1/iclr2025_expanded80_assistant_adjudication_v1.tsv",
+  "adjudication_rows": 80,
+  "blind_sheet": "experiments/day1/iclr2025_expanded80_human_validation_v1_blind.tsv",
+  "claim_boundary": "Use as user-confirmed single-pass standard validation; do not report as independent two-annotator IAA.",
+  "confidence_distribution": {
+    "3": 49,
+    "4": 31
+  },
+  "errors": [],
+  "evidence_source_distribution": {
+    "aligned_response_excerpt": 73,
+    "review_excerpt": 3,
+    "revision_summary": 4
+  },
+  "label_distribution": {
+    "fixed": 4,
+    "partially_fixed": 4,
+    "regressed": 6,
+    "unresolved": 66
+  },
+  "promoted_rows": 80,
+  "provenance": "User-confirmed standard expanded80 validation on 2026-04-26; source=user-reviewed expanded80 assistant-adjudication draft; not an independent two-annotator IAA pass.",
+  "rows": 80,
+  "status": "ok",
+  "write": true
+}

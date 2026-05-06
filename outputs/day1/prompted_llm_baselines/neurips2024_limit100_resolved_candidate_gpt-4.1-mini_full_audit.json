@@ -1,0 +1,27 @@
+{
+  "allow_subset": false,
+  "duplicate_ids": [],
+  "evaluated_examples": 80,
+  "invalid_rows": [],
+  "label_distribution": {
+    "fixed": 16,
+    "partially_fixed": 64
+  },
+  "missing_evidence_ids": [
+    "JO6T4rEJ32__r04",
+    "FZQYfmsmX9__r03",
+    "iEeiZlTbts__r01",
+    "owuEcT6BTl__r02",
+    "qOSFiJdVkZ__r04",
+    "uSKzEaj9zJ__r01",
+    "axW8xvQPkF__r04",
+    "doaJTihgIZ__r03",
+    "nw4TWuEPGx__r02",
+    "nw4TWuEPGx__r03",
+    "nw4TWuEPGx__r05"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 80,
+  "rows": 80,
+  "status": "ok"
+}

@@ -1,0 +1,72 @@
+{
+  "complete_rate": 1.0,
+  "complete_rows": 393,
+  "disagreement": {
+    "comparable_rows": 393,
+    "disagreement_rows": 316,
+    "high_disagreement_rows": 93,
+    "label_combo_counts": {
+      "issue_ledger=fixed; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=fixed": 7,
+      "issue_ledger=fixed; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 37,
+      "issue_ledger=fixed; modernbert=partially_fixed; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 7,
+      "issue_ledger=fixed; modernbert=partially_fixed; mpnet=fixed; structured=partially_fixed; tfidf=partially_fixed": 25,
+      "issue_ledger=fixed; modernbert=unresolved; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 8,
+      "issue_ledger=partially_fixed; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 5,
+      "issue_ledger=partially_fixed; modernbert=fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 68,
+      "issue_ledger=partially_fixed; modernbert=fixed; mpnet=regressed; structured=fixed; tfidf=partially_fixed": 3,
+      "issue_ledger=partially_fixed; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 70,
+      "issue_ledger=partially_fixed; modernbert=partially_fixed; mpnet=regressed; structured=partially_fixed; tfidf=partially_fixed": 3,
+      "issue_ledger=partially_fixed; modernbert=unresolved; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 9,
+      "issue_ledger=unresolved; modernbert=fixed; mpnet=fixed; structured=fixed; tfidf=partially_fixed": 16,
+      "issue_ledger=unresolved; modernbert=fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 30,
+      "issue_ledger=unresolved; modernbert=fixed; mpnet=unresolved; structured=fixed; tfidf=partially_fixed": 9,
+      "issue_ledger=unresolved; modernbert=fixed; mpnet=unresolved; structured=unresolved; tfidf=partially_fixed": 3,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=fixed; structured=partially_fixed; tfidf=partially_fixed": 13,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 26,
+      "issue_ledger=unresolved; modernbert=partially_fixed; mpnet=unresolved; structured=partially_fixed; tfidf=partially_fixed": 31,
+      "issue_ledger=unresolved; modernbert=unresolved; mpnet=fixed; structured=unresolved; tfidf=partially_fixed": 6,
+      "issue_ledger=unresolved; modernbert=unresolved; mpnet=partially_fixed; structured=partially_fixed; tfidf=partially_fixed": 3
+    },
+    "missing_prediction_rows": 0,
+    "prediction_models": [
+      "issue_ledger",
+      "modernbert",
+      "mpnet",
+      "structured",
+      "tfidf"
+    ]
+  },
+  "duplicate_issue_ids": [],
+  "errors": [],
+  "field_nonempty_rates": {
+    "aligned_response_excerpt": 1.0,
+    "concern_text": 1.0,
+    "revision_summary": 1.0
+  },
+  "missing_issue_ids": 0,
+  "ok": true,
+  "review_field_counts": {
+    "questions": 393,
+    "summary": 393,
+    "weaknesses": 393
+  },
+  "rows": 393,
+  "submission_count": 100,
+  "top_submission_issue_counts": {
+    "3BNPUDvqMt": 5,
+    "7Sh0XkN1KS": 5,
+    "8B3sAX889P": 5,
+    "C62d2nS3KO": 5,
+    "MQIET1VfoV": 5,
+    "XZp1uP0hh2": 5,
+    "a560KLF3v5": 5,
+    "ez7w0Ss4g9": 5,
+    "iEeiZlTbts": 4,
+    "nw4TWuEPGx": 5
+  },
+  "unique_issue_ids": 393,
+  "venue_counts": {
+    "NeurIPS.cc/2024/Conference": 393
+  },
+  "warnings": []
+}

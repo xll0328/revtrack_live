@@ -1,0 +1,101 @@
+{
+  "agreement": 1.0,
+  "assistant_distribution": {
+    "fixed": 13,
+    "partially_fixed": 19,
+    "regressed": 1,
+    "unresolved": 7
+  },
+  "bucket_agreement": {
+    "minority_regressed": {
+      "agreement": 1.0,
+      "matches": 1,
+      "total": 1
+    },
+    "minority_unresolved": {
+      "agreement": 1.0,
+      "matches": 7,
+      "total": 7
+    },
+    "model_high_conflict": {
+      "agreement": 1.0,
+      "matches": 8,
+      "total": 8
+    },
+    "structured_error": {
+      "agreement": 1.0,
+      "matches": 24,
+      "total": 24
+    }
+  },
+  "cohen_kappa": 1.0,
+  "confusion_assistant_to_human": {
+    "fixed": {
+      "fixed": 13,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "partially_fixed": {
+      "fixed": 0,
+      "partially_fixed": 19,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "regressed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 1,
+      "unresolved": 0
+    },
+    "unresolved": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 7
+    }
+  },
+  "human_distribution": {
+    "fixed": 13,
+    "partially_fixed": 19,
+    "regressed": 1,
+    "unresolved": 7
+  },
+  "invalid_rows": [],
+  "key_rows": 40,
+  "labeled_rows": 40,
+  "mismatches": 0,
+  "missing_key_rows": 0,
+  "per_label": {
+    "fixed": {
+      "assistant_support": 13,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 13
+    },
+    "partially_fixed": {
+      "assistant_support": 19,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 19
+    },
+    "regressed": {
+      "assistant_support": 1,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "unresolved": {
+      "assistant_support": 7,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 7
+    }
+  },
+  "rows": 40,
+  "unlabeled_rows": 0
+}

@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{p{0.28\linewidth}cccc}
+\toprule
+Model & ICLR24 & ICLR25 & NeurIPS & Mean \\
+\midrule
+Majority & 0.184 & 0.226 & 0.177 & 0.196 \\
+GPT-5.5 (v2) & 0.350 & 0.081 & 0.171 & 0.201 \\
+GPT-4.1 & 0.326 & 0.070 & 0.166 & 0.187 \\
+GPT-4o-mini & 0.299 & 0.077 & 0.178 & 0.185 \\
+GPT-4.1-nano & 0.210 & 0.161 & 0.126 & 0.166 \\
+Qwen2.5-72B & 0.334 & 0.072 & 0.165 & 0.190 \\
+GPT-4.1-mini & 0.347 & 0.066 & 0.181 & 0.198 \\
+\midrule
+Vote-3 (top) & 0.352 & 0.071 & 0.179 & 0.201 \\
+Vote-3 (diverse) & 0.347 & 0.088 & 0.174 & 0.203 \\
+Vote-3 (U-guard) & 0.345 & 0.092 & 0.170 & 0.202 \\
+Vote-3 (U+F) & 0.350 & 0.094 & 0.167 & 0.204 \\
+Vote-6 (all) & 0.344 & 0.064 & 0.177 & 0.195 \\
+\bottomrule
+\end{tabular}
+\caption{Macro-F1 of prompted LLMs and vote ensembles on three standard-labeled splits. Voting improves in-domain stability but does not resolve cross-year brittleness on expanded80.}
+\label{tab:prompted-llm-ensemble}
+\end{table}

@@ -1,0 +1,2 @@
+artifact,rows,needs_human_review,key_evidence_rows,context_fallback_evidence_rows,assistant_distribution,audit_bucket_distribution,signoff_sheet,signoff_packet
+ai_assisted_validation_signoff,61,61,41,20,fixed 18 / partially_fixed 35 / regressed 1 / unresolved 7,label_stratum 4 / minority_regressed 1 / minority_unresolved 7 / model_disagreement 6 / model_high_conflict 10 / structured_error 33,outputs/day1/ai_assisted_validation_signoff/ai_assisted_validation_signoff.tsv,outputs/day1/ai_assisted_validation_signoff/ai_assisted_validation_signoff.html

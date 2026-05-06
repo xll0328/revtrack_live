@@ -1,0 +1,26 @@
+{
+  "best_model": {
+    "accuracy": 1.0,
+    "fixed_f1": 1.0,
+    "macro_f1": 0.75,
+    "model_key": "issue_ledger",
+    "partially_fixed_f1": 1.0,
+    "regressed_f1": 0.0,
+    "rows": 80,
+    "status": "assistant_resolved_candidate_not_human_validation",
+    "unresolved_f1": 1.0
+  },
+  "claim_boundary": "Use only as proxy/pre-confirmation analysis; do not report as standard human validation, IAA, or final benchmark transfer evidence.",
+  "dataset_name": "ICLR 2023 random80 resolved candidate",
+  "human_validation_status": "assistant_resolved_candidate_not_human_validation",
+  "label_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "metrics_csv": "/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2023_limit80_random80_resolved_candidate_transfer_metrics.csv",
+  "metrics_md": "/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2023_limit80_random80_resolved_candidate_transfer_metrics.md",
+  "output_jsonl": "/data/sony/emnlp2026_revtrack/data/processed/iclr2023_limit80_random80_resolved_candidate_validation_v1.jsonl",
+  "rows": 80,
+  "status": "assistant_resolved_candidate_not_human_validation"
+}

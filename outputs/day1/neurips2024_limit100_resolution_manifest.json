@@ -1,0 +1,22 @@
+{
+  "action_distribution": {
+    "downgrade_regressed": 4,
+    "keep": 36,
+    "upgrade_weak_unresolved_to_partial": 40
+  },
+  "candidate_blind": "experiments/day1/neurips2024_limit100_standard_label_candidate_blind.tsv",
+  "claim_boundary": "Use as an assistant-resolved candidate sheet only; do not report as standard human validation, IAA, or benchmark transfer performance until user-confirmed labels are written to the canonical blind sheet.",
+  "draft_distribution": {
+    "regressed": 4,
+    "unresolved": 76
+  },
+  "human_validation_status": "not_human_validated",
+  "output_tsv": "experiments/day1/neurips2024_limit100_resolved_adjudication_v1.tsv",
+  "resolved_distribution": {
+    "partially_fixed": 44,
+    "unresolved": 36
+  },
+  "review_required_rows": 80,
+  "rows": 80,
+  "status": "assistant_resolved_candidate"
+}

@@ -1,0 +1,27 @@
+{
+  "best_model": {
+    "accuracy": 1.0,
+    "fixed_f1": 1.0,
+    "macro_f1": 0.75,
+    "model_key": "issue_ledger",
+    "partially_fixed_f1": 1.0,
+    "regressed_f1": 0.0,
+    "rows": 80,
+    "status": "standard_single_user_confirmed",
+    "unresolved_f1": 1.0
+  },
+  "claim_boundary": "Use as standard single-user random/stratified slice validation only when the source sheet has been user-confirmed; do not report as independent two-annotator IAA or unmeasured natural venue prevalence.",
+  "dataset_name": "ICLR 2023 random80 standard slice",
+  "human_validation_status": "standard_single_user_confirmed",
+  "label_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "metrics_csv": "outputs/day1/paper_assets/iclr2023_limit80_random80_standard_transfer_metrics.csv",
+  "metrics_md": "outputs/day1/paper_assets/iclr2023_limit80_random80_standard_transfer_metrics.md",
+  "output_jsonl": "data/processed/iclr2023_limit80_random80_standard_validation_v1.jsonl",
+  "rows": 80,
+  "sample_design": "random_stratified",
+  "status": "standard_single_user_confirmed"
+}

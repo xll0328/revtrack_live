@@ -1,0 +1,47 @@
+\section{Related Work}
+
+\paragraph{Scientific peer review and review assistance.}
+Peer-review datasets have enabled computational study of review text, scores, decisions, and reviewing workflows.
+PeerRead introduced a public corpus of paper drafts, decisions, and expert reviews from venues including ACL, NeurIPS, and ICLR \citep{kang-etal-2018-dataset}.
+NLPeer expands this line with a clearly licensed, multi-domain resource that includes drafts, camera-ready versions, reviews, metadata, and versioning information \citep{dycke-etal-2023-nlpeer}.
+More recent resources such as Re2 collect full-stage review and rebuttal discussions across many OpenReview venues \citep{zhang-etal-2025-re2}.
+Task inventories for peer-review automation also emphasize that reviewing decomposes into many different subtasks and that dataset documentation matters for comparability \citep{staudinger-etal-2024-analysis}.
+These resources provide the raw setting for studying scientific review, but their main tasks are usually paper-level prediction, review understanding, or discussion modeling.
+RevTrack changes the unit of evaluation.
+Rather than predicting acceptance, summarizing reviews, or modeling discussions wholesale, it isolates one reviewer concern and asks whether later revision evidence changes that concern's status.
+This makes revision tracking closer to an issue ledger than to a static review corpus.
+
+\paragraph{Review-question answering and evidence grounding.}
+PeerQA uses peer-review questions as document-level scientific QA prompts and asks systems to retrieve evidence, identify unanswerable questions, and generate answers \citep{baumgartner-etal-2025-peerqa}.
+RevTrack shares the emphasis on authentic reviewer information needs, but changes the output from answer generation to status tracking.
+More broadly, evidence-verification benchmarks such as FEVER test whether claims are supported, refuted, or lack enough information with respect to textual evidence \citep{thorne-etal-2018-fever}.
+RevTrack differs in two ways.
+First, the claim is not a standalone fact: it is an old review concern whose status depends on later author response and revision evidence.
+Second, the correct label is not only supported versus refuted.
+Partial fixes and regressions are first-class outcomes because scientific revision often narrows, complicates, or worsens a concern rather than simply resolving it.
+This perspective is also connected to QA with conflicting evidence, where systems must avoid over-confident answers when contexts disagree \citep{liu-etal-2025-open,shaier-etal-2024-adaptive}.
+
+\paragraph{LLM-assisted reviewing.}
+LLM-based review assistance has focused heavily on generating reviewer feedback.
+Large-scale empirical work suggests that GPT-4 feedback can overlap with human-reviewer feedback and can be perceived as useful by authors \citep{liang-etal-2023-can}.
+For example, MARG uses multiple specialized LLM agents to generate scientific-paper feedback and reduce generic comments \citep{darcy-etal-2024-marg}.
+This direction is useful, but review generation alone does not test whether an assistant can retire stale criticisms after a paper changes.
+RevTrack therefore evaluates a narrower and more auditable capability: revision-aware issue tracking.
+This framing also separates assistance quality from fluency.
+A system can write a plausible comment while still failing the longitudinal decision of whether a prior comment should remain active.
+
+\paragraph{Reliability, calibration, and hallucination under evidence conflict.}
+LLM-as-judge methods have become common for scalable open-ended evaluation \citep{zheng-etal-2023-judging,liu-etal-2023-g}, and related work explores using panels of smaller judges to reduce cost and single-model bias \citep{verga-etal-2024-replacing}.
+At the same time, LLM evaluators can show position and fairness biases that require calibration \citep{wang-etal-2024-large-language-models-fair}.
+LLMs are also increasingly studied as data annotators or annotation assistants \citep{tan-etal-2024-large,gu-etal-2025-large}.
+These lines motivate our prompted-LLM baselines, but they also make direct substitution of LLM labels for validated status labels risky.
+Recent work has shown that strong language models can remain unreliable under factual pressure or conflicting evidence, even when outputs are fluent \citep{lin-etal-2022-truthfulqa,ji-etal-2023-hallucination-survey}.
+Confidence-aware analyses also show that model certainty is not a sufficient proxy for correctness \citep{kadavath-etal-2022-language}.
+This reliability gap under shift is consistent with broader calibration and robustness findings beyond review tasks \citep{guo-etal-2017-calibration,ovadia-etal-2019-shift,koh-etal-2021-wilds}.
+Post-hoc hallucination checks can improve auditing \citep{manakul-etal-2023-selfcheckgpt}, but they do not directly solve the longitudinal decision in review workflows.
+RevTrack complements this line by making the evaluation target explicit: whether a previously raised concern should stay active after revision evidence.
+
+\paragraph{Evaluation under skew.}
+The accuracy trap observed here is a standard risk in imbalanced classification, but it is especially damaging for review support.
+The minority labels are often the scientifically important ones: fixed cases determine whether stale criticism should be retired, and unresolved cases determine whether a blocker remains active.
+RevTrack therefore treats macro-F1, fixed-case recovery, unresolved-case recovery, and regressed-case analysis as part of the task definition rather than secondary diagnostics.

@@ -1,0 +1,340 @@
+{
+  "summary": {
+    "num_examples": 48.0,
+    "accuracy": 0.0625,
+    "macro_f1": 0.04166666666666666,
+    "per_label": {
+      "fixed": {
+        "precision": 0.13636363636363635,
+        "recall": 0.21428571428571427,
+        "f1": 0.16666666666666663,
+        "support": 14.0
+      },
+      "partially_fixed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 27.0
+      },
+      "unresolved": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6.0
+      },
+      "regressed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1.0
+      }
+    },
+    "confusion": {
+      "partially_fixed": {
+        "fixed": 13,
+        "regressed": 14
+      },
+      "unresolved": {
+        "fixed": 5,
+        "regressed": 1
+      },
+      "fixed": {
+        "regressed": 11,
+        "fixed": 3
+      },
+      "regressed": {
+        "fixed": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "TPZRq4FALB__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Test-time Adaptation against Multi-modal Reliability Bias"
+    },
+    {
+      "id": "qBL04XXex6__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    },
+    {
+      "id": "kmn0BhQk7p__r03",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models"
+    },
+    {
+      "id": "rhgIgTSSxW__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "TabR: Tabular Deep Learning Meets Nearest Neighbors"
+    },
+    {
+      "id": "uz7d2N2zul__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Bayesian Coreset Optimization for Personalized Federated Learning"
+    },
+    {
+      "id": "qBL04XXex6__r02",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    },
+    {
+      "id": "kmn0BhQk7p__r04",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models"
+    },
+    {
+      "id": "rhgIgTSSxW__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "TabR: Tabular Deep Learning Meets Nearest Neighbors"
+    },
+    {
+      "id": "uz7d2N2zul__r02",
+      "gold_label": "regressed",
+      "predicted_label": "fixed",
+      "paper_title": "Bayesian Coreset Optimization for Personalized Federated Learning"
+    },
+    {
+      "id": "qBL04XXex6__r03",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    },
+    {
+      "id": "lK2V2E2MNv__r03",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Bridging Vision and Language Spaces with Assignment Prediction"
+    },
+    {
+      "id": "rhgIgTSSxW__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "TabR: Tabular Deep Learning Meets Nearest Neighbors"
+    },
+    {
+      "id": "uz7d2N2zul__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Bayesian Coreset Optimization for Personalized Federated Learning"
+    },
+    {
+      "id": "qBL04XXex6__r04",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    },
+    {
+      "id": "lK2V2E2MNv__r04",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Bridging Vision and Language Spaces with Assignment Prediction"
+    },
+    {
+      "id": "eUgS9Ig8JG__r01",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "SaNN: Simple Yet Powerful Simplicial-aware Neural Networks"
+    },
+    {
+      "id": "qBL04XXex6__r05",
+      "gold_label": "unresolved",
+      "predicted_label": "fixed",
+      "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    },
+    {
+      "id": "lK2V2E2MNv__r05",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Bridging Vision and Language Spaces with Assignment Prediction"
+    },
+    {
+      "id": "kmn0BhQk7p__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models"
+    },
+    {
+      "id": "tmsqb6WpLz__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Dissecting learning and forgetting in language model finetuning"
+    },
+    {
+      "id": "7vVWiCrFnd__r01",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Rethinking and Extending the Probabilistic Inference Capacity of GNNs"
+    },
+    {
+      "id": "i8PjQT3Uig__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Locality Sensitive Sparse Encoding for Learning World Models Online"
+    },
+    {
+      "id": "tmsqb6WpLz__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Dissecting learning and forgetting in language model finetuning"
+    },
+    {
+      "id": "bDWXhzZT40__r01",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Learning model uncertainty as variance-minimizing instance weights"
+    },
+    {
+      "id": "lK2V2E2MNv__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Bridging Vision and Language Spaces with Assignment Prediction"
+    },
+    {
+      "id": "tmsqb6WpLz__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Dissecting learning and forgetting in language model finetuning"
+    },
+    {
+      "id": "bDWXhzZT40__r02",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Learning model uncertainty as variance-minimizing instance weights"
+    },
+    {
+      "id": "gtkFw6sZGS__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Generative Judge for Evaluating Alignment"
+    },
+    {
+      "id": "YItWKZci78__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Symmetric Mean-field Langevin Dynamics for Distributional Minimax Problems"
+    },
+    {
+      "id": "bDWXhzZT40__r03",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Learning model uncertainty as variance-minimizing instance weights"
+    },
+    {
+      "id": "6ARlSgun7J__r02",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Enhancing Tail Performance in Extreme Classifiers by Label Variance Reduction"
+    },
+    {
+      "id": "7vVWiCrFnd__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Rethinking and Extending the Probabilistic Inference Capacity of GNNs"
+    },
+    {
+      "id": "9k0krNzvlV__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "On the Learnability of Watermarks for Language Models"
+    },
+    {
+      "id": "AJBkfwXh3u__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Causality-Inspired Spatial-Temporal Explanations for Dynamic Graph Neural Networks"
+    },
+    {
+      "id": "BTKAeLqLMw__r01",
+      "gold_label": "fixed",
+      "predicted_label": "regressed",
+      "paper_title": "What Makes Good Data for Alignment? A Comprehensive Study of Automatic Data Selection in Instruction Tuning"
+    },
+    {
+      "id": "Ebt7JgMHv1__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching"
+    },
+    {
+      "id": "FMMF1a9ifL__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Gradual Optimization Learning for Conformational Energy Minimization"
+    },
+    {
+      "id": "FMMF1a9ifL__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Gradual Optimization Learning for Conformational Energy Minimization"
+    },
+    {
+      "id": "Iyve2ycvGZ__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Bellman Optimal Stepsize Straightening of Flow-Matching Models"
+    },
+    {
+      "id": "My7lkRNnL9__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "regressed",
+      "paper_title": "Forward Learning with Top-Down Feedback: Empirical and Analytical Characterization"
+    },
+    {
+      "id": "buC4E91xZE__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "AnomalyCLIP: Object-agnostic Prompt Learning for Zero-shot Anomaly Detection"
+    },
+    {
+      "id": "buC4E91xZE__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "AnomalyCLIP: Object-agnostic Prompt Learning for Zero-shot Anomaly Detection"
+    },
+    {
+      "id": "eUgS9Ig8JG__r04",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "SaNN: Simple Yet Powerful Simplicial-aware Neural Networks"
+    },
+    {
+      "id": "eepoE7iLpL__r01",
+      "gold_label": "fixed",
+      "predicted_label": "fixed",
+      "paper_title": "Enhancing Neural Subset Selection: Integrating Background Information into Set Representations"
+    },
+    {
+      "id": "vESNKdEMGp__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Multilingual Jailbreak Challenges in Large Language Models"
+    },
+    {
+      "id": "vESNKdEMGp__r02",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Multilingual Jailbreak Challenges in Large Language Models"
+    },
+    {
+      "id": "vESNKdEMGp__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Multilingual Jailbreak Challenges in Large Language Models"
+    },
+    {
+      "id": "vESNKdEMGp__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "regressed",
+      "paper_title": "Multilingual Jailbreak Challenges in Large Language Models"
+    }
+  ]
+}

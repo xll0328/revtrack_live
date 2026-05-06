@@ -1,0 +1,26 @@
+from_version,to_version,model_key,model,changed,total,churn_rate
+v3,v4,tfidf,TF-IDF + LinearSVC,25,230,0.10869565217391304
+v3,v4,modernbert,ModernBERT + LinearSVC,60,230,0.2608695652173913
+v3,v4,mpnet,MPNet + LinearSVC,46,230,0.2
+v3,v4,issue_ledger,Issue-Ledger,24,230,0.10434782608695652
+v3,v4,structured,Structured,34,230,0.14782608695652175
+v4,v5,tfidf,TF-IDF + LinearSVC,36,230,0.1565217391304348
+v4,v5,modernbert,ModernBERT + LinearSVC,41,230,0.1782608695652174
+v4,v5,mpnet,MPNet + LinearSVC,29,230,0.12608695652173912
+v4,v5,issue_ledger,Issue-Ledger,18,230,0.0782608695652174
+v4,v5,structured,Structured,18,230,0.0782608695652174
+v5,v6,tfidf,TF-IDF + LinearSVC,14,230,0.06086956521739131
+v5,v6,modernbert,ModernBERT + LinearSVC,9,230,0.0391304347826087
+v5,v6,mpnet,MPNet + LinearSVC,4,230,0.017391304347826087
+v5,v6,issue_ledger,Issue-Ledger,3,230,0.013043478260869565
+v5,v6,structured,Structured,4,230,0.017391304347826087
+v6,v7,tfidf,TF-IDF + LinearSVC,13,230,0.05652173913043478
+v6,v7,modernbert,ModernBERT + LinearSVC,22,230,0.09565217391304348
+v6,v7,mpnet,MPNet + LinearSVC,14,230,0.06086956521739131
+v6,v7,issue_ledger,Issue-Ledger,13,230,0.05652173913043478
+v6,v7,structured,Structured,12,230,0.05217391304347826
+v7,v8,tfidf,TF-IDF + LinearSVC,7,230,0.030434782608695653
+v7,v8,modernbert,ModernBERT + LinearSVC,5,230,0.021739130434782608
+v7,v8,mpnet,MPNet + LinearSVC,3,230,0.013043478260869565
+v7,v8,issue_ledger,Issue-Ledger,3,230,0.013043478260869565
+v7,v8,structured,Structured,3,230,0.013043478260869565

@@ -1,0 +1,122 @@
+[
+  {
+    "gold_label": "regressed",
+    "id": "VNMJfBBUd5__r04",
+    "paper_title": "Activation Gradient based Poisoned Sample Detection Against Backdoor Attacks",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "1qP3lsatCR__r01",
+    "paper_title": "NetMoE: Accelerating MoE Training through Dynamic Sample Placement",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "DTqx3iqjkz__r02",
+    "paper_title": "Convergence and Implicit Bias of Gradient Descent on Continual Linear Classification",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "dgR6i4TSng__r02",
+    "paper_title": "Quantum-PEFT: Ultra parameter-efficient fine-tuning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nNiWRRj6r9__r04",
+    "paper_title": "ONLINE EPSILON NET & PIERCING SET FOR GEOMETRIC CONCEPTS",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "rpwGUtTeA5__r04",
+    "paper_title": "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "tNn6Hskmti__r02",
+    "paper_title": "Asymptotic Analysis of Two-Layer Neural Networks after One Gradient Step under Gaussian Mixtures Data with Structure",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "tNn6Hskmti__r03",
+    "paper_title": "Asymptotic Analysis of Two-Layer Neural Networks after One Gradient Step under Gaussian Mixtures Data with Structure",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "nNiWRRj6r9__r02",
+    "paper_title": "ONLINE EPSILON NET & PIERCING SET FOR GEOMETRIC CONCEPTS",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "ONfWFluZBI__r01",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "ONfWFluZBI__r03",
+    "paper_title": "Self-supervised contrastive learning performs non-linear system identification",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "rAoEub6Nw2__r03",
+    "paper_title": "A Statistical Framework for Ranking LLM-based Chatbots",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "2Chkk5Ye2s__r04",
+    "paper_title": "Be More Diverse than the Most Diverse: Optimal Mixtures of Generative Models via Mixture-UCB Bandit Algorithms",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "82p8VHRsaK__r01",
+    "paper_title": "Language Models are Advanced Anonymizers",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "BUj9VSCoET__r01",
+    "paper_title": "Efficient Residual Learning with Mixture-of-Experts for Universal Dexterous Grasping",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "BUj9VSCoET__r03",
+    "paper_title": "Efficient Residual Learning with Mixture-of-Experts for Universal Dexterous Grasping",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "BUj9VSCoET__r04",
+    "paper_title": "Efficient Residual Learning with Mixture-of-Experts for Universal Dexterous Grasping",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "E4LAVLXAHW__r03",
+    "paper_title": "Black-Box Detection of Language Model Watermarks",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "KnoS9XxIlK__r02",
+    "paper_title": "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "KnoS9XxIlK__r04",
+    "paper_title": "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules",
+    "predicted_label": "fixed"
+  }
+]

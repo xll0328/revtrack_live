@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ICLR 2024 Clean Dev v7 Strict LOO</title>
+  <style>
+    :root {
+      --bg: #f7efe3;
+      --ink: #1c1815;
+      --muted: #6d5a49;
+      --line: rgba(28, 24, 21, 0.12);
+      --panel: rgba(255, 250, 243, 0.82);
+      --panel-strong: rgba(255, 255, 255, 0.9);
+      --shadow: 0 22px 60px rgba(38, 25, 10, 0.14);
+      --gold: #c46b14;
+      --sage: #0f6a57;
+      --blue: #275cc8;
+      --rose: #ad2e49;
+      --slate: #4a5f73;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(15, 106, 87, 0.12), transparent 24%),
+        radial-gradient(circle at 90% 8%, rgba(196, 107, 20, 0.14), transparent 24%),
+        linear-gradient(180deg, #fcf7f0 0%, #f1e6d4 100%);
+    }
+    .page {
+      width: min(1500px, calc(100vw - 28px));
+      margin: 18px auto 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(251,241,226,0.84));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -70px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(39,92,200,0.14), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: clamp(32px, 4.5vw, 56px);
+      line-height: 0.98;
+      max-width: 900px;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 980px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      backdrop-filter: blur(8px);
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      margin-top: 18px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 24px;
+    }
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .metric-card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+    }
+    .metric-card + .metric-card {
+      margin-top: 12px;
+    }
+    .metric-head {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .metric-head strong {
+      font-size: 22px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+    }
+    .metric-head span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .bar-block {
+      margin-top: 12px;
+    }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .bar-rail {
+      width: 100%;
+      height: 14px;
+      background: rgba(28,24,21,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      transition: width 900ms cubic-bezier(.2,.8,.2,1);
+    }
+    .bar-fill.accuracy { background: linear-gradient(90deg, var(--sage), #3aa17f); }
+    .bar-fill.macro { background: linear-gradient(90deg, var(--blue), #67a4ff); }
+    .label-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .label-card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px;
+    }
+    .label-name {
+      margin-bottom: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .label-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+    .rank-list {
+      display: grid;
+      gap: 12px;
+    }
+    .rank-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(250,241,228,0.92));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      overflow: hidden;
+    }
+    .rank-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--gold), var(--rose));
+      opacity: 0.9;
+    }
+    .rank-card.top::before {
+      background: linear-gradient(180deg, var(--sage), #53c39a);
+    }
+    .rank-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .rank-title {
+      font-size: 22px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      margin: 0;
+    }
+    .rank-scores {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .score-pill {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.74);
+      font-size: 13px;
+    }
+    .confusion-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    @media (max-width: 1100px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 720px) {
+      .page {
+        width: min(100vw - 16px, 100%);
+      }
+      .hero {
+        padding: 20px;
+        border-radius: 22px;
+      }
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .label-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">RevTrack Day-1 Results</div>
+      <h1>ICLR 2024 Clean Dev v7 Strict LOO</h1>
+      <p>
+        Assistant-adjudicated clean-dev results for revision-aware issue tracking.
+        This view emphasizes both raw accuracy and boundary-sensitive macro-F1 so we can
+        see whether a method merely memorizes easy closure cases or actually separates
+        <code>fixed</code>, <code>partially_fixed</code>, <code>unresolved</code>, and <code>regressed</code>.
+      </p>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="grid">
+      <section class="panel">
+        <h2>Metric Sweep</h2>
+        <div id="metricCards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Ranking</h2>
+        <div class="rank-list" id="rankList"></div>
+      </section>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
+      <h2>Per-Label F1</h2>
+      <div class="label-grid" id="labelGrid"></div>
+    </section>
+  </main>
+
+  <script>
+    const rows = [{"name": "Heuristic", "accuracy": 0.13513513513513514, "macro_f1": 0.08547008547008547, "per_label": {"fixed": {"precision": 0.29850746268656714, "recall": 0.4, "f1": 0.3418803418803419, "support": 50.0}, "partially_fixed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 86.0}, "unresolved": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 11.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"fixed": 41, "regressed": 45}, "unresolved": {"fixed": 5, "regressed": 6}, "fixed": {"regressed": 30, "fixed": 20}, "regressed": {"fixed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_heuristic_metrics.json"}, {"name": "TF-IDF", "accuracy": 0.5608108108108109, "macro_f1": 0.3755193694244165, "per_label": {"fixed": {"precision": 0.5208333333333334, "recall": 0.5, "f1": 0.5102040816326531, "support": 50.0}, "partially_fixed": {"precision": 0.654320987654321, "recall": 0.6162790697674418, "f1": 0.6347305389221557, "support": 86.0}, "unresolved": {"precision": 0.29411764705882354, "recall": 0.45454545454545453, "f1": 0.35714285714285715, "support": 11.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 53, "regressed": 2, "fixed": 22, "unresolved": 9}, "unresolved": {"unresolved": 5, "partially_fixed": 5, "fixed": 1}, "fixed": {"fixed": 25, "partially_fixed": 22, "unresolved": 3}, "regressed": {"partially_fixed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_tfidf_metrics.json"}, {"name": "ModernBERT", "accuracy": 0.5608108108108109, "macro_f1": 0.38671889704498397, "per_label": {"fixed": {"precision": 0.4666666666666667, "recall": 0.56, "f1": 0.509090909090909, "support": 50.0}, "partially_fixed": {"precision": 0.6666666666666666, "recall": 0.5813953488372093, "f1": 0.6211180124223603, "support": 86.0}, "unresolved": {"precision": 0.38461538461538464, "recall": 0.45454545454545453, "f1": 0.41666666666666663, "support": 11.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 50, "unresolved": 7, "fixed": 29}, "unresolved": {"unresolved": 5, "fixed": 3, "partially_fixed": 3}, "fixed": {"partially_fixed": 21, "fixed": 28, "unresolved": 1}, "regressed": {"partially_fixed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_modernbert_metrics.json"}, {"name": "MPNet", "accuracy": 0.581081081081081, "macro_f1": 0.3894849415255115, "per_label": {"fixed": {"precision": 0.5490196078431373, "recall": 0.56, "f1": 0.5544554455445545, "support": 50.0}, "partially_fixed": {"precision": 0.6794871794871795, "recall": 0.6162790697674418, "f1": 0.6463414634146342, "support": 86.0}, "unresolved": {"precision": 0.29411764705882354, "recall": 0.45454545454545453, "f1": 0.35714285714285715, "support": 11.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 53, "regressed": 2, "fixed": 21, "unresolved": 10}, "unresolved": {"unresolved": 5, "fixed": 2, "partially_fixed": 4}, "fixed": {"fixed": 28, "partially_fixed": 20, "unresolved": 2}, "regressed": {"partially_fixed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_mpnet_metrics.json"}, {"name": "Issue-Ledger", "accuracy": 0.47297297297297297, "macro_f1": 0.5946065840663997, "per_label": {"fixed": {"precision": 0.7142857142857143, "recall": 0.6, "f1": 0.6521739130434783, "support": 50.0}, "partially_fixed": {"precision": 0.8285714285714286, "recall": 0.3372093023255814, "f1": 0.47933884297520657, "support": 86.0}, "unresolved": {"precision": 0.14285714285714285, "recall": 0.9090909090909091, "f1": 0.24691358024691357, "support": 11.0}, "regressed": {"precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 1.0}}, "confusion": {"partially_fixed": {"unresolved": 45, "partially_fixed": 29, "fixed": 12}, "unresolved": {"unresolved": 10, "partially_fixed": 1}, "fixed": {"fixed": 30, "unresolved": 15, "partially_fixed": 5}, "regressed": {"regressed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_issue_ledger_metrics.json"}, {"name": "Structured-No-Overrides", "accuracy": 0.6554054054054054, "macro_f1": 0.423731394671328, "per_label": {"fixed": {"precision": 0.6511627906976745, "recall": 0.56, "f1": 0.6021505376344087, "support": 50.0}, "partially_fixed": {"precision": 0.7272727272727273, "recall": 0.7441860465116279, "f1": 0.735632183908046, "support": 86.0}, "unresolved": {"precision": 0.29411764705882354, "recall": 0.45454545454545453, "f1": 0.35714285714285715, "support": 11.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 64, "unresolved": 8, "fixed": 14}, "unresolved": {"unresolved": 5, "partially_fixed": 5, "fixed": 1}, "fixed": {"fixed": 28, "partially_fixed": 18, "unresolved": 4}, "regressed": {"partially_fixed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_structured_no_overrides_metrics.json"}, {"name": "Structured", "accuracy": 0.6824324324324325, "macro_f1": 0.7038066988011371, "per_label": {"fixed": {"precision": 0.6744186046511628, "recall": 0.58, "f1": 0.6236559139784946, "support": 50.0}, "partially_fixed": {"precision": 0.7386363636363636, "recall": 0.7558139534883721, "f1": 0.7471264367816092, "support": 86.0}, "unresolved": {"precision": 0.375, "recall": 0.5454545454545454, "f1": 0.4444444444444444, "support": 11.0}, "regressed": {"precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 65, "unresolved": 7, "fixed": 14}, "unresolved": {"unresolved": 6, "partially_fixed": 5}, "fixed": {"fixed": 29, "partially_fixed": 18, "unresolved": 3}, "regressed": {"regressed": 1}}, "path": "outputs/day1/iclr2024_clean_dev_assistant_v7_structured_metrics.json"}];
+    const labels = ["fixed", "partially_fixed", "unresolved", "regressed"];
+    const statsRoot = document.getElementById("stats");
+    const metricRoot = document.getElementById("metricCards");
+    const rankRoot = document.getElementById("rankList");
+    const labelRoot = document.getElementById("labelGrid");
+
+    const bestAccuracy = rows.reduce((best, row) => Math.max(best, row.accuracy), 0);
+    const bestMacro = rows.reduce((best, row) => Math.max(best, row.macro_f1), 0);
+    const ranked = [...rows].sort((a, b) => (b.macro_f1 - a.macro_f1) || (b.accuracy - a.accuracy));
+    const top = ranked[0];
+
+    function pct(value) {
+      return `${(value * 100).toFixed(1)}%`;
+    }
+
+    statsRoot.innerHTML = [
+      `<div class="stat"><strong>${rows.length}</strong><span>methods compared</span></div>`,
+      `<div class="stat"><strong>${pct(bestAccuracy)}</strong><span>best accuracy</span></div>`,
+      `<div class="stat"><strong>${pct(bestMacro)}</strong><span>best macro-F1</span></div>`,
+      `<div class="stat"><strong>${top.name}</strong><span>top boundary-aware method</span></div>`,
+    ].join("");
+
+    for (const row of rows) {
+      const card = document.createElement("article");
+      card.className = "metric-card";
+      card.innerHTML = `
+        <div class="metric-head">
+          <strong>${row.name}</strong>
+          <span>${row.path}</span>
+        </div>
+        <div class="bar-block">
+          <div class="bar-label"><span>Accuracy</span><span>${pct(row.accuracy)}</span></div>
+          <div class="bar-rail"><div class="bar-fill accuracy" data-width="${row.accuracy * 100}"></div></div>
+        </div>
+        <div class="bar-block">
+          <div class="bar-label"><span>Macro F1</span><span>${pct(row.macro_f1)}</span></div>
+          <div class="bar-rail"><div class="bar-fill macro" data-width="${row.macro_f1 * 100}"></div></div>
+        </div>
+      `;
+      metricRoot.appendChild(card);
+    }
+
+    ranked.forEach((row, index) => {
+      const confusionPairs = [];
+      for (const [gold, predMap] of Object.entries(row.confusion)) {
+        for (const [pred, count] of Object.entries(predMap)) {
+          if (gold !== pred && count > 0) {
+            confusionPairs.push(`${gold} -> ${pred} (${count})`);
+          }
+        }
+      }
+      const card = document.createElement("article");
+      card.className = `rank-card${index === 0 ? " top" : ""}`;
+      card.innerHTML = `
+        <div class="rank-meta">
+          <span>#${index + 1}</span>
+          <span>${row.name}</span>
+        </div>
+        <h3 class="rank-title">${row.name}</h3>
+        <div class="rank-scores">
+          <span class="score-pill">accuracy ${pct(row.accuracy)}</span>
+          <span class="score-pill">macro-F1 ${pct(row.macro_f1)}</span>
+        </div>
+        <div class="confusion-note">${confusionPairs.slice(0, 4).join(" | ") || "No non-trivial confusions."}</div>
+      `;
+      rankRoot.appendChild(card);
+    });
+
+    labels.forEach((label) => {
+      const card = document.createElement("article");
+      card.className = "label-card";
+      const rowsHtml = ranked.map((row) => {
+        const value = row.per_label[label]?.f1 ?? 0;
+        return `<div class="label-row"><span>${row.name}</span><strong>${pct(value)}</strong></div>`;
+      }).join("");
+      card.innerHTML = `
+        <div class="label-name">${label.replace("_", " ")}</div>
+        ${rowsHtml}
+      `;
+      labelRoot.appendChild(card);
+    });
+
+    requestAnimationFrame(() => {
+      document.querySelectorAll(".bar-fill").forEach((node) => {
+        node.style.width = `${node.dataset.width}%`;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "api_mode": "v1-notes",
+  "diagnostics": [],
+  "limit": 80,
+  "output": "data/raw/openreview/iclr2023_limit80_submissions.jsonl",
+  "submissions": 80,
+  "venue_id": "ICLR.cc/2023/Conference"
+}

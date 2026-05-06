@@ -1,0 +1,620 @@
+{
+  "evidence_issue_count": 60,
+  "evidence_issues": [
+    {
+      "evidence_chars": "0",
+      "issue_id": "7vVWiCrFnd__r05",
+      "label": "partially_fixed",
+      "notes_chars": "51",
+      "paper_title": "Rethinking and Extending the Probabilistic Inference Capacity of GNNs",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "KTtEICH4TO__r01",
+      "label": "fixed",
+      "notes_chars": "65",
+      "paper_title": "CORN: Contact-based Object Representation for Nonprehensile Manipulation of General Unseen Objects",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "uGtfk2OphU__r01",
+      "label": "partially_fixed",
+      "notes_chars": "67",
+      "paper_title": "Towards Faithful Explanations: Boosting Rationalization with Shortcuts Discovery",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AZGIwqCyYY__r02",
+      "label": "fixed",
+      "notes_chars": "43",
+      "paper_title": "Towards Cross Domain Generalization of Hamiltonian Representation via Meta Learning",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "KTtEICH4TO__r02",
+      "label": "partially_fixed",
+      "notes_chars": "72",
+      "paper_title": "CORN: Contact-based Object Representation for Nonprehensile Manipulation of General Unseen Objects",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "5JWAOLBxwp__r04",
+      "label": "partially_fixed",
+      "notes_chars": "56",
+      "paper_title": "An Intuitive Multi-Frequency Feature Representation for SO(3)-Equivariant Networks",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "hv3SklibkL__r01",
+      "label": "partially_fixed",
+      "notes_chars": "83",
+      "paper_title": "Graph Parsing Networks",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "KTtEICH4TO__r03",
+      "label": "partially_fixed",
+      "notes_chars": "82",
+      "paper_title": "CORN: Contact-based Object Representation for Nonprehensile Manipulation of General Unseen Objects",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "OsGUnYOzii__r03",
+      "label": "fixed",
+      "notes_chars": "56",
+      "paper_title": "Learning From Simplicial Data Based on Random Walks and 1D Convolutions",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "uREj4ZuGJE__r01",
+      "label": "partially_fixed",
+      "notes_chars": "60",
+      "paper_title": "In-context Autoencoder for Context Compression in a Large Language Model",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AqN23oqraW__r01",
+      "label": "partially_fixed",
+      "notes_chars": "81",
+      "paper_title": "KoLA: Carefully Benchmarking World Knowledge of Large Language Models",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "SQpnEfv9WH__r02",
+      "label": "partially_fixed",
+      "notes_chars": "74",
+      "paper_title": "Social-Transmotion: Promptable Human Trajectory Prediction",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "uREj4ZuGJE__r03",
+      "label": "partially_fixed",
+      "notes_chars": "69",
+      "paper_title": "In-context Autoencoder for Context Compression in a Large Language Model",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "OsGUnYOzii__r04",
+      "label": "partially_fixed",
+      "notes_chars": "76",
+      "paper_title": "Learning From Simplicial Data Based on Random Walks and 1D Convolutions",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "wfgZc3IMqo__r04",
+      "label": "partially_fixed",
+      "notes_chars": "89",
+      "paper_title": "Robust Classification via Regression for Learning with Noisy Labels",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "uREj4ZuGJE__r04",
+      "label": "partially_fixed",
+      "notes_chars": "75",
+      "paper_title": "In-context Autoencoder for Context Compression in a Large Language Model",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "dCHbFDsCZz__r01",
+      "label": "fixed",
+      "notes_chars": "60",
+      "paper_title": "Learning to Reject with a Fixed Predictor: Application to Decontextualization",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "tEgrUrUuwA__r01",
+      "label": "fixed",
+      "notes_chars": "54",
+      "paper_title": "Partitioning Message Passing for Graph Fraud Detection",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "7vVWiCrFnd__r02",
+      "label": "partially_fixed",
+      "notes_chars": "76",
+      "paper_title": "Rethinking and Extending the Probabilistic Inference Capacity of GNNs",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=fixed",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AyXIDfvYg8__r02",
+      "label": "fixed",
+      "notes_chars": "60",
+      "paper_title": "Symmetric Neural-Collapse Representations with Supervised Contrastive Loss: The Impact of ReLU and Batching",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "tEgrUrUuwA__r04",
+      "label": "partially_fixed",
+      "notes_chars": "62",
+      "paper_title": "Partitioning Message Passing for Graph Fraud Detection",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "uREj4ZuGJE__r02",
+      "label": "partially_fixed",
+      "notes_chars": "84",
+      "paper_title": "In-context Autoencoder for Context Compression in a Large Language Model",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "EmQSOi1X2f__r01",
+      "label": "partially_fixed",
+      "notes_chars": "66",
+      "paper_title": "Self-contradictory Hallucinations of Large Language Models: Evaluation, Detection and Mitigation",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "KS8mIvetg2__r02",
+      "label": "fixed",
+      "notes_chars": "54",
+      "paper_title": "Proving Test Set Contamination in Black-Box Language Models",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "327tbF3S65__r02",
+      "label": "partially_fixed",
+      "notes_chars": "69",
+      "paper_title": "DDMI: Domain-agnostic Latent Diffusion Models for Synthesizing High-Quality Implicit Neural Representations",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "HX5ujdsSon__r02",
+      "label": "partially_fixed",
+      "notes_chars": "66",
+      "paper_title": "In-Context Learning through the Bayesian Prism",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "327tbF3S65__r04",
+      "label": "partially_fixed",
+      "notes_chars": "71",
+      "paper_title": "DDMI: Domain-agnostic Latent Diffusion Models for Synthesizing High-Quality Implicit Neural Representations",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "lF2aip4Scn__r02",
+      "label": "unresolved",
+      "notes_chars": "76",
+      "paper_title": "Demonstration-Regularized RL",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "GN921JHCRw__r03",
+      "label": "fixed",
+      "notes_chars": "67",
+      "paper_title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "hv3SklibkL__r04",
+      "label": "partially_fixed",
+      "notes_chars": "89",
+      "paper_title": "Graph Parsing Networks",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "sLQb8q0sUi__r02",
+      "label": "unresolved",
+      "notes_chars": "83",
+      "paper_title": "Fair and Efficient Contribution Valuation for Vertical Federated Learning",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "HX5ujdsSon__r01",
+      "label": "unresolved",
+      "notes_chars": "90",
+      "paper_title": "In-Context Learning through the Bayesian Prism",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "HX5ujdsSon__r03",
+      "label": "partially_fixed",
+      "notes_chars": "88",
+      "paper_title": "In-Context Learning through the Bayesian Prism",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "WsRHpHH4s0__r02",
+      "label": "partially_fixed",
+      "notes_chars": "93",
+      "paper_title": "RingAttention with Blockwise Transformers for Near-Infinite Context",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "elMKXvhhQ9__r03",
+      "label": "partially_fixed",
+      "notes_chars": "86",
+      "paper_title": "Consistency Training with Learnable Data Augmentation for Graph Anomaly Detection with Limited Supervision",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AZGIwqCyYY__r03",
+      "label": "fixed",
+      "notes_chars": "60",
+      "paper_title": "Towards Cross Domain Generalization of Hamiltonian Representation via Meta Learning",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "hv3SklibkL__r03",
+      "label": "partially_fixed",
+      "notes_chars": "74",
+      "paper_title": "Graph Parsing Networks",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "JiTVtCUOpS__r02",
+      "label": "fixed",
+      "notes_chars": "75",
+      "paper_title": "Rethinking Channel Dependence for Multivariate Time Series Forecasting: Learning from Leading Indicators",
+      "problems": "missing_evidence",
+      "suggestion_note": "structured=partially_fixed; issue_ledger=unresolved",
+      "suggestion_source": "priority_secondary_structured"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "lF2aip4Scn__r04",
+      "label": "fixed",
+      "notes_chars": "94",
+      "paper_title": "Demonstration-Regularized RL",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=unresolved; structured=fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AyXIDfvYg8__r03",
+      "label": "unresolved",
+      "notes_chars": "78",
+      "paper_title": "Symmetric Neural-Collapse Representations with Supervised Contrastive Loss: The Impact of ReLU and Batching",
+      "problems": "missing_evidence",
+      "suggestion_note": "Thank you for your further clarifications. In the era of \"large model\" and \"big data\", I still think the experimental results for training ResNet-18/34 and a two-layer ViT on MNIST, CIFAR10, CIFAR100 and Tiny ImageNet is not so convincing. Hence, I will keep the score.",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AqN23oqraW__r04",
+      "label": "partially_fixed",
+      "notes_chars": "81",
+      "paper_title": "KoLA: Carefully Benchmarking World Knowledge of Large Language Models",
+      "problems": "missing_evidence",
+      "suggestion_note": "I appreciate the authors' detailed feedback. The main contribution of this work is the extensive benchmark with different levels (knowledge, reasoning, etc.) of data of different nature (evolving or not evolving, etc.) with inspiration drawn from cognitive science. However, although I agree with the novelty of this ...",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "My7lkRNnL9__r03",
+      "label": "partially_fixed",
+      "notes_chars": "69",
+      "paper_title": "Forward Learning with Top-Down Feedback: Empirical and Analytical Characterization",
+      "problems": "missing_evidence",
+      "suggestion_note": "Thank you for the response. Some of my questions are addressed, e.g., the comparison with DFA and the magnitude of $Fe$, and I raise my score to 5. I have some additional comments. 1. In PEPITA, there is also a traveling of error from top to input, while DFA propagates errors to each layer. To what extent the error ...",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "OsGUnYOzii__r02",
+      "label": "partially_fixed",
+      "notes_chars": "95",
+      "paper_title": "Learning From Simplicial Data Based on Random Walks and 1D Convolutions",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=fixed; structured=partially_fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "7vVWiCrFnd__r04",
+      "label": "fixed",
+      "notes_chars": "85",
+      "paper_title": "Rethinking and Extending the Probabilistic Inference Capacity of GNNs",
+      "problems": "missing_evidence",
+      "suggestion_note": "I appreciate the authors' responses and they address my concerns. I'll raise my score to 6.",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "YItWKZci78__r05",
+      "label": "fixed",
+      "notes_chars": "77",
+      "paper_title": "Symmetric Mean-field Langevin Dynamics for Distributional Minimax Problems",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=unresolved; structured=partially_fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "dCHbFDsCZz__r02",
+      "label": "partially_fixed",
+      "notes_chars": "100",
+      "paper_title": "Learning to Reject with a Fixed Predictor: Application to Decontextualization",
+      "problems": "missing_evidence",
+      "suggestion_note": "> While the cost-sensitive surrogate loss benefits from Bayes-consistency, it does not benefit from $\\mathcal{R}$-consistency bounds I agree---my point was that when $\\mathcal{R} = \\mathcal{R}\\_{all}$, as it is for your main-text results, the Bayes-consistentcy results for usual cost-sensitive surrogates should dire...",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "AJBkfwXh3u__r01",
+      "label": "fixed",
+      "notes_chars": "84",
+      "paper_title": "Causality-Inspired Spatial-Temporal Explanations for Dynamic Graph Neural Networks",
+      "problems": "missing_evidence",
+      "suggestion_note": "Sorry for the late reply. Thank you for the detailed response from the author; the major concern has already been addressed. I will raise my score to acceptance, I believe that with the added content, this work has become clearer and more coherent, especially the comparative analysis of related work, which has resol...",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "GN921JHCRw__r01",
+      "label": "partially_fixed",
+      "notes_chars": "88",
+      "paper_title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "problems": "missing_evidence",
+      "suggestion_note": "I've increased my score because although I think RAPTOR has flaws, it is clever and should inspire future work. The new results help. But I think you should make the writing more clear that GPT-4 is doing a lot of the heavy lifting compared to those baselines. Perhaps should add context length to the table 5 or ment...",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "78iGZdqxYY__r01",
+      "label": "fixed",
+      "notes_chars": "93",
+      "paper_title": "Mirage: Model-agnostic Graph Distillation for Graph Classification",
+      "problems": "missing_evidence",
+      "suggestion_note": "Thanks for the response. I will increase my score to 6.",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "kmn0BhQk7p__r05",
+      "label": "partially_fixed",
+      "notes_chars": "101",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=fixed; structured=partially_fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "elMKXvhhQ9__r01",
+      "label": "fixed",
+      "notes_chars": "72",
+      "paper_title": "Consistency Training with Learnable Data Augmentation for Graph Anomaly Detection with Limited Supervision",
+      "problems": "missing_evidence",
+      "suggestion_note": "Thanks for the authors' detailed rebuttal. It generally addresses my comments in the review. Thus, I increase my score and support this paper.",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "OsGUnYOzii__r01",
+      "label": "partially_fixed",
+      "notes_chars": "87",
+      "paper_title": "Learning From Simplicial Data Based on Random Walks and 1D Convolutions",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=fixed; structured=partially_fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "N0nTk5BSvO__r01",
+      "label": "partially_fixed",
+      "notes_chars": "91",
+      "paper_title": "TESTAM: A Time-Enhanced Spatio-Temporal Attention Model with Mixture of Experts",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=partially_fixed; structured=fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "N0nTk5BSvO__r02",
+      "label": "partially_fixed",
+      "notes_chars": "96",
+      "paper_title": "TESTAM: A Time-Enhanced Spatio-Temporal Attention Model with Mixture of Experts",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=partially_fixed; structured=fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "N0nTk5BSvO__r03",
+      "label": "fixed",
+      "notes_chars": "86",
+      "paper_title": "TESTAM: A Time-Enhanced Spatio-Temporal Attention Model with Mixture of Experts",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=partially_fixed; structured=fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "N0nTk5BSvO__r04",
+      "label": "fixed",
+      "notes_chars": "79",
+      "paper_title": "TESTAM: A Time-Enhanced Spatio-Temporal Attention Model with Mixture of Experts",
+      "problems": "missing_evidence",
+      "suggestion_note": "Based on the authors' response, I decide to raise my rating to 6. Still, I have some suggestions for Appendix C. W3-1. The numbers of selected roads in three scenarios can be reported. The procedure of selecting these roads can be described more precisely. For example, (I) How to quantitatively select isolated roads...",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "3SJE1WLB4M__r03",
+      "label": "fixed",
+      "notes_chars": "80",
+      "paper_title": "Generalization error of spectral algorithms",
+      "problems": "missing_evidence",
+      "suggestion_note": "tfidf=partially_fixed; structured=fixed",
+      "suggestion_source": "priority_secondary_tfidf"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "tEgrUrUuwA__r02",
+      "label": "fixed",
+      "notes_chars": "96",
+      "paper_title": "Partitioning Message Passing for Graph Fraud Detection",
+      "problems": "missing_evidence",
+      "suggestion_note": "Thanks for the author's response especially the detailed discussion on the differences between ACM and the proposed PMP. These answers addressed my concerns, so I would like to increase my rating.",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "tEgrUrUuwA__r03",
+      "label": "fixed",
+      "notes_chars": "63",
+      "paper_title": "Partitioning Message Passing for Graph Fraud Detection",
+      "problems": "missing_evidence",
+      "suggestion_note": "Dear authors, Thank you for your response and pardon my late reply. I appreciate the time and efforts you put on rebuttal. The response is clear and well addressed my concerns. Therefore, I am amending my score upward.",
+      "suggestion_source": "silver_followup_comment"
+    },
+    {
+      "evidence_chars": "0",
+      "issue_id": "RzNlECeoOB__r03",
+      "label": "fixed",
+      "notes_chars": "67",
+      "paper_title": "$t^3$-Variational Autoencoder: Learning Heavy-tailed Data with Student's t and Power Divergence",
+      "problems": "missing_evidence",
+      "suggestion_note": "I am satisfied with the authors' rebuttal. I keep my high rating of the contribution.",
+      "suggestion_source": "silver_followup_comment"
+    }
+  ],
+  "evidence_ok": false,
+  "label_counts": {
+    "fixed": 50,
+    "partially_fixed": 86,
+    "regressed": 1,
+    "unresolved": 11
+  },
+  "ok": false,
+  "problem_counts": {
+    "missing_evidence": 60
+  },
+  "rows": 148,
+  "structural_errors": [],
+  "structural_ok": true,
+  "unique_issue_ids": 148
+}

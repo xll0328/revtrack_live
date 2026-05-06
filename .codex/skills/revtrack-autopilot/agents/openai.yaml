@@ -1,0 +1,4 @@
+interface:
+  display_name: "RevTrack Autopilot"
+  short_description: "Advance RevTrack evidence cycles"
+  default_prompt: "Use $revtrack-autopilot to continue the RevTrack project from the current repository state."

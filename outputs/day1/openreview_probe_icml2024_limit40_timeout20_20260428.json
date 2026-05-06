@@ -1,0 +1,36 @@
+{
+  "limit": 40,
+  "modes": [
+    {
+      "candidate_rate": 0.0,
+      "diagnostics": [],
+      "issue_candidates": 0,
+      "max_replies": 0,
+      "min_replies": 0,
+      "mode": "v2-notes",
+      "status": "ok",
+      "submissions": 40,
+      "submissions_with_candidates": 0
+    },
+    {
+      "diagnostics": [],
+      "error": "OpenReview request failed for https://api2.openreview.net/notes/search with params {'venueid': 'ICML.cc/2024/Conference', 'source': 'forum', 'limit': 40, 'offset': 0}: 400 Client Error: Bad Request for url: https://api2.openreview.net/notes/search?venueid=ICML.cc%2F2024%2FConference&source=forum&limit=40&offset=0",
+      "mode": "v2-search",
+      "status": "error"
+    },
+    {
+      "candidate_rate": 0.0,
+      "diagnostics": [],
+      "issue_candidates": 0,
+      "max_replies": 0,
+      "min_replies": 0,
+      "mode": "v1-notes",
+      "status": "ok",
+      "submissions": 0,
+      "submissions_with_candidates": 0
+    }
+  ],
+  "retries": 1,
+  "timeout": 20,
+  "venue_id": "ICML.cc/2024/Conference"
+}

@@ -1,0 +1,87 @@
+{
+  "agreement": 0.45,
+  "assistant_distribution": {
+    "regressed": 4,
+    "unresolved": 76
+  },
+  "bucket_agreement": {
+    "minority_regressed": {
+      "agreement": 0.0,
+      "matches": 0,
+      "total": 4
+    },
+    "minority_unresolved": {
+      "agreement": 0.47368421052631576,
+      "matches": 36,
+      "total": 76
+    }
+  },
+  "cohen_kappa": 0.03930131004366816,
+  "confusion_assistant_to_human": {
+    "fixed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "partially_fixed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "regressed": {
+      "fixed": 0,
+      "partially_fixed": 4,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "unresolved": {
+      "fixed": 0,
+      "partially_fixed": 40,
+      "regressed": 0,
+      "unresolved": 36
+    }
+  },
+  "human_distribution": {
+    "partially_fixed": 44,
+    "unresolved": 36
+  },
+  "invalid_rows": [],
+  "key_rows": 80,
+  "labeled_rows": 80,
+  "mismatches": 44,
+  "missing_key_rows": 0,
+  "per_label": {
+    "fixed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "partially_fixed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 44
+    },
+    "regressed": {
+      "assistant_support": 4,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "unresolved": {
+      "assistant_support": 76,
+      "f1": 0.6428571428571429,
+      "precision": 0.47368421052631576,
+      "recall": 1.0,
+      "support": 36
+    }
+  },
+  "rows": 80,
+  "unlabeled_rows": 0
+}

@@ -1,0 +1,23 @@
+{
+  "action_distribution": {
+    "keep": 54,
+    "keep_weak_unresolved": 26
+  },
+  "candidate_blind": "/data/sony/emnlp2026_revtrack/experiments/day1/iclr2023_limit80_random80_resolved_label_candidate_for_human_review.tsv",
+  "claim_boundary": "Use as an assistant-resolved candidate sheet only; do not report as standard human validation, IAA, or benchmark transfer performance until user-confirmed labels are written to the canonical blind sheet.",
+  "draft_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "human_validation_status": "not_human_validated",
+  "output_tsv": "/data/sony/emnlp2026_revtrack/experiments/day1/iclr2023_limit80_random80_resolved_adjudication_v1.tsv",
+  "resolved_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "review_required_rows": 80,
+  "rows": 80,
+  "status": "assistant_resolved_candidate"
+}

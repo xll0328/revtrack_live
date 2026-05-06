@@ -1,0 +1,23 @@
+\section{Limitations}
+
+The current strongest performance evidence is in-domain ICLR 2024.
+The ICLR 2025 repro set is validated but small, and expanded80 plus NeurIPS 2024 limit100 are active frontiers rather than random or natural-prevalence samples.
+The ICLR 2023 random80 slice adds random/stratified evidence within the ICLR venue family, but it is still standard single-user validation and not a full natural-prevalence estimate for all venues.
+These labels are standard single-user confirmed labels, but not an independent two-annotator agreement result.
+We therefore frame cross-year and cross-venue evidence as bounded transfer and external-validity evidence, not as a complete estimate of performance on all issues.
+For the same reason, frontier failure-taxonomy counts should be read as diagnostic counts on intentionally hard frontiers, while random80 counts should be read by measured slice design rather than as broad prevalence estimates.
+
+The label rubric is issue-level and evidence-based, but some concerns remain ambiguous.
+For example, a narrowed claim may make an original criticism less severe without fully resolving it.
+These cases depend on careful evidence spans and notes.
+
+The current labeled pool has too few regressed examples for stable regression-performance conclusions.
+We include the label because it is conceptually important, but do not claim robust detection until more examples are collected.
+
+RevTrack is also text-first.
+The current pipeline uses review text, author responses, revision summaries, and available paper metadata rather than full PDF differencing.
+This keeps the first benchmark auditable and lightweight, but it can miss changes that are only visible in figures, equations, or revised appendices.
+Future versions should add PDF-aware evidence extraction while preserving issue-level provenance.
+
+Finally, the current standard labels come from user-reviewed AI-assisted signoff and user-confirmed expanded80, NeurIPS 2024, and ICLR 2023 adjudication rather than an independent two-annotator protocol.
+This is sufficient for the present standard-label release, but inter-annotator agreement requires a separate second pass.

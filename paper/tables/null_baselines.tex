@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.18\linewidth}p{0.22\linewidth}rrr}
+\toprule
+Dataset & System & Accuracy & Macro-F1 & Fixed F1 \\
+\midrule
+ICLR 2024 & Majority & 0.581 & 0.184 & 0.000 \\
+ICLR 2024 & TF-IDF & 0.561 & 0.376 & 0.510 \\
+ICLR 2025 & Majority & 0.762 & 0.216 & 0.000 \\
+ICLR 2025 & TF-IDF & 0.762 & 0.216 & 0.000 \\
+\bottomrule
+\end{tabular}
+\caption{Null-baseline comparison. On the ICLR 2025 stress set, TF-IDF matches the majority baseline while failing fixed-case recovery.}
+\label{tab:null-baselines}
+\end{table}

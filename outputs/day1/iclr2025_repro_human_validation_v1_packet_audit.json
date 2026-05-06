@@ -1,0 +1,18 @@
+{
+  "assistant_distribution": {
+    "fixed": 4,
+    "partially_fixed": 12
+  },
+  "audit_bucket_distribution": {
+    "model_disagreement": 6,
+    "model_high_conflict": 2,
+    "structured_error": 8
+  },
+  "audit_rows": 16,
+  "blind_rows": 16,
+  "errors": [],
+  "key_rows": 16,
+  "ok": true,
+  "source_rows": 16,
+  "warnings": []
+}

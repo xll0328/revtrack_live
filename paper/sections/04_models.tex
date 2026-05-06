@@ -1,0 +1,18 @@
+\section{Baselines and Diagnostic Models}
+
+We compare three families of models.
+\textbf{Null baselines} predict the majority label, primarily to expose the accuracy trap under skew.
+\textbf{Semantic baselines} train TF-IDF or encoder representations with a linear classifier.
+They test whether issue resolution can be recovered from generic text similarity.
+\textbf{Structured diagnostic models} expose evidence slots and follow-up cues to a calibrator.
+This model is deliberately simple: its purpose is to test whether revision-specific structure helps, not to maximize architecture novelty.
+
+The issue-ledger and structured calibrator are designed as diagnostic interventions.
+They encode cues such as concrete added experiments, softened claims, future-work deferrals, and response-only fixes.
+Hard overrides are reported with an ablation so that the gain from explicit revision cues is visible.
+
+\paragraph{Structured feature groups.}
+The structured calibrator uses only observable fields from the issue sheet: request type cues in the review concern, response/revision cues for added evidence, broad-evaluation responses, theory or notation fixes, code-release promises, future-work deferrals, digit/count buckets, and the disagreement pattern among semantic baselines.
+It also includes an issue-ledger label and rule as diagnostic features.
+For ICLR 2024 clean-dev evaluation, we use leave-one-out training: each row is predicted by a classifier trained on all other labeled rows, with hard overrides disabled in the ablation row.
+Transfer predictions train on the frozen labeled source sheet and are never used as labels for blind validation packets.

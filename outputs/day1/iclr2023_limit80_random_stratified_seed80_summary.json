@@ -1,0 +1,19 @@
+{
+  "disagreement_rows": 27,
+  "disagreement_share": 0.4,
+  "label_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "min_per_label": 8,
+  "output": "experiments/day1/iclr2023_limit80_random_stratified_seed80.tsv",
+  "prediction_models": [
+    "issue_ledger",
+    "tfidf"
+  ],
+  "sample_size": 80,
+  "seed": 20260428,
+  "source_candidates": "data/processed/iclr2023_limit80_issue_candidates_complete.jsonl",
+  "status": "ok"
+}

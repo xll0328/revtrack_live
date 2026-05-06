@@ -1,0 +1,31 @@
+{
+  "limit": 40,
+  "modes": [
+    {
+      "diagnostics": [],
+      "error": "OpenReview request failed for https://api2.openreview.net/notes with params {'content.venueid': 'ICML.cc/2024/Conference', 'details': 'replies', 'limit': 40, 'offset': 0}: HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICML.cc%2F2024%2FConference&details=replies&limit=40&offset=0 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='api2.openreview.net', port=443): Read timed out. (read timeout=8)\"))",
+      "mode": "v2-notes",
+      "status": "error"
+    },
+    {
+      "diagnostics": [],
+      "error": "OpenReview request failed for https://api2.openreview.net/notes/search with params {'venueid': 'ICML.cc/2024/Conference', 'source': 'forum', 'limit': 40, 'offset': 0}: HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes/search?venueid=ICML.cc%2F2024%2FConference&source=forum&limit=40&offset=0 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='api2.openreview.net', port=443): Read timed out. (read timeout=8)\"))",
+      "mode": "v2-search",
+      "status": "error"
+    },
+    {
+      "candidate_rate": 0.0,
+      "diagnostics": [],
+      "issue_candidates": 0,
+      "max_replies": 0,
+      "min_replies": 0,
+      "mode": "v1-notes",
+      "status": "ok",
+      "submissions": 0,
+      "submissions_with_candidates": 0
+    }
+  ],
+  "retries": 0,
+  "timeout": 8,
+  "venue_id": "ICML.cc/2024/Conference"
+}

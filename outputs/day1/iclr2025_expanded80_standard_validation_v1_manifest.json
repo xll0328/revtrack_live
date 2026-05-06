@@ -1,0 +1,26 @@
+{
+  "best_model": {
+    "accuracy": 0.85,
+    "fixed_f1": 0.4285714285714285,
+    "macro_f1": 0.46898496240601506,
+    "model_key": "issue_ledger",
+    "partially_fixed_f1": 0.0,
+    "regressed_f1": 0.5,
+    "rows": 80,
+    "status": "standard_user_confirmed_validation",
+    "unresolved_f1": 0.9473684210526316
+  },
+  "claim_boundary": "Not an independent two-annotator IAA result; disagreement-focused standard single-user active-frontier cross-year validation.",
+  "human_validation_status": "standard_single_user_confirmed",
+  "label_distribution": {
+    "fixed": 4,
+    "partially_fixed": 4,
+    "regressed": 6,
+    "unresolved": 66
+  },
+  "metrics_csv": "/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2025_expanded80_standard_transfer_metrics.csv",
+  "metrics_md": "/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iclr2025_expanded80_standard_transfer_metrics.md",
+  "output_jsonl": "/data/sony/emnlp2026_revtrack/data/processed/iclr2025_expanded80_standard_validation_v1.jsonl",
+  "rows": 80,
+  "status": "standard_user_confirmed_validation"
+}

@@ -1,0 +1,133 @@
+{
+  "allow_subset": true,
+  "duplicate_ids": [],
+  "evaluated_examples": 80,
+  "invalid_rows": [
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "VNMJfBBUd5__r04",
+      "row": "1"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "tNn6Hskmti__r03",
+      "row": "8"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "2Chkk5Ye2s__r04",
+      "row": "13"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "KnoS9XxIlK__r02",
+      "row": "19"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "WwmtcGr4lP__r03",
+      "row": "27"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "WwmtcGr4lP__r05",
+      "row": "28"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "ZS7UEI3vG5__r01",
+      "row": "29"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "h0vC0fm1q7__r01",
+      "row": "32"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "l11DZY5Nxu__r04",
+      "row": "34"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "uClUUJk05H__r02",
+      "row": "42"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "uClUUJk05H__r05",
+      "row": "44"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "x83w6yGIWb__r02",
+      "row": "48"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "pDDODPtpx9__r04",
+      "row": "54"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "w7P92BEsb2__r01",
+      "row": "55"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "1qP3lsatCR__r04",
+      "row": "64"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "3tukjsVyrE__r01",
+      "row": "66"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "5o9JJJPPm6__r04",
+      "row": "72"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "ZS7UEI3vG5__r04",
+      "row": "76"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "KnoS9XxIlK__r05",
+      "row": "78"
+    }
+  ],
+  "label_distribution": {
+    "fixed": 1,
+    "invalid": 19,
+    "partially_fixed": 54,
+    "unresolved": 6
+  },
+  "missing_evidence_ids": [
+    "VNMJfBBUd5__r04",
+    "tNn6Hskmti__r03",
+    "2Chkk5Ye2s__r04",
+    "KnoS9XxIlK__r02",
+    "WwmtcGr4lP__r03",
+    "WwmtcGr4lP__r05",
+    "ZS7UEI3vG5__r01",
+    "h0vC0fm1q7__r01",
+    "l11DZY5Nxu__r04",
+    "uClUUJk05H__r02",
+    "uClUUJk05H__r05",
+    "x83w6yGIWb__r02",
+    "pDDODPtpx9__r04",
+    "w7P92BEsb2__r01",
+    "1qP3lsatCR__r04",
+    "3tukjsVyrE__r01",
+    "5o9JJJPPm6__r04",
+    "ZS7UEI3vG5__r04",
+    "KnoS9XxIlK__r05"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 80,
+  "rows": 80,
+  "status": "error"
+}

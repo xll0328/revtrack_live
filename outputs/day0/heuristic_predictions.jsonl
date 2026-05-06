@@ -1,0 +1,8 @@
+{"id": "smoke-001", "predicted_label": "fixed", "raw_output": "fixed", "metadata": {"backend": "heuristic", "token_overlap": 2}}
+{"id": "smoke-002", "predicted_label": "unresolved", "raw_output": "unresolved", "metadata": {"backend": "heuristic", "token_overlap": 3}}
+{"id": "smoke-003", "predicted_label": "fixed", "raw_output": "fixed", "metadata": {"backend": "heuristic", "token_overlap": 3}}
+{"id": "smoke-004", "predicted_label": "fixed", "raw_output": "fixed", "metadata": {"backend": "heuristic", "token_overlap": 5}}
+{"id": "smoke-005", "predicted_label": "fixed", "raw_output": "fixed", "metadata": {"backend": "heuristic", "token_overlap": 2}}
+{"id": "smoke-006", "predicted_label": "partially_fixed", "raw_output": "partially_fixed", "metadata": {"backend": "heuristic", "token_overlap": 4}}
+{"id": "smoke-007", "predicted_label": "partially_fixed", "raw_output": "partially_fixed", "metadata": {"backend": "heuristic", "token_overlap": 5}}
+{"id": "smoke-008", "predicted_label": "regressed", "raw_output": "regressed", "metadata": {"backend": "heuristic", "token_overlap": 5}}

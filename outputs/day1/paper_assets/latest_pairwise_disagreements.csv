@@ -1,0 +1,5 @@
+version,pair,total,top_pairs
+v8,structured vs tfidf,35,partially_fixed -> fixed: 11; fixed -> partially_fixed: 10; partially_fixed -> unresolved: 8; fixed -> unresolved: 2; partially_fixed -> regressed: 2; unresolved -> partially_fixed: 1; unresolved -> fixed: 1
+v8,structured vs modernbert,2,fixed -> partially_fixed: 1; unresolved -> partially_fixed: 1
+v8,structured vs mpnet,2,fixed -> partially_fixed: 1; unresolved -> partially_fixed: 1
+v8,structured vs issue_ledger,55,partially_fixed -> unresolved: 41; fixed -> unresolved: 14

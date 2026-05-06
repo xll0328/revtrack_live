@@ -1,0 +1,72 @@
+\section{Audit and Reproducibility Details}
+
+The current project artifacts include machine-readable reports for candidate-pool quality, human-validation packet integrity, label-evidence completeness, citation integrity, signoff quality, and paper-readiness status.
+The paper-readiness audit reports status \texttt{ready} for the core claim set, with nine ready claims, zero blockers, and zero warnings.
+The draft uses the public ACL style-file release \citep{aclstylefiles} and is aligned with the EMNLP 2026 main-conference call \citep{emnlp2026cfp}.
+
+Table~\ref{tab:artifact-manifest} lists the paper-facing artifact manifest used to audit the current claim set.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.13\textwidth}p{0.27\textwidth}p{0.34\textwidth}p{0.16\textwidth}}
+\toprule
+Artifact & Local file & Role in the paper & Current gate \\
+\midrule
+Readiness audit & \path{paper_readiness_audit.md} & Summarizes blockers, warnings, and claim readiness before paper use & ready; 0 blockers \\
+Claim ledger & \path{claim_evidence_ledger.md} & Maps each paper claim to supporting metrics and counterevidence & 9 ready claims \\
+Dataset card & \path{docs/revtrack_dataset_card_v0.md} & Records collection scope, provenance, label policy, and release boundaries & standard labels locked \\
+Validation queue & \path{human_validation_work_queue.md} & Tracks all active standard validation packets and pending rows across ICLR, NeurIPS, and random/stratified lanes & 301/301 complete \\
+Expanded80 transfer & \path{iclr2025_expanded80_standard_transfer_metrics.md} & Reports cross-year active-frontier transfer metrics with provenance caveats & standard-labeled frontier \\
+Failure taxonomy & \path{failure_taxonomy.md} & Connects model errors to stale criticism, over-crediting, fixed under-recovery, and regression blindness & paper-facing analysis \\
+Prompted LLM intervals & \path{prompted_llm_bootstrap_intervals.md} & Reports example-level bootstrap intervals for selected prompted LLM and vote baselines & stress evidence \\
+NeurIPS transfer & \path{neurips2024_limit100_standard_transfer_metrics.md} & Reports user-confirmed cross-venue active-frontier transfer metrics & standard single-user active frontier \\
+ICLR 2023 random80 & \path{iclr2023_limit80_random80_standard_transfer_metrics.md} & Reports bounded random/stratified external-validity evidence with provenance caveats & standard single-user slice \\
+Citation audit & \path{paper_citation_audit.md} & Checks cited keys, BibTeX entries, required metadata fields, and final LaTeX citation warnings & pass; 26/26 keys resolved \\
+\bottomrule
+\end{tabular}
+\caption{Repository artifact manifest for reproducibility and claim auditing. Paths are relative to the paper-asset or repository root as appropriate.}
+\label{tab:artifact-manifest}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.12\textwidth}p{0.21\textwidth}p{0.21\textwidth}p{0.26\textwidth}}
+\toprule
+Work & Main artifact or task & Overlap & RevTrack distinction \\
+\midrule
+PeerRead \citep{kang-etal-2018-dataset} & Drafts, reviews, decisions, and score-prediction tasks & Scientific peer-review data & Tracks issue-level post-revision status rather than acceptance or score prediction \\
+NLPeer \citep{dycke-etal-2023-nlpeer} & Licensed multidomain peer-review corpus with versioning & Versioned review data & Converts versioned context into concern-resolution labels with evidence spans and audits \\
+Re2 \citep{zhang-etal-2025-re2} & Full-stage review, rebuttal, and discussion corpus & Reviewer-author interaction & Narrows whole discussions to one concern and one post-revision status label \\
+PeerQA \citep{baumgartner-etal-2025-peerqa} & Peer-review questions for scientific QA & Reviewer information needs & Outputs revision status rather than generated answers \\
+FEVER \citep{thorne-etal-2018-fever} & Evidence-grounded claim verification & Supported/refuted evidence reasoning & The claim is a historical review concern whose status can change after revision \\
+MARG \citep{darcy-etal-2024-marg} & Multi-agent review-feedback generation & LLM assistance for reviewing & Evaluates retiring stale criticism, not generating new comments \\
+\bottomrule
+\end{tabular}
+\caption{Adjacent benchmark and review-assistance settings compared with RevTrack.}
+\label{tab:related-comparison}
+\end{table*}
+
+Table~\ref{tab:prompted-llm-postprocess-rules} reports an offline post-processing search on prompted-vote outputs.
+The table is generated from machine-readable metrics in \path{postprocess_rule_search.json} to keep the calibration claim auditable.
+
+\paragraph{Prompted LLM post-processing search.}
+\input{tables/prompted_llm_postprocess_rules}
+
+\paragraph{In-domain significance check.}
+Table~\ref{tab:iclr2024-significance} reports stratified-bootstrap confidence intervals and paired-bootstrap risk for the ICLR 2024 main results.
+This is a split-level uncertainty check only: it does not model annotator uncertainty.
+\input{tables/iclr2024_significance}
+
+\paragraph{Cross-split significance check.}
+Table~\ref{tab:cross-split-significance} extends the same bootstrap protocol to ICLR 2025 expanded80 and NeurIPS 2024 limit100 standard frontiers.
+This check quantifies uncertainty under transfer difficulty and preserves the same no-IAA boundary.
+\input{tables/cross_split_significance}
+
+\paragraph{Prompted LLM uncertainty audit.}
+Table~\ref{tab:prompted-llm-bootstrap} reports example-level bootstrap intervals for selected prompted LLM and vote baselines.
+The intervals are used as a claim-risk check: they capture sample instability in the current splits, while leaving annotator uncertainty and API stochasticity as separate limitations.
+\input{tables/prompted_llm_bootstrap_intervals}

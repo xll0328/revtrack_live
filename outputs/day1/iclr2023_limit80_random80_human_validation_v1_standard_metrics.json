@@ -1,0 +1,94 @@
+{
+  "agreement": 1.0,
+  "assistant_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "bucket_agreement": {
+    "label_stratum": {
+      "agreement": 1.0,
+      "matches": 53,
+      "total": 53
+    },
+    "minority_unresolved": {
+      "agreement": 1.0,
+      "matches": 26,
+      "total": 26
+    },
+    "model_disagreement": {
+      "agreement": 1.0,
+      "matches": 1,
+      "total": 1
+    }
+  },
+  "cohen_kappa": 1.0,
+  "confusion_assistant_to_human": {
+    "fixed": {
+      "fixed": 5,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "partially_fixed": {
+      "fixed": 0,
+      "partially_fixed": 49,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "regressed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "unresolved": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 26
+    }
+  },
+  "human_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "invalid_rows": [],
+  "key_rows": 80,
+  "labeled_rows": 80,
+  "mismatches": 0,
+  "missing_key_rows": 0,
+  "per_label": {
+    "fixed": {
+      "assistant_support": 5,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 5
+    },
+    "partially_fixed": {
+      "assistant_support": 49,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 49
+    },
+    "regressed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "unresolved": {
+      "assistant_support": 26,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 26
+    }
+  },
+  "rows": 80,
+  "unlabeled_rows": 0
+}

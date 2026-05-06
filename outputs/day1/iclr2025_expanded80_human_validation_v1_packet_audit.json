@@ -1,0 +1,20 @@
+{
+  "assistant_distribution": {
+    "fixed": 4,
+    "partially_fixed": 4,
+    "regressed": 6,
+    "unresolved": 66
+  },
+  "audit_bucket_distribution": {
+    "minority_regressed": 6,
+    "minority_unresolved": 66,
+    "model_disagreement": 8
+  },
+  "audit_rows": 80,
+  "blind_rows": 80,
+  "errors": [],
+  "key_rows": 80,
+  "ok": true,
+  "source_rows": 120,
+  "warnings": []
+}

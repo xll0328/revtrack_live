@@ -1,0 +1,482 @@
+[
+  {
+    "gold_label": "unresolved",
+    "id": "hChYEyebNm1__r03",
+    "paper_title": "Gradient-Based Transfer Learning",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "ejR4E1jaH9k__r03",
+    "paper_title": "Solving stochastic weak Minty variational inequalities without increasing batch size",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "1FsdIfRngtw__r01",
+    "paper_title": "Rethinking the Value of Prompt Learning for Vision-Language Models",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "mhnHqRqcjYU__r03",
+    "paper_title": "DFPC: Data flow driven pruning of coupled channels without data.",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "HqVp0rNC8jn__r01",
+    "paper_title": "Learning Geometric Representations of\u00a0Interactive Objects",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "m3DmIL7wHDW__r04",
+    "paper_title": "The guide and the explorer: smart agents for resource-limited iterated batch reinforcement learning",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "UPQualDj1oo__r02",
+    "paper_title": "Machine Learning from Explanations",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "ywAjQw-spmY__r02",
+    "paper_title": "Formal Specifications from Natural Language",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "AqX3oSbzyQ1__r02",
+    "paper_title": "Object-Centric Learning with Slot Mixture Models",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "8foynpwwRb__r02",
+    "paper_title": "Randomized Sharpness-Aware Training for Boosting Computational Efficiency in Deep Learning",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "m3DmIL7wHDW__r03",
+    "paper_title": "The guide and the explorer: smart agents for resource-limited iterated batch reinforcement learning",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "yqe0BZeN_xH__r03",
+    "paper_title": "SwinZS3: Zero-Shot Semantic Segmentation with a Swin Transformer",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "yqe0BZeN_xH__r02",
+    "paper_title": "SwinZS3: Zero-Shot Semantic Segmentation with a Swin Transformer",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "6iEoTr-jeB7__r03",
+    "paper_title": "Learning Continuous Normalizing Flows For Faster Convergence To Target Distribution via Ascent Regularizations",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "ejR4E1jaH9k__r02",
+    "paper_title": "Solving stochastic weak Minty variational inequalities without increasing batch size",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "17RDXeF-skZ__r02",
+    "paper_title": "Doing Fast Adaptation Fast: Conditionally Independent Deep Ensembles for Distribution Shifts",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "BO5_Lm7iD___r03",
+    "paper_title": "Social Network Structure Shapes Innovation: Experience-sharing in RL with SAPIENS",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "NOKUQ9JMohJ__r01",
+    "paper_title": "ONLINE RESTLESS BANDITS WITH UNOBSERVED STATES",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "N3kGYG3ZcTi__r02",
+    "paper_title": "Suppression helps: Lateral Inhibition-inspired Convolutional Neural Network for Image Classification",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "QN_VgTeOYGl__r02",
+    "paper_title": "Data Leakage in Tabular Federated Learning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "8Ygoj2IeXfW__r03",
+    "paper_title": "Diversity Boosted Learning for Domain Generalization with a Large Number of Domains",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "ywAjQw-spmY__r03",
+    "paper_title": "Formal Specifications from Natural Language",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "tPKKXeW33YU__r03",
+    "paper_title": "WiNeRT: Towards Neural Ray Tracing for Wireless Channel Modelling and Differentiable Simulations",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "-UsbRlXzMG__r02",
+    "paper_title": "How (Un)Fair is Text Summarization?",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "gNI4_85Cyve__r03",
+    "paper_title": "QAID: Question Answering Inspired Few-shot Intent Detection",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "tmIiMPl4IPa__r03",
+    "paper_title": "Factorized Fourier Neural Operators",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "oJpVVGXu9i__r04",
+    "paper_title": "Share Your Representation Only: Guaranteed Improvement of the Privacy-Utility Tradeoff in Federated Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "Rn50hCOX9XX__r04",
+    "paper_title": "Gene finding revisited: improved robustness through structured decoding from learning embeddings",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "x-mXzBgCX3a__r03",
+    "paper_title": "FairGBM: Gradient Boosting with Fairness Constraints",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "tPKKXeW33YU__r01",
+    "paper_title": "WiNeRT: Towards Neural Ray Tracing for Wireless Channel Modelling and Differentiable Simulations",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "o3Q4m8jg4BR__r03",
+    "paper_title": "LS-IQ: Implicit Reward Regularization for Inverse Reinforcement Learning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "8Ygoj2IeXfW__r02",
+    "paper_title": "Diversity Boosted Learning for Domain Generalization with a Large Number of Domains",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "x-mXzBgCX3a__r02",
+    "paper_title": "FairGBM: Gradient Boosting with Fairness Constraints",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "17RDXeF-skZ__r03",
+    "paper_title": "Doing Fast Adaptation Fast: Conditionally Independent Deep Ensembles for Distribution Shifts",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "9D5FH6LFbRu__r03",
+    "paper_title": "Functional Risk Minimization",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "tmIiMPl4IPa__r04",
+    "paper_title": "Factorized Fourier Neural Operators",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "7YfHla7IxBJ__r02",
+    "paper_title": "Encoding Recurrence into Transformers",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "pW_jGk1D_Ww__r03",
+    "paper_title": "Disentangled Feature Swapping Augmentation for Weakly Supervised Semantic Segmentation",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "me09xlTmm8__r03",
+    "paper_title": "Transport with Support: Data-Conditional Diffusion Bridges",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "Y1J29OryQg__r01",
+    "paper_title": "Causal Inference for Knowledge Graph Completion",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "oJpVVGXu9i__r01",
+    "paper_title": "Share Your Representation Only: Guaranteed Improvement of the Privacy-Utility Tradeoff in Federated Learning",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "TZG_XsO4x6y__r01",
+    "paper_title": "Long-horizon video prediction using a dynamic latent hierarchy",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "cZM4iZmxzR7__r01",
+    "paper_title": "Simple Spectral Graph Convolution from an Optimization Perspective",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3uDXZZLBAwd__r01",
+    "paper_title": "Deep Reinforcement Learning based Insight Selection Policy",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "r9fX833CsuN__r02",
+    "paper_title": "Curriculum-based Co-design of Morphology and Control of Voxel-based Soft Robots",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "vzdrgR2nomD__r04",
+    "paper_title": "FARE: Provably Fair Representation Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "8foynpwwRb__r01",
+    "paper_title": "Randomized Sharpness-Aware Training for Boosting Computational Efficiency in Deep Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "AqX3oSbzyQ1__r04",
+    "paper_title": "Object-Centric Learning with Slot Mixture Models",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "pWVASryOyFw__r02",
+    "paper_title": "Learning Uncertainty for Unknown Domains with Zero-Target-Assumption",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "QN_VgTeOYGl__r03",
+    "paper_title": "Data Leakage in Tabular Federated Learning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "jkMT2AtccX__r04",
+    "paper_title": "Learning Representations for Reinforcement Learning with Hierarchical Forward Models",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "tmIiMPl4IPa__r01",
+    "paper_title": "Factorized Fourier Neural Operators",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "me09xlTmm8__r02",
+    "paper_title": "Transport with Support: Data-Conditional Diffusion Bridges",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "rwetAifrs16__r02",
+    "paper_title": "Incremental Predictive Coding: A Parallel and Fully Automatic Learning Algorithm",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "I3HCE7Ro78H__r04",
+    "paper_title": "Finding Actual Descent Directions for Adversarial Training",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "BO5_Lm7iD___r04",
+    "paper_title": "Social Network Structure Shapes Innovation: Experience-sharing in RL with SAPIENS",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "RUzSobdYy0V__r03",
+    "paper_title": "Quantifying and Mitigating the Impact of Label Errors on Model Disparity Metrics",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "a-bD9-0ycs0__r04",
+    "paper_title": "Latent Linear ODEs with Neural Kalman Filtering for Irregular Time Series Forecasting",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "0z_cXcu1N6o__r01",
+    "paper_title": "Transformer needs NMDA receptor nonlinearity for long-term memory",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "QN_VgTeOYGl__r01",
+    "paper_title": "Data Leakage in Tabular Federated Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "BO5_Lm7iD___r02",
+    "paper_title": "Social Network Structure Shapes Innovation: Experience-sharing in RL with SAPIENS",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "a-bD9-0ycs0__r03",
+    "paper_title": "Latent Linear ODEs with Neural Kalman Filtering for Irregular Time Series Forecasting",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "pW_jGk1D_Ww__r01",
+    "paper_title": "Disentangled Feature Swapping Augmentation for Weakly Supervised Semantic Segmentation",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "N3kGYG3ZcTi__r04",
+    "paper_title": "Suppression helps: Lateral Inhibition-inspired Convolutional Neural Network for Image Classification",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "m3DmIL7wHDW__r01",
+    "paper_title": "The guide and the explorer: smart agents for resource-limited iterated batch reinforcement learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "tPKKXeW33YU__r04",
+    "paper_title": "WiNeRT: Towards Neural Ray Tracing for Wireless Channel Modelling and Differentiable Simulations",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "fixed",
+    "id": "o3Q4m8jg4BR__r02",
+    "paper_title": "LS-IQ: Implicit Reward Regularization for Inverse Reinforcement Learning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "HqVp0rNC8jn__r02",
+    "paper_title": "Learning Geometric Representations of\u00a0Interactive Objects",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "Xj9V-stmIcO__r03",
+    "paper_title": "Proper Scoring Rules for Survival Analysis",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "jkMT2AtccX__r03",
+    "paper_title": "Learning Representations for Reinforcement Learning with Hierarchical Forward Models",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "me09xlTmm8__r04",
+    "paper_title": "Transport with Support: Data-Conditional Diffusion Bridges",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "rwetAifrs16__r04",
+    "paper_title": "Incremental Predictive Coding: A Parallel and Fully Automatic Learning Algorithm",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "I3HCE7Ro78H__r03",
+    "paper_title": "Finding Actual Descent Directions for Adversarial Training",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "jREF4bkfi_S__r02",
+    "paper_title": "Mini-batch $k$-means terminates within $O(d/\\epsilon)$ iterations",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "mhnHqRqcjYU__r02",
+    "paper_title": "DFPC: Data flow driven pruning of coupled channels without data.",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "hChYEyebNm1__r02",
+    "paper_title": "Gradient-Based Transfer Learning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "sZI1Oj9KBKy__r04",
+    "paper_title": "TVSPrune - Pruning Non-discriminative filters via Total Variation separability of intermediate representations without fine tuning",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "WVZQa2QYJN__r03",
+    "paper_title": "RuDar: Weather Radar Dataset for Precipitation Nowcasting with Geographical and Seasonal Variability",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "fyD8adDrXo__r02",
+    "paper_title": "HyPHEN: A Hybrid Packing Method and Optimizations for Homomorphic Encryption-Based Neural Network ",
+    "predicted_label": "partially_fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "jREF4bkfi_S__r01",
+    "paper_title": "Mini-batch $k$-means terminates within $O(d/\\epsilon)$ iterations",
+    "predicted_label": "partially_fixed"
+  }
+]

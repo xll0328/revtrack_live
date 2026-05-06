@@ -1,0 +1,39 @@
+\section{Benchmark Construction}
+
+RevTrack uses a staged construction pipeline.
+First, we collect public OpenReview submissions and discussion notes \citep{openreview}.
+Second, we extract issue candidates from review fields such as weaknesses, questions, and summary.
+Third, we align each concern with response candidates and revision-summary text.
+Fourth, we use model disagreement to prioritize hard examples.
+Finally, we create blind human-validation sheets with a hidden assistant/model key and run packet integrity audits before any labels are promoted.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/figure_pipeline_overview.pdf}
+\caption{RevTrack construction and claim-governance pipeline. The release keeps extraction quality gates, blind/key/source packet audits, label-evidence checks, and claim-readiness audits in one reproducible path so transfer claims cannot bypass provenance boundaries.}
+\label{fig:pipeline-overview}
+\end{figure*}
+
+\paragraph{Example schema and leakage control.}
+Each example keeps the issue identifier, paper title, review metadata, a review-concern excerpt, the top and aligned author-response excerpts, a revision summary, the status label, confidence, evidence span, and annotator note.
+Blind packets omit labels, assistant suggestions, and model predictions; hidden key files retain those fields only for audit and promotion.
+The packet audit checks row identity, duplicate issue identifiers, source-sheet consistency, forbidden label leakage into blind files, missing model snapshots in signoff files, and evidence-span completeness before a sheet can support a paper claim.
+
+\input{tables/dataset_versions}
+
+\paragraph{Quality gates.}
+The ICLR 2024 candidate pool contains 230 candidates with complete required text fields and 82 multi-model disagreement rows.
+The expanded ICLR 2025 pool contains 322 candidates from 80 submissions, has a complete-field rate of 0.963, and includes 244 disagreement rows.
+The NeurIPS 2024 limit100 candidate pool contains 393 entries with 1.000 complete-field rate and 316 disagreement rows; its 80-row active frontier is user-confirmed single-pass standard validation.
+The ICLR expanded80 frontier is standard-labeled through user-confirmed single-pass validation.
+The ICLR 2023 complete-field pool contains 241 candidates and 83 TF-IDF/issue-ledger disagreement rows; its 80-row random/stratified validation slice is user-confirmed single-pass standard validation.
+Because the ICLR 2025 and NeurIPS 2024 frontiers are active-sampled from model disagreement, we treat them as hardened transfer frontiers rather than estimates of natural venue-level issue prevalence.
+Because the ICLR 2023 slice is random/stratified rather than an active frontier, we report it by measured slice design and still avoid unmeasured natural-prevalence claims.
+
+\paragraph{Validation provenance.}
+The current standard human-validation set contains 301 rows: 40 from ICLR 2024, 21 from the ICLR 2025 repro stress set, 80 from the ICLR 2025 expanded frontier, 80 from the NeurIPS 2024 active frontier, and 80 from the ICLR 2023 random/stratified slice.
+The first 61 rows were promoted after user-reviewed AI-assisted signoff on 2026-04-26; expanded80 was promoted after user-confirmed review of the assistant-adjudication draft on the same date; the NeurIPS 2024 resolved candidate was promoted after user confirmation on 2026-04-28.
+The ICLR 2023 random80 slice was promoted after user confirmation on 2026-04-29.
+We report this provenance explicitly.
+It supports the current standard-label claims, but it is not an independent two-annotator agreement study.
+The release package includes a dataset card, claim-evidence ledger, packet audits, label-evidence audits, and the scripts used to regenerate tables and figures from machine-readable CSV, JSON, TSV, and JSONL artifacts.

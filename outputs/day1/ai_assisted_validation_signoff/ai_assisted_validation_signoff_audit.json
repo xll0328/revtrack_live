@@ -1,0 +1,201 @@
+{
+  "artifact": "outputs/day1/ai_assisted_validation_signoff/ai_assisted_validation_signoff.tsv",
+  "error_count": 0,
+  "overall_status": "pass",
+  "passes": [
+    {
+      "errors": [],
+      "evidence": {
+        "duplicate_rows": 0,
+        "fields": 25,
+        "missing_fields": [],
+        "rows": 61
+      },
+      "pass_id": "pass_1_schema_identity",
+      "status": "pass",
+      "summary": "Required fields, row identity, and rank ordering are valid.",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "evidence": {
+        "all_queue_rows": 61,
+        "coverage_scope": "all",
+        "expected_queue_rows": 61,
+        "extra_rows": 0,
+        "missing_rows": 0,
+        "pending_queue_rows": 0,
+        "signoff_rows": 61
+      },
+      "pass_id": "pass_2_queue_coverage",
+      "status": "pass",
+      "summary": "Signoff rows should exactly cover pending queue rows, or all queue rows after promotion.",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "evidence": {
+        "missing_by_field": {},
+        "short_review_rows": 0
+      },
+      "pass_id": "pass_3_context_completeness",
+      "status": "pass",
+      "summary": "Every signoff row should include full review, response, aligned context, and revision text.",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "evidence": {
+        "assistant_distribution": {
+          "fixed": 18,
+          "partially_fixed": 35,
+          "regressed": 1,
+          "unresolved": 7
+        },
+        "fallback_assistant_evidence_span": [
+          "sLQb8q0sUi__r02",
+          "HX5ujdsSon__r01",
+          "AyXIDfvYg8__r03",
+          "lF2aip4Scn__r02",
+          "KS8mIvetg2__r02",
+          "AyXIDfvYg8__r02",
+          "dCHbFDsCZz__r01",
+          "tEgrUrUuwA__r01",
+          "AqN23oqraW__r04",
+          "HX5ujdsSon__r03",
+          "OsGUnYOzii__r04",
+          "hv3SklibkL__r01",
+          "AZGIwqCyYY__r03",
+          "GN921JHCRw__r03",
+          "KTtEICH4TO__r01",
+          "OsGUnYOzii__r03",
+          "5JWAOLBxwp__r04",
+          "EmQSOi1X2f__r01",
+          "tEgrUrUuwA__r04",
+          "uGtfk2OphU__r01"
+        ],
+        "invalid_assistant_labels": [],
+        "invalid_suggested_labels": [],
+        "missing_assistant_evidence_span": [],
+        "missing_assistant_notes": [],
+        "missing_model_snapshot": []
+      },
+      "pass_id": "pass_4_assistant_evidence",
+      "status": "pass",
+      "summary": "Assistant labels and evidence should be valid and inspectable.",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "evidence": {
+        "bad_status_rows": [],
+        "html_has_warning": true,
+        "manifest_has_warning": true,
+        "prefilled_reviewer_rows": []
+      },
+      "pass_id": "pass_5_non_blind_isolation",
+      "status": "pass",
+      "summary": "AI-assisted signoff must stay separate from independent blind validation.",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "evidence": {
+        "assistant_distribution": {
+          "fixed": 18,
+          "partially_fixed": 35,
+          "regressed": 1,
+          "unresolved": 7
+        },
+        "audit_bucket_distribution": {
+          "label_stratum": 4,
+          "minority_regressed": 1,
+          "minority_unresolved": 7,
+          "model_disagreement": 6,
+          "model_high_conflict": 10,
+          "structured_error": 33
+        },
+        "high_risk_rows": 51,
+        "high_risk_rows_in_top_25": 25,
+        "top_audit_score_cases": [
+          {
+            "assistant_label": "unresolved",
+            "audit_bucket": "minority_unresolved",
+            "audit_score": "24.620",
+            "issue_id": "My7lkRNnL9__r01",
+            "signoff_rank": "2"
+          },
+          {
+            "assistant_label": "unresolved",
+            "audit_bucket": "minority_unresolved",
+            "audit_score": "24.620",
+            "issue_id": "sLQb8q0sUi__r02",
+            "signoff_rank": "3"
+          },
+          {
+            "assistant_label": "unresolved",
+            "audit_bucket": "minority_unresolved",
+            "audit_score": "22.620",
+            "issue_id": "qBL04XXex6__r05",
+            "signoff_rank": "4"
+          },
+          {
+            "assistant_label": "unresolved",
+            "audit_bucket": "minority_unresolved",
+            "audit_score": "21.620",
+            "issue_id": "HX5ujdsSon__r01",
+            "signoff_rank": "5"
+          },
+          {
+            "assistant_label": "fixed",
+            "audit_bucket": "structured_error",
+            "audit_score": "20.620",
+            "issue_id": "KS8mIvetg2__r02",
+            "signoff_rank": "9"
+          },
+          {
+            "assistant_label": "partially_fixed",
+            "audit_bucket": "structured_error",
+            "audit_score": "20.620",
+            "issue_id": "9k0krNzvlV__r02",
+            "signoff_rank": "10"
+          },
+          {
+            "assistant_label": "partially_fixed",
+            "audit_bucket": "structured_error",
+            "audit_score": "20.620",
+            "issue_id": "ADDCErFzev__r02",
+            "signoff_rank": "11"
+          },
+          {
+            "assistant_label": "partially_fixed",
+            "audit_bucket": "structured_error",
+            "audit_score": "20.620",
+            "issue_id": "buC4E91xZE__r01",
+            "signoff_rank": "12"
+          },
+          {
+            "assistant_label": "partially_fixed",
+            "audit_bucket": "structured_error",
+            "audit_score": "20.620",
+            "issue_id": "buC4E91xZE__r04",
+            "signoff_rank": "13"
+          },
+          {
+            "assistant_label": "partially_fixed",
+            "audit_bucket": "structured_error",
+            "audit_score": "19.550",
+            "issue_id": "ONfWFluZBI__r01",
+            "signoff_rank": "41"
+          }
+        ]
+      },
+      "pass_id": "pass_6_high_risk_triage",
+      "status": "pass",
+      "summary": "High-risk and minority-label rows should be visible early for final review.",
+      "warnings": []
+    }
+  ],
+  "rows": 61,
+  "warning_count": 0
+}

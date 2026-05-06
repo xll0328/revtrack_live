@@ -1,0 +1,15 @@
+{
+  "evidence_issue_count": 0,
+  "evidence_issues": [],
+  "evidence_ok": true,
+  "label_counts": {
+    "fixed": 5,
+    "partially_fixed": 16
+  },
+  "ok": true,
+  "problem_counts": {},
+  "rows": 21,
+  "structural_errors": [],
+  "structural_ok": true,
+  "unique_issue_ids": 21
+}

@@ -1,0 +1,129 @@
+{
+  "models": [
+    "gpt55_v2",
+    "gpt-4.1-mini_full",
+    "qwen2.5-72b-instruct_full"
+  ],
+  "rules": [
+    {
+      "datasets": [
+        {
+          "accuracy": 0.6486486486486487,
+          "dataset_key": "iclr2024_clean_dev_v7",
+          "fixed_recall": 0.44,
+          "macro_f1": 0.35029539722038827,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.09090909090909091
+        },
+        {
+          "accuracy": 0.1,
+          "dataset_key": "iclr2025_expanded80",
+          "fixed_recall": 0.25,
+          "macro_f1": 0.09428037715708948,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.06060606060606061
+        },
+        {
+          "accuracy": 0.4875,
+          "dataset_key": "neurips2024_limit100_resolved_candidate",
+          "fixed_recall": 0.0,
+          "macro_f1": 0.16666666666666666,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.0
+        }
+      ],
+      "mean_macro_f1": 0.20374748034804813,
+      "rule": "u_guard_fix_suppress"
+    },
+    {
+      "datasets": [
+        {
+          "accuracy": 0.6081081081081081,
+          "dataset_key": "iclr2024_clean_dev_v7",
+          "fixed_recall": 0.6,
+          "macro_f1": 0.344840592520345,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.09090909090909091
+        },
+        {
+          "accuracy": 0.1,
+          "dataset_key": "iclr2025_expanded80",
+          "fixed_recall": 0.75,
+          "macro_f1": 0.0922120750887874,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.06060606060606061
+        },
+        {
+          "accuracy": 0.4625,
+          "dataset_key": "neurips2024_limit100_resolved_candidate",
+          "fixed_recall": 0.0,
+          "macro_f1": 0.16972477064220182,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.0
+        }
+      ],
+      "mean_macro_f1": 0.20225914608377807,
+      "rule": "u_any"
+    },
+    {
+      "datasets": [
+        {
+          "accuracy": 0.6554054054054054,
+          "dataset_key": "iclr2024_clean_dev_v7",
+          "fixed_recall": 0.44,
+          "macro_f1": 0.3568789584799437,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.09090909090909091
+        },
+        {
+          "accuracy": 0.0625,
+          "dataset_key": "iclr2025_expanded80",
+          "fixed_recall": 0.25,
+          "macro_f1": 0.07314534780288205,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.015151515151515152
+        },
+        {
+          "accuracy": 0.525,
+          "dataset_key": "neurips2024_limit100_resolved_candidate",
+          "fixed_recall": 0.0,
+          "macro_f1": 0.17500000000000002,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.0
+        }
+      ],
+      "mean_macro_f1": 0.20167476876094192,
+      "rule": "fixed_suppress"
+    },
+    {
+      "datasets": [
+        {
+          "accuracy": 0.6148648648648649,
+          "dataset_key": "iclr2024_clean_dev_v7",
+          "fixed_recall": 0.6,
+          "macro_f1": 0.3516951386691975,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.09090909090909091
+        },
+        {
+          "accuracy": 0.0625,
+          "dataset_key": "iclr2025_expanded80",
+          "fixed_recall": 0.75,
+          "macro_f1": 0.0714703425229741,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.015151515151515152
+        },
+        {
+          "accuracy": 0.5,
+          "dataset_key": "neurips2024_limit100_resolved_candidate",
+          "fixed_recall": 0.0,
+          "macro_f1": 0.17857142857142858,
+          "regressed_recall": 0.0,
+          "unresolved_recall": 0.0
+        }
+      ],
+      "mean_macro_f1": 0.20057896992120006,
+      "rule": "base"
+    }
+  ]
+}

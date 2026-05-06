@@ -1,0 +1,34 @@
+{
+  "errors": [],
+  "fallback_evidence_rows": 20,
+  "label_distribution": {
+    "fixed": 18,
+    "partially_fixed": 35,
+    "regressed": 1,
+    "unresolved": 7
+  },
+  "output_sheets": [
+    {
+      "labeled_rows": 40,
+      "packet": "ICLR 2024 v1",
+      "rows": 40,
+      "sheet": "experiments/day1/iclr2024_human_validation_v1_blind.tsv"
+    },
+    {
+      "labeled_rows": 21,
+      "packet": "ICLR 2025 repro v2",
+      "rows": 21,
+      "sheet": "experiments/day1/iclr2025_repro_human_validation_v2_blind.tsv"
+    }
+  ],
+  "packet_distribution": {
+    "ICLR 2024 v1": 40,
+    "ICLR 2025 repro v2": 21
+  },
+  "promoted_rows": 61,
+  "provenance_note": "User-reviewed standard human-validation signoff on 2026-04-26; source=human-reviewed AI-assisted signoff packet.",
+  "signoff_rows": 61,
+  "skipped_rows": 0,
+  "status": "ok",
+  "write": true
+}

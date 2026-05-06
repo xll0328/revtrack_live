@@ -1,0 +1,57 @@
+{
+  "batch_files": [],
+  "batch_rows": 0,
+  "blank_batch_rows": 0,
+  "by_packet": [],
+  "completed_batch_rows": 0,
+  "duplicate_batch_rows": [],
+  "error_count": 0,
+  "error_messages": [],
+  "errors": [],
+  "incomplete_detail_rows": [],
+  "invalid_label_rows": [],
+  "merge_conflicts": [],
+  "merged_rows": 0,
+  "missing_queue_rows": [],
+  "output_dir": "outputs/day1/human_validation_batch_ingest",
+  "queue_rows": 301,
+  "sheets": [
+    {
+      "blind_sheet": "experiments/day1/iclr2023_limit80_random80_human_validation_v1_blind.tsv",
+      "labeled_rows": 80,
+      "merged_rows": 0,
+      "output_sheet": "outputs/day1/human_validation_batch_ingest/sheets/iclr2023_limit80_random80_human_validation_v1_blind.tsv",
+      "rows": 80
+    },
+    {
+      "blind_sheet": "experiments/day1/iclr2024_human_validation_v1_blind.tsv",
+      "labeled_rows": 40,
+      "merged_rows": 0,
+      "output_sheet": "outputs/day1/human_validation_batch_ingest/sheets/iclr2024_human_validation_v1_blind.tsv",
+      "rows": 40
+    },
+    {
+      "blind_sheet": "experiments/day1/iclr2025_expanded80_human_validation_v1_blind.tsv",
+      "labeled_rows": 80,
+      "merged_rows": 0,
+      "output_sheet": "outputs/day1/human_validation_batch_ingest/sheets/iclr2025_expanded80_human_validation_v1_blind.tsv",
+      "rows": 80
+    },
+    {
+      "blind_sheet": "experiments/day1/iclr2025_repro_human_validation_v2_blind.tsv",
+      "labeled_rows": 21,
+      "merged_rows": 0,
+      "output_sheet": "outputs/day1/human_validation_batch_ingest/sheets/iclr2025_repro_human_validation_v2_blind.tsv",
+      "rows": 21
+    },
+    {
+      "blind_sheet": "experiments/day1/neurips2024_limit100_human_validation_v1_blind.tsv",
+      "labeled_rows": 80,
+      "merged_rows": 0,
+      "output_sheet": "outputs/day1/human_validation_batch_ingest/sheets/neurips2024_limit100_human_validation_v1_blind.tsv",
+      "rows": 80
+    }
+  ],
+  "status": "ok",
+  "write_canonical": false
+}

@@ -1,0 +1,25 @@
+{
+  "best_model": {
+    "accuracy": 0.55,
+    "fixed_f1": 0.0,
+    "macro_f1": 0.3477822580645161,
+    "model_key": "mpnet",
+    "partially_fixed_f1": 0.5161290322580644,
+    "regressed_f1": 0.0,
+    "rows": 80,
+    "status": "assistant_resolved_candidate_user_review_required",
+    "unresolved_f1": 0.8750000000000001
+  },
+  "claim_boundary": "Use as standard single-user validation only when the source sheet has been user-confirmed; do not report as independent two-annotator IAA.",
+  "dataset_name": "neurips2024_limit100_resolved_candidate",
+  "human_validation_status": "assistant_resolved_candidate_user_review_required",
+  "label_distribution": {
+    "partially_fixed": 44,
+    "unresolved": 36
+  },
+  "metrics_csv": "outputs/day1/paper_assets/neurips2024_limit100_resolved_candidate_transfer_metrics.csv",
+  "metrics_md": "outputs/day1/paper_assets/neurips2024_limit100_resolved_candidate_transfer_metrics.md",
+  "output_jsonl": "data/processed/neurips2024_limit100_resolved_candidate_validation_v1.jsonl",
+  "rows": 80,
+  "status": "assistant_resolved_candidate_user_review_required"
+}

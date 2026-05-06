@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RevTrack Issue Timeline</title>
+  <style>
+    :root {
+      --bg: #f6f0e8;
+      --ink: #1e1a18;
+      --panel: rgba(255,255,255,0.72);
+      --line: rgba(30,26,24,0.12);
+      --fixed: #297d4e;
+      --partial: #d68c1d;
+      --unresolved: #a2372b;
+      --regressed: #a2216b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(223, 189, 135, 0.35), transparent 26%),
+        radial-gradient(circle at 80% 10%, rgba(109, 141, 190, 0.24), transparent 24%),
+        linear-gradient(180deg, #f7f2ea, #ece3d3 54%, #f8f4ee);
+    }
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: clamp(32px, 4vw, 58px);
+      letter-spacing: -0.04em;
+    }
+    .sub {
+      max-width: 780px;
+      font-size: 17px;
+      line-height: 1.5;
+      opacity: 0.8;
+      margin-bottom: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(60, 41, 14, 0.08);
+      padding: 18px 18px 16px;
+      animation: rise 700ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: var(--status-color);
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .badge {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--status-color) 14%, white);
+      color: var(--status-color);
+      font-weight: 700;
+    }
+    .paper {
+      font-size: 12px;
+      opacity: 0.65;
+    }
+    .title {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: 20px;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .lane {
+      position: relative;
+      margin: 12px 0;
+      padding-left: 18px;
+      border-left: 2px dashed rgba(30,26,24,0.14);
+    }
+    .event {
+      position: relative;
+      margin-bottom: 12px;
+      padding: 10px 12px 10px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.66);
+    }
+    .event::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--status-color);
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.5);
+    }
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.56;
+      margin-bottom: 6px;
+    }
+    .text {
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .outcome {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-top: 1px solid var(--line);
+      margin-top: 14px;
+      padding-top: 14px;
+      font-size: 13px;
+    }
+    .gold, .pred {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.75);
+    }
+    .status {
+      font-weight: 800;
+      color: var(--status-color);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(28px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>RevTrack Issue Ledger</h1>
+    <div class="sub">
+      A dynamic visualization for revision-aware scientific judgment. Each card shows one review concern, the author response, the revision event, and the resulting issue status.
+    </div>
+    <div id="grid" class="grid"></div>
+  </div>
+  <script>
+    const rows = [{"id": "smoke-001", "venue": "demo", "paper_title": "Sparse Evidence Routing for Long-Context QA", "review_text": "The paper claims efficiency gains but does not report latency or memory ablations.", "author_response": "We added a new latency and memory ablation in Table 4 and discuss deployment trade-offs in Section 5.", "revision_summary": "Revision adds Table 4 with latency and GPU memory under four context lengths, plus a new Section 5 discussion.", "gold_label": "fixed", "predicted_label": "fixed"}, {"id": "smoke-002", "venue": "demo", "paper_title": "Cross-Domain Retrieval Tuning", "review_text": "Dataset licensing and consent are unclear for the newly collected corpus.", "author_response": "We appreciate the concern and will expand the ethical discussion in future work.", "revision_summary": "The revision does not add data licensing details or a collection protocol.", "gold_label": "unresolved", "predicted_label": "unresolved"}, {"id": "smoke-003", "venue": "demo", "paper_title": "Chain-of-Plan Decoding", "review_text": "The error analysis is too shallow and does not explain where the model still fails.", "author_response": "We added a short qualitative analysis of three failures and clarified typical planning errors.", "revision_summary": "A short paragraph with three examples was added, but no systematic error taxonomy appears.", "gold_label": "partially_fixed", "predicted_label": "fixed"}, {"id": "smoke-004", "venue": "demo", "paper_title": "Low-Resource Multilingual Alignment", "review_text": "The paper lacks low-resource language analysis and may hide uneven performance.", "author_response": "We added low-resource results and re-ran the main table with a stronger prompt.", "revision_summary": "The revision adds eight low-resource languages, but removes one previous language and shows a notable average drop on the new setup.", "gold_label": "regressed", "predicted_label": "fixed"}, {"id": "smoke-005", "venue": "demo", "paper_title": "Calibration-Aware Reasoning", "review_text": "The confidence claims are unsupported because no calibration metric is reported.", "author_response": "We now report ECE and Brier score and add a reliability diagram in the appendix.", "revision_summary": "A new calibration section reports ECE, Brier score, and a reliability diagram.", "gold_label": "fixed", "predicted_label": "fixed"}, {"id": "smoke-006", "venue": "demo", "paper_title": "Adaptive Context Pruning", "review_text": "The main baseline is missing, so it is hard to tell whether the gains are meaningful.", "author_response": "We agree this comparison is useful, but the experiment is beyond the current scope.", "revision_summary": "The missing baseline is still absent in the revised manuscript.", "gold_label": "unresolved", "predicted_label": "partially_fixed"}, {"id": "smoke-007", "venue": "demo", "paper_title": "Provable Prompt Compression", "review_text": "The theoretical guarantee seems overstated because the assumptions are not explicit.", "author_response": "We softened the claim, listed the assumptions clearly, and clarified when the guarantee applies.", "revision_summary": "The theorem statement is narrowed and assumptions are now explicit, but no new proof detail is added.", "gold_label": "partially_fixed", "predicted_label": "partially_fixed"}, {"id": "smoke-008", "venue": "demo", "paper_title": "Self-Debugging Tool Agents", "review_text": "The method is reproducible in principle, but the exact prompt templates and seeds are missing.", "author_response": "We simplified the prompting pipeline and updated the reproducibility statement.", "revision_summary": "The revised paper uses a new prompt template, reports longer runtime, and still does not release exact seeds.", "gold_label": "regressed", "predicted_label": "regressed"}];
+    const colorMap = {
+      fixed: "var(--fixed)",
+      partially_fixed: "var(--partial)",
+      unresolved: "var(--unresolved)",
+      regressed: "var(--regressed)",
+      missing: "#555"
+    };
+    const grid = document.getElementById("grid");
+    rows.forEach((row, index) => {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.style.setProperty("--status-color", colorMap[row.predicted_label] || "#555");
+      card.style.animationDelay = `${index * 90}ms`;
+      card.innerHTML = `
+        <div class="top">
+          <div class="badge">${row.predicted_label.replace("_", " ")}</div>
+          <div class="paper">${row.venue || "demo"}</div>
+        </div>
+        <div class="title">${row.paper_title}</div>
+        <div class="lane">
+          <div class="event">
+            <div class="label">Review Concern</div>
+            <div class="text">${row.review_text}</div>
+          </div>
+          <div class="event">
+            <div class="label">Author Response</div>
+            <div class="text">${row.author_response}</div>
+          </div>
+          <div class="event">
+            <div class="label">Revision Event</div>
+            <div class="text">${row.revision_summary}</div>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="gold">
+            <div class="label">Gold</div>
+            <div class="status">${row.gold_label}</div>
+          </div>
+          <div class="pred">
+            <div class="label">Prediction</div>
+            <div class="status">${row.predicted_label}</div>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

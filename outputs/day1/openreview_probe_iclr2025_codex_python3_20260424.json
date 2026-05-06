@@ -1,0 +1,107 @@
+{
+  "limit": 20,
+  "modes": [
+    {
+      "diagnostics": [
+        {
+          "error": "HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1e17b47a40>: Failed to establish a new connection: [Errno 1] Operation not permitted')))",
+          "error_type": "ProxyError",
+          "event": "proxy_request_failed",
+          "params": {
+            "content.venueid": "ICLR.cc/2025/Conference",
+            "details": "replies",
+            "limit": 20,
+            "offset": 0
+          },
+          "session": "env",
+          "url": "https://api2.openreview.net/notes"
+        },
+        {
+          "error": "HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1e18a0c680>: Failed to resolve 'api2.openreview.net' ([Errno -2] Name or service not known)\"))",
+          "error_type": "ConnectionError",
+          "event": "direct_retry_failed",
+          "params": {
+            "content.venueid": "ICLR.cc/2025/Conference",
+            "details": "replies",
+            "limit": 20,
+            "offset": 0
+          },
+          "session": "direct",
+          "url": "https://api2.openreview.net/notes"
+        }
+      ],
+      "error": "OpenReview request failed for https://api2.openreview.net/notes with params {'content.venueid': 'ICLR.cc/2025/Conference', 'details': 'replies', 'limit': 20, 'offset': 0}; env-proxy error: HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1e17b47a40>: Failed to establish a new connection: [Errno 1] Operation not permitted'))); direct retry error: HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1e18a0c680>: Failed to resolve 'api2.openreview.net' ([Errno -2] Name or service not known)\"))",
+      "mode": "v2-notes",
+      "status": "error"
+    },
+    {
+      "diagnostics": [
+        {
+          "error": "HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes/search?venueid=ICLR.cc%2F2025%2FConference&source=forum&limit=20&offset=0 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1e18a14c20>: Failed to establish a new connection: [Errno 1] Operation not permitted')))",
+          "error_type": "ProxyError",
+          "event": "proxy_request_failed",
+          "params": {
+            "limit": 20,
+            "offset": 0,
+            "source": "forum",
+            "venueid": "ICLR.cc/2025/Conference"
+          },
+          "session": "env",
+          "url": "https://api2.openreview.net/notes/search"
+        },
+        {
+          "error": "HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes/search?venueid=ICLR.cc%2F2025%2FConference&source=forum&limit=20&offset=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1e18104440>: Failed to resolve 'api2.openreview.net' ([Errno -2] Name or service not known)\"))",
+          "error_type": "ConnectionError",
+          "event": "direct_retry_failed",
+          "params": {
+            "limit": 20,
+            "offset": 0,
+            "source": "forum",
+            "venueid": "ICLR.cc/2025/Conference"
+          },
+          "session": "direct",
+          "url": "https://api2.openreview.net/notes/search"
+        }
+      ],
+      "error": "OpenReview request failed for https://api2.openreview.net/notes/search with params {'venueid': 'ICLR.cc/2025/Conference', 'source': 'forum', 'limit': 20, 'offset': 0}; env-proxy error: HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes/search?venueid=ICLR.cc%2F2025%2FConference&source=forum&limit=20&offset=0 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1e18a14c20>: Failed to establish a new connection: [Errno 1] Operation not permitted'))); direct retry error: HTTPSConnectionPool(host='api2.openreview.net', port=443): Max retries exceeded with url: /notes/search?venueid=ICLR.cc%2F2025%2FConference&source=forum&limit=20&offset=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1e18104440>: Failed to resolve 'api2.openreview.net' ([Errno -2] Name or service not known)\"))",
+      "mode": "v2-search",
+      "status": "error"
+    },
+    {
+      "diagnostics": [
+        {
+          "error": "HTTPSConnectionPool(host='api.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1e17b47bf0>: Failed to establish a new connection: [Errno 1] Operation not permitted')))",
+          "error_type": "ProxyError",
+          "event": "proxy_request_failed",
+          "params": {
+            "content.venueid": "ICLR.cc/2025/Conference",
+            "details": "replies",
+            "limit": 20,
+            "offset": 0
+          },
+          "session": "env",
+          "url": "https://api.openreview.net/notes"
+        },
+        {
+          "error": "HTTPSConnectionPool(host='api.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1e17b78a40>: Failed to resolve 'api.openreview.net' ([Errno -2] Name or service not known)\"))",
+          "error_type": "ConnectionError",
+          "event": "direct_retry_failed",
+          "params": {
+            "content.venueid": "ICLR.cc/2025/Conference",
+            "details": "replies",
+            "limit": 20,
+            "offset": 0
+          },
+          "session": "direct",
+          "url": "https://api.openreview.net/notes"
+        }
+      ],
+      "error": "OpenReview request failed for https://api.openreview.net/notes with params {'content.venueid': 'ICLR.cc/2025/Conference', 'details': 'replies', 'limit': 20, 'offset': 0}; env-proxy error: HTTPSConnectionPool(host='api.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by ProxyError('Unable to connect to proxy', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1e17b47bf0>: Failed to establish a new connection: [Errno 1] Operation not permitted'))); direct retry error: HTTPSConnectionPool(host='api.openreview.net', port=443): Max retries exceeded with url: /notes?content.venueid=ICLR.cc%2F2025%2FConference&details=replies&limit=20&offset=0 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1e17b78a40>: Failed to resolve 'api.openreview.net' ([Errno -2] Name or service not known)\"))",
+      "mode": "v1-notes",
+      "status": "error"
+    }
+  ],
+  "retries": 0,
+  "timeout": 8,
+  "venue_id": "ICLR.cc/2025/Conference"
+}

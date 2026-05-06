@@ -1,0 +1,169 @@
+{
+  "allow_subset": true,
+  "duplicate_ids": [],
+  "evaluated_examples": 148,
+  "invalid_rows": [
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "qBL04XXex6__r01",
+      "row": "2"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "kmn0BhQk7p__r03",
+      "row": "3"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "qBL04XXex6__r02",
+      "row": "6"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "rhgIgTSSxW__r02",
+      "row": "8"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "lK2V2E2MNv__r02",
+      "row": "25"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "YItWKZci78__r01",
+      "row": "29"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "My7lkRNnL9__r01",
+      "row": "40"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "eUgS9Ig8JG__r04",
+      "row": "43"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "KTtEICH4TO__r03",
+      "row": "56"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "dCHbFDsCZz__r01",
+      "row": "65"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "7vVWiCrFnd__r02",
+      "row": "67"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "EmQSOi1X2f__r01",
+      "row": "71"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "GN921JHCRw__r03",
+      "row": "77"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "sLQb8q0sUi__r02",
+      "row": "79"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "HX5ujdsSon__r01",
+      "row": "80"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "78iGZdqxYY__r01",
+      "row": "97"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "elMKXvhhQ9__r01",
+      "row": "99"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "YItWKZci78__r03",
+      "row": "110"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "AyXIDfvYg8__r04",
+      "row": "119"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "Ebt7JgMHv1__r03",
+      "row": "121"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "sLQb8q0sUi__r03",
+      "row": "122"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "JiTVtCUOpS__r03",
+      "row": "126"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "6ARlSgun7J__r04",
+      "row": "127"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "wfgZc3IMqo__r02",
+      "row": "134"
+    },
+    {
+      "error": "invalid label: 'invalid'",
+      "issue_id": "Ebt7JgMHv1__r02",
+      "row": "145"
+    }
+  ],
+  "label_distribution": {
+    "fixed": 13,
+    "invalid": 25,
+    "partially_fixed": 104,
+    "unresolved": 6
+  },
+  "missing_evidence_ids": [
+    "qBL04XXex6__r01",
+    "kmn0BhQk7p__r03",
+    "qBL04XXex6__r02",
+    "rhgIgTSSxW__r02",
+    "lK2V2E2MNv__r02",
+    "YItWKZci78__r01",
+    "My7lkRNnL9__r01",
+    "eUgS9Ig8JG__r04",
+    "KTtEICH4TO__r03",
+    "dCHbFDsCZz__r01",
+    "7vVWiCrFnd__r02",
+    "EmQSOi1X2f__r01",
+    "GN921JHCRw__r03",
+    "sLQb8q0sUi__r02",
+    "HX5ujdsSon__r01",
+    "78iGZdqxYY__r01",
+    "elMKXvhhQ9__r01",
+    "YItWKZci78__r03",
+    "AyXIDfvYg8__r04",
+    "Ebt7JgMHv1__r03",
+    "sLQb8q0sUi__r03",
+    "JiTVtCUOpS__r03",
+    "6ARlSgun7J__r04",
+    "wfgZc3IMqo__r02",
+    "Ebt7JgMHv1__r02"
+  ],
+  "missing_prediction_ids": [],
+  "normalized_predictions": 148,
+  "rows": 148,
+  "status": "error"
+}

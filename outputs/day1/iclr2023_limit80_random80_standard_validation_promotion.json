@@ -1,0 +1,28 @@
+{
+  "blind_sheet": "experiments/day1/iclr2023_limit80_random80_human_validation_v1_blind.tsv",
+  "candidate_rows": 80,
+  "claim_boundary": "Use as user-confirmed single-pass standard validation only after --write with an explicit confirmation note; do not report as independent two-annotator IAA.",
+  "confidence_distribution": {
+    "3": 80
+  },
+  "confirmation_note": "User confirmed ICLR 2023 random80 resolved candidate labels in Codex chat on 2026-04-29.",
+  "errors": [],
+  "label_distribution": {
+    "fixed": 5,
+    "partially_fixed": 49,
+    "unresolved": 26
+  },
+  "promotable_rows": 80,
+  "promoted_rows": 80,
+  "resolution_action_distribution": {
+    "keep": 54,
+    "keep_weak_unresolved": 26
+  },
+  "resolution_provenance_distribution": {
+    "assistant_resolved_candidate_not_human_validation": 80
+  },
+  "resolved_candidate": "experiments/day1/iclr2023_limit80_random80_resolved_adjudication_v1.tsv",
+  "rows": 80,
+  "status": "ok",
+  "write": true
+}

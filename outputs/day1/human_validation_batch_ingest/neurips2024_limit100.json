@@ -1,0 +1,50 @@
+{
+  "batch_files": [
+    {
+      "annotated_rows": 0,
+      "batch_file": "outputs/day1/human_validation_batches/neurips2024_limit100/neurips2024_limit100_batch_01_blind.tsv",
+      "leaked_fields": [],
+      "missing_fields": [],
+      "rows": 40
+    },
+    {
+      "annotated_rows": 0,
+      "batch_file": "outputs/day1/human_validation_batches/neurips2024_limit100/neurips2024_limit100_batch_02_blind.tsv",
+      "leaked_fields": [],
+      "missing_fields": [],
+      "rows": 40
+    }
+  ],
+  "batch_rows": 80,
+  "blank_batch_rows": 80,
+  "by_packet": [
+    {
+      "completed_rows": 0,
+      "rows": 80,
+      "source_packet": "NeurIPS 2024 Limit100"
+    }
+  ],
+  "completed_batch_rows": 0,
+  "duplicate_batch_rows": [],
+  "error_count": 0,
+  "error_messages": [],
+  "errors": [],
+  "incomplete_detail_rows": [],
+  "invalid_label_rows": [],
+  "merge_conflicts": [],
+  "merged_rows": 0,
+  "missing_queue_rows": [],
+  "output_dir": "outputs/day1/human_validation_batch_ingest/neurips2024_limit100",
+  "queue_rows": 80,
+  "sheets": [
+    {
+      "blind_sheet": "experiments/day1/neurips2024_limit100_standard_label_candidate_for_human_review.tsv",
+      "labeled_rows": 0,
+      "merged_rows": 0,
+      "output_sheet": "outputs/day1/human_validation_batch_ingest/neurips2024_limit100/sheets/neurips2024_limit100_standard_label_candidate_for_human_review.tsv",
+      "rows": 80
+    }
+  ],
+  "status": "ok",
+  "write_canonical": false
+}

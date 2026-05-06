@@ -1,0 +1,6 @@
+model_key,rows,accuracy,macro_f1,fixed_f1,partially_fixed_f1,unresolved_f1,regressed_f1,status
+issue_ledger,80,0.8875,0.33972602739726027,0.0,0.0,0.958904109589041,0.4,provisional_assistant_adjudication
+modernbert,80,0.175,0.07777777777777778,0.0,0.0,0.3111111111111111,0.0,provisional_assistant_adjudication
+mpnet,80,0.4,0.3846153846153846,0.0,0.0,0.5384615384615384,1.0,provisional_assistant_adjudication
+structured,80,0.0625,0.030864197530864192,0.0,0.0,0.12345679012345677,0.0,provisional_assistant_adjudication
+tfidf,80,0.0,0.0,0.0,0.0,0.0,0.0,provisional_assistant_adjudication

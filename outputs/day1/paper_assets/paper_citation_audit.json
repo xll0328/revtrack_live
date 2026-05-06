@@ -1,0 +1,186 @@
+{
+  "bib_entry_count": 26,
+  "bib_keys": [
+    "aclstylefiles",
+    "baumgartner-etal-2025-peerqa",
+    "darcy-etal-2024-marg",
+    "dycke-etal-2023-nlpeer",
+    "emnlp2026cfp",
+    "gu-etal-2025-large",
+    "guo-etal-2017-calibration",
+    "ji-etal-2023-hallucination-survey",
+    "kadavath-etal-2022-language",
+    "kang-etal-2018-dataset",
+    "koh-etal-2021-wilds",
+    "liang-etal-2023-can",
+    "lin-etal-2022-truthfulqa",
+    "liu-etal-2023-g",
+    "liu-etal-2025-open",
+    "manakul-etal-2023-selfcheckgpt",
+    "openreview",
+    "ovadia-etal-2019-shift",
+    "shaier-etal-2024-adaptive",
+    "staudinger-etal-2024-analysis",
+    "tan-etal-2024-large",
+    "thorne-etal-2018-fever",
+    "verga-etal-2024-replacing",
+    "wang-etal-2024-large-language-models-fair",
+    "zhang-etal-2025-re2",
+    "zheng-etal-2023-judging"
+  ],
+  "bib_path": "/data/sony/emnlp2026_revtrack/paper/refs.bib",
+  "bibliography_names": [
+    "refs"
+  ],
+  "citation_locations": {
+    "aclstylefiles": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "baumgartner-etal-2025-peerqa": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "darcy-etal-2024-marg": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "dycke-etal-2023-nlpeer": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "emnlp2026cfp": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "gu-etal-2025-large": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "guo-etal-2017-calibration": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "ji-etal-2023-hallucination-survey": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "kadavath-etal-2022-language": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "kang-etal-2018-dataset": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "koh-etal-2021-wilds": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "liang-etal-2023-can": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "lin-etal-2022-truthfulqa": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "liu-etal-2023-g": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "liu-etal-2025-open": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "manakul-etal-2023-selfcheckgpt": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "openreview": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/03_dataset.tex"
+    ],
+    "ovadia-etal-2019-shift": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "shaier-etal-2024-adaptive": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "staudinger-etal-2024-analysis": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "tan-etal-2024-large": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "thorne-etal-2018-fever": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "verga-etal-2024-replacing": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "wang-etal-2024-large-language-models-fair": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ],
+    "zhang-etal-2025-re2": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+      "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex"
+    ],
+    "zheng-etal-2023-judging": [
+      "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex"
+    ]
+  },
+  "citation_occurrences": 32,
+  "cited_key_count": 26,
+  "cited_keys": [
+    "aclstylefiles",
+    "baumgartner-etal-2025-peerqa",
+    "darcy-etal-2024-marg",
+    "dycke-etal-2023-nlpeer",
+    "emnlp2026cfp",
+    "gu-etal-2025-large",
+    "guo-etal-2017-calibration",
+    "ji-etal-2023-hallucination-survey",
+    "kadavath-etal-2022-language",
+    "kang-etal-2018-dataset",
+    "koh-etal-2021-wilds",
+    "liang-etal-2023-can",
+    "lin-etal-2022-truthfulqa",
+    "liu-etal-2023-g",
+    "liu-etal-2025-open",
+    "manakul-etal-2023-selfcheckgpt",
+    "openreview",
+    "ovadia-etal-2019-shift",
+    "shaier-etal-2024-adaptive",
+    "staudinger-etal-2024-analysis",
+    "tan-etal-2024-large",
+    "thorne-etal-2018-fever",
+    "verga-etal-2024-replacing",
+    "wang-etal-2024-large-language-models-fair",
+    "zhang-etal-2025-re2",
+    "zheng-etal-2023-judging"
+  ],
+  "duplicate_bib_keys": [],
+  "entries_with_locator_count": 26,
+  "latex_files": [
+    "/data/sony/emnlp2026_revtrack/paper/main.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/01_introduction.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/02_task.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/03_dataset.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/04_models.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/05_experiments.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/06_discussion.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/07_related_work.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/08_limitations.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/09_ethics.tex",
+    "/data/sony/emnlp2026_revtrack/paper/sections/appendix_audit.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/cross_split_significance.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/dataset_versions.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/expanded80_transfer.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/failure_taxonomy.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/iclr2024_significance.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/main_results.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/neurips_limit100_transfer.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/null_baselines.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_bootstrap_intervals.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_ensemble.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_postprocess_rules.tex",
+    "/data/sony/emnlp2026_revtrack/paper/tables/prompted_llm_temperature_ablation.tex"
+  ],
+  "log_path": "/data/sony/emnlp2026_revtrack/paper/main.log",
+  "log_problems": [],
+  "missing_bib_keys": [],
+  "missing_required_fields": [],
+  "ok": true,
+  "paper_dir": "/data/sony/emnlp2026_revtrack/paper",
+  "status": "pass",
+  "unused_bib_keys": []
+}

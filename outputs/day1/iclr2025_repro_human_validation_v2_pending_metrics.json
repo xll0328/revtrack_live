@@ -1,0 +1,97 @@
+{
+  "agreement": 1.0,
+  "assistant_distribution": {
+    "fixed": 5,
+    "partially_fixed": 16
+  },
+  "bucket_agreement": {
+    "label_stratum": {
+      "agreement": 1.0,
+      "matches": 4,
+      "total": 4
+    },
+    "model_disagreement": {
+      "agreement": 1.0,
+      "matches": 6,
+      "total": 6
+    },
+    "model_high_conflict": {
+      "agreement": 1.0,
+      "matches": 2,
+      "total": 2
+    },
+    "structured_error": {
+      "agreement": 1.0,
+      "matches": 9,
+      "total": 9
+    }
+  },
+  "cohen_kappa": 1.0,
+  "confusion_assistant_to_human": {
+    "fixed": {
+      "fixed": 5,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "partially_fixed": {
+      "fixed": 0,
+      "partially_fixed": 16,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "regressed": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    },
+    "unresolved": {
+      "fixed": 0,
+      "partially_fixed": 0,
+      "regressed": 0,
+      "unresolved": 0
+    }
+  },
+  "human_distribution": {
+    "fixed": 5,
+    "partially_fixed": 16
+  },
+  "invalid_rows": [],
+  "key_rows": 21,
+  "labeled_rows": 21,
+  "mismatches": 0,
+  "missing_key_rows": 0,
+  "per_label": {
+    "fixed": {
+      "assistant_support": 5,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 5
+    },
+    "partially_fixed": {
+      "assistant_support": 16,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 16
+    },
+    "regressed": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    },
+    "unresolved": {
+      "assistant_support": 0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0
+    }
+  },
+  "rows": 21,
+  "unlabeled_rows": 0
+}

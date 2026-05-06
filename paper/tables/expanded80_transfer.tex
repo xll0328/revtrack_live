@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.28\linewidth}rrrr}
+\toprule
+Model & Accuracy & Macro-F1 & Fixed F1 & Regressed F1 \\
+\midrule
+TF-IDF & 0.050 & 0.026 & 0.000 & 0.000 \\
+ModernBERT & 0.125 & 0.092 & 0.056 & 0.000 \\
+MPNet & 0.312 & 0.276 & 0.174 & 0.500 \\
+Structured & 0.150 & 0.298 & 0.229 & \textbf{0.800} \\
+Issue ledger & \textbf{0.850} & \textbf{0.469} & \textbf{0.429} & 0.500 \\
+\bottomrule
+\end{tabular}
+\caption{ICLR 2025 expanded80 standard-labeled active frontier. The frontier is intentionally hard and model-disagreement-heavy, so it supports transfer brittleness analysis rather than natural label-prevalence estimates.}
+\label{tab:expanded80-transfer}
+\end{table}

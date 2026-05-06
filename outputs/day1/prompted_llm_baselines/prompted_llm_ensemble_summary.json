@@ -1,0 +1,179 @@
+{
+  "label_recall": {
+    "ICLR24": {
+      "GPT-4.1-mini": {
+        "fixed": 0.58,
+        "partially_fixed": 0.6976744186046512,
+        "regressed": 0.0,
+        "unresolved": 0.09090909090909091
+      },
+      "GPT-5.5 (v2)": {
+        "fixed": 0.58,
+        "partially_fixed": 0.7093023255813954,
+        "regressed": 0.0,
+        "unresolved": 0.09090909090909091
+      },
+      "Majority": {
+        "fixed": 0.0,
+        "partially_fixed": 1.0,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      },
+      "Qwen2.5-72B": {
+        "fixed": 0.58,
+        "partially_fixed": 0.6627906976744186,
+        "regressed": 0.0,
+        "unresolved": 0.09090909090909091
+      },
+      "Vote-3 (+U+F-cal)": {
+        "fixed": 0.44,
+        "partially_fixed": 0.8488372093023255,
+        "regressed": 0.0,
+        "unresolved": 0.09090909090909091
+      },
+      "Vote-3 (top)": {
+        "fixed": 0.6,
+        "partially_fixed": 0.6976744186046512,
+        "regressed": 0.0,
+        "unresolved": 0.09090909090909091
+      }
+    },
+    "ICLR25": {
+      "GPT-4.1-mini": {
+        "fixed": 1.0,
+        "partially_fixed": 0.0,
+        "regressed": 0.0,
+        "unresolved": 0.015151515151515152
+      },
+      "GPT-5.5 (v2)": {
+        "fixed": 0.25,
+        "partially_fixed": 0.75,
+        "regressed": 0.0,
+        "unresolved": 0.045454545454545456
+      },
+      "Majority": {
+        "fixed": 0.0,
+        "partially_fixed": 0.0,
+        "regressed": 0.0,
+        "unresolved": 1.0
+      },
+      "Qwen2.5-72B": {
+        "fixed": 0.75,
+        "partially_fixed": 0.25,
+        "regressed": 0.0,
+        "unresolved": 0.030303030303030304
+      },
+      "Vote-3 (+U+F-cal)": {
+        "fixed": 0.25,
+        "partially_fixed": 0.75,
+        "regressed": 0.0,
+        "unresolved": 0.06060606060606061
+      },
+      "Vote-3 (top)": {
+        "fixed": 0.75,
+        "partially_fixed": 0.25,
+        "regressed": 0.0,
+        "unresolved": 0.015151515151515152
+      }
+    },
+    "NeurIPS24": {
+      "GPT-4.1-mini": {
+        "fixed": 0.0,
+        "partially_fixed": 0.8863636363636364,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      },
+      "GPT-5.5 (v2)": {
+        "fixed": 0.0,
+        "partially_fixed": 0.9090909090909091,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      },
+      "Majority": {
+        "fixed": 0.0,
+        "partially_fixed": 1.0,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      },
+      "Qwen2.5-72B": {
+        "fixed": 0.0,
+        "partially_fixed": 0.7954545454545454,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      },
+      "Vote-3 (+U+F-cal)": {
+        "fixed": 0.0,
+        "partially_fixed": 0.8863636363636364,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      },
+      "Vote-3 (top)": {
+        "fixed": 0.0,
+        "partially_fixed": 0.9090909090909091,
+        "regressed": 0.0,
+        "unresolved": 0.0
+      }
+    }
+  },
+  "means": {
+    "GPT-4.1": 0.18746856612036597,
+    "GPT-4.1-mini": 0.1979588131548916,
+    "GPT-4.1-nano": 0.16599694029545067,
+    "GPT-4o-mini": 0.18460819205140264,
+    "GPT-5.5 (v2)": 0.2008167710245118,
+    "Qwen2.5-72B": 0.19049245401327317,
+    "Vote-3 (+U+F-cal)": 0.20374748034804813,
+    "Vote-3 (+U-guard)": 0.20225914608377807,
+    "Vote-3 (diverse)": 0.2027728066032214,
+    "Vote-3 (top)": 0.20057896992120006,
+    "Vote-6 (all)": 0.19515043997002948,
+    "majority": 0.19573333333333331
+  },
+  "rows": [
+    {
+      "GPT-4.1": 0.3262927415504667,
+      "GPT-4.1-mini": 0.34735449735449736,
+      "GPT-4.1-nano": 0.2100869610770601,
+      "GPT-4o-mini": 0.29919541969330105,
+      "GPT-5.5 (v2)": 0.35047613990371,
+      "Qwen2.5-72B": 0.33419913419913416,
+      "Vote-3 (+U+F-cal)": 0.35029539722038827,
+      "Vote-3 (+U-guard)": 0.344840592520345,
+      "Vote-3 (diverse)": 0.34653005464480874,
+      "Vote-3 (top)": 0.3516951386691975,
+      "Vote-6 (all)": 0.34423441948750394,
+      "dataset": "ICLR24",
+      "majority": 0.1838
+    },
+    {
+      "GPT-4.1": 0.07,
+      "GPT-4.1-mini": 0.06596638655462185,
+      "GPT-4.1-nano": 0.16145833333333334,
+      "GPT-4o-mini": 0.07694320604768365,
+      "GPT-5.5 (v2)": 0.0810340022296544,
+      "Qwen2.5-72B": 0.0721838882180438,
+      "Vote-3 (+U+F-cal)": 0.09428037715708948,
+      "Vote-3 (+U-guard)": 0.0922120750887874,
+      "Vote-3 (diverse)": 0.08805955160553339,
+      "Vote-3 (top)": 0.0714703425229741,
+      "Vote-6 (all)": 0.06422574998010663,
+      "dataset": "ICLR25",
+      "majority": 0.226
+    },
+    {
+      "GPT-4.1": 0.1661129568106312,
+      "GPT-4.1-mini": 0.18055555555555558,
+      "GPT-4.1-nano": 0.1264455264759586,
+      "GPT-4o-mini": 0.17768595041322316,
+      "GPT-5.5 (v2)": 0.17094017094017092,
+      "Qwen2.5-72B": 0.16509433962264153,
+      "Vote-3 (+U+F-cal)": 0.16666666666666666,
+      "Vote-3 (+U-guard)": 0.16972477064220182,
+      "Vote-3 (diverse)": 0.17372881355932202,
+      "Vote-3 (top)": 0.17857142857142858,
+      "Vote-6 (all)": 0.17699115044247787,
+      "dataset": "NeurIPS24",
+      "majority": 0.1774
+    }
+  ]
+}

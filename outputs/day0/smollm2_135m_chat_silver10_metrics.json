@@ -1,0 +1,106 @@
+{
+  "summary": {
+    "num_examples": 10.0,
+    "accuracy": 0.1,
+    "macro_f1": 0.045454545454545456,
+    "per_label": {
+      "fixed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5.0
+      },
+      "partially_fixed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4.0
+      },
+      "unresolved": {
+        "precision": 0.1,
+        "recall": 1.0,
+        "f1": 0.18181818181818182,
+        "support": 1.0
+      },
+      "regressed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0.0
+      }
+    },
+    "confusion": {
+      "partially_fixed": {
+        "unresolved": 4
+      },
+      "fixed": {
+        "unresolved": 5
+      },
+      "unresolved": {
+        "unresolved": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "rhgIgTSSxW__r04",
+      "gold_label": "partially_fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "TabR: Tabular Deep Learning Meets Nearest Neighbors"
+    },
+    {
+      "id": "eUgS9Ig8JG__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "SaNN: Simple Yet Powerful Simplicial-aware Neural Networks"
+    },
+    {
+      "id": "eUgS9Ig8JG__r02",
+      "gold_label": "fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "SaNN: Simple Yet Powerful Simplicial-aware Neural Networks"
+    },
+    {
+      "id": "qBL04XXex6__r01",
+      "gold_label": "unresolved",
+      "predicted_label": "unresolved",
+      "paper_title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    },
+    {
+      "id": "kmn0BhQk7p__r01",
+      "gold_label": "partially_fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models"
+    },
+    {
+      "id": "kmn0BhQk7p__r02",
+      "gold_label": "fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models"
+    },
+    {
+      "id": "kmn0BhQk7p__r03",
+      "gold_label": "fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "Beyond Memorization: Violating Privacy via Inference with Large Language Models"
+    },
+    {
+      "id": "i8PjQT3Uig__r01",
+      "gold_label": "fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "Locality Sensitive Sparse Encoding for Learning World Models Online"
+    },
+    {
+      "id": "i8PjQT3Uig__r03",
+      "gold_label": "partially_fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "Locality Sensitive Sparse Encoding for Learning World Models Online"
+    },
+    {
+      "id": "eepoE7iLpL__r03",
+      "gold_label": "fixed",
+      "predicted_label": "unresolved",
+      "paper_title": "Enhancing Neural Subset Selection: Integrating Background Information into Set Representations"
+    }
+  ]
+}

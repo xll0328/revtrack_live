@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "revtrack"
+version = "0.1.0"
+description = "EMNLP 2026 scaffold for revision-aware scientific judgment."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+inference = [
+  "torch>=2.5.0",
+  "transformers>=4.45.0",
+  "accelerate>=1.0.0",
+]
+pdf = [
+  "pypdf>=5.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

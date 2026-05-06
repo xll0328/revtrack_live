@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.42\linewidth}rrr}
+\toprule
+Model & Accuracy & Macro-F1 & Fixed F1 \\
+\midrule
+Majority label & 0.581 & 0.184 & 0.000 \\
+TF-IDF + LinearSVC & 0.561 & 0.376 & 0.510 \\
+ModernBERT & 0.561 & 0.387 & 0.509 \\
+MPNet & 0.581 & 0.389 & 0.554 \\
+Structured without hard rules & 0.655 & 0.424 & 0.602 \\
+Structured & \textbf{0.682} & \textbf{0.704} & \textbf{0.624} \\
+\bottomrule
+\end{tabular}
+\caption{ICLR 2024 clean dev v7 results. Macro-F1 is the primary metric because label skew makes accuracy misleading.}
+\label{tab:main-results}
+\end{table}

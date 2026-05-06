@@ -1,0 +1,47 @@
+{
+  "complete_rate": 1.0,
+  "complete_rows": 393,
+  "disagreement": {
+    "comparable_rows": 0,
+    "disagreement_rows": 0,
+    "high_disagreement_rows": 0,
+    "label_combo_counts": {},
+    "missing_prediction_rows": 0,
+    "prediction_models": []
+  },
+  "duplicate_issue_ids": [],
+  "errors": [],
+  "field_nonempty_rates": {
+    "aligned_response_excerpt": 1.0,
+    "concern_text": 1.0,
+    "revision_summary": 1.0
+  },
+  "missing_issue_ids": 0,
+  "ok": true,
+  "review_field_counts": {
+    "questions": 393,
+    "summary": 393,
+    "weaknesses": 393
+  },
+  "rows": 393,
+  "submission_count": 100,
+  "top_submission_issue_counts": {
+    "3BNPUDvqMt": 5,
+    "7Sh0XkN1KS": 5,
+    "8B3sAX889P": 5,
+    "C62d2nS3KO": 5,
+    "MQIET1VfoV": 5,
+    "XZp1uP0hh2": 5,
+    "a560KLF3v5": 5,
+    "ez7w0Ss4g9": 5,
+    "iEeiZlTbts": 4,
+    "nw4TWuEPGx": 5
+  },
+  "unique_issue_ids": 393,
+  "venue_counts": {
+    "NeurIPS.cc/2024/Conference": 393
+  },
+  "warnings": [
+    "no prediction files supplied; disagreement gate was not evaluated"
+  ]
+}

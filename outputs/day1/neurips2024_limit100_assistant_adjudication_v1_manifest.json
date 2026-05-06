@@ -1,0 +1,27 @@
+{
+  "best_provisional_model": {
+    "accuracy": 0.4,
+    "fixed_f1": 0.0,
+    "macro_f1": 0.3846153846153846,
+    "model_key": "mpnet",
+    "partially_fixed_f1": 0.0,
+    "regressed_f1": 1.0,
+    "rows": 80,
+    "status": "provisional_assistant_adjudication",
+    "unresolved_f1": 0.5384615384615384
+  },
+  "claim_boundary": "Use only as provisional assistant-adjudicated active-frontier analysis; do not report as standard human validation, IAA, or benchmark transfer performance.",
+  "dataset_name": "NeurIPS 2024 limit100 active frontier",
+  "human_validation_status": "not_human_validated",
+  "label_distribution": {
+    "regressed": 4,
+    "unresolved": 76
+  },
+  "metrics_csv": "outputs/day1/paper_assets/neurips2024_limit100_provisional_transfer_metrics.csv",
+  "metrics_md": "outputs/day1/paper_assets/neurips2024_limit100_provisional_transfer_metrics.md",
+  "missing_evidence_rows": [],
+  "output_jsonl": "data/processed/neurips2024_limit100_assistant_adjudication_v1.jsonl",
+  "output_tsv": "experiments/day1/neurips2024_limit100_assistant_adjudication_v1.tsv",
+  "rows": 80,
+  "status": "provisional_assistant_adjudication"
+}

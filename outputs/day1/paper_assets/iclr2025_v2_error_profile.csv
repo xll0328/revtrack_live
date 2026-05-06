@@ -1,0 +1,6 @@
+venue_year,model_key,model,rows,correct,accuracy,unique_predicted_labels,majority_only,fixed_missed_as_partially_fixed,fixed_missed_as_unresolved,fixed_missed_as_regressed,partially_fixed_misread_as_fixed,partially_fixed_misread_as_unresolved,partially_fixed_misread_as_regressed
+iclr2025_repro_v2,tfidf,TF-IDF + LinearSVC,21,16,0.7619047619047619,1,True,5,0,0,0,0,0
+iclr2025_repro_v2,modernbert,ModernBERT + LinearSVC,21,11,0.5238095238095238,3,False,2,1,0,7,0,0
+iclr2025_repro_v2,mpnet,MPNet + LinearSVC,21,8,0.38095238095238093,4,False,3,0,0,6,3,1
+iclr2025_repro_v2,issue_ledger,Issue-Ledger,21,7,0.3333333333333333,3,False,2,3,0,5,4,0
+iclr2025_repro_v2,structured,Structured,21,12,0.5714285714285714,3,False,4,0,0,4,1,0

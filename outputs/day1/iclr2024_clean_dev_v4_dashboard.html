@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RevTrack Clean Dev v4 Dashboard</title>
+  <style>
+    :root {
+      --bg: #f7efe3;
+      --ink: #1c1815;
+      --muted: #6d5a49;
+      --line: rgba(28, 24, 21, 0.12);
+      --panel: rgba(255, 250, 243, 0.82);
+      --panel-strong: rgba(255, 255, 255, 0.9);
+      --shadow: 0 22px 60px rgba(38, 25, 10, 0.14);
+      --gold: #c46b14;
+      --sage: #0f6a57;
+      --blue: #275cc8;
+      --rose: #ad2e49;
+      --slate: #4a5f73;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(15, 106, 87, 0.12), transparent 24%),
+        radial-gradient(circle at 90% 8%, rgba(196, 107, 20, 0.14), transparent 24%),
+        linear-gradient(180deg, #fcf7f0 0%, #f1e6d4 100%);
+    }
+    .page {
+      width: min(1500px, calc(100vw - 28px));
+      margin: 18px auto 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(251,241,226,0.84));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -70px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(39,92,200,0.14), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: clamp(32px, 4.5vw, 56px);
+      line-height: 0.98;
+      max-width: 900px;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 980px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      backdrop-filter: blur(8px);
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      margin-top: 18px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 24px;
+    }
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .metric-card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+    }
+    .metric-card + .metric-card {
+      margin-top: 12px;
+    }
+    .metric-head {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .metric-head strong {
+      font-size: 22px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+    }
+    .metric-head span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .bar-block {
+      margin-top: 12px;
+    }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .bar-rail {
+      width: 100%;
+      height: 14px;
+      background: rgba(28,24,21,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      transition: width 900ms cubic-bezier(.2,.8,.2,1);
+    }
+    .bar-fill.accuracy { background: linear-gradient(90deg, var(--sage), #3aa17f); }
+    .bar-fill.macro { background: linear-gradient(90deg, var(--blue), #67a4ff); }
+    .label-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .label-card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px;
+    }
+    .label-name {
+      margin-bottom: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .label-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+    .rank-list {
+      display: grid;
+      gap: 12px;
+    }
+    .rank-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(250,241,228,0.92));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      overflow: hidden;
+    }
+    .rank-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--gold), var(--rose));
+      opacity: 0.9;
+    }
+    .rank-card.top::before {
+      background: linear-gradient(180deg, var(--sage), #53c39a);
+    }
+    .rank-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .rank-title {
+      font-size: 22px;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      margin: 0;
+    }
+    .rank-scores {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .score-pill {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.74);
+      font-size: 13px;
+    }
+    .confusion-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    @media (max-width: 1100px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 720px) {
+      .page {
+        width: min(100vw - 16px, 100%);
+      }
+      .hero {
+        padding: 20px;
+        border-radius: 22px;
+      }
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .label-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">RevTrack Day-1 Results</div>
+      <h1>RevTrack Clean Dev v4 Dashboard</h1>
+      <p>
+        Assistant-adjudicated clean-dev results for revision-aware issue tracking.
+        This view emphasizes both raw accuracy and boundary-sensitive macro-F1 so we can
+        see whether a method merely memorizes easy closure cases or actually separates
+        <code>fixed</code>, <code>partially_fixed</code>, <code>unresolved</code>, and <code>regressed</code>.
+      </p>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="grid">
+      <section class="panel">
+        <h2>Metric Sweep</h2>
+        <div id="metricCards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Ranking</h2>
+        <div class="rank-list" id="rankList"></div>
+      </section>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
+      <h2>Per-Label F1</h2>
+      <div class="label-grid" id="labelGrid"></div>
+    </section>
+  </main>
+
+  <script>
+    const rows = [{"name": "Heuristic", "accuracy": 0.12962962962962962, "macro_f1": 0.07865168539325842, "per_label": {"fixed": {"precision": 0.2641509433962264, "recall": 0.3888888888888889, "f1": 0.3146067415730337, "support": 36.0}, "partially_fixed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 61.0}, "unresolved": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 10.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"fixed": 33, "regressed": 28}, "unresolved": {"fixed": 5, "regressed": 5}, "fixed": {"regressed": 22, "fixed": 14}, "regressed": {"fixed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_heuristic_metrics.json"}, {"name": "TF-IDF + LinearSVC", "accuracy": 0.5462962962962963, "macro_f1": 0.38794117647058823, "per_label": {"fixed": {"precision": 0.4375, "recall": 0.3888888888888889, "f1": 0.411764705882353, "support": 36.0}, "partially_fixed": {"precision": 0.625, "recall": 0.6557377049180327, "f1": 0.64, "support": 61.0}, "unresolved": {"precision": 0.5, "recall": 0.5, "f1": 0.5, "support": 10.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 40, "regressed": 2, "fixed": 16, "unresolved": 3}, "unresolved": {"unresolved": 5, "partially_fixed": 3, "fixed": 2}, "fixed": {"partially_fixed": 20, "fixed": 14, "unresolved": 2}, "regressed": {"partially_fixed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_tfidf_metrics.json"}, {"name": "ModernBERT + LinearSVC", "accuracy": 0.5555555555555556, "macro_f1": 0.39952312105029963, "per_label": {"fixed": {"precision": 0.42105263157894735, "recall": 0.4444444444444444, "f1": 0.43243243243243246, "support": 36.0}, "partially_fixed": {"precision": 0.639344262295082, "recall": 0.639344262295082, "f1": 0.639344262295082, "support": 61.0}, "unresolved": {"precision": 0.5555555555555556, "recall": 0.5, "f1": 0.5263157894736842, "support": 10.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 39, "fixed": 20, "unresolved": 2}, "unresolved": {"unresolved": 5, "fixed": 2, "partially_fixed": 3}, "fixed": {"partially_fixed": 18, "fixed": 16, "unresolved": 2}, "regressed": {"partially_fixed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_modernbert_metrics.json"}, {"name": "MPNet + LinearSVC", "accuracy": 0.5740740740740741, "macro_f1": 0.4044079044079044, "per_label": {"fixed": {"precision": 0.5, "recall": 0.5277777777777778, "f1": 0.5135135135135136, "support": 36.0}, "partially_fixed": {"precision": 0.6785714285714286, "recall": 0.6229508196721312, "f1": 0.6495726495726496, "support": 61.0}, "unresolved": {"precision": 0.4166666666666667, "recall": 0.5, "f1": 0.45454545454545453, "support": 10.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"fixed": 16, "partially_fixed": 38, "regressed": 2, "unresolved": 5}, "unresolved": {"unresolved": 5, "partially_fixed": 2, "fixed": 3}, "fixed": {"partially_fixed": 15, "fixed": 19, "unresolved": 2}, "regressed": {"partially_fixed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_mpnet_metrics.json"}, {"name": "Issue-Ledger Calibrator", "accuracy": 0.4537037037037037, "macro_f1": 0.5933231819859727, "per_label": {"fixed": {"precision": 0.85, "recall": 0.4722222222222222, "f1": 0.6071428571428571, "support": 36.0}, "partially_fixed": {"precision": 0.84, "recall": 0.3442622950819672, "f1": 0.4883720930232558, "support": 61.0}, "unresolved": {"precision": 0.16129032258064516, "recall": 1.0, "f1": 0.27777777777777773, "support": 10.0}, "regressed": {"precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 21, "unresolved": 37, "fixed": 3}, "unresolved": {"unresolved": 10}, "fixed": {"fixed": 17, "partially_fixed": 4, "unresolved": 15}, "regressed": {"regressed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_issue_ledger_metrics.json"}, {"name": "Structured Calibrator (No Overrides)", "accuracy": 0.6296296296296297, "macro_f1": 0.4102757222236852, "per_label": {"fixed": {"precision": 0.6551724137931034, "recall": 0.5277777777777778, "f1": 0.5846153846153845, "support": 36.0}, "partially_fixed": {"precision": 0.6818181818181818, "recall": 0.7377049180327869, "f1": 0.7086614173228346, "support": 61.0}, "unresolved": {"precision": 0.3076923076923077, "recall": 0.4, "f1": 0.34782608695652173, "support": 10.0}, "regressed": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 45, "fixed": 9, "unresolved": 7}, "unresolved": {"unresolved": 4, "partially_fixed": 5, "fixed": 1}, "fixed": {"fixed": 19, "partially_fixed": 15, "unresolved": 2}, "regressed": {"partially_fixed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_structured_no_overrides_metrics.json"}, {"name": "Structured Calibrator", "accuracy": 0.6666666666666666, "macro_f1": 0.6976911976911977, "per_label": {"fixed": {"precision": 0.6666666666666666, "recall": 0.5555555555555556, "f1": 0.606060606060606, "support": 36.0}, "partially_fixed": {"precision": 0.7076923076923077, "recall": 0.7540983606557377, "f1": 0.7301587301587301, "support": 61.0}, "unresolved": {"precision": 0.4166666666666667, "recall": 0.5, "f1": 0.45454545454545453, "support": 10.0}, "regressed": {"precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 1.0}}, "confusion": {"partially_fixed": {"partially_fixed": 46, "fixed": 9, "unresolved": 6}, "unresolved": {"unresolved": 5, "partially_fixed": 4, "fixed": 1}, "fixed": {"fixed": 20, "partially_fixed": 15, "unresolved": 1}, "regressed": {"regressed": 1}}, "path": "/data/sony/emnlp2026_revtrack/outputs/day1/iclr2024_clean_dev_assistant_v4_structured_metrics.json"}];
+    const labels = ["fixed", "partially_fixed", "unresolved", "regressed"];
+    const statsRoot = document.getElementById("stats");
+    const metricRoot = document.getElementById("metricCards");
+    const rankRoot = document.getElementById("rankList");
+    const labelRoot = document.getElementById("labelGrid");
+
+    const bestAccuracy = rows.reduce((best, row) => Math.max(best, row.accuracy), 0);
+    const bestMacro = rows.reduce((best, row) => Math.max(best, row.macro_f1), 0);
+    const ranked = [...rows].sort((a, b) => (b.macro_f1 - a.macro_f1) || (b.accuracy - a.accuracy));
+    const top = ranked[0];
+
+    function pct(value) {
+      return `${(value * 100).toFixed(1)}%`;
+    }
+
+    statsRoot.innerHTML = [
+      `<div class="stat"><strong>${rows.length}</strong><span>methods compared</span></div>`,
+      `<div class="stat"><strong>${pct(bestAccuracy)}</strong><span>best accuracy</span></div>`,
+      `<div class="stat"><strong>${pct(bestMacro)}</strong><span>best macro-F1</span></div>`,
+      `<div class="stat"><strong>${top.name}</strong><span>top boundary-aware method</span></div>`,
+    ].join("");
+
+    for (const row of rows) {
+      const card = document.createElement("article");
+      card.className = "metric-card";
+      card.innerHTML = `
+        <div class="metric-head">
+          <strong>${row.name}</strong>
+          <span>${row.path}</span>
+        </div>
+        <div class="bar-block">
+          <div class="bar-label"><span>Accuracy</span><span>${pct(row.accuracy)}</span></div>
+          <div class="bar-rail"><div class="bar-fill accuracy" data-width="${row.accuracy * 100}"></div></div>
+        </div>
+        <div class="bar-block">
+          <div class="bar-label"><span>Macro F1</span><span>${pct(row.macro_f1)}</span></div>
+          <div class="bar-rail"><div class="bar-fill macro" data-width="${row.macro_f1 * 100}"></div></div>
+        </div>
+      `;
+      metricRoot.appendChild(card);
+    }
+
+    ranked.forEach((row, index) => {
+      const confusionPairs = [];
+      for (const [gold, predMap] of Object.entries(row.confusion)) {
+        for (const [pred, count] of Object.entries(predMap)) {
+          if (gold !== pred && count > 0) {
+            confusionPairs.push(`${gold} -> ${pred} (${count})`);
+          }
+        }
+      }
+      const card = document.createElement("article");
+      card.className = `rank-card${index === 0 ? " top" : ""}`;
+      card.innerHTML = `
+        <div class="rank-meta">
+          <span>#${index + 1}</span>
+          <span>${row.name}</span>
+        </div>
+        <h3 class="rank-title">${row.name}</h3>
+        <div class="rank-scores">
+          <span class="score-pill">accuracy ${pct(row.accuracy)}</span>
+          <span class="score-pill">macro-F1 ${pct(row.macro_f1)}</span>
+        </div>
+        <div class="confusion-note">${confusionPairs.slice(0, 4).join(" | ") || "No non-trivial confusions."}</div>
+      `;
+      rankRoot.appendChild(card);
+    });
+
+    labels.forEach((label) => {
+      const card = document.createElement("article");
+      card.className = "label-card";
+      const rowsHtml = ranked.map((row) => {
+        const value = row.per_label[label]?.f1 ?? 0;
+        return `<div class="label-row"><span>${row.name}</span><strong>${pct(value)}</strong></div>`;
+      }).join("");
+      card.innerHTML = `
+        <div class="label-name">${label.replace("_", " ")}</div>
+        ${rowsHtml}
+      `;
+      labelRoot.appendChild(card);
+    });
+
+    requestAnimationFrame(() => {
+      document.querySelectorAll(".bar-fill").forEach((node) => {
+        node.style.width = `${node.dataset.width}%`;
+      });
+    });
+  </script>
+</body>
+</html>

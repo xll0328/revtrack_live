@@ -1,0 +1,48 @@
+{
+  "accuracy": 0.5,
+  "confusion": {
+    "fixed": {
+      "fixed": 4,
+      "partially_fixed": 2
+    },
+    "partially_fixed": {
+      "fixed": 2,
+      "partially_fixed": 6
+    },
+    "regressed": {
+      "partially_fixed": 1
+    },
+    "unresolved": {
+      "fixed": 2,
+      "partially_fixed": 3
+    }
+  },
+  "macro_f1": 0.29285714285714287,
+  "num_examples": 20.0,
+  "per_label": {
+    "fixed": {
+      "f1": 0.5714285714285715,
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "support": 6.0
+    },
+    "partially_fixed": {
+      "f1": 0.6,
+      "precision": 0.5,
+      "recall": 0.75,
+      "support": 8.0
+    },
+    "regressed": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 1.0
+    },
+    "unresolved": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 5.0
+    }
+  }
+}

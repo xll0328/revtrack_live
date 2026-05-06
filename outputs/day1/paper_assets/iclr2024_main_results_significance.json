@@ -1,0 +1,69 @@
+{
+  "bootstrap_iters": 5000,
+  "dataset": "data/processed/iclr2024_clean_dev_assistant_v7.jsonl",
+  "results": [
+    {
+      "ci95_high": 0.183761,
+      "ci95_low": 0.183761,
+      "delta_to_structured": 0.520046,
+      "macro_f1": 0.183761,
+      "model": "Majority label",
+      "model_key": "majority",
+      "rows": 148,
+      "structured_not_better_prob": 0.0
+    },
+    {
+      "ci95_high": 0.447049,
+      "ci95_low": 0.305096,
+      "delta_to_structured": 0.328287,
+      "macro_f1": 0.375519,
+      "model": "TF-IDF + LinearSVC",
+      "model_key": "tfidf",
+      "rows": 148,
+      "structured_not_better_prob": 0.0
+    },
+    {
+      "ci95_high": 0.463859,
+      "ci95_low": 0.31136,
+      "delta_to_structured": 0.317088,
+      "macro_f1": 0.386719,
+      "model": "ModernBERT + LinearSVC",
+      "model_key": "modernbert",
+      "rows": 148,
+      "structured_not_better_prob": 0.0
+    },
+    {
+      "ci95_high": 0.460713,
+      "ci95_low": 0.31981,
+      "delta_to_structured": 0.314322,
+      "macro_f1": 0.389485,
+      "model": "MPNet + LinearSVC",
+      "model_key": "mpnet",
+      "rows": 148,
+      "structured_not_better_prob": 0.0
+    },
+    {
+      "ci95_high": 0.493759,
+      "ci95_low": 0.351883,
+      "delta_to_structured": 0.280075,
+      "macro_f1": 0.423731,
+      "model": "Structured (No Overrides)",
+      "model_key": "structured_no_overrides",
+      "rows": 148,
+      "structured_not_better_prob": 0.0
+    },
+    {
+      "ci95_high": 0.774761,
+      "ci95_low": 0.629712,
+      "delta_to_structured": 0.0,
+      "macro_f1": 0.703807,
+      "model": "Structured",
+      "model_key": "structured",
+      "rows": 148,
+      "structured_not_better_prob": 1.0
+    }
+  ],
+  "rows": 148,
+  "seed": 20260428,
+  "status": "ok"
+}

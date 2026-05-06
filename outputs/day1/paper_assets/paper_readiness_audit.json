@@ -1,0 +1,88 @@
+{
+  "blockers": [],
+  "checks": [
+    {
+      "check_id": "claims_ready",
+      "evidence": "ready=9, integrity_ready=0, stress=0, not_ready=0",
+      "next_action": "Keep the claim ledger updated after every new experiment.",
+      "status": "pass",
+      "summary": "Core paper claims are separated into ready/stress/not-ready buckets."
+    },
+    {
+      "check_id": "iclr2024_pool_quality",
+      "evidence": "ok=True, rows=230, complete_rate=1.0, disagreements=82",
+      "next_action": "Freeze exact split/version metadata for the eventual benchmark release.",
+      "status": "pass",
+      "summary": "ICLR 2024 in-domain pool passes candidate quality gates."
+    },
+    {
+      "check_id": "iclr2025_pool_quality",
+      "evidence": "ok=True, rows=322, complete_rate=0.9627329192546584, disagreements=244",
+      "next_action": "Use the scaled ICLR 2025 frontier as hardened cross-year evidence; add another venue/year before broad generalization claims.",
+      "status": "pass",
+      "summary": "ICLR 2025 scaled pool passes candidate quality gates."
+    },
+    {
+      "check_id": "packet_integrity",
+      "evidence": "packet_audits=6, failures=0",
+      "next_action": "Run packet audit before every human-validation release.",
+      "status": "pass",
+      "summary": "Blind/key/audit validation packet integrity checks pass."
+    },
+    {
+      "check_id": "label_evidence_complete",
+      "evidence": "audited_rows=329, evidence_issues=0",
+      "next_action": "Fill missing evidence_span values before freezing the benchmark release.",
+      "status": "pass",
+      "summary": "Labeled sheets should have explicit evidence spans and notes for release-quality auditing."
+    },
+    {
+      "check_id": "human_validation_completed",
+      "evidence": "labeled_rows=301, total_rows=301, provenance=canonical blind-sheet labels | standard human-validation signoff; promoted_rows=61; second annotator only needed for inter-annotator reliability claims | expanded80 user-confirmed standard validation; promoted_rows=80; not an independent two-annotator IAA pass | NeurIPS2024 user-confirmed standard validation; promoted_rows=80; not an independent two-annotator IAA pass | ICLR2023 random80 user-confirmed standard validation; promoted_rows=80; transfer_status=standard_single_user_confirmed; not an independent two-annotator IAA pass",
+      "next_action": "Use these standard human-validation labels for current claims; add a second annotator only for inter-annotator reliability claims.",
+      "status": "pass",
+      "summary": "Human validation labels are required before final benchmark claims."
+    },
+    {
+      "check_id": "human_validation_queue_ready",
+      "evidence": "queue_rows=301, pending=0, done=301, packets=['ICLR 2023 random80 v1', 'ICLR 2024 v1', 'ICLR 2025 expanded80 v1', 'ICLR 2025 repro v2', 'NeurIPS 2024 limit100 v1']",
+      "next_action": "Regenerate outputs/day1/paper_assets/human_validation_work_queue.csv after packet or label updates.",
+      "status": "pass",
+      "summary": "A prioritized human-validation work queue points to the active blind sheets."
+    },
+    {
+      "check_id": "human_validation_batches_ready",
+      "evidence": "batches=0, batch_rows=0, expected_pending_rows=0",
+      "next_action": "Regenerate outputs/day1/human_validation_batches after queue or blind-sheet updates.",
+      "status": "pass",
+      "summary": "Blind human-validation batches cover the active pending queue."
+    },
+    {
+      "check_id": "human_validation_batch_ingest_ready",
+      "evidence": "status=ok, batch_rows=0, completed_batch_rows=0, merged_rows=0, errors=0",
+      "next_action": "Rerun merge_human_validation_batches.py after batch edits; write canonical sheets only after an error-free dry run.",
+      "status": "pass",
+      "summary": "Completed batch annotations can be mapped back to the canonical blind sheets."
+    },
+    {
+      "check_id": "paper_citations_ready",
+      "evidence": "status=pass, cited_keys=26, bib_entries=26, problems=0",
+      "next_action": "Rerun audit_paper_citations.py after related-work or BibTeX edits.",
+      "status": "pass",
+      "summary": "Paper citations resolve against the BibTeX file and the final LaTeX log."
+    },
+    {
+      "check_id": "not_ready_claims_blocked",
+      "evidence": "not_ready_claims=[]",
+      "next_action": "Keep not-ready claims out of the main claim set until gates pass.",
+      "status": "pass",
+      "summary": "Not-ready claims are explicitly blocked from paper claims."
+    }
+  ],
+  "claim_status_counts": {
+    "ready": 9
+  },
+  "next_actions": [],
+  "overall_status": "ready",
+  "warnings": []
+}

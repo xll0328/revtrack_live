@@ -1,0 +1,122 @@
+[
+  {
+    "gold_label": "partially_fixed",
+    "id": "BRZYhVHvSg__r02",
+    "paper_title": "Multi-Group Proportional Representation in Retrieval",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "BRZYhVHvSg__r03",
+    "paper_title": "Multi-Group Proportional Representation in Retrieval",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "DAO2BFzMfy__r04",
+    "paper_title": "Interpreting the Weight Space of Customized Diffusion Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "eHzIwAhj06__r03",
+    "paper_title": "The Group Robustness is in the Details: Revisiting Finetuning under Spurious Correlations",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3ZAfFoAcUI__r02",
+    "paper_title": "On the Inductive Bias of Stacking Towards Improving Reasoning",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "YO6GVPUrKN__r03",
+    "paper_title": "On the Limitations of Fractal Dimension as a Measure of Generalization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "YO6GVPUrKN__r04",
+    "paper_title": "On the Limitations of Fractal Dimension as a Measure of Generalization",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "owuEcT6BTl__r01",
+    "paper_title": "Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "owuEcT6BTl__r04",
+    "paper_title": "Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "JO6T4rEJ32__r04",
+    "paper_title": "Binding in hippocampal-entorhinal circuits enables compositionality in cognitive maps",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "FZQYfmsmX9__r03",
+    "paper_title": "A Critical Evaluation of AI Feedback for Aligning Large Language Models",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "Yu7H8ZOuI2__r02",
+    "paper_title": "Sample-Efficient Geometry Reconstruction from Euclidean Distances using Non-Convex Optimization",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "hGgkdFF2hR__r02",
+    "paper_title": "Low-Rank Optimal Transport through Factor Relaxation with Latent Coupling",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "lwpfH9wVkO__r02",
+    "paper_title": "Controlling Multiple Errors Simultaneously with a PAC-Bayes Bound",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "lwpfH9wVkO__r04",
+    "paper_title": "Controlling Multiple Errors Simultaneously with a PAC-Bayes Bound",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "unresolved",
+    "id": "wDirCeTIoz__r03",
+    "paper_title": "Communication Efficient Distributed Training with Distributed Lion",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3BNPUDvqMt__r01",
+    "paper_title": "Better by default: Strong pre-tuned MLPs and boosted trees on tabular data",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3BNPUDvqMt__r02",
+    "paper_title": "Better by default: Strong pre-tuned MLPs and boosted trees on tabular data",
+    "predicted_label": "fixed"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "3ZAfFoAcUI__r01",
+    "paper_title": "On the Inductive Bias of Stacking Towards Improving Reasoning",
+    "predicted_label": "unresolved"
+  },
+  {
+    "gold_label": "partially_fixed",
+    "id": "9uolDxbYLm__r01",
+    "paper_title": "Model Reconstruction Using Counterfactual Explanations: A Perspective From Polytope Theory",
+    "predicted_label": "partially_fixed"
+  }
+]
