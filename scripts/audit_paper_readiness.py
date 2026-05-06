@@ -37,6 +37,11 @@ DEFAULTS = {
     "iclr2023_random80_human_validation_provenance": ROOT
     / "outputs/day1/iclr2023_limit80_random80_standard_validation_promotion.json",
     "citation_audit": ROOT / "outputs/day1/paper_assets/paper_citation_audit.json",
+    "iaa_second_annotator_manifest": ROOT
+    / "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_manifest.json",
+    "iaa_second_annotator_blind_sheet": ROOT / "experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv",
+    "iaa_second_annotator_metrics": ROOT
+    / "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json",
     "packet_audits": [
         ROOT / "outputs/day1/iclr2024_human_validation_v1_packet_audit.json",
         ROOT / "outputs/day1/iclr2025_repro_human_validation_v1_packet_audit.json",
@@ -100,6 +105,18 @@ def parse_args() -> argparse.Namespace:
         default=str(DEFAULTS["iclr2023_random80_human_validation_provenance"]),
     )
     parser.add_argument("--citation-audit", default=str(DEFAULTS["citation_audit"]))
+    parser.add_argument(
+        "--iaa-second-annotator-manifest",
+        default=str(DEFAULTS["iaa_second_annotator_manifest"]),
+    )
+    parser.add_argument(
+        "--iaa-second-annotator-blind-sheet",
+        default=str(DEFAULTS["iaa_second_annotator_blind_sheet"]),
+    )
+    parser.add_argument(
+        "--iaa-second-annotator-metrics",
+        default=str(DEFAULTS["iaa_second_annotator_metrics"]),
+    )
     parser.add_argument("--packet-audit", action="append", default=[str(path) for path in DEFAULTS["packet_audits"]])
     parser.add_argument(
         "--label-evidence-audit",
@@ -153,6 +170,15 @@ def readiness_status(checks: list[dict[str, str]]) -> str:
     return "ready"
 
 
+def count_labeled_rows(rows: list[dict[str, str]]) -> int:
+    labeled = 0
+    for row in rows:
+        label = (row.get("human_label") or row.get("gold_label") or "").strip().lower()
+        if label:
+            labeled += 1
+    return labeled
+
+
 def audit_readiness(
     *,
     claim_rows: list[dict[str, str]],
@@ -174,6 +200,9 @@ def audit_readiness(
     neurips2024_human_validation_provenance: dict[str, Any] | None = None,
     iclr2023_random80_human_validation_provenance: dict[str, Any] | None = None,
     citation_audit: dict[str, Any] | None = None,
+    iaa_second_annotator_manifest: dict[str, Any] | None = None,
+    iaa_second_annotator_blind_rows: list[dict[str, str]] | None = None,
+    iaa_second_annotator_metrics: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     checks: list[dict[str, str]] = []
     label_evidence_audits = label_evidence_audits or []
@@ -359,6 +388,28 @@ def audit_readiness(
             + len(citation_audit.get("missing_required_fields", []))
             + len(citation_audit.get("log_problems", []))
         )
+
+    if iaa_second_annotator_manifest is not None or iaa_second_annotator_blind_rows is not None:
+        target_rows = int((iaa_second_annotator_manifest or {}).get("selected_rows", 0))
+        labeled_rows = count_labeled_rows(iaa_second_annotator_blind_rows or [])
+        blind_total_rows = len(iaa_second_annotator_blind_rows or [])
+        agreement = iaa_second_annotator_metrics.get("agreement") if iaa_second_annotator_metrics else None
+        kappa = iaa_second_annotator_metrics.get("cohen_kappa") if iaa_second_annotator_metrics else None
+        metrics_rows = int(iaa_second_annotator_metrics.get("labeled_rows", 0)) if iaa_second_annotator_metrics else 0
+        status = "pass" if target_rows > 0 else "warning"
+        add_check(
+            checks,
+            check_id="iaa_second_annotator_packet",
+            status=status,
+            summary="Second-annotator IAA mini-slice status is tracked separately from canonical first-pass labels.",
+            evidence=(
+                f"target_rows={target_rows}, blind_rows={blind_total_rows}, labeled_rows={labeled_rows}, "
+                f"metrics_labeled_rows={metrics_rows}, agreement={agreement}, cohen_kappa={kappa}"
+            ),
+            next_action=(
+                "Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics."
+            ),
+        )
         add_check(
             checks,
             check_id="paper_citations_ready",
@@ -472,6 +523,15 @@ def main() -> None:
         if Path(args.iclr2023_random80_human_validation_provenance).exists()
         else None,
         citation_audit=load_json(args.citation_audit) if Path(args.citation_audit).exists() else None,
+        iaa_second_annotator_manifest=load_json(args.iaa_second_annotator_manifest)
+        if Path(args.iaa_second_annotator_manifest).exists()
+        else None,
+        iaa_second_annotator_blind_rows=load_csv_rows(args.iaa_second_annotator_blind_sheet)
+        if Path(args.iaa_second_annotator_blind_sheet).exists()
+        else None,
+        iaa_second_annotator_metrics=load_json(args.iaa_second_annotator_metrics)
+        if Path(args.iaa_second_annotator_metrics).exists()
+        else None,
     )
 
     output_json = Path(args.output_json)
