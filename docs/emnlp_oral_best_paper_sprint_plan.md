@@ -221,6 +221,34 @@ Table 4: Cross-year stress test.
 
 ## Sprint Calendar
 
+### Current Checkpoint: 2026-05-06 (T-19 to ARR May deadline)
+
+Deadline anchor:
+
+- ARR May deadline: `2026-05-25` (19 days left)
+- Target: submit by `2026-05-24` night with no deadline-day experiments
+
+Verified today:
+
+- Paper assets were regenerated (`scripts/export_paper_assets.py`) with no claim-scope drift.
+- Readiness audit remains `ready` with `9` ready claims and no blockers (`scripts/audit_paper_readiness.py`).
+- Progress dashboard refreshed (`scripts/render_progress_dashboard.py`).
+- Paper build command reports clean state (`make -C paper` -> no pending rebuild).
+- Figure-1 rendering text and regression tests are aligned (`14` targeted tests pass).
+
+What still blocks oral/best-paper confidence:
+
+- No independent IAA evidence yet (current validation is standard single-user).
+- No strong frontier prompted-LLM run is finalized under clean output audit (GPT-5.5 path still pending key/runtime run).
+- External-validity framing is stronger than April, but still requires one more high-trust axis (non-frontier random/stratified venue slice and/or targeted IAA mini-slice).
+- The manuscript story must keep failure taxonomy and stale-criticism narrative as the center, not auxiliary analysis.
+
+Next gate (2026-05-15):
+
+- lock one stronger transfer baseline package,
+- lock one broader-evidence package (or explicit constrained fallback),
+- freeze paper-facing narrative around three flagship failure modes.
+
 ### Current Checkpoint: 2026-04-27
 
 Goal: enter the next sprint with a clean scoped draft rather than unresolved core blockers.
