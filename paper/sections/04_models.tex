@@ -10,6 +10,7 @@ This model is deliberately simple: its purpose is to test whether revision-speci
 The issue-ledger and structured calibrator are designed as diagnostic interventions.
 They encode cues such as concrete added experiments, softened claims, future-work deferrals, and response-only fixes.
 Hard overrides are reported with an ablation so that the gain from explicit revision cues is visible.
+We treat these systems as task-shaped diagnostic baselines (learned components plus explicit rule cues), not as a claim of architecture-level state of the art for general revision tracking.
 
 \paragraph{Structured feature groups.}
 The structured calibrator uses only observable fields from the issue sheet: request type cues in the review concern, response/revision cues for added evidence, broad-evaluation responses, theory or notation fixes, code-release promises, future-work deferrals, digit/count buckets, and the disagreement pattern among semantic baselines.

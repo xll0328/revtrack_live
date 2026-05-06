@@ -13,6 +13,7 @@ Table~\ref{tab:main-results} shows that structured revision evidence substantial
 The strongest semantic baseline, MPNet with a linear classifier, reaches 0.581 accuracy and 0.389 macro-F1.
 The structured model reaches 0.682 accuracy and 0.704 macro-F1.
 Removing structured hard overrides drops macro-F1 to 0.424, showing that explicit revision-follow-up cues drive much of the minority-label recovery.
+This large drop also clarifies the model role: the strongest in-domain system is a diagnostic hybrid that combines learned scoring with benchmark-specific explicit cues.
 
 \subsection{RQ2: When Does Accuracy Mislead?}
 
@@ -62,6 +63,7 @@ Table~\ref{tab:neurips100-transfer} shows the same trend in a different venue ec
 It also shows unresolved labels still dominating and fixed recovery absent in the current split.
 Issue-ledger rules are strongest overall in this bounded frontier setting, while TF-IDF and encoder baselines have weak macro-F1 and poor fixed-case recovery.
 This supports a cross-year brittleness claim, but not a broad prevalence claim, because the frontier is intentionally model-disagreement-heavy.
+Because these frontiers are disagreement-harvested hard subsets, they should be read as stress-test transfer evidence rather than as a full distributional estimate of venue-wide revision behavior.
 The ICLR 2023 random/stratified slice complements these frontiers with 80 standard rows and a fixed/partial/unresolved label mix of 5/49/26.
 It supports bounded external-validity evidence by measured slice design, not a claim about natural venue prevalence.
 Appendix Table~\ref{tab:cross-split-significance} reports stratified-bootstrap confidence intervals for all three standard splits; ranking uncertainty is small for the in-domain gap and substantially larger on transfer frontiers.

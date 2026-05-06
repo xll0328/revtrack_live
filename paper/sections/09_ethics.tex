@@ -8,3 +8,9 @@ Because the data involves real papers and reviews, releases should preserve only
 We separate blind validation sheets from hidden assistant/model keys to reduce label leakage and to make audit boundaries explicit.
 We do not release hidden assistant/model keys as human labels unless they have passed the documented promotion path.
 The intended release artifact is therefore an audited benchmark package: minimally necessary text excerpts, labels with evidence spans, provenance metadata, scripts, and machine-readable audit reports, rather than a bulk mirror of full review discussions.
+
+We also note deployment risks beyond privacy.
+First, systems optimized on this benchmark can over-credit polished rebuttal language or under-credit substantive but terse revisions, which can unfairly affect downstream editorial triage if used naively.
+Second, venue-style and discipline norms differ: a model tuned on ICLR/NeurIPS review discourse may transfer poorly to other communities and may encode style-specific bias in what counts as "resolved."
+Third, issue-level status tracking can privilege concerns that are easy to verbalize in short review snippets while underweighting subtler methodological, safety, or fairness concerns.
+For these reasons, we frame RevTrack as an evaluation benchmark for assistant behavior under revision, not as a decision-making system for paper outcomes.

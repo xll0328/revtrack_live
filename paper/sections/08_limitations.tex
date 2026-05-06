@@ -6,13 +6,14 @@ The ICLR 2023 random80 slice adds random/stratified evidence within the ICLR ven
 Most labels are standard single-user confirmed labels, and only a bounded mini60 packet has an independent second pass.
 We therefore frame cross-year and cross-venue evidence as bounded transfer and external-validity evidence, not as a complete estimate of performance on all issues.
 For the same reason, frontier failure-taxonomy counts should be read as diagnostic counts on intentionally hard frontiers, while random80 counts should be read by measured slice design rather than as broad prevalence estimates.
+The mini60 agreement result should be interpreted narrowly: it is a bounded consistency check on hard cases, not a substitute for full two-annotator coverage across all packets.
 
 The label rubric is issue-level and evidence-based, but some concerns remain ambiguous.
 For example, a narrowed claim may make an original criticism less severe without fully resolving it.
 These cases depend on careful evidence spans and notes.
 
 The current labeled pool has too few regressed examples for stable regression-performance conclusions.
-We include the label because it is conceptually important, but do not claim robust detection until more examples are collected.
+We include the label because it is conceptually important, but treat regression performance as provisional until more examples are collected.
 
 RevTrack is also text-first.
 The current pipeline uses review text, author responses, revision summaries, and available paper metadata rather than full PDF differencing.
