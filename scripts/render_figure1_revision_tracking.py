@@ -122,7 +122,7 @@ def render(row: dict[str, str]) -> str:
         "still sounds plausible in isolation."
     )
     target = (
-        "Label: fixed. The exact cost-comparison concern is retired because the "
+        "RevTrack label: fixed. The exact cost-comparison concern is retired because the "
         "new evidence directly answers it."
     )
 
@@ -141,7 +141,7 @@ def render(row: dict[str, str]) -> str:
 <rect width="100%" height="100%" fill="#f4f7fb"/>
 <path d="M0 0 H1320 V154 C1080 132 914 120 702 144 C458 172 244 152 0 118 Z" fill="#e6eef8"/>
 <text x="54" y="54" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="29" font-weight="900" fill="#0f172a">A review concern can become stale after revision</text>
-<text x="54" y="86" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#475569">RevTrack asks whether one concrete concern remains valid after aligning the review, response, and revised evidence.</text>
+<text x="54" y="86" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#475569">RevTrack evaluates whether a scientific criticism still holds after aligning the review, response, and revised evidence.</text>
 <text x="54" y="112" font-family="Source Sans 3, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#64748b">Example: {html.escape(title)} ({html.escape(issue_id)})</text>
 
 <g filter="url(#shadow)">
