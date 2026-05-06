@@ -1,0 +1,60 @@
+{
+  "batches": [
+    {
+      "batch_id": 1,
+      "file": "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch1.tsv",
+      "label_distribution": {
+        "fixed": 4,
+        "partially_fixed": 4,
+        "regressed": 2,
+        "unresolved": 10
+      },
+      "rows": 20,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 8,
+        "ICLR 2024 v1": 4,
+        "ICLR 2025 expanded80 v1": 4,
+        "ICLR 2025 repro v2": 2,
+        "NeurIPS 2024 limit100 v1": 2
+      }
+    },
+    {
+      "batch_id": 2,
+      "file": "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch2.tsv",
+      "label_distribution": {
+        "fixed": 4,
+        "partially_fixed": 4,
+        "regressed": 2,
+        "unresolved": 10
+      },
+      "rows": 20,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 7,
+        "ICLR 2024 v1": 3,
+        "ICLR 2025 expanded80 v1": 4,
+        "ICLR 2025 repro v2": 3,
+        "NeurIPS 2024 limit100 v1": 3
+      }
+    },
+    {
+      "batch_id": 3,
+      "file": "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch3.tsv",
+      "label_distribution": {
+        "fixed": 4,
+        "partially_fixed": 4,
+        "regressed": 2,
+        "unresolved": 10
+      },
+      "rows": 20,
+      "source_distribution": {
+        "ICLR 2023 random80 v1": 5,
+        "ICLR 2024 v1": 3,
+        "ICLR 2025 expanded80 v1": 5,
+        "ICLR 2025 repro v2": 3,
+        "NeurIPS 2024 limit100 v1": 4
+      }
+    }
+  ],
+  "num_batches": 3,
+  "total_rows": 60
+}
