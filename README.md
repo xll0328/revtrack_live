@@ -69,6 +69,7 @@ Latest assistant-adjudicated benchmark assets:
 - second-annotator IAA mini-slice manifest (2026-05-06): [iaa_second_annotator_mini60_v1_manifest.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_manifest.md)
 - second-annotator IAA mini-slice blind packet: [iaa_second_annotator_mini60_v1_blind_packet.html](/data/sony/emnlp2026_revtrack/outputs/day1/iaa_second_annotator_mini60_v1_blind_packet.html)
 - second-annotator IAA mini-slice batch plan: [iaa_second_annotator_mini60_batches.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iaa_second_annotator_mini60_batches.md)
+- second-annotator IAA pipeline report: [iaa_second_annotator_mini60_v1_pipeline_report.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_pipeline_report.md)
 - random/stratified next-slice plan: [random_stratified_slice_plan_20260428.md](/data/sony/emnlp2026_revtrack/docs/random_stratified_slice_plan_20260428.md)
 - random/stratified feasibility snapshot: [random_stratified_slice_feasibility_2026-04-28.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/random_stratified_slice_feasibility_2026-04-28.md)
 - random/stratified feasibility refresh (2026-05-06): [random_stratified_slice_feasibility_2026-05-06.md](/data/sony/emnlp2026_revtrack/outputs/day1/paper_assets/random_stratified_slice_feasibility_2026-05-06.md)

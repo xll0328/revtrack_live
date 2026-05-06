@@ -90,7 +90,10 @@ Status legend: `[x] done`, `[-] in_progress`, `[ ] pending`
 - [x] T0-4 Added batch splitter utility + test:
   - `scripts/split_second_annotator_packet.py`
   - `tests/test_split_second_annotator_packet.py`
-- [ ] T0-5 Start independent second-pass labeling on batch files
+- [-] T0-5 Start independent second-pass labeling on batch files
+- [x] T0-6 Added one-command IAA merge/eval/readiness pipeline:
+  - `scripts/run_iaa_second_annotator_pipeline.py`
+  - `outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_pipeline_report.{md,json}`
 
 ### Week 1 (`2026-05-07` ~ `2026-05-12`)
 

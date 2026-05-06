@@ -1,0 +1,37 @@
+{
+  "batch_sheets": [
+    "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch1.tsv",
+    "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch2.tsv",
+    "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch3.tsv"
+  ],
+  "blind_sheet": "experiments/day1/iaa_second_annotator_mini60_v1_blind.tsv",
+  "key_sheet": "experiments/day1/iaa_second_annotator_mini60_v1_key.tsv",
+  "merge": {
+    "batch_coverage_by_file": {
+      "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch1.tsv": 20,
+      "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch2.tsv": 20,
+      "experiments/day1/iaa_second_annotator_mini60_v1_blind_batch3.tsv": 20
+    },
+    "batch_issue_rows": 60,
+    "blind_rows": 60,
+    "labeled_rows": 0,
+    "missing_batch_issue_rows": 0,
+    "unlabeled_rows": 60
+  },
+  "merged_output": "outputs/day1/iaa_second_annotator_mini60_v1_blind_merged.tsv",
+  "metrics": {
+    "agreement": null,
+    "cohen_kappa": null,
+    "labeled_rows": 0,
+    "mismatches": 0,
+    "rows": 60
+  },
+  "metrics_json": "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_metrics.json",
+  "mismatch_tsv": "outputs/day1/paper_assets/iaa_second_annotator_mini60_v1_mismatches.tsv",
+  "readiness": {
+    "output_json": "outputs/day1/paper_assets/paper_readiness_audit.json",
+    "output_md": "outputs/day1/paper_assets/paper_readiness_audit.md",
+    "overall_status": "ready"
+  },
+  "status": "ok"
+}
