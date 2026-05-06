@@ -75,3 +75,7 @@ The intervals are used as a claim-risk check: they capture sample instability in
 Table~\ref{tab:prompted-llm-significance} reports paired stratified-bootstrap deltas against the majority baseline.
 It strengthens the transfer-boundary statement with a direct hypothesis-test style view: prompted methods are significantly above majority in-domain, significantly below majority on ICLR25 expanded80, and overlapping on NeurIPS24.
 \input{tables/prompted_llm_significance}
+
+\paragraph{Bounded second-pass reliability check.}
+For a separate independent mini60 packet, second-pass labels are complete (60/60) with agreement $=1.0$, Cohen's $\kappa=1.0$, and zero mismatches.
+This artifact is tracked in \path{iaa_second_annotator_mini60_v1_metrics.json} and surfaced by the readiness gate as bounded reliability evidence rather than full-scale two-annotator coverage.
