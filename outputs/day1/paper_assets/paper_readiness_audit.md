@@ -94,7 +94,7 @@ Second-annotator IAA mini-slice status is tracked separately from canonical firs
 
 Evidence: target_rows=60, blind_rows=60, labeled_rows=60, metrics_labeled_rows=60, agreement=1.0, cohen_kappa=1.0
 
-Next action: Collect independent second-pass labels in the IAA blind sheet and run evaluate_human_validation.py to populate agreement metrics.
+Next action: IAA mini-slice metrics are complete; keep this as bounded reliability evidence and avoid broad prevalence claims.
 
 ### not_ready_claims_blocked (pass)
 
