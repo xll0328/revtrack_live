@@ -32,13 +32,12 @@ pytest -q tests/test_audit_paper_readiness.py \
 ## Current Gate Decision
 
 - Submission-safe for current bounded claim scope: **Go**.
-- Oral push status: **Go (in progress)** with remaining focus on narrative concentration and final response-pack polish.
+- Oral push status: **Go (in progress)** with remaining focus on final response-pack polish.
 - Best-paper push status: **Conditional**; still depends on stronger field-level reliability signal beyond current bounded evidence.
 
 ## Remaining High-Priority Items
 
-1. W2-4 dry-run package freeze follow-up: lock final command log + artifact manifest closer to deadline.
-2. Final-week consistency and rebuttal response pack.
+1. Final-week consistency and rebuttal response pack.
 
 ## Refresh Checkpoint (Boundary160 Integrated)
 
@@ -94,3 +93,4 @@ Refresh results:
 - Paper build: `pass` (`paper/main.pdf` rebuilt; 19 pages).
 - Targeted regression tests: `16 passed`.
 - Narrative concentration pass: completed on `2026-05-07` for Introduction/Experiments/Discussion with claim boundaries unchanged.
+- Updated freeze artifact manifest: `outputs/day1/paper_assets/submission_artifact_manifest_20260507_0227.md`.
