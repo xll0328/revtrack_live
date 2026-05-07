@@ -67,3 +67,30 @@ Refresh results:
 Freeze artifact hashes:
 
 - `outputs/day1/paper_assets/submission_artifact_manifest_20260506_1213.md`
+
+## Refresh Checkpoint (2026-05-07 Final Sweep)
+
+Refresh time: `2026-05-07` (UTC)
+
+Commands executed:
+
+```bash
+python scripts/export_paper_assets.py --output-dir outputs/day1/paper_assets
+python scripts/audit_paper_readiness.py \
+  --output-json outputs/day1/paper_assets/paper_readiness_audit.json \
+  --output-md outputs/day1/paper_assets/paper_readiness_audit.md
+python scripts/audit_paper_citations.py > outputs/day1/paper_assets/paper_citation_audit.json
+make -B -C paper
+pytest -q tests/test_audit_paper_readiness.py \
+  tests/test_export_oral_evidence_panel.py \
+  tests/test_export_oral_casebook.py \
+  tests/test_split_second_annotator_packet.py \
+  tests/test_render_figure1_revision_tracking.py
+```
+
+Refresh results:
+
+- Readiness audit: `overall_status=ready`, `ready_claims=9`, `blockers=0`, `warnings=0`.
+- Citation audit: `pass`, `cited_keys=31`, `problems=0`.
+- Paper build: `pass` (`paper/main.pdf` rebuilt; 19 pages).
+- Targeted regression tests: `16 passed`.
