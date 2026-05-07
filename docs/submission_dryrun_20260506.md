@@ -37,9 +37,8 @@ pytest -q tests/test_audit_paper_readiness.py \
 
 ## Remaining High-Priority Items
 
-1. W2-1 narrative concentration pass (intro/results/discussion), without changing claim scope.
-2. W2-4 dry-run package freeze follow-up: lock final command log + artifact manifest closer to deadline.
-3. Final-week consistency and rebuttal response pack.
+1. W2-4 dry-run package freeze follow-up: lock final command log + artifact manifest closer to deadline.
+2. Final-week consistency and rebuttal response pack.
 
 ## Refresh Checkpoint (Boundary160 Integrated)
 
@@ -94,3 +93,4 @@ Refresh results:
 - Citation audit: `pass`, `cited_keys=31`, `problems=0`.
 - Paper build: `pass` (`paper/main.pdf` rebuilt; 19 pages).
 - Targeted regression tests: `16 passed`.
+- Narrative concentration pass: completed on `2026-05-07` for Introduction/Experiments/Discussion with claim boundaries unchanged.

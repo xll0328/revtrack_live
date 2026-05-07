@@ -1,9 +1,8 @@
 \section{Discussion}
 
 RevTrack suggests that review assistance should be evaluated as evidence tracking rather than static critique generation.
-The practical failure mode is not merely that a model makes a wrong label.
-It is that the model may keep repeating a criticism that has been fixed, or may credit a response that only defers the issue.
-Both failures can distort author effort and reviewer attention.
+The practical failure mode is not just a wrong label: a model may repeat a concern that has been fixed, or credit a response that only defers the issue.
+Both failures distort author effort and reviewer attention.
 
 The benchmark also changes how model progress should be read.
 Small accuracy differences are not meaningful when most examples are partially fixed.
@@ -14,7 +13,7 @@ On the expanded ICLR 2025 frontier, many transfer errors are not random confusio
 
 The expanded ICLR 2025 frontier strengthens the cross-year story but also sharpens the boundary of the claim.
 It confirms brittleness on a larger active frontier, yet the sample is deliberately hard and disagreement-heavy.
-This is useful evidence for a benchmark paper because it shows where static matching breaks under pressure.
+This is useful benchmark evidence because it shows where static matching breaks under pressure.
 The NeurIPS active frontier and ICLR 2023 random/stratified slice broaden that evidence, but they still do not imply that the same label distribution holds across all venues or years.
 A bounded independent mini60 check and a larger user-confirmed boundary160 second-pass packet now provide reliability support on hard boundaries.
 However, because boundary160 is prelabel-assisted and both packets are bounded by design, the next step is still broader blind-independent annotation coverage and non-ICLR random/stratified evidence.

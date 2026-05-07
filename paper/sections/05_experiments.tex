@@ -57,9 +57,8 @@ For example, \texttt{w7P92BEsb2\_\_r01} is \textit{fixed} only after the revisio
 \input{tables/expanded80_transfer}
 \input{tables/neurips_limit100_transfer}
 
-\textbf{In-domain to ICLR 2025} is still the strongest signal for proving in-year revision-aware gain, but both expanded80 and NeurIPS limit100 are purposefully hard.
-Cross-venue transfer confirms the same pattern:
-high aggregate scores alone can mask clinically important misses, while unresolved concerns remain the hardest safety-critical case.
+\textbf{In-domain to ICLR 2025} is still the strongest signal for in-year revision-aware gain, but both expanded80 and NeurIPS limit100 are purposefully hard transfer frontiers.
+Across venues, the same pattern holds: high aggregate scores can still hide clinically important misses, especially on unresolved concerns.
 
 The validated ICLR 2025 repro set is a stress test, not a full benchmark.
 It reveals brittleness: the majority baseline and TF-IDF both reach 0.762 accuracy, while TF-IDF has fixed-label F1 of 0.000.
@@ -69,8 +68,7 @@ Table~\ref{tab:neurips100-transfer} shows the same trend in a different venue ec
 It also shows unresolved labels still dominating and fixed recovery absent in the current split.
 Appendix Table~\ref{tab:split-label-coverage} reports the exact split-level label coverage and missing-label patterns used for boundary interpretation.
 Issue-ledger rules are strongest overall in this bounded frontier setting, while TF-IDF and encoder baselines have weak macro-F1 and poor fixed-case recovery.
-This supports a cross-year brittleness claim, but not a broad prevalence claim, because the frontier is intentionally model-disagreement-heavy.
-Because these frontiers are disagreement-harvested hard subsets, they should be read as stress-test transfer evidence rather than as a full distributional estimate of venue-wide revision behavior.
+This supports a cross-year brittleness claim, but not a broad prevalence claim, because these frontiers are disagreement-harvested hard subsets.
 The ICLR 2023 random/stratified slice complements these frontiers with 80 standard rows and a fixed/partial/unresolved label mix of 5/49/26.
 It supports bounded external-validity evidence by measured slice design, not a claim about natural venue prevalence.
 Appendix Table~\ref{tab:cross-split-significance} reports stratified-bootstrap confidence intervals for all three standard splits; ranking uncertainty is small for the in-domain gap and substantially larger on transfer frontiers.
