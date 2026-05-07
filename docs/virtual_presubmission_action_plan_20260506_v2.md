@@ -7,7 +7,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
 
 ## A. Highest-impact fixes (review-score critical)
 
-- [-] **A1. Reliability claim hardening (without overclaim)**
+- [x] **A1. Reliability claim hardening (without overclaim)**
   - Reviewer issue: reliability evidence too narrow for benchmark maturity.
   - Actions:
     - keep explicit boundary: `mini60` is blind-independent bounded check; `boundary160` is user-confirmed prelabel-assisted packet.
@@ -58,7 +58,7 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
 
 ## B. Medium-impact upgrades (robustness & readability)
 
-- [ ] **B1. Label-sparsity-aware reporting panel**
+- [x] **B1. Label-sparsity-aware reporting panel**
   - Actions:
     - add collapsed evaluation panel (4-way primary + boundary-aware notes) to reduce over-interpretation under missing labels.
     - add per-split “interpretable labels present/absent” callout next to transfer tables.
@@ -66,8 +66,10 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
     - `outputs/day1/paper_assets/split_label_coverage.{md,csv,json}`
     - `paper/sections/05_experiments.tex`
     - `paper/tables/split_label_coverage.tex`
+  - Resolution (`2026-05-07`):
+    - split-level missing-label coverage is exported and explicitly referenced from transfer interpretation text.
 
-- [ ] **B2. Main-text qualitative example strengthening**
+- [x] **B2. Main-text qualitative example strengthening**
   - Actions:
     - ensure 3-5 compact, concrete cases with concern/evidence/rationale are visible from main narrative.
   - Artifacts:
@@ -75,20 +77,20 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
     - `paper/sections/appendix_audit.tex`
     - `outputs/day1/paper_assets/oral_casebook.md`
 
-- [-] **B3. Presentation polish from reviewer notes**
+- [x] **B3. Presentation polish from reviewer notes**
   - Actions:
     - standardize `in-domain` spelling.
     - shorten long table captions where possible.
     - fix malformed citation style snippets.
   - Artifacts:
     - paper sections + affected tables.
-  - Progress (`2026-05-06`):
+  - Resolution (`2026-05-07`):
     - `in-domain` spelling normalized and several long captions shortened (`dataset_versions.tex`, `prompted_llm_ensemble.tex`, `prompted_llm_temperature_ablation.tex`).
-    - citation-style snippet cleanup reserved for final freeze pass.
+    - citation-style snippet cleanup applied in `03_dataset.tex` and final caption polish completed in `dataset_versions.tex`.
 
 ## C. Final freeze + rebuttal packet
 
-- [ ] **C1. Full no-key reproducibility sweep**
+- [x] **C1. Full no-key reproducibility sweep**
   - Commands:
     - `python scripts/export_paper_assets.py --output-dir outputs/day1/paper_assets`
     - `python scripts/audit_paper_readiness.py --output-json ... --output-md ...`
@@ -98,11 +100,13 @@ Status legend: `[x] done`, `[-] in progress`, `[ ] pending`
   - Exit gate:
     - readiness `ready`, citations `pass`, paper builds.
 
-- [ ] **C2. Rebuttal-ready objection matrix refresh**
+- [x] **C2. Rebuttal-ready objection matrix refresh**
   - Actions:
     - map each major criticism to exact artifact paths and one-line rebuttal claims.
   - Artifact:
     - `docs/reviewer_objection_evidence_matrix_20260506.md`
+  - Resolution (`2026-05-07`):
+    - matrix reflects bounded-claim wording for O3/O4/O6 and maps each objection to auditable artifact paths.
 
 ---
 

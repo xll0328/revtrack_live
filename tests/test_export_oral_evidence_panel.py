@@ -18,7 +18,6 @@ def test_build_panel_returns_expected_axes() -> None:
     axes = {row["axis"] for row in rows}
     assert "In-domain gain" in axes
     assert "Accuracy trap" in axes
-    assert "IAA mini-slice reliability" in axes
+    assert "IAA boundary-packet reliability" in axes
     assert "Readiness gate" in axes
     assert len(rows) >= 7
-
