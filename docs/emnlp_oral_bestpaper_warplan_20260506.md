@@ -5,6 +5,8 @@ Today: `2026-05-06`
 ARR deadline (AoE): `2026-05-25`  
 Remaining: `19` days
 
+2026-05-12 addendum: human signoff completion was confirmed by the human author in-session; see `docs/emnlp2026_human_signoff_addendum_20260512.md`.
+
 ## 1) Distance Snapshot (As of 2026-05-06)
 
 - Main-track acceptance: `7.5 / 10` (plausible now)
